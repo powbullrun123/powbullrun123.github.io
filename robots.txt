@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://rightfulreturnsrecovery.com/sitemap.xml
+
+Sitemap: https://www.rightfulreturnsrecovery.com/sitemap.xml
