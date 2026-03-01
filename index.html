@@ -1,1077 +1,179 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///C:/Users/Powell/Downloads/index%204.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rightful Returns Recovery | Your Money Is Waiting</title>
-<link href="./index_files/css2" rel="stylesheet">
+<meta name="description" content="National surplus funds recovery specialists helping homeowners across the United States recover unclaimed foreclosure and tax sale overages. 100% contingency. No recovery, no fee.">
+<title>Rightful Returns Recovery | National Surplus Funds Specialists</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --gold: #C9A84C;
-    --gold-light: #E8C96A;
-    --navy: #0C1F3F;
-    --navy-mid: #162D56;
-    --dark: #1A1A1A;
-    --dark-mid: #2C2C2C;
-    --dark-bg: #111111;
-    --cream: #F5F0E8;
-    --cream-mid: #EDE6D6;
-    --text-light: #9A9A8A;
-    --white: #FFFFFF;
-    --grass: #1a3a1a;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: var(--dark-bg);
-    color: var(--cream);
-    font-size: 17px;
-    line-height: 1.7;
-  }
-
-  /* ─── BASEBALL DIAMOND LOGO SVG ─── */
-  /* Used inline in HTML for flexibility */
-
-  /* ─── NAVIGATION ─── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 14px 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(12,31,63,0.97);
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid rgba(201,168,76,0.3);
-  }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    text-decoration: none;
-  }
-
-  .nav-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.03em;
-    line-height: 1.2;
-  }
-  .nav-brand span { color: var(--gold); }
-
-  .nav-links {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-    align-items: center;
-  }
-
-  .nav-links a {
-    color: var(--cream);
-    text-decoration: none;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    transition: color 0.3s;
-  }
-
-  .nav-links a:hover { color: var(--gold); }
-
-  .nav-cta {
-    background: var(--gold) !important;
-    color: var(--dark) !important;
-    padding: 10px 24px;
-    font-size: 0.7rem !important;
-    letter-spacing: 0.12em !important;
-    transition: background 0.3s !important;
-  }
-
-  .nav-cta:hover { background: var(--gold-light) !important; }
-
-  /* ─── HERO ─── */
-  #home {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 120px 60px 80px;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #080e1a 0%, #0c1f3f 50%, #0a1528 100%);
-  }
-
-  #home::before {
-    content: '';
-    position: absolute;
-    top: -200px; right: -100px;
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  #home::after {
-    content: '';
-    position: absolute;
-    bottom: -100px; left: -100px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-content {
-    max-width: 700px;
-    position: relative;
-    z-index: 2;
-    animation: fadeUp 1s ease forwards;
-  }
-
-  .hero-tag {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .hero-tag::before {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-  }
-
-  .hero-h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 6vw, 5.2rem);
-    font-weight: 700;
-    line-height: 1.05;
-    margin-bottom: 12px;
-    color: var(--white);
-  }
-
-  .hero-h1 em {
-    font-style: italic;
-    color: var(--gold);
-    display: block;
-  }
-
-  .hero-sub {
-    font-size: 1.05rem;
-    line-height: 1.85;
-    color: rgba(245,240,232,0.8);
-    max-width: 580px;
-    margin: 24px 0 16px;
-  }
-
-  /* ─── REFUND CALLOUT ─── */
-  .refund-callout {
-    background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
-    border: 1px solid rgba(201,168,76,0.4);
-    border-left: 4px solid var(--gold);
-    padding: 18px 24px;
-    margin: 24px 0 40px;
-    max-width: 500px;
-  }
-
-  .refund-callout .refund-label {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 4px;
-  }
-
-  .refund-callout .refund-amount {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.1;
-  }
-
-  .refund-callout .refund-sub {
-    font-size: 0.82rem;
-    color: rgba(245,240,232,0.65);
-    margin-top: 4px;
-  }
-
-  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-
-  .btn-primary {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--dark);
-    padding: 18px 44px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-
-  .btn-primary:hover { background: var(--gold-light); }
-
-  .btn-outline {
-    display: inline-block;
-    border: 1px solid rgba(201,168,76,0.6);
-    color: var(--gold);
-    padding: 18px 44px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-
-  .btn-outline:hover { background: rgba(201,168,76,0.1); }
-
-  /* ─── SECTION BASE ─── */
-  section { padding: 90px 60px; }
-
-  .section-tag {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-  }
-
-  .section-h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 4vw, 3.4rem);
-    font-weight: 700;
-    line-height: 1.1;
-    color: var(--white);
-    margin-bottom: 20px;
-  }
-
-  .section-sub {
-    font-size: 1rem;
-    color: rgba(245,240,232,0.7);
-    max-width: 600px;
-    line-height: 1.85;
-  }
-
-  .gold-line {
-    width: 60px;
-    height: 2px;
-    background: var(--gold);
-    margin: 24px 0;
-  }
-
-  /* ─── SOCIAL PROOF / STAT BAR ─── */
-  .stat-bar {
-    background: var(--navy);
-    padding: 40px 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 40px;
-    border-top: 1px solid rgba(201,168,76,0.2);
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-    flex-wrap: wrap;
-  }
-
-  .stat-item { text-align: center; }
-
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--gold);
-    line-height: 1;
-    display: block;
-  }
-
-  .stat-label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.6);
-    margin-top: 6px;
-  }
-
-  .stat-divider {
-    width: 1px;
-    height: 60px;
-    background: rgba(201,168,76,0.2);
-  }
-
-  /* ─── WHAT WE DO ─── */
-  #what-we-do {
-    background: var(--cream);
-    color: var(--dark);
-  }
-
-  #what-we-do .section-tag { color: #8B6E2A; }
-  #what-we-do .section-h2 { color: var(--navy); }
-  #what-we-do .section-sub { color: #555; }
-  #what-we-do .gold-line { background: var(--gold); }
-
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin-top: 56px;
-  }
-
-  .card {
-    background: var(--white);
-    border: 1px solid rgba(12,31,63,0.1);
-    border-top: 3px solid var(--gold);
-    padding: 40px 32px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-
-  .card-icon {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 14px;
-  }
-
-  .card p { font-size: 0.95rem; color: #666; line-height: 1.8; }
-
-  /* ─── URGENCY BANNER ─── */
-  .urgency-banner {
-    background: linear-gradient(135deg, var(--navy) 0%, #1a3a6e 100%);
-    padding: 50px 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    border-top: 2px solid var(--gold);
-    border-bottom: 2px solid var(--gold);
-  }
-
-  .urgency-left { flex: 1; }
-
-  .urgency-banner h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    color: var(--white);
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  .urgency-banner h3 em { color: var(--gold); font-style: italic; }
-
-  .urgency-banner p {
-    font-size: 0.95rem;
-    color: rgba(245,240,232,0.75);
-    max-width: 500px;
-  }
-
-  .urgency-banner p strong { color: var(--gold); font-weight: 700; }
-
-  /* ─── HOW IT WORKS ─── */
-  #how-it-works { background: #0a1528; }
-
-  .steps-list { margin-top: 60px; }
-
-  .step {
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 32px;
-    padding: 40px 0;
-    border-bottom: 1px solid rgba(245,240,232,0.07);
-    align-items: start;
-  }
-
-  .step:last-child { border-bottom: none; }
-
-  .step-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--gold);
-    opacity: 0.5;
-    line-height: 1;
-  }
-
-  .step-content h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 10px;
-  }
-
-  .step-content p {
-    font-size: 0.97rem;
-    color: rgba(245,240,232,0.65);
-    line-height: 1.8;
-    max-width: 600px;
-  }
-
-  /* ─── FAQ ─── */
-  #faq { background: #0d0d0d; }
-
-  .faq-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 56px;
-  }
-
-  .faq-item {
-    border: 1px solid rgba(201,168,76,0.12);
-    border-left: 3px solid rgba(201,168,76,0.4);
-    padding: 32px;
-    transition: border-color 0.3s;
-    background: rgba(255,255,255,0.02);
-  }
-
-  .faq-item:hover { border-left-color: var(--gold); }
-
-  .faq-item h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 12px;
-    line-height: 1.3;
-  }
-
-  .faq-item p { font-size: 0.94rem; color: rgba(245,240,232,0.6); line-height: 1.8; }
-
-  /* ─── CONTACT ─── */
-  #contact {
-    background: var(--cream);
-    color: var(--dark);
-  }
-
-  .contact-intro {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 60px;
-  }
-
-  .contact-intro .section-tag { text-align: center; }
-
-  .contact-intro .section-h2 { color: var(--navy); text-align: center; }
-
-  .contact-intro .section-sub { color: #555; text-align: center; max-width: 600px; margin: 0 auto; }
-
-  .contact-refund-badge {
-    display: inline-block;
-    background: var(--navy);
-    color: var(--gold);
-    padding: 14px 32px;
-    margin: 20px 0 0;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    border: 1px solid var(--gold);
-  }
-
-  .contact-refund-badge span { color: var(--white); font-size: 0.75rem; font-family: 'Montserrat', sans-serif; display: block; letter-spacing: 0.15em; font-weight: 600; }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 70px;
-    align-items: start;
-  }
-
-  .contact-left h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 16px;
-    line-height: 1.2;
-  }
-
-  .contact-left p {
-    font-size: 0.97rem;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 28px;
-  }
-
-  .trust-list { list-style: none; margin-bottom: 36px; }
-
-  .trust-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 0.95rem;
-    color: #444;
-    margin-bottom: 14px;
-    line-height: 1.5;
-  }
-
-  .trust-list li::before {
-    content: '✦';
-    color: var(--gold);
-    font-size: 0.7rem;
-    margin-top: 4px;
-    flex-shrink: 0;
-  }
-
-  .quote-block {
-    border-left: 3px solid var(--gold);
-    padding-left: 20px;
-    background: rgba(12,31,63,0.04);
-    padding: 20px 20px 20px 24px;
-  }
-
-  .quote-block p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    font-style: italic;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 0 !important;
-  }
-
-  /* ─── FORM ─── */
-  .contact-form { display: flex; flex-direction: column; gap: 18px; }
-
-  .form-group { display: flex; flex-direction: column; gap: 7px; }
-
-  .form-group label {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--navy);
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 14px 18px;
-    border: 1.5px solid #C8C0B0;
-    background: var(--white);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.97rem;
-    color: var(--dark);
-    outline: none;
-    transition: border-color 0.3s;
-    -webkit-appearance: none;
-    border-radius: 0;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--navy); }
-
-  .form-group textarea { resize: vertical; min-height: 110px; }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-
-  .btn-submit {
-    background: var(--navy);
-    color: var(--white);
-    border: none;
-    padding: 20px 44px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s;
-    align-self: stretch;
-    border-bottom: 3px solid var(--gold);
-  }
-
-  .btn-submit:hover { background: var(--navy-mid); }
-
-  .form-note {
-    font-size: 0.78rem;
-    color: #888;
-    text-align: center;
-    margin-top: -8px;
-  }
-
-  /* ─── LOGO SHOWCASE ─── */
-  .logo-showcase {
-    background: var(--navy);
-    padding: 70px 60px;
-    text-align: center;
-    border-top: 2px solid rgba(201,168,76,0.3);
-  }
-
-  .logo-tagline {
-    font-size: 0.68rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.5);
-    margin-top: 20px;
-  }
-
-  /* ─── FOOTER ─── */
-  footer {
-    background: var(--dark-bg);
-    padding: 44px 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid rgba(201,168,76,0.15);
-  }
-
-  .footer-left { display: flex; align-items: center; gap: 16px; }
-
-  .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    color: var(--white);
-  }
-
-  .footer-brand span { color: var(--gold); }
-
-  .footer-right { font-size: 0.8rem; color: var(--text-light); }
-
-  /* ─── ANIMATIONS ─── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 900px) {
-    nav { padding: 14px 20px; flex-wrap: wrap; gap: 10px; }
-    section { padding: 60px 20px; }
-    #home { padding: 100px 20px 60px; }
-    .cards-grid { grid-template-columns: 1fr; }
-    .faq-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-    .urgency-banner { flex-direction: column; padding: 40px 20px; }
-    .nav-links { gap: 14px; }
-    footer { flex-direction: column; gap: 16px; text-align: center; }
-    .step { grid-template-columns: 60px 1fr; }
-    .step-num { font-size: 2.4rem; }
-    .stat-bar { padding: 30px 20px; }
-    .stat-divider { display: none; }
-    .logo-showcase { padding: 50px 20px; }
-  }
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background: #0f172a;
+  color: #f8fafc;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+  background: linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.trust-bar {
+  margin: 30px 0;
+  font-weight: 600;
+  color: #facc15;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #facc15;
+  color: #0f172a;
+  padding: 15px 30px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.contact {
+  background: #111827;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+input, textarea {
+  padding: 14px;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+button {
+  padding: 16px;
+  background: #facc15;
+  color: #0f172a;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.sms-consent {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.legal {
+  font-size: 0.8rem;
+  margin-top: 30px;
+  opacity: 0.7;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+  background: #0f172a;
+}
 </style>
 </head>
+
 <body>
 
-<!-- ═══ NAVIGATION ═══ -->
-<nav>
-  <a href="file:///C:/Users/Powell/Downloads/index%204.html#home" class="nav-logo">
-    <!-- RRR Baseball Diamond Logo (small) -->
-    <svg width="52" height="52" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-      <!-- Outer circle -->
-      <circle cx="60" cy="60" r="57" fill="none" stroke="#C9A84C" stroke-width="2"></circle>
-      <!-- Background fill -->
-      <circle cx="60" cy="60" r="54" fill="#0C1F3F"></circle>
-      <!-- Inner circle ring -->
-      <circle cx="60" cy="60" r="48" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.4"></circle>
-      
-      <!-- Baseball Diamond shape (rotated square) -->
-      <!-- Vertices: Top(60,20), Right(95,55), Bottom(60,90), Left(25,55) -->
-      <polygon points="60,22 94,55 60,88 26,55" fill="rgba(201,168,76,0.06)" stroke="#C9A84C" stroke-width="1.2" opacity="0.7"></polygon>
-      
-      <!-- Base squares at each corner -->
-      <!-- Top base (Home plate position at top) -->
-      <rect x="54" y="15" width="12" height="10" rx="1" fill="#C9A84C" opacity="0.9"></rect>
-      <!-- Right base (1st base) -->
-      <rect x="88" y="50" width="12" height="10" rx="1" fill="#C9A84C" opacity="0.9"></rect>
-      <!-- Bottom base (2nd base) -->
-      <rect x="54" y="82" width="12" height="10" rx="1" fill="#C9A84C" opacity="0.9"></rect>
-      <!-- Left base (3rd base) -->
-      <rect x="20" y="50" width="12" height="10" rx="1" fill="#C9A84C" opacity="0.9"></rect>
-      
-      <!-- Three R letters at Top, Right, Left positions (baseball diamond) -->
-      <!-- Top R = Rightful -->
-      <text x="60" y="23" font-family="Georgia, serif" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">R</text>
-      <!-- Right R = Returns -->
-      <text x="94" y="58" font-family="Georgia, serif" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">R</text>
-      <!-- Left R = Recovery -->
-      <text x="26" y="58" font-family="Georgia, serif" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">R</text>
-      
-      <!-- Curved text around the circle -->
-      <path id="navTopArc" d="M 10,60 A 50,50 0 0,1 110,60" fill="none"></path>
-      <path id="navBotArc" d="M 10,62 A 50,50 0 0,0 110,62" fill="none"></path>
-      <text font-family="Arial, sans-serif" font-size="7" fill="#C9A84C" font-weight="bold" letter-spacing="2.5">
-        <textpath href="#navTopArc" startOffset="6%">RIGHTFUL · RETURNS · RECOVERY</textpath>
-      </text>
-    </svg>
-    <div class="nav-brand">Rightful <span>Returns</span> Recovery</div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="file:///C:/Users/Powell/Downloads/index%204.html#home">Home</a></li>
-    <li><a href="file:///C:/Users/Powell/Downloads/index%204.html#how-it-works">How It Works</a></li>
-    <li><a href="file:///C:/Users/Powell/Downloads/index%204.html#faq">FAQ</a></li>
-    <li><a href="file:///C:/Users/Powell/Downloads/index%204.html#contact" class="nav-cta">Free Consultation</a></li>
-  </ul>
-</nav>
+<section class="hero">
+  <div class="container">
+    <h1>You May Be Owed $40,000–$100,000 in Surplus Funds.</h1>
+    <h2>We Help Homeowners Across the United States Recover What’s Legally Theirs.</h2>
+    <p>
+      After foreclosure or tax sale, excess proceeds often go unclaimed.
+      Our team researches public records nationwide and connects you with experienced legal professionals
+      to help recover your funds — 100% contingency. No recovery. No fee.
+    </p>
 
-<!-- ═══ HERO ═══ -->
-<section id="home">
-  <div class="hero-content">
-    <div class="hero-tag">Surplus Funds Recovery Specialists</div>
-    <h1 class="hero-h1">
-      Your Money Is Waiting.
-      <em>Let's Bring It Home.</em>
-    </h1>
-    <p class="hero-sub">After a foreclosure or tax deed sale, leftover funds often go unclaimed — money that legally belongs to you or your family. Rightful Returns Recovery finds it, fights for it, and puts it back where it belongs.</p>
-
-    <div class="refund-callout">
-      <div class="refund-label">Average Client Recovery</div>
-      <div class="refund-amount">$40,000 – $100,000</div>
-      <div class="refund-sub">100% contingency — you pay nothing unless we recover funds for you</div>
+    <div class="trust-bar">
+      ✔ Serving Clients Nationwide  
+      ✔ 100% Confidential Inquiry  
+      ✔ No Recovery, No Fee
     </div>
 
-    <div class="hero-btns">
-      <a href="file:///C:/Users/Powell/Downloads/index%204.html#contact" class="btn-primary">Find Out What You're Owed — Free</a>
-      <a href="file:///C:/Users/Powell/Downloads/index%204.html#how-it-works" class="btn-outline">How It Works</a>
-    </div>
+    <a href="#contact" class="btn-primary">Check If You’re Owed Money — Free</a>
   </div>
 </section>
 
-<!-- ═══ STAT BAR ═══ -->
-<div class="stat-bar">
-  <div class="stat-item">
-    <span class="stat-number">$40K–$100K</span>
-    <span class="stat-label">Average Refund Recovered</span>
-  </div>
-  <div class="stat-divider"></div>
-  <div class="stat-item">
-    <span class="stat-number">$0</span>
-    <span class="stat-label">Cost if We Find Nothing</span>
-  </div>
-  <div class="stat-divider"></div>
-  <div class="stat-item">
-    <span class="stat-number">100%</span>
-    <span class="stat-label">Contingency — No Recovery, No Fee</span>
-  </div>
-  <div class="stat-divider"></div>
-  <div class="stat-item">
-    <span class="stat-number">24 hrs</span>
-    <span class="stat-label">Response Time After Inquiry</span>
-  </div>
-</div>
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Free Nationwide Consultation</h2>
+    <p>The average recovery is $40,000–$100,000 USD. It takes less than 2 minutes to check.</p>
 
-<!-- ═══ WHAT WE DO ═══ -->
-<section id="what-we-do">
-  <div class="section-tag">What We Do</div>
-  <h2 class="section-h2">We Reunite People With Money<br>That Is Rightfully Theirs</h2>
-  <div class="gold-line"></div>
-  <p class="section-sub">When a home sells at a foreclosure or tax deed auction for more than what was owed, the surplus — often tens of thousands of dollars — legally belongs to the former owner. Most people never know it exists.</p>
+    <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
 
-  <div class="cards-grid">
-    <div class="card">
-      <span class="card-icon">🔍</span>
-      <h3>We Find the Funds</h3>
-      <p>We dig through public records across counties and states to identify unclaimed surplus funds from foreclosure and tax deed sales — and match them to their rightful owner. Free of charge.</p>
-    </div>
-    <div class="card">
-      <span class="card-icon">🤝</span>
-      <h3>We Connect You With Legal Help</h3>
-      <p>We partner with experienced, licensed attorneys who specialize in surplus fund claims, so your case is handled professionally and efficiently from start to finish.</p>
-    </div>
-    <div class="card">
-      <span class="card-icon">💰</span>
-      <h3>You Get What's Yours</h3>
-      <p>No confusing legal jargon, no surprise fees. We handle all the legwork so you can focus on what matters — receiving the money you deserve. We only collect a fee after you're paid.</p>
-    </div>
-  </div>
-</section>
+      <input type="hidden" name="_subject" value="New Surplus Funds Lead">
+      <input type="hidden" name="_captcha" value="false">
 
-<!-- ═══ URGENCY BANNER ═══ -->
-<div class="urgency-banner">
-  <div class="urgency-left">
-    <h3>Don't Let the Clock Run Out on <em>Your Money</em></h3>
-    <p>In most states, you have a limited window to claim surplus funds before they're turned over to the state permanently. <strong>Time is working against you right now.</strong> The average unclaimed refund is $40,000–$100,000 — and a free consultation takes less than 15 minutes.</p>
-  </div>
-  <a href="file:///C:/Users/Powell/Downloads/index%204.html#contact" class="btn-primary" style="flex-shrink:0;">Claim What's Yours — Free</a>
-</div>
+      <input type="text" name="Full Name" placeholder="Full Name" required>
+      <input type="email" name="Email" placeholder="Email Address" required>
+      <input type="tel" name="Phone" placeholder="Phone Number" required>
+      <input type="text" name="State" placeholder="State" required>
+      <input type="text" name="County" placeholder="County (if known)">
+      <textarea name="Message" placeholder="Tell us about your situation" required></textarea>
 
-<!-- ═══ HOW IT WORKS ═══ -->
-<section id="how-it-works">
-  <div class="section-tag">The Process</div>
-  <h2 class="section-h2">Simple, Transparent,<br>Always in Your Corner</h2>
-  <div class="gold-line"></div>
-  <p class="section-sub">We've made the claim process as easy as possible. Here's exactly what happens from the moment you reach out to us.</p>
+      <label class="sms-consent">
+        <input type="checkbox" name="SMS Consent" required>
+        I agree to receive SMS updates regarding my inquiry at the number provided.
+        Message & data rates may apply. Reply STOP to opt out.
+      </label>
 
-  <div class="steps-list">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-content">
-        <h3>Schedule Your Free Consultation</h3>
-        <p>Reach out through our contact form. We'll set up a no-cost, no-obligation call to learn about your situation and explain what surplus funds recovery means for you. Zero pressure, zero cost.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-content">
-        <h3>We Research Your Case</h3>
-        <p>Our team searches public records — including tax deed sales, foreclosure auctions, and county excess funds lists — to verify whether unclaimed funds exist in your name or your family's name. We do all the legwork so you don't have to.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-content">
-        <h3>We Connect You With a Trusted Attorney</h3>
-        <p>If funds are found, we connect you with one of our experienced attorney partners who specialize in surplus fund claims. They handle all legal filings, court appearances, and communications.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-content">
-        <h3>Your Claim Is Filed</h3>
-        <p>Your attorney partner submits the official claim to the appropriate court or county on your behalf. We stay closely involved, keeping communication smooth between you and the legal team every step of the way.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">05</div>
-      <div class="step-content">
-        <h3>You Receive Your Funds</h3>
-        <p>Once the claim is approved, your money is released to you. We only collect a fee after you've been paid — meaning if we don't recover funds for you, you owe us nothing. That's our commitment to you.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FAQ ═══ -->
-<section id="faq">
-  <div class="section-tag">FAQ</div>
-  <h2 class="section-h2">You Have Questions.<br>We Have Answers.</h2>
-  <div class="gold-line"></div>
-  <p class="section-sub">Surplus funds recovery is a specialized field and it's normal to have questions. Here are the ones we hear most often.</p>
-
-  <div class="faq-grid">
-    <div class="faq-item">
-      <h4>What exactly are surplus funds?</h4>
-      <p>Surplus funds — also called excess proceeds or overages — are money left over after a home sells at a foreclosure or tax deed auction for more than the amount owed. By law, that extra money belongs to the former homeowner or their heirs. Most people never know it exists or how to claim it.</p>
-    </div>
-    <div class="faq-item">
-      <h4>How much money could I be owed?</h4>
-      <p>Our clients typically recover between $40,000 and $100,000 — though some cases have exceeded that significantly. The amount depends on how much the property sold for at auction versus what was owed. We'll tell you exactly what we find during your free consultation.</p>
-    </div>
-    <div class="faq-item">
-      <h4>How much does this cost me?</h4>
-      <p>Nothing upfront — ever. Rightful Returns Recovery works on a contingency basis, meaning we only collect a fee if and when we successfully recover funds for you. If we don't find or recover anything, you owe us absolutely nothing.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Is there a deadline to claim my funds?</h4>
-      <p>Yes — and this is critical. In most states, you have a limited window to claim surplus funds before they are turned over to the state permanently. In Georgia, claimants typically have up to five years. Don't wait — reach out now before time runs out.</p>
-    </div>
-    <div class="faq-item">
-      <h4>How do I know if there are funds in my name?</h4>
-      <p>That's exactly what we find out for you — free of charge. When you schedule a consultation, we research public records on your behalf to determine whether unclaimed surplus funds exist in your name or your family member's name.</p>
-    </div>
-    <div class="faq-item">
-      <h4>What if the original homeowner has passed away?</h4>
-      <p>Heirs may still be entitled to claim surplus funds on behalf of a deceased family member. We work with families navigating these situations regularly, and our attorney partners can help establish the proper legal standing to pursue the claim.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Why do I need an attorney?</h4>
-      <p>In most states, surplus fund claims must be filed by a licensed attorney. That's why we partner with experienced legal professionals who specialize in exactly this type of claim. We handle research and communication — they handle the legal filings.</p>
-    </div>
-    <div class="faq-item">
-      <h4>What states do you serve?</h4>
-      <p>Rightful Returns Recovery currently serves clients across multiple states, with a strong focus on Georgia — particularly Fulton County and the greater Atlanta metro area. Contact us to find out if we operate in your state.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CONTACT ═══ -->
-<section id="contact">
-  <div class="contact-intro">
-    <div class="section-tag">Free Consultation — No Cost, No Obligation</div>
-    <h2 class="section-h2" style="color:var(--navy);">Could You Have <em style="color:var(--gold);font-style:italic;">Tens of Thousands</em><br>Waiting in Your Name?</h2>
-    <div class="gold-line" style="margin:20px auto;"></div>
-    <p class="section-sub">The average surplus fund recovery is <strong>$40,000 to $100,000</strong>. It takes less than 2 minutes to submit your info — and it costs you absolutely nothing to find out.</p>
-    <div class="contact-refund-badge">
-      <span>Average Client Recovery</span>
-      $40,000 – $100,000
-    </div>
-  </div>
-
-  <div class="contact-grid">
-    <div class="contact-left">
-      <h3>We'll Personally Review Your Case</h3>
-      <p>Fill out the form and Powell will personally reach out to schedule a free, no-pressure consultation call. We'll listen to your situation, answer your questions honestly, and let you know whether we can help — all at no cost to you.</p>
-      <ul class="trust-list">
-        <li>We'll call you back within 1 business day</li>
-        <li>Prefer email? We'll meet you there</li>
-        <li>No Recovery = No Fee. Period.</li>
-        <li>Your information is always kept private</li>
-        <li>Serving clients across multiple states</li>
-        <li>Heirs and family members welcome — funds don't disappear with the homeowner</li>
-      </ul>
-      <div class="quote-block">
-        <p>"I started Rightful Returns Recovery because I believe everyone deserves to know when money is rightfully theirs — and to have someone truly in their corner to help get it back."</p>
-      </div>
-    </div>
-
-    <form class="contact-form" onsubmit="handleSubmit(event)">
-      <div class="form-row">
-        <div class="form-group">
-          <label>Your Full Name</label>
-          <input type="text" placeholder="Jane Smith" required="">
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="(555) 000-0000" required="">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" placeholder="jane@email.com" required="">
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>State</label>
-          <select required="">
-            <option value="" disabled="" selected="">Select your state...</option>
-            <option>Alabama</option><option>Alaska</option><option>Arizona</option>
-            <option>Arkansas</option><option>California</option><option>Colorado</option>
-            <option>Connecticut</option><option>Delaware</option><option>Florida</option>
-            <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
-            <option>Illinois</option><option>Indiana</option><option>Iowa</option>
-            <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
-            <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
-            <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
-            <option>Missouri</option><option>Montana</option><option>Nebraska</option>
-            <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
-            <option>New Mexico</option><option>New York</option><option>North Carolina</option>
-            <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
-            <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
-            <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
-            <option>Texas</option><option>Utah</option><option>Vermont</option>
-            <option>Virginia</option><option>Washington</option><option>West Virginia</option>
-            <option>Wisconsin</option><option>Wyoming</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>County (If Known)</label>
-          <input type="text" placeholder="e.g. Fulton County">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Tell Us a Little About Your Situation</label>
-        <textarea placeholder="e.g. My home was sold at foreclosure in 2022 and I believe there may be funds I haven&#39;t received..." required=""></textarea>
-      </div>
-      <button type="submit" class="btn-submit">Submit — It's Free &amp; Takes 2 Minutes</button>
-      <p class="form-note">100% confidential · No fees unless we recover · Response within 1 business day</p>
+      <button type="submit">Submit — It’s Free & Confidential</button>
     </form>
+
+    <p class="legal">
+      Rightful Returns Recovery connects clients with licensed attorney partners where required.
+      We are not a law firm. Results vary by case and jurisdiction.
+    </p>
+
   </div>
 </section>
 
-<!-- ═══ LOGO SHOWCASE ═══ -->
-<div class="logo-showcase">
-  <!-- Large Baseball Diamond Logo -->
-  <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 24px;">
-    <!-- Outer circle -->
-    <circle cx="80" cy="80" r="76" fill="none" stroke="#C9A84C" stroke-width="2"></circle>
-    <!-- Inner fill -->
-    <circle cx="80" cy="80" r="72" fill="#0C1F3F"></circle>
-    <!-- Inner ring -->
-    <circle cx="80" cy="80" r="64" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.3"></circle>
-    
-    <!-- Baseball Diamond (rotated square) -->
-    <!-- Top(80,28), Right(122,70), Bottom(80,112), Left(38,70) -->
-    <polygon points="80,30 122,72 80,114 38,72" fill="rgba(201,168,76,0.07)" stroke="#C9A84C" stroke-width="1.5" opacity="0.8"></polygon>
-    
-    <!-- Diamond baseline stitching lines -->
-    <line x1="80" y1="30" x2="122" y2="72" stroke="#C9A84C" stroke-width="1" opacity="0.4"></line>
-    <line x1="122" y1="72" x2="80" y2="114" stroke="#C9A84C" stroke-width="1" opacity="0.4"></line>
-    <line x1="80" y1="114" x2="38" y2="72" stroke="#C9A84C" stroke-width="1" opacity="0.4"></line>
-    <line x1="38" y1="72" x2="80" y2="30" stroke="#C9A84C" stroke-width="1" opacity="0.4"></line>
-    
-    <!-- Base squares -->
-    <!-- Top (2nd base / home area - labeled Rightful) -->
-    <rect x="73" y="21" width="14" height="11" rx="1.5" fill="#C9A84C"></rect>
-    <!-- Right (1st base - Returns) -->
-    <rect x="114" y="66" width="14" height="11" rx="1.5" fill="#C9A84C"></rect>
-    <!-- Bottom (Home plate - Recovery) -->
-    <rect x="73" y="106" width="14" height="11" rx="1.5" fill="#C9A84C"></rect>
-    <!-- Left (3rd base) — no R here, just a base -->
-    <rect x="32" y="66" width="14" height="11" rx="1.5" fill="rgba(201,168,76,0.4)"></rect>
-
-    <!-- R letters at Top, Right, Bottom (three Rs) -->
-    <text x="80" y="31" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">R</text>
-    <text x="121" y="75" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">R</text>
-    <text x="80" y="116" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">R</text>
-
-    <!-- Word labels near each R -->
-    <!-- RIGHTFUL above top R -->
-    <text x="80" y="16" font-family="Arial, sans-serif" font-size="6.5" font-weight="bold" fill="#C9A84C" text-anchor="middle" letter-spacing="1.5">RIGHTFUL</text>
-    <!-- RETURNS right of right R -->
-    <text x="143" y="76" font-family="Arial, sans-serif" font-size="6.5" font-weight="bold" fill="#C9A84C" text-anchor="middle" letter-spacing="1.5">RETURNS</text>
-    <!-- RECOVERY below bottom R -->
-    <text x="80" y="128" font-family="Arial, sans-serif" font-size="6.5" font-weight="bold" fill="#C9A84C" text-anchor="middle" letter-spacing="1.5">RECOVERY</text>
-
-    <!-- Circular text path -->
-    <path id="bigTopArc" d="M 10,80 A 70,70 0 0,1 150,80" fill="none"></path>
-    <path id="bigBotArc" d="M 10,82 A 70,70 0 0,0 150,82" fill="none"></path>
-    <text font-family="Arial, sans-serif" font-size="9" fill="#C9A84C" font-weight="bold" letter-spacing="3">
-      <textpath href="#bigTopArc" startOffset="8%">RIGHTFUL · RETURNS · RECOVERY</textpath>
-    </text>
-  </svg>
-  <div class="logo-tagline">Rightful · Returns · Recovery</div>
-</div>
-
-<!-- ═══ FOOTER ═══ -->
 <footer>
-  <div class="footer-left">
-    <svg width="36" height="36" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="57" fill="none" stroke="#C9A84C" stroke-width="2"></circle>
-      <circle cx="60" cy="60" r="53" fill="#0C1F3F"></circle>
-      <polygon points="60,22 94,55 60,88 26,55" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.7"></polygon>
-      <rect x="54" y="15" width="12" height="10" rx="1" fill="#C9A84C" opacity="0.9"></rect>
-      <rect x="88" y="50" width="12" height="10" rx="1" fill="#C9A84C" opacity="0.9"></rect>
-      <rect x="54" y="82" width="12" height="10" rx="1" fill="#C9A84C" opacity="0.9"></rect>
-      <text x="60" y="23" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">R</text>
-      <text x="94" y="58" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">R</text>
-      <text x="60" y="89" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">R</text>
-    </svg>
-    <div class="footer-brand">Rightful <span>Returns</span> Recovery</div>
-  </div>
-  <div class="footer-right">© 2025 Rightful Returns Recovery. All rights reserved.</div>
+  © 2026 Rightful Returns Recovery | Serving Clients Nationwide
 </footer>
 
-<script>
-  function handleSubmit(e) {
-    e.preventDefault();
-    alert('Thank you! Powell will be in touch within 1 business day.');
-    e.target.reset();
-  }
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-</script>
-
-
-</body></html>
+</body>
+</html>
