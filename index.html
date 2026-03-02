@@ -33,10 +33,89 @@
   @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
   .logo{font-family:'Playfair Display',serif;font-size:14px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:60px;opacity:0;animation:fadeUp 0.8s ease forwards 0.2s;position:relative;z-index:2;}
-  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,7vw,5.5rem);font-weight:900;line-height:1.1;margin-bottom:24px;opacity:0;animation:fadeUp 0.8s ease forwards 0.4s;position:relative;z-index:2;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,7vw,5.5rem);font-weight:900;line-height:1.1;margin-bottom:8px;opacity:0;animation:fadeUp 0.8s ease forwards 0.4s;position:relative;z-index:2;}
   .hero h1 span{color:var(--gold);}
   .hero p{font-size:clamp(1rem,2.5vw,1.3rem);font-weight:300;max-width:620px;line-height:1.8;color:var(--accent);margin-bottom:48px;opacity:0;animation:fadeUp 0.8s ease forwards 0.6s;position:relative;z-index:2;}
   .hero-cta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp 0.8s ease forwards 0.8s;position:relative;z-index:2;}
+
+  /* ===== FLASHY DOLLAR SIGNS ===== */
+  .dollar-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.55s;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 32px;
+  }
+  .dollar-sign {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 9vw, 7.5rem);
+    font-weight: 900;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    cursor: default;
+    user-select: none;
+  }
+  .dollar-sign span {
+    background: linear-gradient(135deg, #8B6914 0%, #C9A84C 20%, #F5E08A 40%, #FFD700 50%, #F5E08A 60%, #C9A84C 80%, #8B6914 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 300% 300%;
+    display: inline-block;
+    animation: goldShimmer 2.5s ease-in-out infinite, dollarFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(255,215,0,0.8)) drop-shadow(0 0 30px rgba(201,168,76,0.5)) drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+  }
+  .dollar-sign.left span  { animation-delay: 0s, 0s; }
+  .dollar-sign.right span { animation-delay: 0.5s, 0.5s; }
+
+  /* Rotating glow ring behind each sign */
+  .dollar-sign::before {
+    content: '';
+    position: absolute;
+    inset: -14px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 60%, rgba(201,168,76,0.5) 70%, rgba(255,215,0,0.7) 80%, rgba(201,168,76,0.5) 90%, transparent 100%);
+    animation: ringRotate 3s linear infinite;
+    z-index: -1;
+  }
+  .dollar-sign.right::before { animation-direction: reverse; animation-duration: 2.5s; }
+
+  /* Octagon border that pulses */
+  .dollar-sign::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 2px solid rgba(201,168,76,0.4);
+    clip-path: polygon(8% 0%,92% 0%,100% 8%,100% 92%,92% 100%,8% 100%,0% 92%,0% 8%);
+    animation: borderPulse 2s ease-in-out infinite;
+  }
+  .dollar-sign.right::after { animation-delay: 0.6s; }
+
+  @keyframes goldShimmer {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes dollarFloat {
+    0%,100% { transform: translateY(0)   rotate(-3deg) scale(1); }
+    25%     { transform: translateY(-10px) rotate(2deg)  scale(1.05); }
+    50%     { transform: translateY(-5px)  rotate(-1deg) scale(1.02); }
+    75%     { transform: translateY(-12px) rotate(3deg)  scale(1.06); }
+  }
+  @keyframes borderPulse {
+    0%,100% { opacity: 0.3; transform: scale(1); }
+    50%     { opacity: 0.9; transform: scale(1.08); }
+  }
+  @keyframes ringRotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  /* ===== END DOLLAR SIGNS ===== */
 
   .btn-primary{background:var(--gold);color:var(--dark);padding:18px 40px;font-family:'Lato',sans-serif;font-size:1rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:all 0.3s ease;display:inline-block;}
   .btn-primary:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,0.4);}
@@ -65,7 +144,6 @@
   .stat-number{font-family:'Playfair Display',serif;font-size:3rem;color:var(--gold);display:block;}
   .stat-label{font-size:0.9rem;color:#9aaabb;letter-spacing:1px;}
 
-  /* KEYWORD SECTION */
   .keyword-section{padding:80px 20px;background:var(--dark);}
   .keyword-inner{max-width:1100px;margin:0 auto;}
   .keyword-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:50px;}
@@ -73,7 +151,6 @@
   .keyword-card h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--gold);margin-bottom:14px;}
   .keyword-card p{font-size:0.93rem;line-height:1.85;color:#8a9aaa;}
 
-  /* STATES */
   .states-section{padding:110px 20px;background:linear-gradient(180deg,#0D1B2A 0%,#111e2e 50%,#0D1B2A 100%);position:relative;overflow:hidden;}
   .states-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 50%,rgba(201,168,76,0.05) 0%,transparent 70%);pointer-events:none;}
   .states-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
@@ -100,7 +177,6 @@
   .states-footnote{text-align:center;margin-top:56px;font-size:0.85rem;color:#5a6a7a;line-height:1.7;}
   .states-footnote span{color:var(--gold);font-weight:700;}
 
-  /* TESTIMONIALS */
   .testimonials{padding:100px 20px;max-width:1100px;margin:0 auto;}
   .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:60px;}
   .testi-card{background:var(--navy);border:1px solid rgba(201,168,76,0.15);padding:40px;position:relative;}
@@ -112,7 +188,6 @@
   .testi-location{font-size:0.8rem;color:#9aaabb;}
   .stars{color:var(--gold);font-size:0.9rem;margin-bottom:4px;}
 
-  /* FAQ */
   .faq-section{background:var(--navy);padding:100px 20px;}
   .faq-inner{max-width:780px;margin:0 auto;}
   .faq-item{border-bottom:1px solid rgba(201,168,76,0.15);padding:28px 0;cursor:pointer;}
@@ -123,7 +198,6 @@
   .faq-a{font-size:0.93rem;line-height:1.85;color:#8a9aaa;max-height:0;overflow:hidden;transition:max-height 0.4s ease,margin-top 0.3s ease;}
   .faq-item.open .faq-a{max-height:300px;margin-top:16px;}
 
-  /* FORM */
   .signup-section{background:linear-gradient(135deg,var(--navy) 0%,var(--dark) 100%);border-top:1px solid rgba(201,168,76,0.2);border-bottom:1px solid rgba(201,168,76,0.2);padding:100px 20px;}
   .signup-inner{max-width:640px;margin:0 auto;text-align:center;}
   .signup-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:16px;}
@@ -152,12 +226,9 @@
   .footer-copy{font-size:0.8rem;color:#4a5a6a;margin-top:24px;}
 </style>
 
-<!-- Business Schema -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FinancialService","name":"Rightful Returns Recovery","url":"https://www.rightfulreturnsrecovery.com","telephone":"+1-480-788-2320","email":"powell@rightfulreturnsrecovery.com","areaServed":[{"@type":"State","name":"Arizona"},{"@type":"State","name":"Georgia"},{"@type":"State","name":"Texas"}],"description":"Surplus funds recovery specialists helping homeowners claim foreclosure overages and tax sale excess proceeds nationwide. No upfront fees.","priceRange":"Contingency Only"}
 </script>
-
-<!-- FAQ Schema -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"What are surplus funds after a foreclosure?","acceptedAnswer":{"@type":"Answer","text":"Surplus funds, also called foreclosure overages or excess proceeds, are money left over after a foreclosure or tax sale pays off all debts. The former property owner is legally entitled to claim these funds but most people never know they exist."}},
@@ -185,6 +256,13 @@
 <section class="hero" aria-label="Surplus Funds Recovery">
   <div class="logo">Rightful Returns Recovery</div>
   <h1>You May Have <span>Unclaimed Money</span><br>Waiting For You</h1>
+
+  <!-- FLASHY DOLLAR SIGNS -->
+  <div class="dollar-row" aria-hidden="true">
+    <div class="dollar-sign left"><span>$</span></div>
+    <div class="dollar-sign right"><span>$</span></div>
+  </div>
+
   <p>Thousands of homeowners have <strong>surplus funds</strong> from foreclosure sales and tax auctions held by the county — money that is legally yours. We research, locate, and recover what you're owed. <strong>No upfront fees. Ever.</strong></p>
   <div class="hero-cta">
     <a href="#signup" class="btn-primary" aria-label="Start your free surplus funds search">Claim What's Yours</a>
@@ -262,7 +340,7 @@
         <p>When a county sells a property for unpaid taxes and the sale generates more than the tax debt, the <strong style="color:var(--accent)">tax sale surplus</strong> belongs to the former owner. We search tax sale records across Arizona, Georgia, Texas and all 50 states.</p>
       </div>
       <div class="keyword-card">
-        <h3>HOA & Lien Sale Overages</h3>
+        <h3>HOA &amp; Lien Sale Overages</h3>
         <p>Properties sold by HOAs or lienholders can also generate <strong style="color:var(--accent)">excess proceeds</strong> owed to the prior owner. These are often overlooked but can represent significant unclaimed funds sitting in county accounts.</p>
       </div>
     </div>
@@ -368,193 +446,92 @@
     margin: 0 auto;
     font-family: 'Georgia', serif;
   }
-
   #signup-form .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-bottom: 20px;
   }
-
-  #signup-form .form-row.full {
-    grid-template-columns: 1fr;
-  }
-
-  #signup-form .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #signup-form label {
-    color: #d4af37;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  #signup-form input,
-  #signup-form select,
-  #signup-form textarea {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(212, 175, 55, 0.35);
-    border-radius: 6px;
-    color: #ffffff;
-    font-family: 'Georgia', serif;
-    font-size: 0.95rem;
-    padding: 13px 16px;
-    transition: border-color 0.2s, background 0.2s;
-    outline: none;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  #signup-form input::placeholder,
-  #signup-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.35);
-  }
-
-  #signup-form select {
-    appearance: none;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.7);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23d4af37' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    padding-right: 40px;
-  }
-
-  #signup-form select option {
-    background: #1a1a2e;
-    color: #ffffff;
-  }
-
-  #signup-form input:focus,
-  #signup-form select:focus,
-  #signup-form textarea:focus {
-    border-color: #d4af37;
-    background: rgba(212, 175, 55, 0.07);
-  }
-
-  #signup-form textarea {
-    resize: vertical;
-    min-height: 110px;
-  }
-
-  #signup-form .submit-btn {
-    background: linear-gradient(135deg, #d4af37, #b8960c);
-    border: none;
-    border-radius: 6px;
-    color: #0a0a1a;
-    cursor: pointer;
-    font-family: 'Georgia', serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    padding: 16px 32px;
-    width: 100%;
-    margin-top: 10px;
-    transition: opacity 0.2s, transform 0.1s;
-    text-transform: uppercase;
-  }
-
-  #signup-form .submit-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-  }
-
-  #signup-form .form-note {
-    color: rgba(212, 175, 55, 0.7);
-    font-size: 0.82rem;
-    text-align: center;
-    margin-top: 16px;
-    letter-spacing: 0.03em;
-  }
-
-  @media (max-width: 600px) {
-    #signup-form {
-      padding: 32px 20px;
-    }
-    #signup-form .form-row {
-      grid-template-columns: 1fr;
-    }
-  }
+  #signup-form .form-row.full { grid-template-columns: 1fr; }
+  #signup-form .form-group { display: flex; flex-direction: column; }
+  #signup-form label { color: #d4af37; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+  #signup-form input, #signup-form select, #signup-form textarea { background: rgba(255,255,255,0.06); border: 1px solid rgba(212,175,55,0.35); border-radius: 6px; color: #ffffff; font-family: 'Georgia', serif; font-size: 0.95rem; padding: 13px 16px; transition: border-color 0.2s, background 0.2s; outline: none; width: 100%; box-sizing: border-box; }
+  #signup-form input::placeholder, #signup-form textarea::placeholder { color: rgba(255,255,255,0.35); }
+  #signup-form select { appearance: none; cursor: pointer; color: rgba(255,255,255,0.7); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23d4af37' d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+  #signup-form select option { background: #1a1a2e; color: #ffffff; }
+  #signup-form input:focus, #signup-form select:focus, #signup-form textarea:focus { border-color: #d4af37; background: rgba(212,175,55,0.07); }
+  #signup-form textarea { resize: vertical; min-height: 110px; }
+  #signup-form .submit-btn { background: linear-gradient(135deg, #d4af37, #b8960c); border: none; border-radius: 6px; color: #0a0a1a; cursor: pointer; font-family: 'Georgia', serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.05em; padding: 16px 32px; width: 100%; margin-top: 10px; transition: opacity 0.2s, transform 0.1s; text-transform: uppercase; }
+  #signup-form .submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+  #signup-form .form-note { color: rgba(212,175,55,0.7); font-size: 0.82rem; text-align: center; margin-top: 16px; letter-spacing: 0.03em; }
+  @media (max-width: 600px) { #signup-form { padding: 32px 20px; } #signup-form .form-row { grid-template-columns: 1fr; } }
 </style>
 
-<form
-  id="signup-form"
-  action="https://formspree.io/f/mjgeddoy"
-  method="POST"
->
+<section id="signup" class="signup-section" aria-label="Free surplus fund search sign up">
+  <div class="signup-inner">
+    <div class="section-label">Get Started</div>
+    <div class="gold-line"></div>
+    <h2>Start Your Free Search</h2>
+    <p>Fill out the form below and we'll search county records to find any surplus funds or foreclosure overages held in your name — completely free.</p>
 
-  <div class="form-row">
-    <div class="form-group">
-      <label for="first_name">First Name</label>
-      <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
-    </div>
-    <div class="form-group">
-      <label for="last_name">Last Name</label>
-      <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="your@email.com" required>
-    </div>
-    <div class="form-group">
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
-    </div>
-  </div>
-
-  <div class="form-row">
-    <div class="form-group">
-      <label for="state">State</label>
-      <select id="state" name="state" required>
-        <option value="">Select your state...</option>
-        <option value="Arizona">Arizona</option>
-        <option value="Georgia">Georgia</option>
-        <option value="Texas">Texas</option>
-        <option value="Other">Other — Call Me</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="how_heard">How Did You Hear About Us?</label>
-      <select id="how_heard" name="how_heard">
-        <option value="">Select one...</option>
-        <option value="Google Search">Google Search</option>
-        <option value="Friend or Family">Friend or Family</option>
-        <option value="Social Media">Social Media</option>
-        <option value="Flyer or Mailer">Flyer or Mailer</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="form-row full">
-    <div class="form-group">
-      <label for="property_address">Previous Property Address (if known)</label>
-      <input type="text" id="property_address" name="property_address" placeholder="123 Main St, City, State">
-    </div>
-  </div>
-
-  <div class="form-row full">
-    <div class="form-group">
-      <label for="notes">Additional Notes (optional)</label>
-      <textarea id="notes" name="notes" placeholder="Any additional information about your property or situation..."></textarea>
-    </div>
-  </div>
-
-  <button type="submit" class="submit-btn">Submit My Free Search Request</button>
-
-  <p class="form-note">🔒 No upfront fees. We only get paid if we recover money for you.</p>
-
-</form>
-
-</form>
+    <form id="signup-form" action="https://formspree.io/f/mjgeddoy" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="state">State</label>
+          <select id="state" name="state" required>
+            <option value="">Select your state...</option>
+            <option value="Arizona">Arizona</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Texas">Texas</option>
+            <option value="Other">Other — Call Me</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="how_heard">How Did You Hear About Us?</label>
+          <select id="how_heard" name="how_heard">
+            <option value="">Select one...</option>
+            <option value="Google Search">Google Search</option>
+            <option value="Friend or Family">Friend or Family</option>
+            <option value="Social Media">Social Media</option>
+            <option value="Flyer or Mailer">Flyer or Mailer</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-group">
+          <label for="property_address">Previous Property Address (if known)</label>
+          <input type="text" id="property_address" name="property_address" placeholder="123 Main St, City, State">
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-group">
+          <label for="notes">Additional Notes (optional)</label>
+          <textarea id="notes" name="notes" placeholder="Any additional information about your property or situation..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Submit My Free Search Request</button>
+      <p class="form-note">🔒 No upfront fees. We only get paid if we recover money for you.</p>
     </form>
   </div>
 </section>
@@ -600,7 +577,3 @@
 </script>
 </body>
 </html>
-
-
-
-
