@@ -358,33 +358,57 @@
 </section>
 
 <!-- SIGNUP FORM -->
-<section id="signup" class="signup-section" aria-label="Free surplus fund search form">
-  <div class="signup-inner">
-    <div class="section-label">Get Started</div>
-    <div class="gold-line"></div>
-    <h2>Claim Your Free Search Today</h2>
-    <p>Fill out the form below and we'll research whether the county is holding surplus funds or foreclosure overages in your name. No cost. No obligation. No risk.</p>
-    <form id="contactForm" action="https://formsubmit.co/powell@rightfulreturnsrecovery.com" method="POST">
-      <input type="hidden" name="_subject" value="🏠 New Surplus Fund Recovery Inquiry — Rightful Returns">
-      <input type="hidden" name="_next" value="https://www.rightfulreturnsrecovery.com/?submitted=true">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <div class="form-row">
-        <div class="form-group"><label for="first_name">First Name</label><input type="text" id="first_name" name="First Name" placeholder="John" required aria-required="true"></div>
-        <div class="form-group"><label for="last_name">Last Name</label><input type="text" id="last_name" name="Last Name" placeholder="Smith" required aria-required="true"></div>
-      </div>
-      <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="Email" placeholder="john@email.com" required aria-required="true"></div>
-      <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="Phone Number" placeholder="(480) 555-0000" required aria-required="true"></div>
-      <div class="form-group"><label for="state">State</label>
-        <select id="state" name="State"><option value="">Select your state...</option><option>Arizona</option><option>Georgia</option><option>Texas</option><option>Other — Call Me</option></select>
-      </div>
-      <div class="form-group"><label for="property">Previous Property Address (if known)</label><input type="text" id="property" name="Property Address" placeholder="123 Main St, Phoenix, AZ"></div>
-      <div class="form-group"><label for="referral">How did you hear about us?</label>
-        <select id="referral" name="How They Found Us"><option value="">Select one...</option><option>Google Search</option><option>Friend or Family</option><option>Social Media</option><option>Flyer or Mailer</option><option>Other</option></select>
-      </div>
-      <div class="form-group"><label for="notes">Additional Notes (optional)</label><textarea id="notes" name="Notes" placeholder="Any other information that might help us find your surplus funds..."></textarea></div>
-      <button type="submit" class="submit-btn" aria-label="Submit free surplus fund search request">Submit My Free Search Request</button>
-      <p class="no-fee">🔒 <span>No upfront fees.</span> We only get paid if we recover money for you.</p>
+<!-- Rightful Returns Recovery - Contact Form connected to Formspree -->
+<form
+  action="https://formspree.io/f/mjgeddoy"
+  method="POST"
+  style="max-width: 600px; margin: 0 auto;"
+>
+
+  <label for="first_name">First Name</label>
+  <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+
+  <label for="last_name">Last Name</label>
+  <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+
+  <label for="email">Email Address</label>
+  <input type="email" id="email" name="email" placeholder="Email Address" required>
+
+  <label for="phone">Phone Number</label>
+  <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+
+  <label for="state">State</label>
+  <select id="state" name="state" required>
+    <option value="">Select your state...</option>
+    <option value="Arizona">Arizona</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Texas">Texas</option>
+    <option value="Other">Other — Call Me</option>
+  </select>
+
+  <label for="property_address">Previous Property Address (if known)</label>
+  <input type="text" id="property_address" name="property_address" placeholder="Previous Property Address">
+
+  <label for="how_heard">How did you hear about us?</label>
+  <select id="how_heard" name="how_heard">
+    <option value="">Select one...</option>
+    <option value="Google Search">Google Search</option>
+    <option value="Friend or Family">Friend or Family</option>
+    <option value="Social Media">Social Media</option>
+    <option value="Flyer or Mailer">Flyer or Mailer</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <label for="notes">Additional Notes (optional)</label>
+  <textarea id="notes" name="notes" placeholder="Any additional information..." rows="4"></textarea>
+
+  <button type="submit">Submit My Free Search Request</button>
+
+  <p style="font-size: 0.85em; color: #555; margin-top: 10px;">
+    🔒 No upfront fees. We only get paid if we recover money for you.
+  </p>
+
+</form>
     </form>
   </div>
 </section>
@@ -430,3 +454,4 @@
 </script>
 </body>
 </html>
+
