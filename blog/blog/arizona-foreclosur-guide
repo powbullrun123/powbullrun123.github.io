@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arizona Foreclosure Surplus Funds: Maricopa, Pima & All 15 Counties | Rightful Returns Recovery</title>
+  <meta name="description" content="Arizona law under A.R.S. § 33-812 protects your right to claim foreclosure surplus funds. Learn how to claim excess proceeds from Maricopa, Pima, Pinal, and all 15 Arizona counties." />
+  <link rel="canonical" href="https://www.rightfulreturnsrecovery.com/blog/arizona-foreclosure-surplus-funds.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Arizona Foreclosure Surplus Funds: Complete Guide for All 15 Counties",
+    "description": "How to claim foreclosure surplus funds and tax sale excess proceeds in Arizona under A.R.S. § 33-812.",
+    "author": { "@type": "Organization", "name": "Rightful Returns Recovery" },
+    "publisher": { "@type": "Organization", "name": "Rightful Returns Recovery", "url": "https://www.rightfulreturnsrecovery.com" },
+    "datePublished": "2026-02-15",
+    "about": { "@type": "Place", "name": "Arizona" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #0f1e3c; --navy-mid: #1a3060; --gold: #c8922a; --gold-light: #e8b84b; --green: #1a7a4a; --green-light: #22a060; --cream: #faf8f3; --white: #ffffff; --gray: #6b7280; --light-gray: #f3f4f6; --border: #e5e7eb; }
+    body { font-family: 'Source Serif 4', Georgia, serif; background: var(--cream); color: #1f2937; line-height: 1.7; }
+    nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    .nav-logo { color: white; font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; text-decoration: none; }
+    .nav-logo span { color: var(--gold-light); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta { background: var(--gold); color: white !important; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600 !important; }
+    .article-hero { background: linear-gradient(135deg, #0a1a30 0%, #1a3a20 100%); padding: 3.5rem 2rem 2.5rem; position: relative; overflow: hidden; }
+    .article-hero::before { content: '🌵'; position: absolute; right: 8%; top: 50%; transform: translateY(-50%); font-size: 8rem; opacity: 0.07; }
+    .article-hero-inner { max-width: 800px; margin: 0 auto; position: relative; }
+    .breadcrumb { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--gold-light); text-decoration: none; }
+    .article-category { display: inline-block; background: rgba(200,146,42,0.2); color: var(--gold-light); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 2px; margin-bottom: 1rem; border: 1px solid rgba(200,146,42,0.35); }
+    .article-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: white; line-height: 1.25; margin-bottom: 1rem; }
+    .article-hero .lede { color: rgba(255,255,255,0.72); font-size: 1.1rem; line-height: 1.65; max-width: 680px; margin-bottom: 1.5rem; }
+    .article-meta { display: flex; gap: 1.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+    .article-layout { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--navy); margin: 2.5rem 0 1rem; line-height: 1.3; }
+    .article-body h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); margin: 1.75rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1.25rem; font-size: 1.02rem; color: #374151; }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.6rem; font-size: 1rem; color: #374151; }
+    .callout { background: linear-gradient(135deg, rgba(15,30,60,0.05) 0%, rgba(200,146,42,0.08) 100%); border-left: 4px solid var(--gold); padding: 1.25rem 1.5rem; border-radius: 0 6px 6px 0; margin: 2rem 0; }
+    .callout p { margin: 0; font-size: 1rem; color: var(--navy); font-style: italic; }
+    .county-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.5rem 0 2rem; }
+    .county-card { background: white; border: 1px solid var(--border); border-radius: 6px; padding: 0.85rem; text-align: center; font-size: 0.85rem; color: var(--navy); }
+    .county-card strong { display: block; font-family: 'Playfair Display', serif; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .county-card.highlight { background: var(--navy); color: white; border-color: var(--navy); }
+    .county-card.highlight strong { color: var(--gold-light); }
+    .statute-box { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid var(--green-light); }
+    .statute-box h4 { font-family: 'Playfair Display', serif; color: var(--navy); margin-bottom: 0.75rem; }
+    .statute-box p { font-size: 0.93rem; color: #374151; margin: 0; line-height: 1.65; }
+    .cta-block { background: var(--navy); border-radius: 8px; padding: 2rem; margin: 2.5rem 0; text-align: center; }
+    .cta-block h3 { font-family: 'Playfair Display', serif; color: white; margin-bottom: 0.75rem; font-size: 1.4rem; }
+    .cta-block p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .cta-block a { display: inline-block; background: var(--gold); color: white; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+    .cta-block a:hover { background: var(--gold-light); color: var(--navy); }
+    .sidebar { position: sticky; top: 88px; }
+    .sidebar-widget { background: white; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(15,30,60,0.05); }
+    .widget-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--gold); }
+    .toc-list { list-style: none; }
+    .toc-list li { padding: 0.4rem 0; border-bottom: 1px solid var(--light-gray); font-size: 0.85rem; }
+    .toc-list li:last-child { border-bottom: none; }
+    .toc-list a { color: var(--navy); text-decoration: none; }
+    .toc-list a:hover { color: var(--green-light); }
+    .cta-widget { background: var(--navy); }
+    .cta-widget .widget-title { color: white; border-bottom-color: var(--gold-light); }
+    .cta-widget p { font-size: 0.88rem; color: rgba(255,255,255,0.75); margin-bottom: 1.25rem; line-height: 1.6; }
+    .cta-btn { display: block; background: var(--gold); color: white; text-align: center; padding: 0.85rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .cta-btn:hover { background: var(--gold-light); color: var(--navy); }
+    .related-list { list-style: none; }
+    .related-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--light-gray); }
+    .related-list li:last-child { border-bottom: none; }
+    .related-list a { color: var(--navy); text-decoration: none; font-size: 0.85rem; display: block; line-height: 1.4; }
+    .related-list a:hover { color: var(--green-light); }
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 2rem; font-size: 0.85rem; }
+    footer a { color: var(--gold-light); text-decoration: none; }
+    @media (max-width: 768px) { .article-layout { grid-template-columns: 1fr; } .sidebar { position: static; } .county-grid { grid-template-columns: repeat(2, 1fr); } .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.rightfulreturnsrecovery.com" class="nav-logo">Rightful <span>Returns</span> Recovery</a>
+  <div class="nav-links">
+    <a href="https://www.rightfulreturnsrecovery.com/#how">How It Works</a>
+    <a href="https://www.rightfulreturnsrecovery.com/#states">States We Serve</a>
+    <a href="index.html">Blog</a>
+    <a href="https://www.rightfulreturnsrecovery.com/#signup" class="nav-cta">Free Search</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="breadcrumb"><a href="https://www.rightfulreturnsrecovery.com">Home</a> › <a href="index.html">Blog</a> › Arizona Guide</div>
+    <div class="article-category">🌵 Arizona Guide</div>
+    <h1>Arizona Foreclosure Surplus Funds: Complete Guide for Maricopa, Pima & All 15 Counties</h1>
+    <p class="lede">Arizona law gives former homeowners the right to claim excess proceeds from foreclosure and tax sales. Here's everything you need to know about Arizona surplus fund recovery — including county-specific resources and deadlines.</p>
+    <div class="article-meta">
+      <span>By Rightful Returns Recovery</span>
+      <span>February 2026</span>
+      <span>7 min read</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-layout">
+  <article>
+    <div class="article-body">
+
+      <p>Arizona is one of the most active states for surplus fund recovery in the country — particularly in fast-growing counties like Maricopa, Pima, and Pinal. The combination of a booming real estate market in recent years and a large number of foreclosure and tax sales has left millions of dollars in unclaimed surplus funds sitting in county accounts across the state.</p>
+
+      <p>If you lost a home to foreclosure or a tax sale in Arizona, there's a meaningful chance the county is holding money in your name — and a deadline to claim it.</p>
+
+      <div class="statute-box">
+        <h4>⚖️ The Law: A.R.S. § 33-812 and Arizona Surplus Fund Rights</h4>
+        <p>Under Arizona Revised Statutes § 33-812, when a trustee's sale generates proceeds in excess of the total amount owed to the beneficiary (lender), those surplus funds must be held by the trustee and distributed to entitled parties — including the former property owner. Arizona also has separate statutes governing judicial foreclosure surpluses and tax sale excess proceeds under A.R.S. Title 42.</p>
+      </div>
+
+      <h2 id="how-it-works">How Foreclosure Surplus Funds Work in Arizona</h2>
+      <p>Arizona uses two main foreclosure processes, and each has its own surplus fund rules:</p>
+
+      <h3>Trustee's Sale (Non-Judicial Foreclosure)</h3>
+      <p>The most common foreclosure method in Arizona is the trustee's sale — a non-judicial process that moves quickly and doesn't involve the courts. When a trustee's sale produces excess proceeds, the trustee holds the funds and must follow the distribution process outlined in A.R.S. § 33-812. The former owner has a limited window to make a written demand for the surplus before it is interplead into the court system.</p>
+
+      <h3>Judicial Foreclosure</h3>
+      <p>Arizona also allows judicial foreclosure in certain circumstances (such as when there is a deficiency judgment issue). In judicial foreclosure sales, any surplus is held by the county court clerk and a formal petition must be filed to claim distribution.</p>
+
+      <h3>Tax Sale Excess Proceeds</h3>
+      <p>When Arizona counties sell properties for delinquent taxes and the sale price exceeds the taxes owed plus fees, the excess proceeds are held by the county treasurer. Maricopa and Pima Counties in particular generate significant tax sale activity each year.</p>
+
+      <h2 id="counties">All 15 Arizona Counties — Where We Search</h2>
+      <p>Rightful Returns Recovery searches surplus fund records across all 15 Arizona counties:</p>
+
+      <div class="county-grid">
+        <div class="county-card highlight"><strong>Maricopa</strong>Phoenix metro</div>
+        <div class="county-card highlight"><strong>Pima</strong>Tucson area</div>
+        <div class="county-card highlight"><strong>Pinal</strong>Casa Grande area</div>
+        <div class="county-card"><strong>Mohave</strong>Kingman area</div>
+        <div class="county-card"><strong>Yavapai</strong>Prescott area</div>
+        <div class="county-card"><strong>Coconino</strong>Flagstaff area</div>
+        <div class="county-card"><strong>Yuma</strong>Yuma area</div>
+        <div class="county-card"><strong>Navajo</strong>Holbrook area</div>
+        <div class="county-card"><strong>Apache</strong>St. Johns area</div>
+        <div class="county-card"><strong>Graham</strong>Safford area</div>
+        <div class="county-card"><strong>Cochise</strong>Sierra Vista area</div>
+        <div class="county-card"><strong>Santa Cruz</strong>Nogales area</div>
+        <div class="county-card"><strong>Gila</strong>Globe area</div>
+        <div class="county-card"><strong>La Paz</strong>Parker area</div>
+        <div class="county-card"><strong>Greenlee</strong>Clifton area</div>
+      </div>
+
+      <div class="callout">
+        <p><strong>Maricopa County alone</strong> — which includes Phoenix, Scottsdale, Mesa, Chandler, Tempe, and Gilbert — generates more surplus fund activity than most entire states. If you had a foreclosure in the Phoenix metro area, the odds are particularly good that funds may be waiting.</p>
+      </div>
+
+      <h2 id="deadlines">Arizona Surplus Fund Deadlines</h2>
+      <p>Deadlines in Arizona depend on the type of sale:</p>
+      <ul>
+        <li><strong>Trustee's Sale:</strong> After the trustee sends notice of the surplus, the former owner typically has a limited window (often 30–90 days) to make a written demand before the funds may be interplead or distributed to other parties.</li>
+        <li><strong>Judicial Foreclosure:</strong> The court will set a hearing date and issue notice to all parties. A petition to claim surplus funds should be filed promptly after the sale is confirmed.</li>
+        <li><strong>Tax Sale Excess Proceeds:</strong> Under A.R.S. § 42-18303, excess proceeds from a tax sale must be claimed within a set period or they may be transferred to the state's unclaimed property fund.</li>
+      </ul>
+      <p>Because deadlines vary by county, sale type, and individual case, the safest approach is to search for and claim funds as soon as possible. Do not assume you have years to act in Arizona — some windows are short.</p>
+
+      <h2 id="how-to-claim">How to Claim Surplus Funds in Arizona</h2>
+      <p>The claims process depends on the type of foreclosure:</p>
+      <ol>
+        <li><strong>Identify the type of sale</strong> (trustee's sale, judicial, or tax sale) by reviewing your foreclosure documents or looking up the case in county court records.</li>
+        <li><strong>Locate the surplus.</strong> Check the county clerk's records or contact the trustee who conducted the sale to confirm whether surplus funds exist.</li>
+        <li><strong>File the correct claim document.</strong> For trustee's sales, this is a written demand to the trustee. For judicial and tax sales, this typically requires a court petition with supporting documents.</li>
+        <li><strong>Respond to any competing claims.</strong> Junior lienholders and other creditors may also file claims against the surplus — these must be resolved before distribution.</li>
+        <li><strong>Receive your check.</strong> Once the claim is approved, funds are released — typically within 4–10 weeks for straightforward cases.</li>
+      </ol>
+
+      <h2 id="maricopa">Maricopa County Surplus Funds: Phoenix Metro Focus</h2>
+      <p>Maricopa County is the fourth most populous county in the United States and one of the most active real estate markets in the nation. The county's Superior Court handles hundreds of foreclosure-related surplus fund distributions each year. Former homeowners in Phoenix, Scottsdale, Mesa, Chandler, Tempe, Gilbert, Glendale, Peoria, and surrounding communities should specifically search Maricopa County court records for any surplus funds filed under their names.</p>
+      <p>Rightful Returns Recovery has extensive experience navigating Maricopa County Superior Court filings and can search, file, and manage the entire claim process on your behalf.</p>
+
+      <div class="cta-block">
+        <h3>Former Arizona Homeowner? Find Out What You're Owed.</h3>
+        <p>We search Maricopa, Pima, Pinal, and all 15 Arizona counties — completely free. No upfront fees, ever.</p>
+        <a href="https://www.rightfulreturnsrecovery.com/#signup">Start Your Free Arizona Search</a>
+      </div>
+
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="sidebar-widget cta-widget">
+      <div class="widget-title">Free Arizona Search</div>
+      <p>We search all 15 Arizona counties at no cost. You only pay if we recover money for you.</p>
+      <a href="https://www.rightfulreturnsrecovery.com/#signup" class="cta-btn">Start Free Search</a>
+    </div>
+    <div class="sidebar-widget">
+      <div class="widget-title">In This Article</div>
+      <ul class="toc-list">
+        <li><a href="#how-it-works">How It Works in Arizona</a></li>
+        <li><a href="#counties">All 15 Counties</a></li>
+        <li><a href="#deadlines">Deadlines & Timelines</a></li>
+        <li><a href="#how-to-claim">How to Claim</a></li>
+        <li><a href="#maricopa">Maricopa County Focus</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-widget">
+      <div class="widget-title">Other State Guides</div>
+      <ul class="related-list">
+        <li><a href="georgia-excess-funds-list.html">🍑 Georgia Excess Funds Guide →</a></li>
+        <li><a href="texas-foreclosure-overage-recovery.html">⭐ Texas Overage Recovery Guide →</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-widget">
+      <div class="widget-title">Call a Specialist</div>
+      <p style="font-size:0.88rem;color:var(--gray);margin-bottom:0.75rem;">We serve all of Arizona. Free consultation.</p>
+      <p style="font-weight:700;color:var(--navy);">📞 <a href="tel:4807882320" style="color:var(--navy);text-decoration:none;">(480) 788-2320</a></p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <p>© 2026 Rightful Returns Recovery · <a href="https://www.rightfulreturnsrecovery.com">Home</a> · <a href="https://www.rightfulreturnsrecovery.com/arizona.html">Arizona</a> · <a href="index.html">Blog</a> · <a href="tel:4807882320">(480) 788-2320</a></p>
+</footer>
+</body>
+</html>
