@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Surplus Funds & Foreclosure Overage Tips | Rightful Returns Recovery</title>
+  <meta name="description" content="Learn everything about surplus funds, foreclosure overages, and tax sale excess proceeds. Expert tips from Rightful Returns Recovery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d1b2a;
+      --gold: #c9a84c;
+      --gold-light: #f0d080;
+      --cream: #fdf8f0;
+      --text: #2c2c2c;
+      --muted: #666;
+      --border: #e8e0d0;
+    }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+
+    /* HERO */
+    .blog-hero {
+      background: var(--navy);
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      border-bottom: 3px solid var(--gold);
+    }
+    .blog-hero .label {
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .blog-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .blog-hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* GRID */
+    .blog-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .post-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(13,27,42,0.1);
+    }
+
+    .post-card-top {
+      background: var(--navy);
+      padding: 1.5rem;
+      position: relative;
+    }
+    .post-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+      margin-bottom: 0.75rem;
+    }
+    .post-card-top h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #fff;
+      line-height: 1.35;
+    }
+
+    .post-card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+    .post-excerpt {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #444;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+      align-self: flex-start;
+    }
+    .read-more:hover { color: var(--gold); border-color: transparent; }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background: var(--navy);
+      border-top: 3px solid var(--gold);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cta-strip h2 {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .cta-strip p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1.5rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--gold-light); }
+
+    /* FOOTER */
+    footer {
+      background: #07111c;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .posts-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="../index.html">Rightful Returns Recovery</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#how">How It Works</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#states">States</a></li>
+      <li><a href="../index.html#faq">FAQ</a></li>
+      <li><a href="../index.html#signup">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <header class="blog-hero">
+    <p class="label">Knowledge Center</p>
+    <h1>Surplus Funds &amp; Foreclosure<br>Overage Resources</h1>
+    <p>Learn how surplus funds work, how to claim them, and what deadlines you need to know — state by state.</p>
+  </header>
+
+  <main class="blog-container">
+    <div class="posts-grid">
+
+      <article class="post-card">
+        <div class="post-card-top">
+          <span class="post-tag">Basics</span>
+          <h2>What Are Surplus Funds After a Foreclosure?</h2>
+        </div>
+        <div class="post-card-body">
+          <p class="post-meta">March 2026 &nbsp;·&nbsp; 5 min read</p>
+          <p class="post-excerpt">When a foreclosed home sells for more than what was owed, the leftover money belongs to you — not the bank. Find out what surplus funds are and why most people never collect them.</p>
+          <a class="read-more" href="what-are-surplus-funds.html">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card-top">
+          <span class="post-tag">Deadlines</span>
+          <h2>How Long Do You Have to Claim Foreclosure Surplus Funds?</h2>
+        </div>
+        <div class="post-card-body">
+          <p class="post-meta">March 2026 &nbsp;·&nbsp; 6 min read</p>
+          <p class="post-excerpt">Texas gives you 2 years. Georgia up to 5. Arizona varies. Missing the deadline means losing the money forever. Here's a state-by-state breakdown of claim windows you need to know.</p>
+          <a class="read-more" href="how-long-to-claim-surplus-funds.html">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card-top">
+          <span class="post-tag">Process</span>
+          <h2>How the Surplus Fund Claim Process Works — Step by Step</h2>
+        </div>
+        <div class="post-card-body">
+          <p class="post-meta">March 2026 &nbsp;·&nbsp; 7 min read</p>
+          <p class="post-excerpt">From identifying funds in county records to receiving your check — here is exactly what happens during a surplus fund recovery, and what you need to provide to make it happen.</p>
+          <a class="read-more" href="how-surplus-fund-claim-process-works.html">Read Article →</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <div class="cta-strip">
+    <h2>Find Out If You Have Unclaimed Funds</h2>
+    <p>Free search. No upfront cost. We only get paid if we recover money for you.</p>
+    <a class="cta-btn" href="../index.html#signup">Start Your Free Search</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Rightful Returns Recovery &nbsp;|&nbsp; <a href="tel:4807882320">(480) 788-2320</a> &nbsp;|&nbsp; <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a></p>
+  </footer>
+
+</body>
+</html>
