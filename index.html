@@ -16,18 +16,125 @@
 <meta property="og:site_name" content="Rightful Returns Recovery">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 body {
-font-family: 'Inter', Arial, sans-serif;
+<!-- CLEAN HEADER / NAVIGATION -->
+
+<header class="site-header">
+
+<div class="nav-container">
+
+<div class="logo">
+<a href="/">
+Rightful Returns Recovery
+</a>
+</div>
+
+<nav class="main-nav">
+
+<ul>
+
+<li><a href="#how">How It Works</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#states">States</a></li>
+
+<li><a href="#blog">Blog</a></li>
+
+<li><a href="#faq">FAQ</a></li>
+
+<li><a class="cta-button" href="#signup">Free Search</a></li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<style>
+
+/* HEADER */
+
+.site-header{
+position:fixed;
+top:0;
+width:100%;
+background:#0D1B2A;
+border-bottom:1px solid rgba(201,168,76,.2);
+z-index:1000;
 }
-.nav-links a{
-color:white;
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 24px;
+}
+
+/* LOGO */
+
+.logo a{
+font-family:'Playfair Display',serif;
+font-size:20px;
+color:#C9A84C;
+text-decoration:none;
+letter-spacing:1px;
+}
+
+/* NAV */
+
+.main-nav ul{
+display:flex;
+gap:28px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.main-nav a{
+font-family:'Lato',sans-serif;
+font-size:13px;
+letter-spacing:1px;
+text-transform:uppercase;
+color:#E8D5A3;
 text-decoration:none;
 transition:color .25s ease;
 }
 
-
-.nav-links a:hover{
-color:#c9a646;
+.main-nav a:hover{
+color:#C9A84C;
 }
+
+/* CTA BUTTON */
+
+.cta-button{
+background:#C9A84C;
+color:#0D1B2A !important;
+padding:8px 14px;
+border-radius:4px;
+font-weight:600;
+}
+
+.cta-button:hover{
+background:#E8D5A3;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.main-nav ul{
+gap:16px;
+font-size:12px;
+}
+
+}
+
+</style>
+
 <header>
 
 <div class="logo">
