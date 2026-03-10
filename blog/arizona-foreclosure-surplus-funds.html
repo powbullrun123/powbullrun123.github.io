@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arizona Foreclosure Surplus Funds: How Homeowners Claim Excess Proceeds | Rightful Returns Recovery</title>
+  <meta name="description" content="When a home sells at a trustee sale for more than the amount owed on the mortgage, the remaining money becomes excess proceeds. Learn who can claim these funds and how the process works in Arizona."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #002868;
+      --red: #BF0A30;
+      --gold: #C87533;
+      --gold-light: #FFC72C;
+      --cream: #FAF8F3;
+      --text: #1a1a1a;
+      --muted: #5a5a5a;
+      --border: #e2ddd5;
+    }
+    body { font-family: 'Source Serif 4', Georgia, serif; background: var(--cream); color: var(--text); line-height: 1.75; }
+
+    /* NAV */
+    nav { background: var(--navy); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    nav a { color: #fff; text-decoration: none; font-family: 'Source Serif 4', serif; font-size: 0.85rem; letter-spacing: 0.05em; opacity: 0.85; transition: opacity 0.2s; }
+    nav a:hover { opacity: 1; }
+    .nav-logo { font-weight: 600; font-size: 1rem; opacity: 1; }
+    .nav-links { display: flex; gap: 2rem; }
+
+    /* ARIZONA HERO */
+    .az-hero { background: var(--navy); text-align: center; padding: 3rem 1rem 2.5rem; border-bottom: 4px solid var(--gold); }
+    .az-flag { width: min(420px, 90vw); border: 3px solid rgba(255,255,255,0.15); box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(200,117,51,0.4); display: block; margin: 0 auto; }
+    .az-motto { margin-top: 1.4rem; display: flex; align-items: center; justify-content: center; gap: 0.9rem; flex-wrap: wrap; }
+    .motto-latin { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: var(--gold-light); letter-spacing: 0.05em; }
+    .motto-divider { color: rgba(255,255,255,0.35); font-size: 1.4rem; }
+    .motto-sub { font-family: 'Source Serif 4', serif; font-size: 1rem; color: rgba(255,255,255,0.7); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 300; }
+
+    /* ARTICLE */
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; font-size: 0.82rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+    .tag { background: var(--navy); color: #fff; padding: 0.2em 0.7em; border-radius: 3px; font-size: 0.75rem; letter-spacing: 0.08em; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 1.2rem; }
+    .lead { font-size: 1.15rem; color: var(--muted); font-weight: 300; font-style: italic; border-left: 4px solid var(--gold); padding-left: 1.2rem; margin-bottom: 2.5rem; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 2.5rem 0 0.8rem; }
+    h3 { font-size: 1.1rem; font-weight: 600; color: var(--red); margin: 1.8rem 0 0.5rem; }
+    p { margin-bottom: 1.2rem; }
+    ul, ol { margin: 0.5rem 0 1.2rem 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    strong { color: var(--navy); }
+
+    /* CALLOUT BOX */
+    .callout { background: #fff; border: 1px solid var(--border); border-left: 5px solid var(--gold); border-radius: 4px; padding: 1.4rem 1.6rem; margin: 2.5rem 0; }
+    .callout-title { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; font-size: 1.05rem; }
+
+    /* STAT STRIP */
+    .stat-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 2rem 0; }
+    .stat { background: #fff; padding: 1.2rem; text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--red); display: block; }
+    .stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* CTA */
+    .cta-block { background: var(--navy); color: #fff; border-radius: 8px; padding: 2.5rem 2rem; text-align: center; margin: 3rem 0; }
+    .cta-block h3 { color: var(--gold-light); font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.6rem; }
+    .cta-block p { color: rgba(255,255,255,0.8); margin-bottom: 1.4rem; font-size: 0.95rem; }
+    .cta-btn { display: inline-block; background: var(--red); color: #fff; text-decoration: none; font-weight: 600; padding: 0.85rem 2rem; border-radius: 4px; font-size: 0.95rem; letter-spacing: 0.03em; transition: background 0.2s; }
+    .cta-btn:hover { background: #a00825; }
+    .cta-phone { display: block; margin-top: 0.8rem; color: var(--gold-light); font-size: 1.1rem; font-weight: 600; text-decoration: none; }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 2rem 1rem; font-size: 0.82rem; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 0.5rem; }
+    footer a:hover { color: var(--gold-light); }
+
+    @media (max-width: 600px) { .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.rightfulreturnsrecovery.com/" class="nav-logo">Rightful Returns Recovery</a>
+  <div class="nav-links">
+    <a href="https://www.rightfulreturnsrecovery.com/#how">How It Works</a>
+    <a href="https://www.rightfulreturnsrecovery.com/#states">States We Serve</a>
+    <a href="https://www.rightfulreturnsrecovery.com/blog/index.html">Blog</a>
+    <a href="https://www.rightfulreturnsrecovery.com/#signup">Free Search</a>
+  </div>
+</nav>
+
+<!-- ARIZONA FLAG HERO -->
+<div class="az-hero">
+  <svg class="az-flag" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" aria-label="Arizona State Flag">
+    <rect x="0" y="0" width="600" height="400" fill="#002868"/>
+    <polygon points="300,200 600,0 530,0" fill="#BF0A30"/>
+    <polygon points="300,200 530,0 455,0" fill="#FFC72C"/>
+    <polygon points="300,200 455,0 375,0" fill="#BF0A30"/>
+    <polygon points="300,200 375,0 295,0" fill="#FFC72C"/>
+    <polygon points="300,200 295,0 210,0" fill="#BF0A30"/>
+    <polygon points="300,200 210,0 130,0" fill="#FFC72C"/>
+    <polygon points="300,200 130,0 55,0" fill="#BF0A30"/>
+    <polygon points="300,200 55,0 0,0" fill="#FFC72C"/>
+    <polygon points="300,200 0,0 0,60" fill="#BF0A30"/>
+    <polygon points="300,200 0,60 0,140" fill="#FFC72C"/>
+    <polygon points="300,200 0,140 0,200" fill="#BF0A30"/>
+    <polygon points="300,200 600,200 600,140" fill="#FFC72C"/>
+    <polygon points="300,200 600,140 600,60" fill="#BF0A30"/>
+    <polygon points="300,200 600,60 600,0" fill="#FFC72C"/>
+    <rect x="0" y="200" width="600" height="200" fill="#002868"/>
+    <polygon points="300,135 318,190 375,190 329,222 347,277 300,245 253,277 271,222 225,190 282,190" fill="#C87533"/>
+  </svg>
+  <div class="az-motto">
+    <span class="motto-latin">Ditat Deus</span>
+    <span class="motto-divider">·</span>
+    <span class="motto-sub">The Grand Canyon State</span>
+  </div>
+</div>
+
+<div class="article-wrap">
+  <div class="article-meta">
+    <span class="tag">Arizona</span>
+    <span>March 2026</span>
+    <span>· 7 min read</span>
+  </div>
+
+  <h1>Arizona Foreclosure Surplus Funds: How Homeowners Claim Excess Proceeds</h1>
+
+  <p class="lead">When a home sells at a trustee sale for more than the amount owed on the mortgage, the remaining money becomes excess proceeds — and it legally belongs to the former homeowner. Most Arizonans never know these funds exist.</p>
+
+  <div class="stat-strip">
+    <div class="stat"><span class="stat-num">15</span><span class="stat-label">Counties Covered</span></div>
+    <div class="stat"><span class="stat-num">$0</span><span class="stat-label">Upfront Cost</span></div>
+    <div class="stat"><span class="stat-num">A.R.S.<br/>§33-812</span><span class="stat-label">Arizona Law</span></div>
+  </div>
+
+  <p>Arizona is one of the most active states in the country for foreclosure surplus fund recovery. A fast-growing real estate market combined with a high volume of trustee sales means millions of dollars in excess proceeds sit unclaimed in county accounts each year — waiting for former homeowners who simply don't know the money exists.</p>
+
+  <h2>What Are Foreclosure Surplus Funds in Arizona?</h2>
+  <p>When a lender forecloses on a property and that property is sold at a trustee sale, the sale price is set by competitive bidding — not by the lender or the court. In many cases, investor competition drives the sale price well above what was owed on the mortgage.</p>
+  <p>After the lender is paid off, along with court costs, attorney fees, and any junior liens, the remaining balance is called <strong>surplus funds</strong> or <strong>excess proceeds</strong>. Under <strong>A.R.S. § 33-812</strong>, those funds must be held by the trustee and returned to the former homeowner.</p>
+
+  <div class="callout">
+    <div class="callout-title">💡 Example</div>
+    <p>Your home sells at a trustee sale for $290,000. Your remaining mortgage balance plus fees and liens total $230,000. That leaves $60,000 in surplus funds — money that is legally yours, held by the trustee and waiting to be claimed.</p>
+  </div>
+
+  <h2>How the Arizona Trustee Sale Process Works</h2>
+  <p>Arizona primarily uses non-judicial foreclosure through trustee sales. This means the foreclosure process moves without court involvement, which is faster than many other states — but it also means former homeowners must act quickly once a surplus exists.</p>
+
+  <h3>Step 1: The Trustee Holds the Funds</h3>
+  <p>After the sale, the trustee calculates the total amount owed and sets aside the surplus. Arizona law requires the trustee to notify entitled parties that surplus funds are available.</p>
+
+  <h3>Step 2: The Former Owner Files a Written Demand</h3>
+  <p>To claim surplus funds from a trustee's sale, the former homeowner must submit a written demand to the trustee within the applicable window. This demand must include proof of identity and former ownership of the property.</p>
+
+  <h3>Step 3: Distribution or Interpleader</h3>
+  <p>If no competing claims exist, the trustee distributes the funds directly. If junior lienholders also file claims, the trustee may interplead the funds into the Superior Court for a judge to determine the correct distribution order.</p>
+
+  <h2>Deadlines — Act Fast in Arizona</h2>
+  <p>Arizona surplus fund deadlines are among the strictest in the country. For trustee sales, the window to submit a written demand can be as short as <strong>30 to 90 days</strong> from the date notice is sent — sometimes even shorter depending on the case. Once that window closes, the trustee may distribute funds to other claimants or interplead into court, making recovery significantly more difficult.</p>
+  <p>Do not assume you have years to act. If you believe you may have surplus funds from an Arizona foreclosure, the safest approach is to search immediately.</p>
+
+  <h2>Judicial Foreclosure and Tax Sale Surplus Funds</h2>
+  <p>In addition to trustee sales, Arizona also allows judicial foreclosure in certain circumstances. Surplus funds from judicial foreclosure sales are held by the Maricopa County Superior Court clerk (or the clerk in the relevant county), and a formal petition must be filed to claim distribution.</p>
+  <p>Tax sale excess proceeds — generated when a county sells a property for delinquent taxes at a price exceeding what was owed — are governed by <strong>A.R.S. Title 42</strong> and held by the county treasurer. Maricopa and Pima Counties generate significant tax sale activity each year.</p>
+
+  <h2>All 15 Arizona Counties We Search</h2>
+  <p>Rightful Returns Recovery searches surplus fund records in every Arizona county: Maricopa, Pima, Pinal, Mohave, Yavapai, Coconino, Yuma, Navajo, Apache, Graham, Cochise, Santa Cruz, Gila, La Paz, and Greenlee. <strong>Maricopa County alone</strong> — covering Phoenix, Scottsdale, Mesa, Chandler, Tempe, and Gilbert — generates more surplus fund activity than most entire states.</p>
+
+  <h2>Who Can Claim Surplus Funds?</h2>
+  <ul>
+    <li>The former homeowner who held title at the time of the foreclosure sale</li>
+    <li>Heirs or estate representatives if the former owner is deceased</li>
+    <li>Junior lienholders (second mortgage holders, HOA liens, judgment creditors) — after the former owner's claim is satisfied</li>
+  </ul>
+  <p>Even if you've moved out of state, had other debts, or the foreclosure happened years ago, you may still be entitled to claim any surplus from that sale.</p>
+
+  <div class="cta-block">
+    <h3>Think You May Have Arizona Surplus Funds?</h3>
+    <p>We search all 15 Arizona counties at no upfront cost. You only pay if we recover money for you.</p>
+    <a href="https://www.rightfulreturnsrecovery.com/#signup" class="cta-btn">Start Your Free Arizona Search</a>
+    <a href="tel:18004282022" class="cta-phone">📞 1 (800) 428-2022</a>
+  </div>
+
+  <h2>How Rightful Returns Recovery Helps</h2>
+  <p>Navigating Arizona's trustee sale surplus fund process requires knowledge of county-specific procedures, strict deadlines, and proper legal documentation. Our team researches county records, identifies surplus funds held in your name, prepares the required demand letters and court filings, and manages the entire process on your behalf.</p>
+  <p>There is no cost to you upfront. We work on a contingency basis — we only earn a fee when we successfully recover money for you. If we find nothing, you owe nothing.</p>
+</div>
+
+<footer>
+  <p style="margin-bottom:0.6rem;">
+    <a href="https://www.rightfulreturnsrecovery.com/">Home</a>
+    <a href="https://www.rightfulreturnsrecovery.com/arizona.html">Arizona</a>
+    <a href="https://www.rightfulreturnsrecovery.com/blog/index.html">Blog</a>
+    <a href="tel:18004282022">1 (800) 428-2022</a>
+  </p>
+  <p>© 2026 Rightful Returns Recovery. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
