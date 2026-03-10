@@ -64,21 +64,239 @@ Rightful Returns Recovery
 /* HEADER */
 
 .site-header{
-position:fixed;
-top:0;
-width:100%;
-background:#0D1B2A;
-border-bottom:1px solid rgba(201,168,76,.2);
-z-index:1000;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Header Preview — Rightful Returns Recovery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    /* ============================================================
+       RIGHTFUL RETURNS RECOVERY — UPDATED HEADER
+       Drop this <header> block into your site to replace the old one.
+       The Google Fonts link is already on your site, so you only
+       need the <style> block and the <header> block below.
+    ============================================================ */
 
-.nav-container{
-max-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 24px;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', Arial, sans-serif; background: #f4f6f8; }
+
+    /* ── TOP PHONE BAR ─────────────────────────────────────── */
+    .phone-bar {
+      background: #1a3c5e;           /* deep navy — matches trust/finance tone */
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 24px;
+    }
+    .phone-bar a {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.6rem); /* big across the front */
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      color: #f5c542;                /* gold accent — stands out, still on-brand */
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: opacity 0.2s;
+    }
+    .phone-bar a:hover { opacity: 0.85; }
+    .phone-bar .phone-label {
+      font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #b8cde0;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* ── MAIN HEADER / NAV ─────────────────────────────────── */
+    header {
+      background: #ffffff;
+      border-bottom: 2px solid #e8edf2;
+      box-shadow: 0 2px 12px rgba(26,60,94,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    /* Logo */
+    .logo {
+      font-family: 'Inter', Arial, sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #1a3c5e;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .logo span { color: #2a7d4f; } /* green accent on "Returns" */
+
+    /* Nav links */
+    nav { display: flex; align-items: center; gap: 6px; }
+    nav a {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #374151;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    nav a:hover { background: #eef3f8; color: #1a3c5e; }
+
+    /* CTA button */
+    nav a.cta-btn {
+      background: #2a7d4f;
+      color: #ffffff;
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    nav a.cta-btn:hover { background: #1e5e3a; color: #ffffff; }
+
+    /* ── MOBILE HAMBURGER ──────────────────────────────────── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #1a3c5e;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    /* Mobile nav drawer */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #ffffff;
+      border-top: 1px solid #e8edf2;
+      padding: 12px 24px 20px;
+    }
+    .mobile-nav a {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #374151;
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f4f8;
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a.cta-btn {
+      margin-top: 8px;
+      background: #2a7d4f;
+      color: #fff;
+      text-align: center;
+      padding: 13px;
+      border-radius: 6px;
+      border-bottom: none;
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav.open { display: flex; }
+    }
+
+    /* ── PREVIEW ONLY (remove in production) ──────────────── */
+    .preview-note {
+      background: #fff8e1;
+      border: 1.5px dashed #f5c542;
+      color: #7a5c00;
+      font-size: 0.82rem;
+      text-align: center;
+      padding: 10px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════
+     COPY EVERYTHING FROM HERE DOWN INTO YOUR WEBSITE TEMPLATE
+     Replace your existing <header> block with this one.
+     ════════════════════════════════════════════════════════════ -->
+
+<!-- BIG PHONE NUMBER BAR — sits above the main nav -->
+<div class="phone-bar">
+  <span class="phone-label">Speak with a Recovery Specialist — Call Us Free</span>
+  <a href="tel:18004282022">📞 1 (800) 428-2022</a>
+</div>
+
+<!-- MAIN STICKY HEADER -->
+<header>
+  <div class="header-inner">
+
+    <!-- Logo / Brand -->
+    <a class="logo" href="https://www.rightfulreturnsrecovery.com/">
+      Rightful <span>Returns</span> Recovery
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav>
+      <a href="#how">How It Works</a>
+      <a href="#about">About Us</a>
+      <a href="#states">States</a>
+      <a href="https://www.rightfulreturnsrecovery.com/blog.html">Blog</a>
+      <a href="#faq">FAQ</a>
+      <a href="#signup" class="cta-btn">✅ Free Evaluation</a>
+    </nav>
+
+    <!-- Mobile Hamburger Button -->
+    <button class="hamburger" onclick="toggleMobileNav()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#how">How It Works</a>
+    <a href="#about">About Us</a>
+    <a href="#states">States We Serve</a>
+    <a href="https://www.rightfulreturnsrecovery.com/blog.html">Blog</a>
+    <a href="#faq">FAQ</a>
+    <a href="tel:18004282022">📞 1 (800) 428-2022</a>
+    <a href="#signup" class="cta-btn">✅ Sign Up — Free Evaluation</a>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════════════════════════
+     END OF HEADER CODE
+     ════════════════════════════════════════════════════════════ -->
+
+<script>
+  function toggleMobileNav() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+
+</div>
+
+</body>
+</html>
 }
 
 /* LOGO */
