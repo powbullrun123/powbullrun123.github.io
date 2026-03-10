@@ -14,48 +14,390 @@
 <meta property="og:url" content="https://www.rightfulreturnsrecovery.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rightful Returns Recovery">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-body {
-<!-- CLEAN HEADER / NAVIGATION -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="
 
 <header 
 
-<div class="nav-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rightful Returns Recovery – Header Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<div class="logo">
-<a href="/">
-Rightful Returns Recovery
-</a>
+  :root {
+    --navy:   #0D1B2A;
+    --gold:   #C9953C;
+    --gold-lt:#E8B96A;
+    --cream:  #F9F5EE;
+    --white:  #FFFFFF;
+    --shadow: 0 4px 24px rgba(13,27,42,0.18);
+  }
+
+  body { font-family: 'DM Sans', sans-serif; background: #e8e8e8; }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--navy);
+    color: var(--cream);
+    text-align: center;
+    padding: 9px 24px;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    border-bottom: 2px solid var(--gold);
+  }
+  .top-bar a {
+    color: var(--gold-lt);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+  }
+  .top-bar a:hover { text-decoration: underline; }
+
+  /* ── MAIN HEADER ── */
+  header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 32px;
+    gap: 24px;
+  }
+
+  /* ── LOGO BLOCK ── */
+  .logo-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-icon {
+    width: 54px;
+    height: 54px;
+    background: var(--navy);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .logo-icon svg { width: 34px; height: 34px; }
+
+  .logo-text { line-height: 1.15; }
+  .logo-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.22rem;
+    font-weight: 900;
+    color: var(--navy);
+    display: block;
+    letter-spacing: -0.01em;
+  }
+  .logo-sub {
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 1px;
+  }
+
+  /* ── TAGLINE ── */
+  .tagline {
+    flex: 1;
+    text-align: center;
+    padding: 0 16px;
+  }
+  .tagline p {
+    font-size: 0.88rem;
+    color: #4a4a4a;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .tagline strong {
+    color: var(--navy);
+    font-weight: 700;
+  }
+
+  /* ── RIGHT SIDE: PHONE + HAMBURGER ── */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+  }
+
+  .phone-cta {
+    text-align: right;
+  }
+  .phone-cta a {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.26rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .phone-cta a:hover { color: var(--gold); }
+  .phone-label {
+    font-size: 0.68rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── HAMBURGER ── */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    background: var(--navy);
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    padding: 10px;
+    transition: background 0.2s;
+    position: relative;
+  }
+  .hamburger:hover { background: var(--gold); }
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+    transform-origin: center;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+  /* ── DROPDOWN MENU ── */
+  .nav-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 32px;
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(13,27,42,0.22);
+    overflow: hidden;
+    min-width: 220px;
+    border-top: 3px solid var(--gold);
+    z-index: 999;
+    animation: dropIn 0.22s ease;
+  }
+  .nav-dropdown.open { display: block; }
+
+  @keyframes dropIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .nav-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 22px;
+    text-decoration: none;
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f0ece4;
+    transition: background 0.15s, color 0.15s;
+  }
+  .nav-dropdown a:last-child { border-bottom: none; }
+  .nav-dropdown a:hover { background: var(--cream); color: var(--gold); }
+  .nav-dropdown a .nav-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--navy);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .nav-dropdown a:hover .nav-icon { background: var(--gold); }
+  .nav-dropdown a .nav-icon svg { width: 16px; height: 16px; fill: white; }
+
+  .nav-dropdown .signup-link {
+    background: var(--navy);
+    color: var(--white) !important;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    border-bottom: none;
+  }
+  .nav-dropdown .signup-link:hover { background: var(--gold); color: var(--white) !important; }
+  .nav-dropdown .signup-link .nav-icon { background: rgba(255,255,255,0.15); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .tagline { display: none; }
+    .header-inner { padding: 12px 18px; }
+    .logo-name { font-size: 1rem; }
+    .phone-cta a { font-size: 1.05rem; }
+    .nav-dropdown { right: 18px; }
+  }
+  @media (max-width: 480px) {
+    .phone-cta { display: none; }
+  }
+
+  /* ── DEMO PAGE FILLER ── */
+  .demo-body {
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    font-family: 'DM Sans', sans-serif;
+    color: #555;
+  }
+  .demo-body h2 { color: #0D1B2A; font-family: 'Playfair Display', serif; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  Call today for a <strong>FREE evaluation</strong> of your case &nbsp;|&nbsp;
+  <a href="tel:18004282022">1-800-428-2022</a>
 </div>
 
-<nav 
-  <nav class="nav">
+<!-- MAIN HEADER -->
+<header>
+  <div class="header-inner">
 
-<div class="logo">
-Rightful Returns Recovery
+    <!-- LOGO -->
+    <a href="https://www.rightfulreturnsrecovery.com/" class="logo-block">
+      <div class="logo-icon">
+        <!-- Scale / recovery icon -->
+        <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="17" cy="17" r="14" fill="#C9953C" opacity="0.18"/>
+          <!-- Dollar sign -->
+          <text x="17" y="23" text-anchor="middle" font-size="18" font-weight="900" fill="#C9953C" font-family="Georgia,serif">$</text>
+          <!-- Arrow up-right -->
+          <path d="M22 10 L26 10 L26 14" stroke="#C9953C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 16 L26 10" stroke="#C9953C" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Rightful Returns Recovery</span>
+        <span class="logo-sub">Surplus Funds Specialists</span>
+      </div>
+    </a>
+
+    <!-- TAGLINE -->
+    <div class="tagline">
+      <p><strong>Your Surplus Recovery Funds Specialist</strong><br/>
+      Call today for a free evaluation of your case</p>
+    </div>
+
+    <!-- RIGHT: PHONE + BURGER -->
+    <div class="header-right">
+      <div class="phone-cta">
+        <span class="phone-label">Free Evaluation</span>
+        <a href="tel:18004282022">1-800-428-2022</a>
+      </div>
+
+      <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div><!-- /.header-inner -->
+
+  <!-- DROPDOWN NAVIGATION -->
+  <nav class="nav-dropdown" id="navMenu" role="navigation">
+
+    <a href="/about">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>
+      </span>
+      About Us
+    </a>
+
+    <a href="/blog">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+      </span>
+      Blog
+    </a>
+
+    <a href="#signup" class="signup-link">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      </span>
+      Sign Up – Free Search
+    </a>
+
+  </nav>
+</header>
+
+<!-- DEMO CONTENT -->
+<div class="demo-body">
+  <h2>Header Preview</h2>
+  <p>This is a preview of your updated header. The hamburger menu (☰) in the top-right opens the navigation with <strong>About Us</strong>, <strong>Blog</strong>, and <strong>Sign Up</strong>. The phone number and tagline are prominently displayed. Click the ☰ button above to test it!</p>
 </div>
 
-<ul class="nav-links">
+<script>
+  const btn  = document.getElementById('menuBtn');
+  const menu = document.getElementById('navMenu');
 
-<li><a href="#how">How It Works</a></li>
+  btn.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+  });
 
-<li><a href="#about">About</a></li>
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', false);
+    }
+  });
 
-<li><a href="#states">States</a></li>
+  // Close on nav link click
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    });
+  });
+</script>
 
-<li><a href="/blog.html">Blog</a></li>
-
-<li><a href="#faq">FAQ</a></li>
-
-<li><a class="cta" href="#signup">Free Search</a></li>
-
-</ul>
-
-</nav>
-
-</nav>
-
-</div>
+</body>
+</html>
 
 </header>
 
