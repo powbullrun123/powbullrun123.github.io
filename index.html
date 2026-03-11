@@ -1,12 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE TITLE & META DESCRIPTIONS
+     ↓ Edit these to change what shows up in Google search ↓
+══════════════════════════════════════════════════════ -->
 <title>Surplus Funds Recovery | Foreclosure Overage Experts | Rightful Returns Recovery</title>
 <meta name="description" content="Rightful Returns Recovery helps homeowners claim surplus funds from foreclosure sales and tax auctions nationwide. No upfront fees. Free case review. Serving Arizona, Georgia, Texas and all 50 states.">
 <meta name="keywords" content="surplus funds recovery, foreclosure overage, tax sale excess proceeds, unclaimed property funds, foreclosure surplus, excess proceeds recovery, surplus fund claim">
+<!-- ↑ Edit title, description, and keywords above ↑ -->
+
 <meta name="robots" content="index, follow">
 <meta name="author" content="Rightful Returns Recovery">
 <link rel="canonical" href="https://www.rightfulreturnsrecovery.com/">
@@ -16,46 +22,166 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rightful Returns Recovery">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FinancialService","name":"Rightful Returns Recovery","url":"https://www.rightfulreturnsrecovery.com","telephone":"+1-800-428-2022","email":"powell@rightfulreturnsrecovery.com","areaServed":[{"@type":"State","name":"Arizona"},{"@type":"State","name":"Georgia"},{"@type":"State","name":"Texas"}],"description":"Surplus funds recovery specialists helping homeowners claim foreclosure overages and tax sale excess proceeds nationwide. No upfront fees.","priceRange":"Contingency Only"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are surplus funds after a foreclosure?","acceptedAnswer":{"@type":"Answer","text":"Surplus funds, also called foreclosure overages or excess proceeds, are money left over after a foreclosure or tax sale pays off all debts. The former property owner is legally entitled to claim these funds but most people never know they exist."}},{"@type":"Question","name":"How do I claim foreclosure surplus funds?","acceptedAnswer":{"@type":"Answer","text":"You must file a legal claim with the county court or agency holding the funds. Rightful Returns Recovery handles the entire process for you at no upfront cost."}},{"@type":"Question","name":"How much does surplus fund recovery cost?","acceptedAnswer":{"@type":"Answer","text":"There is no upfront cost. We work on a contingency basis — we only earn a fee if we successfully recover money for you. If we find nothing, you pay nothing."}},{"@type":"Question","name":"How long do I have to claim surplus funds?","acceptedAnswer":{"@type":"Answer","text":"Claim windows vary by state. Texas gives you 2 years, Georgia up to 5 years, and Arizona varies by sale type. Acting quickly is always recommended as deadlines are strictly enforced."}},{"@type":"Question","name":"Which states do you serve for surplus fund recovery?","acceptedAnswer":{"@type":"Answer","text":"We actively serve Arizona, Georgia, and Texas, and can assist homeowners in all 50 states through our network of licensed attorneys."}},{"@type":"Question","name":"What is the difference between surplus funds and unclaimed property?","acceptedAnswer":{"@type":"Answer","text":"Surplus funds refer to excess proceeds from foreclosure or tax sales held by county courts. Unclaimed property is a broader category held by the state. Rightful Returns Recovery specializes in surplus fund and foreclosure overage recovery."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What are surplus funds after a foreclosure?","acceptedAnswer":{"@type":"Answer","text":"Surplus funds, also called foreclosure overages or excess proceeds, are money left over after a foreclosure or tax sale pays off all debts. The former property owner is legally entitled to claim these funds but most people never know they exist."}},
+{"@type":"Question","name":"How do I claim foreclosure surplus funds?","acceptedAnswer":{"@type":"Answer","text":"You must file a legal claim with the county court or agency holding the funds. Rightful Returns Recovery handles the entire process for you at no upfront cost."}},
+{"@type":"Question","name":"How much does surplus fund recovery cost?","acceptedAnswer":{"@type":"Answer","text":"There is no upfront cost. We work on a contingency basis — we only earn a fee if we successfully recover money for you. If we find nothing, you pay nothing."}},
+{"@type":"Question","name":"How long do I have to claim surplus funds?","acceptedAnswer":{"@type":"Answer","text":"Claim windows vary by state. Texas gives you 2 years, Georgia up to 5 years, and Arizona varies by sale type. Acting quickly is always recommended as deadlines are strictly enforced."}},
+{"@type":"Question","name":"Which states do you serve for surplus fund recovery?","acceptedAnswer":{"@type":"Answer","text":"We actively serve Arizona, Georgia, and Texas, and can assist homeowners in all 50 states through our network of licensed attorneys."}},
+{"@type":"Question","name":"What is the difference between surplus funds and unclaimed property?","acceptedAnswer":{"@type":"Answer","text":"Surplus funds refer to excess proceeds from foreclosure or tax sales held by county courts. Unclaimed property is a broader category held by the state. Rightful Returns Recovery specializes in surplus fund and foreclosure overage recovery."}}
+]}
 </script>
+
 <style>
+  /* ── RESET & ROOT ── */
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  :root { --gold:#C9A84C; --dark:#0D1B2A; --navy:#1B2A40; --light:#F5F0E8; --white:#FFFFFF; --accent:#E8D5A3; }
+  :root {
+    --gold:   #C9A84C;
+    --dark:   #0D1B2A;
+    --navy:   #1B2A40;
+    --light:  #F5F0E8;
+    --white:  #FFFFFF;
+    --accent: #E8D5A3;
+  }
   html { scroll-behavior: smooth; }
   body { font-family: 'Lato', sans-serif; background: var(--dark); color: var(--light); overflow-x: hidden; }
 
-  /* ── HEADER ── */
-  .site-header { position: sticky; top: 0; z-index: 1000; background: var(--dark); border-bottom: 2px solid rgba(201,168,76,0.3); }
-  .header-main { max-width: 1200px; margin: 0 auto; padding: 0 28px; height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-  .header-logo { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--white); letter-spacing: 0.02em; line-height: 1.2; white-space: nowrap; }
+  /* ════════════════════════════════════════
+     HEADER
+  ════════════════════════════════════════ */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--dark);
+    border-bottom: 2px solid rgba(201,168,76,0.3);
+  }
+  .header-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 28px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .header-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
   .header-logo span { color: var(--gold); }
-  .header-phone { font-size: 1rem; font-weight: 700; color: var(--gold); letter-spacing: 0.05em; text-decoration: none; transition: opacity 0.2s; white-space: nowrap; display: block; }
+  .header-phone {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    display: block;
+  }
   .header-phone:hover { opacity: 0.8; }
-  .hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 46px; height: 46px; background: transparent; border: 2px solid rgba(201,168,76,0.5); border-radius: 8px; cursor: pointer; padding: 11px; flex-shrink: 0; transition: border-color 0.2s, background 0.2s; }
-  .hamburger:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
-  .hamburger span { display: block; width: 100%; height: 2px; background: var(--gold); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; transform-origin: center; }
+
+  /* Hamburger button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 46px;
+    height: 46px;
+    background: transparent;
+    border: 2px solid rgba(201,168,76,0.5);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 11px;
+    flex-shrink: 0;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .hamburger:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+    transform-origin: center;
+  }
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .nav-dropdown { display: none; position: absolute; top: calc(100% + 6px); right: 28px; background: #101e2e; border: 1px solid rgba(201,168,76,0.3); border-top: 3px solid var(--gold); border-radius: 10px; min-width: 240px; box-shadow: 0 16px 48px rgba(0,0,0,0.5); overflow: hidden; animation: dropIn 0.2s ease; }
+
+  /* Dropdown nav */
+  .nav-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 28px;
+    background: #101e2e;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-top: 3px solid var(--gold);
+    border-radius: 10px;
+    min-width: 230px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    overflow: hidden;
+    animation: dropIn 0.2s ease;
+  }
   .nav-dropdown.open { display: block; }
-  @keyframes dropIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
-  .nav-dropdown a { display: flex; align-items: center; gap: 12px; padding: 16px 22px; color: var(--light); text-decoration: none; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.02em; border-bottom: 1px solid rgba(255,255,255,0.06); transition: background 0.15s, color 0.15s; }
+  @keyframes dropIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .nav-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 22px;
+    color: var(--light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.15s, color 0.15s;
+  }
   .nav-dropdown a:last-child { border-bottom: none; }
   .nav-dropdown a:hover { background: rgba(201,168,76,0.1); color: var(--gold); }
-  .nav-dropdown a.nav-cta { background: var(--gold); color: var(--dark); font-weight: 700; justify-content: center; letter-spacing: 0.04em; border-bottom: none; }
+  .nav-dropdown a.nav-cta {
+    background: var(--gold);
+    color: var(--dark);
+    font-weight: 700;
+    justify-content: center;
+    letter-spacing: 0.04em;
+    border-bottom: none;
+  }
   .nav-dropdown a.nav-cta:hover { background: var(--accent); color: var(--dark); }
-  @media(max-width:480px) { .header-logo { font-size: 1rem; } .header-phone { font-size: 0.88rem; } .nav-dropdown { right: 16px; } }
+  @media (max-width: 480px) {
+    .header-logo { font-size: 1rem; }
+    .header-phone { font-size: 0.88rem; }
+    .nav-dropdown { right: 16px; }
+  }
 
-  /* ── SHARED ── */
+  /* ════════════════════════════════════════
+     SHARED
+  ════════════════════════════════════════ */
   .gold-line { width: 80px; height: 3px; background: var(--gold); margin: 0 auto 24px; }
   .section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
   .section-label { font-size: 12px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; text-align: center; margin-bottom: 16px; }
-  .section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 60px; line-height: 1.2; }
   .btn-primary { background: var(--gold); color: var(--dark); padding: 18px 40px; font-family: 'Lato', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: pointer; text-decoration: none; transition: all 0.3s ease; display: inline-block; }
   .btn-primary:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
   .btn-secondary { background: transparent; color: var(--gold); padding: 18px 40px; font-family: 'Lato', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border: 2px solid var(--gold); cursor: pointer; text-decoration: none; transition: all 0.3s ease; display: inline-block; }
@@ -64,8 +190,8 @@
   /* ── HERO ── */
   .hero { min-height: 100vh; background: linear-gradient(135deg, #0D1B2A 0%, #1B2A40 50%, #0D1B2A 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 60%); animation: pulse 6s ease-in-out infinite; }
-  @keyframes pulse { 0%,100% { transform: scale(1); opacity:.5; } 50% { transform: scale(1.1); opacity:1; } }
-  @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes pulse { 0%,100% { transform: scale(1); opacity: .5; } 50% { transform: scale(1.1); opacity: 1; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
   .hero-logo { font-family: 'Playfair Display', serif; font-size: 14px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 60px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; position: relative; z-index: 2; }
   .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 7vw, 5.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 8px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; position: relative; z-index: 2; }
   .hero h1 span { color: var(--gold); }
@@ -79,310 +205,10 @@
   .dollar-sign.right::before { animation-direction: reverse; animation-duration: 2.5s; }
   .dollar-sign::after { content: ''; position: absolute; inset: -8px; border: 2px solid rgba(201,168,76,0.4); clip-path: polygon(8% 0%,92% 0%,100% 8%,100% 92%,92% 100%,8% 100%,0% 92%,0% 8%); animation: borderPulse 2s ease-in-out infinite; }
   .dollar-sign.right::after { animation-delay: 0.6s; }
-  @keyframes goldShimmer { 0% { background-position:0% 50%; } 50% { background-position:100% 50%; } 100% { background-position:0% 50%; } }
-  @keyframes dollarFloat { 0%,100% { transform:translateY(0) rotate(-3deg) scale(1); } 25% { transform:translateY(-10px) rotate(2deg) scale(1.05); } 50% { transform:translateY(-5px) rotate(-1deg) scale(1.02); } 75% { transform:translateY(-12px) rotate(3deg) scale(1.06); } }
-  @keyframes borderPulse { 0%,100% { opacity:0.3; transform:scale(1); } 50% { opacity:0.9; transform:scale(1.08); } }
-  @keyframes ringRotate { from { transform:rotate(0deg); 
-     ============================================================ -->
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600;700&display=swap');
-
-  :root {
-    --rrr-navy:   #0d2b4e;
-    --rrr-blue:   #1a4f8a;
-    --rrr-gold:   #c9a84c;
-    --rrr-gold-lt:#f0d080;
-    --rrr-white:  #ffffff;
-    --rrr-light:  #f4f7fb;
-    --rrr-muted:  #5a7a9a;
-  }
-
-  .rrr-trust-section {
-    width: 100%;
-    background: #f4f7fb; /* matches your site background exactly */
-    padding: 56px 20px 64px;
-    display: flex;
-    justify-content: center;
-    font-family: 'Open Sans', sans-serif;
-  }
-
-  .rrr-trust-card {
-    position: relative;
-    display: flex;
-    align-items: stretch;
-    max-width: 820px;
-    width: 100%;
-    background: var(--rrr-white);
-    border-radius: 16px;
-    box-shadow:
-      0 2px 0 var(--rrr-gold),
-      0 16px 56px rgba(13, 43, 78, 0.15),
-      0 2px 8px rgba(13, 43, 78, 0.08);
-    overflow: hidden;
-  }
-
-  /* ── LEFT VERTICAL BLUE RIBBON ── */
-  .rrr-ribbon {
-    width: 100px;
-    min-width: 100px;
-    background: linear-gradient(180deg, #0d2b4e 0%, #1a4f8a 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 28px 12px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .rrr-ribbon::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 14px,
-      rgba(255,255,255,.04) 14px,
-      rgba(255,255,255,.04) 28px
-    );
-    pointer-events: none;
-  }
-
-  .rrr-ribbon-top {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, #c9a84c, #f0d080, #c9a84c);
-  }
-
-  .rrr-ribbon-bottom {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, #c9a84c, #f0d080, #c9a84c);
-  }
-
-  .rrr-ribbon-text {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    font-family: 'Merriweather', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.9);
-    position: relative;
-    z-index: 1;
-    line-height: 1;
-    white-space: nowrap;
-  }
-
-  .rrr-ribbon-stars {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    position: relative;
-    z-index: 1;
-    margin: 14px 0;
-  }
-  .rrr-ribbon-stars span {
-    font-size: 0.8rem;
-    color: #f0d080;
-    line-height: 1;
-    text-align: center;
-  }
-
-  .rrr-ribbon-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #c9a84c;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 0 8px rgba(240, 208, 128, 0.6);
-  }
-
-  /* ── CENTER BBB LOGO ── */
-  .rrr-logo-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 36px 28px;
-    border-right: 1px solid #e4eaf2;
-    background: radial-gradient(ellipse at center, #eaf2fb 0%, #ffffff 70%);
-    min-width: 160px;
-  }
-
-  .rrr-logo-wrap img {
-    width: 120px;
-    height: auto;
-    filter: drop-shadow(0 4px 18px rgba(13, 43, 78, 0.2));
-    transition: transform 0.3s ease, filter 0.3s ease;
-    display: block;
-  }
-  .rrr-logo-wrap img:hover {
-    transform: scale(1.06);
-    filter: drop-shadow(0 8px 24px rgba(13, 43, 78, 0.3));
-  }
-
-  /* ── RIGHT TEXT CONTENT ── */
-  .rrr-trust-content {
-    flex: 1;
-    padding: 36px 36px 36px 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .rrr-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #c9a84c;
-    margin-bottom: 10px;
-  }
-  .rrr-eyebrow::before {
-    content: '';
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: #c9a84c;
-    border-radius: 2px;
-  }
-
-  .rrr-heading {
-    font-family: 'Merriweather', serif;
-    font-size: 1.5rem;
-    color: #0d2b4e;
-    line-height: 1.3;
-    margin: 0 0 10px;
-  }
-
-  .rrr-body {
-    font-size: 0.88rem;
-    color: #5a7a9a;
-    line-height: 1.75;
-    max-width: 340px;
-    margin: 0 0 20px;
-  }
-
-  .rrr-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .rrr-pill {
-    background: #f4f7fb;
-    border: 1px solid #d0dcea;
-    color: #0d2b4e;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    padding: 5px 13px;
-    border-radius: 99px;
-  }
-
-  .rrr-pill.gold {
-    background: linear-gradient(135deg, #c9a84c, #f0d080);
-    border-color: #c9a84c;
-    color: #0d2b4e;
-  }
-
-  .rrr-corner-tag {
-    position: absolute;
-    top: -1px;
-    right: 28px;
-    background: linear-gradient(135deg, #c9a84c, #f0d080);
-    color: #0d2b4e;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 5px 16px 7px;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 4px 14px rgba(201,168,76,0.35);
-    white-space: nowrap;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 640px) {
-    .rrr-trust-card  { flex-direction: column; }
-    .rrr-ribbon {
-      width: 100%; min-width: unset;
-      flex-direction: row;
-      height: 54px; padding: 0 20px; gap: 12px;
-    }
-    .rrr-ribbon-top    { height: 4px; width: 100%; }
-    .rrr-ribbon-bottom { height: 4px; width: 100%; }
-    .rrr-ribbon-text   { writing-mode: horizontal-tb; transform: none; font-size: 0.7rem; }
-    .rrr-ribbon-stars  { flex-direction: row; margin: 0; }
-    .rrr-ribbon-dot    { display: none; }
-    .rrr-logo-wrap     { border-right: none; border-bottom: 1px solid #e4eaf2; padding: 28px 20px; min-width: unset; }
-    .rrr-trust-content { padding: 24px 20px 28px; }
-    .rrr-body          { max-width: 100%; }
-  }
-</style>
-
-<!-- ══════════════════════════════════════════════════════
-     PASTE THIS SECTION RIGHT AFTER YOUR HERO </section>
-════════════════════════════════════════════════════════ -->
-<section class="rrr-trust-section">
-
-  <div class="rrr-trust-card">
-
-    <!-- gold floating tag -->
-    <div class="rrr-corner-tag">&#10022; Verified &amp; Accredited</div>
-
-    <!-- LEFT: vertical blue ribbon -->
-    <div class="rrr-ribbon">
-      <div class="rrr-ribbon-top"></div>
-      <div class="rrr-ribbon-text">Rightful Returns Recovery</div>
-      <div class="rrr-ribbon-stars">
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-        <span>&#9733;</span>
-      </div>
-      <div class="rrr-ribbon-dot"></div>
-      <div class="rrr-ribbon-bottom"></div>
-    </div>
-
-    <!-- CENTER: BBB logo — update src to your actual image path -->
-    <div class="rrr-logo-wrap">
-      <img
-        src="IMG_6424.png"
-        alt="BBB A+ Rated Accredited Business"
-      />
-    </div>
-
-    <!-- RIGHT: trust copy -->
-    <div class="rrr-trust-content">
-      <div class="rrr-eyebrow">Why trust us</div>
-      <h2 class="rrr-heading">BBB A+ Rated<br/>Accredited Business</h2>
-      <p class="rrr-body">
-        Rightful Returns Recovery holds the highest possible rating from the Better Business Bureau &mdash; a testament to our transparency, integrity, and commitment to recovering what is rightfully yours.
-      </p>
-      <div class="rrr-pills">
-        <span class="rrr-pill gold">A+ Rating</span>
-        <span class="rrr-pill">BBB Accredited</span>
-        <span class="rrr-pill">No Upfront Fees</span>
-        <span class="rrr-pill">Verified Reviews</span>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-<!-- ══════════════════════════════════════════════════════ -->
+  @keyframes goldShimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+  @keyframes dollarFloat { 0%,100% { transform: translateY(0) rotate(-3deg) scale(1); } 25% { transform: translateY(-10px) rotate(2deg) scale(1.05); } 50% { transform: translateY(-5px) rotate(-1deg) scale(1.02); } 75% { transform: translateY(-12px) rotate(3deg) scale(1.06); } }
+  @keyframes borderPulse { 0%,100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.9; transform: scale(1.08); } }
+  @keyframes ringRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
   /* ── HOW IT WORKS ── */
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; }
@@ -392,6 +218,7 @@
   .step-icon { font-size: 2.5rem; margin-bottom: 20px; }
   .step h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 12px; color: var(--accent); }
   .step p { font-size: 0.95rem; line-height: 1.7; color: #9aaabb; }
+  .section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 60px; line-height: 1.2; }
 
   /* ── CONTACT STRIP ── */
   .contact-strip { background: linear-gradient(135deg, #0a1520 0%, #0D1B2A 100%); border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 36px 20px; text-align: center; }
@@ -479,7 +306,7 @@
   #signup-form .form-row.full { grid-template-columns: 1fr; }
   #signup-form .form-group { display: flex; flex-direction: column; }
   #signup-form label { color: #d4af37; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
-  #signup-form input, #signup-form select, #signup-form textarea { background: rgba(255,255,255,0.06); border: 1px solid rgba(212,175,55,0.35); border-radius: 6px; color: #ffffff; font-family: 'Lato', sans-serif; font-size: 0.95rem; padding: 13px 16px; transition: border-color 0.2s, background 0.2s; outline: none; width: 100%; box-sizing: border-box; }
+  #signup-form input, #signup-form select, #signup-form textarea { background: rgba(255,255,255,0.06); border: 1px solid rgba(212,175,55,0.35); border-radius: 6px; color: #ffffff; font-family: 'Lato', sans-serif; font-size: 0.95rem; padding: 13px 16px; transition: border-color 0.2s, background 0.2s; outline: none; width: 100%; }
   #signup-form input::placeholder, #signup-form textarea::placeholder { color: rgba(255,255,255,0.35); }
   #signup-form select { appearance: none; cursor: pointer; color: rgba(255,255,255,0.7); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23d4af37' d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
   #signup-form select option { background: #1a1a2e; color: #ffffff; }
@@ -487,7 +314,7 @@
   #signup-form textarea { resize: vertical; min-height: 110px; }
   #signup-form .submit-btn { background: linear-gradient(135deg, #d4af37, #b8960c); border: none; border-radius: 6px; color: #0a0a1a; cursor: pointer; font-family: 'Lato', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.05em; padding: 16px 32px; width: 100%; margin-top: 10px; transition: opacity 0.2s, transform 0.1s; text-transform: uppercase; }
   #signup-form .submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
-  .form-note { color: rgba(212,175,55,0.7); font-size: 0.82rem; text-align: center; margin-top: 16px; }
+  .form-note { color: rgba(212,175,55,0.7); font-size: 0.82rem; text-align: center; margin-top: 16px; letter-spacing: 0.03em; }
   .sms-note { color: rgba(212,175,55,0.55); font-size: 0.75rem; text-align: center; margin-top: 10px; line-height: 1.5; }
   .sms-note a { color: #d4af37; text-decoration: underline; }
   @media(max-width:600px) { #signup-form { padding: 32px 20px; } #signup-form .form-row { grid-template-columns: 1fr; } }
@@ -497,118 +324,57 @@
   .blog-inner { max-width: 1100px; margin: 0 auto; }
   .blog-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 50px; }
 
-  /* ── MISSING MONEY SECTION ── */
-  #missing-money { background: linear-gradient(180deg, #0a0f1e 0%, #001233 60%, #0a0f1e 100%); position: relative; overflow: hidden; padding: 6rem 1.5rem 5rem; isolation: isolate; }
-  #mm-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-  #missing-money::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,40,104,0.55) 0%, transparent 75%); }
-  .mm-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 3; }
-  .mm-badge { display: inline-flex; align-items: center; gap: .5rem; background: rgba(191,10,48,.25); border: 1px solid rgba(191,10,48,.6); color: #ff7070; font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; padding: .35em 1.1em; border-radius: 100px; margin-bottom: 1.6rem; animation: mmBlink 2s ease-in-out infinite; }
-  @keyframes mmBlink { 0%,100%{box-shadow:0 0 0 0 rgba(191,10,48,0);} 50%{box-shadow:0 0 18px 5px rgba(191,10,48,.4);} }
-  .mm-badge .dot { width:7px; height:7px; background:#ff4444; border-radius:50%; animation:mmDot 1.2s ease-in-out infinite; }
-  @keyframes mmDot{0%,100%{opacity:1;}50%{opacity:.15;}}
-  .mm-heading { font-family:'Playfair Display',Georgia,serif; font-size:clamp(2.1rem,5.5vw,3.4rem); font-weight:900; color:#fff; line-height:1.12; margin-bottom:.9rem; text-align:center; text-shadow:0 2px 20px rgba(0,0,0,.6); }
-  .mm-heading .gold{color:#FFD700;} .mm-heading .red{color:#ff4466;}
-  .mm-subhead { font-family:'Playfair Display',Georgia,serif; color:rgba(255,255,255,.7); font-size:1.08rem; text-align:center; margin-bottom:.5rem; font-weight:300; }
-  .mm-states { display:flex; align-items:center; justify-content:center; gap:.6rem; flex-wrap:wrap; margin-bottom:2.8rem; font-size:.8rem; color:rgba(255,255,255,.45); letter-spacing:.08em; text-transform:uppercase; }
-  .mm-states strong{color:#FFD700;font-size:.92rem;}
-  .mm-card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:20px; padding:2.8rem 2.2rem; backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1); }
-  .mm-card-title { font-family:'Playfair Display',Georgia,serif; font-size:1.25rem; color:#FFD700; font-weight:900; margin-bottom:.3rem; text-align:center; text-shadow:0 0 20px rgba(255,215,0,.4); }
-  .mm-card-sub { font-size:.84rem; color:rgba(255,255,255,.5); text-align:center; margin-bottom:2rem; letter-spacing:.04em; }
-  .mm-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-bottom:1.1rem; }
-  @media(max-width:540px){.mm-grid{grid-template-columns:1fr;}}
-  .mm-full{grid-column:1/-1;}
-  .mm-field{display:flex;flex-direction:column;gap:.4rem;}
-  .mm-field label { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#ffffff; text-shadow:0 1px 6px rgba(0,0,0,.5); }
-  .mm-field .optional { font-size:.66rem; color:rgba(255,255,255,.45); font-weight:400; letter-spacing:0; text-transform:none; margin-left:.3rem; }
-  .mm-field input { background:rgba(255,255,255,.09); border:1.5px solid rgba(255,255,255,.25); border-radius:10px; padding:.82rem 1rem; font-size:1rem; color:#fff; font-family:'Playfair Display',Georgia,serif; outline:none; width:100%; transition:border-color .2s,background .2s,box-shadow .2s; caret-color:#FFD700; }
-  .mm-field input::placeholder{color:rgba(255,255,255,.35);}
-  .mm-field input:focus{border-color:#FFD700;background:rgba(255,255,255,.13);box-shadow:0 0 0 3px rgba(255,215,0,.2);}
-  .mm-submit { width:100%; margin-top:.4rem; background:linear-gradient(135deg,#c8102e 0%,#8B0520 50%,#c8102e 100%); color:#fff; border:none; border-radius:12px; padding:1.1rem 2rem; font-size:1.15rem; font-weight:900; font-family:'Playfair Display',Georgia,serif; letter-spacing:.06em; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:.8rem; transition:transform .15s,box-shadow .2s; animation:btnShimmer 3s ease-in-out infinite; }
-  @keyframes btnShimmer{ 0%,100%{box-shadow:0 6px 30px rgba(200,16,46,.55),0 0 0 0 rgba(255,215,0,0);} 50%{box-shadow:0 6px 30px rgba(200,16,46,.7),0 0 20px 4px rgba(255,215,0,.25);} }
-  .mm-submit:hover{transform:translateY(-3px);} .mm-submit:active{transform:translateY(0);}
-  .mm-disclaimer { text-align:center; font-size:.75rem; color:rgba(255,255,255,.35); margin-top:1.3rem; line-height:1.55; }
-  .mm-disclaimer a{color:rgba(255,255,255,.5);text-decoration:underline;}
-  .mm-trust { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:2.8rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.1); }
-  .mm-trust-item { display:flex; flex-direction:column; align-items:center; gap:.3rem; color:rgba(255,255,255,.5); font-size:.76rem; text-align:center; }
-  .mm-trust-item .icon{font-size:1.5rem;}
-  .mm-trust-item strong{color:rgba(255,255,255,.85);font-size:.82rem;display:block;}
-
-  /* ── THANK YOU OVERLAY ── */
-  #mm-overlay { display:none; position:fixed; inset:0; z-index:99999; background:linear-gradient(160deg,#0a0f1e 0%,#001233 45%,#0d1a0d 100%); overflow:hidden; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; }
-  #mm-overlay.show{display:flex;}
-  #ty-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
-  .ty-float { position:absolute; font-size:4rem; opacity:.06; pointer-events:none; animation:tyFloat linear infinite; z-index:1; }
-  @keyframes tyFloat { 0%{transform:translateY(110vh) rotate(0deg);opacity:0;} 10%{opacity:.06;} 90%{opacity:.06;} 100%{transform:translateY(-10vh) rotate(360deg);opacity:0;} }
-  .ty-content { position:relative; z-index:2; max-width:640px; animation:tyUp .7s cubic-bezier(.22,1,.36,1) forwards; }
-  @keyframes tyUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
-  .ty-icon { font-size:5rem; line-height:1; margin-bottom:1rem; animation:tyBounce .8s cubic-bezier(.175,.885,.32,1.275) .3s both; filter:drop-shadow(0 0 30px rgba(255,215,0,.6)); }
-  @keyframes tyBounce{ 0%{transform:scale(0) rotate(-15deg);opacity:0;} 60%{transform:scale(1.2) rotate(5deg);} 100%{transform:scale(1) rotate(0deg);opacity:1;} }
-  .ty-title { font-family:'Playfair Display',Georgia,serif; font-size:clamp(2rem,6vw,3.5rem); font-weight:900; color:#FFD700; line-height:1.1; margin-bottom:.6rem; text-shadow:0 0 40px rgba(255,215,0,.5),0 2px 20px rgba(0,0,0,.8); animation:tyUp .6s ease .4s both; }
-  .ty-name { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.3rem,3.5vw,1.8rem); color:#fff; font-weight:700; margin-bottom:1.2rem; animation:tyUp .6s ease .55s both; }
-  .ty-message { font-family:'Playfair Display',Georgia,serif; font-size:clamp(.95rem,2.5vw,1.15rem); color:rgba(255,255,255,.82); line-height:1.75; font-weight:300; margin-bottom:2rem; animation:tyUp .6s ease .7s both; }
-  .ty-message strong{color:#FFD700;font-weight:600;}
-  .ty-bar-wrap{margin-bottom:1.8rem;animation:tyUp .6s ease .85s both;}
-  .ty-bar-label{font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
-  .ty-bar-track{width:100%;max-width:400px;margin:0 auto;height:6px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;}
-  .ty-bar-fill{height:100%;background:linear-gradient(90deg,#FFD700,#FFA500);border-radius:99px;width:100%;transform-origin:left;}
-  .ty-go-btn { display:inline-block; background:transparent; border:1px solid rgba(255,255,255,.25); color:rgba(255,255,255,.6); font-size:.9rem; padding:.6rem 1.8rem; border-radius:99px; cursor:pointer; font-family:'Playfair Display',Georgia,serif; transition:all .2s; animation:tyUp .6s ease 1s both; }
-  .ty-go-btn:hover{border-color:#FFD700;color:#FFD700;background:rgba(255,215,0,.08);}
-
   /* ── FOOTER ── */
-  footer { background: #040b12; padding: 60px 20px 0; }
-  .footer-top { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(201,168,76,0.15); }
-  @media(max-width:768px){ .footer-top { grid-template-columns: 1fr; gap: 32px; } }
-  .footer-col-title { font-family: 'Playfair Display', serif; font-size: 0.85rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
-  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 10px; }
-  .footer-tagline { font-size: 0.85rem; color: #5a6a7a; line-height: 1.7; margin-bottom: 16px; }
-  .footer-contact-links a { display: block; color: var(--accent); text-decoration: none; font-size: 0.9rem; margin-bottom: 10px; transition: color 0.3s; }
-  .footer-contact-links a:hover { color: var(--gold); }
-  .footer-nav-links a { display: block; color: #7a8a9a; text-decoration: none; font-size: 0.85rem; margin-bottom: 10px; letter-spacing: 0.5px; transition: color 0.3s; }
-  .footer-nav-links a:hover { color: var(--gold); }
-
-  /* ── LEGAL / COMPLIANCE SECTION ── */
-  .footer-legal { background: #020810; padding: 40px 20px; }
-  .footer-legal-inner { max-width: 1100px; margin: 0 auto; }
-  .footer-legal-title { font-family: 'Playfair Display', serif; font-size: 0.78rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; text-align: center; }
-  .footer-legal-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; margin-bottom: 32px; }
-  @media(max-width:768px){ .footer-legal-grid { grid-template-columns: 1fr; } }
-  .legal-block { border-left: 2px solid rgba(201,168,76,0.2); padding-left: 16px; }
-  .legal-block h4 { font-size: 0.72rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
-  .legal-block p { font-size: 0.72rem; color: #4a5a6a; line-height: 1.7; }
-  .legal-block a { color: #6a7a8a; text-decoration: underline; }
-  .legal-block a:hover { color: var(--gold); }
-  .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin: 28px 0; }
-  .footer-bottom { text-align: center; padding-bottom: 32px; }
-  .footer-copy { font-size: 0.75rem; color: #3a4a5a; line-height: 1.8; }
-  .footer-copy a { color: #5a6a7a; text-decoration: none; }
-  .footer-copy a:hover { color: var(--gold); }
+  footer { background: #080f18; padding: 60px 20px; text-align: center; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 16px; }
+  .footer-contact { margin: 24px 0; display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+  .footer-contact a { color: var(--accent); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+  .footer-contact a:hover { color: var(--gold); }
+  .footer-nav { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin: 16px 0; list-style: none; }
+  .footer-nav a { color: #7a8a9a; text-decoration: none; font-size: 0.82rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
+  .footer-nav a:hover { color: var(--gold); }
+  .footer-copy { font-size: 0.8rem; color: #4a5a6a; margin-top: 24px; }
 </style>
 </head>
 <body>
 
-<!-- ── HEADER ── -->
+<!-- ════════════════════════════════════════
+     HEADER
+════════════════════════════════════════ -->
 <header class="site-header">
   <div class="header-main">
+
+    <!-- Company Name + Phone -->
     <div>
       <div class="header-logo"><span>Rightful Returns</span> Recovery</div>
       <a class="header-phone" href="tel:18004282022">📞 1 (800) 428-2022</a>
     </div>
+
+    <!-- Hamburger Button -->
     <button class="hamburger" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
+
   </div>
+
+  <!-- ══════════════════════════════════════════════
+       NAV MENU LINKS
+       ↓ Edit href values below to change where
+         each menu item points ↓
+  ══════════════════════════════════════════════ -->
   <nav class="nav-dropdown" id="navMenu" aria-label="Site navigation">
-    <a href="#how">📋 How It Works</a>
     <a href="#about">👤 About Us</a>
-    <a href="#states">🗺️ States We Serve</a>
-    <a href="#faq">❓ FAQ</a>
-    <a href="blog/index.html">📝 Blog</a>
-    <a href="sms-terms.html">📱 SMS Terms</a>
+    <a href="blog.html">📝 Blog</a>
     <a href="#signup" class="nav-cta">✅ Free Case Evaluation</a>
   </nav>
 </header>
 
-<!-- ── HERO ── -->
+<!-- ════════════════════════════════════════
+     HERO
+     ↓ Edit headline and paragraph text below ↓
+════════════════════════════════════════ -->
 <section class="hero" aria-label="Surplus Funds Recovery">
   <div class="hero-logo">Rightful Returns Recovery</div>
   <h1>You May Have <span>Unclaimed Money</span><br>Waiting For You</h1>
@@ -623,22 +389,46 @@
   </div>
 </section>
 
-<!-- ── HOW IT WORKS ── -->
+<!-- ════════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════ -->
 <section id="how" aria-label="How surplus fund recovery works">
   <div class="section">
     <div class="section-label">The Process</div>
     <div class="gold-line"></div>
     <h2>Simple. Transparent. <span style="color:var(--gold)">Risk-Free.</span></h2>
     <div class="steps">
-      <div class="step"><span class="step-number">01</span><div class="step-icon">📋</div><h3>Sign Up</h3><p>Fill out our simple form with your name and contact info. Takes less than 2 minutes and costs you nothing to get started.</p></div>
-      <div class="step"><span class="step-number">02</span><div class="step-icon">🔍</div><h3>We Research</h3><p>Our team searches county court records and tax sale databases to locate any surplus funds or excess proceeds held in your name.</p></div>
-      <div class="step"><span class="step-number">03</span><div class="step-icon">📄</div><h3>We File For You</h3><p>If we locate foreclosure overage funds, we handle all the paperwork, legal documentation, and filing on your behalf.</p></div>
-      <div class="step"><span class="step-number">04</span><div class="step-icon">💰</div><h3>You Get Paid</h3><p>Once your surplus fund claim is approved, the money comes to you. We only get paid when you do — a small percentage of what we recover.</p></div>
+      <div class="step">
+        <span class="step-number">01</span>
+        <div class="step-icon">📋</div>
+        <h3>Sign Up</h3>
+        <p>Fill out our simple form with your name and contact info. Takes less than 2 minutes and costs you nothing to get started.</p>
+      </div>
+      <div class="step">
+        <span class="step-number">02</span>
+        <div class="step-icon">🔍</div>
+        <h3>We Research</h3>
+        <p>Our team searches county court records and tax sale databases to locate any surplus funds or excess proceeds held in your name.</p>
+      </div>
+      <div class="step">
+        <span class="step-number">03</span>
+        <div class="step-icon">📄</div>
+        <h3>We File For You</h3>
+        <p>If we locate foreclosure overage funds, we handle all the paperwork, legal documentation, and filing on your behalf.</p>
+      </div>
+      <div class="step">
+        <span class="step-number">04</span>
+        <div class="step-icon">💰</div>
+        <h3>You Get Paid</h3>
+        <p>Once your surplus fund claim is approved, the money comes to you. We only get paid when you do — a small percentage of what we recover.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── CONTACT STRIP 1 ── -->
+<!-- ════════════════════════════════════════
+     CONTACT STRIP 1
+════════════════════════════════════════ -->
 <div class="contact-strip">
   <div class="contact-strip-inner">
     <h3>SPEAK WITH A RECOVERY SPECIALIST TODAY</h3>
@@ -649,7 +439,9 @@
   </div>
 </div>
 
-<!-- ── ABOUT ── -->
+<!-- ════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════ -->
 <section id="about" class="what-section" aria-label="About surplus fund recovery">
   <div class="what-inner">
     <div class="what-text">
@@ -668,21 +460,36 @@
   </div>
 </section>
 
-<!-- ── WHAT WE RECOVER ── -->
+<!-- ════════════════════════════════════════
+     WHAT WE RECOVER
+════════════════════════════════════════ -->
 <section class="keyword-section" aria-label="Types of surplus funds we recover">
   <div class="keyword-inner">
     <div class="section-label" style="text-align:center">What We Recover</div>
     <div class="gold-line"></div>
     <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);text-align:center;margin-bottom:0;">Types of Surplus Funds We Recover</h2>
     <div class="keyword-grid">
-      <div class="keyword-card"><h3>Foreclosure Surplus Funds</h3><p>When a lender forecloses and the auction price exceeds the mortgage balance and fees, the excess is owed to the former homeowner. These <strong style="color:var(--accent)">foreclosure overages</strong> are held by the county court and must be claimed within a limited window.</p></div>
-      <div class="keyword-card"><h3>Tax Sale Excess Proceeds</h3><p>When a county sells a property for unpaid taxes and the sale generates more than the tax debt, the <strong style="color:var(--accent)">tax sale surplus</strong> belongs to the former owner. We search tax sale records across Arizona, Georgia, Texas and all 50 states.</p></div>
-      <div class="keyword-card"><h3>HOA &amp; Lien Sale Overages</h3><p>Properties sold by HOAs or lienholders can also generate <strong style="color:var(--accent)">excess proceeds</strong> owed to the prior owner. These are often overlooked but can represent significant unclaimed funds sitting in county accounts.</p></div>
+      <div class="keyword-card">
+        <h3>Foreclosure Surplus Funds</h3>
+        <p>When a lender forecloses and the auction price exceeds the mortgage balance and fees, the excess is owed to the former homeowner. These <strong style="color:var(--accent)">foreclosure overages</strong> are held by the county court and must be claimed within a limited window.</p>
+      </div>
+      <div class="keyword-card">
+        <h3>Tax Sale Excess Proceeds</h3>
+        <p>When a county sells a property for unpaid taxes and the sale generates more than the tax debt, the <strong style="color:var(--accent)">tax sale surplus</strong> belongs to the former owner. We search tax sale records across Arizona, Georgia, Texas and all 50 states.</p>
+      </div>
+      <div class="keyword-card">
+        <h3>HOA &amp; Lien Sale Overages</h3>
+        <p>Properties sold by HOAs or lienholders can also generate <strong style="color:var(--accent)">excess proceeds</strong> owed to the prior owner. These are often overlooked but can represent significant unclaimed funds sitting in county accounts.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── STATES ── -->
+<!-- ════════════════════════════════════════
+     STATES
+     ↓ Update href="arizona.html" etc. to match
+       your actual filenames on GitHub ↓
+════════════════════════════════════════ -->
 <section class="states-section" id="states" aria-label="States where we recover surplus funds">
   <div class="states-inner">
     <div class="section-label">Where We Work</div>
@@ -723,46 +530,94 @@
   </div>
 </section>
 
-<!-- ── CONTACT STRIP 2 ── -->
+<!-- ════════════════════════════════════════
+     CONTACT STRIP 2
+════════════════════════════════════════ -->
 <div class="contact-strip">
   <div class="contact-strip-inner">
     <h3>READY TO FIND YOUR FUNDS? CALL US FREE</h3>
     <div class="contact-strip-numbers">
       <a href="tel:18004282022">📞 1 (800) 428-2022</a>
       <a href="tel:4802743499">📞 (480) 274-3499</a>
+      <!-- ↓ Plain email address — works fine on GitHub Pages ↓ -->
       <a href="mailto:powell@rightfulreturnsrecovery.com">✉️ powell@rightfulreturnsrecovery.com</a>
     </div>
   </div>
 </div>
 
-<!-- ── TESTIMONIALS ── -->
+<!-- ════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════ -->
 <section id="testimonials" class="testimonials" aria-label="Client success stories">
   <div class="section-label">Success Stories</div>
   <div class="gold-line"></div>
   <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);text-align:center;margin-bottom:0;">What Our Clients Say</h2>
   <div class="testi-grid">
-    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">I had no idea the county was holding surplus funds from the sale of my old home. Powell found it, handled everything, and I received a check I never expected. Incredible service.</p><div class="testi-author"><div class="testi-avatar">M</div><div><div class="testi-name">Maria T.</div><div class="testi-location">Mesa, Arizona</div></div></div></div>
-    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">The foreclosure overage recovery process was completely hands-off for me. I signed a form, they did all the work, and a few weeks later I had money in my account. No fees until they recovered it.</p><div class="testi-author"><div class="testi-avatar">D</div><div><div class="testi-name">David R.</div><div class="testi-location">Chandler, Arizona</div></div></div></div>
-    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">I was skeptical at first, but Powell was transparent the whole way. He explained the surplus fund claim process clearly and delivered exactly what he promised. Highly recommend.</p><div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Sandra K.</div><div class="testi-location">Gilbert, Arizona</div></div></div></div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">I had no idea the county was holding surplus funds from the sale of my old home. Powell found it, handled everything, and I received a check I never expected. Incredible service.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">M</div>
+        <div><div class="testi-name">Maria T.</div><div class="testi-location">Mesa, Arizona</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">The foreclosure overage recovery process was completely hands-off for me. I signed a form, they did all the work, and a few weeks later I had money in my account. No fees until they recovered it.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">D</div>
+        <div><div class="testi-name">David R.</div><div class="testi-location">Chandler, Arizona</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">I was skeptical at first, but Powell was transparent the whole way. He explained the surplus fund claim process clearly and delivered exactly what he promised. Highly recommend.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div><div class="testi-name">Sandra K.</div><div class="testi-location">Gilbert, Arizona</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ── FAQ ── -->
+<!-- ════════════════════════════════════════
+     FAQ
+════════════════════════════════════════ -->
 <section id="faq" class="faq-section" aria-label="Frequently asked questions">
   <div class="faq-inner">
     <div class="section-label" style="text-align:center">Got Questions?</div>
     <div class="gold-line"></div>
     <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);text-align:center;margin-bottom:50px;">Frequently Asked Questions</h2>
-    <div class="faq-item"><div class="faq-q">What are surplus funds after a foreclosure? <span class="faq-icon">+</span></div><div class="faq-a">Surplus funds, also called foreclosure overages or excess proceeds, are money left over after a foreclosure or tax sale pays off all debts. The former property owner is legally entitled to claim these funds — but most people never know they exist.</div></div>
-    <div class="faq-item"><div class="faq-q">How do I claim foreclosure surplus funds? <span class="faq-icon">+</span></div><div class="faq-a">You must file a legal claim with the county court or agency holding the funds. Rightful Returns Recovery handles this entire process for you at no upfront cost. Call us at 1 (800) 428-2022 or (480) 274-3499.</div></div>
-    <div class="faq-item"><div class="faq-q">How much does surplus fund recovery cost? <span class="faq-icon">+</span></div><div class="faq-a">There is absolutely no upfront cost. We work on a contingency basis — we only earn a fee if we successfully recover money for you. If we find nothing, you pay nothing. Zero risk.</div></div>
-    <div class="faq-item"><div class="faq-q">How long do I have to claim surplus funds? <span class="faq-icon">+</span></div><div class="faq-a">Claim windows vary by state. In Texas you have 2 years, Georgia up to 5 years, and Arizona varies by sale type. Acting quickly is always recommended — deadlines are strictly enforced and funds can be permanently lost.</div></div>
-    <div class="faq-item"><div class="faq-q">Which states do you serve? <span class="faq-icon">+</span></div><div class="faq-a">We actively serve Arizona, Georgia, and Texas, and can assist homeowners in all 50 states through our network of licensed attorneys. Contact us regardless of your state — call 1 (800) 428-2022.</div></div>
-    <div class="faq-item"><div class="faq-q">What is the difference between surplus funds and unclaimed property? <span class="faq-icon">+</span></div><div class="faq-a">Surplus funds refer to excess proceeds from foreclosure or tax sales held by county courts. Unclaimed property is a broader category held by the state comptroller. Rightful Returns Recovery specializes in surplus fund and foreclosure overage recovery.</div></div>
+    <div class="faq-item">
+      <div class="faq-q">What are surplus funds after a foreclosure? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Surplus funds, also called foreclosure overages or excess proceeds, are money left over after a foreclosure or tax sale pays off all debts. The former property owner is legally entitled to claim these funds — but most people never know they exist.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I claim foreclosure surplus funds? <span class="faq-icon">+</span></div>
+      <div class="faq-a">You must file a legal claim with the county court or agency holding the funds. The process involves identifying the surplus, gathering documentation, and submitting a petition. Rightful Returns Recovery handles this entire process for you at no upfront cost. Call us at 1 (800) 428-2022 or (480) 274-3499.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How much does surplus fund recovery cost? <span class="faq-icon">+</span></div>
+      <div class="faq-a">There is absolutely no upfront cost. We work on a contingency basis — we only earn a fee if we successfully recover money for you. If we find nothing, you pay nothing. Zero risk.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long do I have to claim surplus funds? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Claim windows vary by state. In Texas you have 2 years, Georgia up to 5 years, and Arizona varies by sale type. Acting quickly is always recommended — deadlines are strictly enforced and funds can be permanently lost.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Which states do you serve? <span class="faq-icon">+</span></div>
+      <div class="faq-a">We actively serve Arizona, Georgia, and Texas, and can assist homeowners in all 50 states through our network of licensed attorneys. Contact us regardless of your state — call 1 (800) 428-2022.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between surplus funds and unclaimed property? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Surplus funds refer to excess proceeds from foreclosure or tax sales held by county courts. Unclaimed property is a broader category held by the state comptroller. Rightful Returns Recovery specializes in surplus fund and foreclosure overage recovery.</div>
+    </div>
   </div>
 </section>
 
-<!-- ── SIGNUP FORM ── -->
+<!-- ════════════════════════════════════════
+     SIGNUP FORM
+════════════════════════════════════════ -->
 <section id="signup" class="signup-section" aria-label="Free surplus fund search sign up">
   <div class="signup-inner">
     <div class="section-label">Get Started</div>
@@ -771,12 +626,24 @@
     <p>Fill out the form below and we'll search county records to find any surplus funds or foreclosure overages held in your name — completely free.</p>
     <form id="signup-form" action="https://formspree.io/f/mjgeddoy" method="POST">
       <div class="form-row">
-        <div class="form-group"><label for="first_name">First Name</label><input type="text" id="first_name" name="first_name" placeholder="First Name" required></div>
-        <div class="form-group"><label for="last_name">Last Name</label><input type="text" id="last_name" name="last_name" placeholder="Last Name" required></div>
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+        </div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="your@email.com" required></div>
-        <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required></div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
+        </div>
       </div>
       <div class="form-row">
         <div class="form-group">
@@ -801,8 +668,18 @@
           </select>
         </div>
       </div>
-      <div class="form-row full"><div class="form-group"><label for="property_address">Previous Property Address (if known)</label><input type="text" id="property_address" name="property_address" placeholder="123 Main St, City, State"></div></div>
-      <div class="form-row full"><div class="form-group"><label for="notes">Additional Notes (optional)</label><textarea id="notes" name="notes" placeholder="Any additional information about your property or situation..."></textarea></div></div>
+      <div class="form-row full">
+        <div class="form-group">
+          <label for="property_address">Previous Property Address (if known)</label>
+          <input type="text" id="property_address" name="property_address" placeholder="123 Main St, City, State">
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-group">
+          <label for="notes">Additional Notes (optional)</label>
+          <textarea id="notes" name="notes" placeholder="Any additional information about your property or situation..."></textarea>
+        </div>
+      </div>
       <button type="submit" class="submit-btn">Submit My Free Search Request</button>
       <p class="form-note">🔒 No upfront fees. We only get paid if we recover money for you.</p>
       <p class="sms-note">By submitting this form and providing your phone number, you agree to receive text messages from Rightful Returns Recovery. Msg &amp; data rates may apply. Reply STOP to opt out. <a href="sms-terms.html" target="_blank">SMS Terms &amp; Conditions</a></p>
@@ -810,380 +687,117 @@
   </div>
 </section>
 
-<!-- ── BLOG ── -->
+<!-- ════════════════════════════════════════
+     BLOG
+     ↓ Each href below must match the EXACT
+       filename of your blog HTML file in your
+       GitHub repo. GitHub Pages requires .html ↓
+════════════════════════════════════════ -->
 <section id="blog" class="blog-section" aria-label="Latest Surplus Funds Blog Articles">
   <div class="blog-inner">
     <div class="section-label" style="text-align:center">Latest Insights</div>
     <div class="gold-line"></div>
     <h2>Surplus Funds Recovery <span style="color:var(--gold)">Blog</span></h2>
     <div class="keyword-grid">
-      <div class="keyword-card"><h3><a href="blog/how-to-claim-surplus-funds.html" style="color:var(--gold);text-decoration:none;">How to Claim Surplus Funds After a Foreclosure</a></h3><p>Most former homeowners never know the county is sitting on money that belongs to them. This complete guide walks you through exactly how to find and claim your foreclosure surplus funds.</p></div>
-      <div class="keyword-card"><h3><a href="blog/what-are-foreclosures.html" style="color:var(--gold);text-decoration:none;">What Are Foreclosures? A Complete Overview</a></h3><p>Learn what foreclosure means, how the process works, and why surplus funds are often left unclaimed after a sale.</p></div>
-      <div class="keyword-card"><h3><a href="blog/arizona-foreclosure-guide.html" style="color:var(--gold);text-decoration:none;">Arizona Foreclosure Surplus Funds Guide</a></h3><p>Everything Arizona homeowners need to know about recovering foreclosure overages under A.R.S. § 33-812.</p></div>
-      <div class="keyword-card"><h3><a href="blog/what-are-surplus-funds.html" style="color:var(--gold);text-decoration:none;">What Are Surplus Funds?</a></h3><p>A clear explanation of what surplus funds are, who they belong to, and why so many homeowners never collect what's owed to them.</p></div>
-      <div class="keyword-card"><h3><a href="blog/why-surplus-funds-go-unclaimed.html" style="color:var(--gold);text-decoration:none;">Why Surplus Funds Go Unclaimed</a></h3><p>Millions of dollars in foreclosure overages go unclaimed every year. Discover the most common reasons.</p></div>
-      <div class="keyword-card"><h3><a href="blog/maricopa-county-surplus-funds-recovery.html" style="color:var(--gold);text-decoration:none;">Maricopa County Surplus Funds Recovery</a></h3><p>Maricopa County holds millions in unclaimed surplus funds. Find out how to check and file your claim.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════
-     MISSING MONEY NATIONAL SEARCH SECTION — ONE COPY ONLY
-     ══════════════════════════════════════════════════════════ -->
-
-<!-- Thank You Overlay -->
-<div id="mm-overlay">
-  <canvas id="ty-canvas"></canvas>
-  <span class="ty-float" style="left:5%;animation-duration:8s;animation-delay:0s">💵</span>
-  <span class="ty-float" style="left:15%;animation-duration:11s;animation-delay:1s">🪙</span>
-  <span class="ty-float" style="left:28%;animation-duration:9s;animation-delay:2s">💰</span>
-  <span class="ty-float" style="left:42%;animation-duration:13s;animation-delay:.5s">💵</span>
-  <span class="ty-float" style="left:58%;animation-duration:10s;animation-delay:3s">🪙</span>
-  <span class="ty-float" style="left:70%;animation-duration:8s;animation-delay:1.5s">💰</span>
-  <span class="ty-float" style="left:82%;animation-duration:12s;animation-delay:0s">💵</span>
-  <span class="ty-float" style="left:92%;animation-duration:9s;animation-delay:2.5s">🪙</span>
-  <div class="ty-content">
-    <div class="ty-icon">💰</div>
-    <div class="ty-title">Thank You!</div>
-    <div class="ty-name" id="ty-name"></div>
-    <div class="ty-message">
-      A <strong>Rightful Returns Recovery Specialist</strong> will personally
-      research any lost or unclaimed funds in your name — across all 50 states.<br/><br/>
-      MissingMoney.com is now open in a new tab. Enter your name exactly as it
-      appeared on your property, and try any previous names or addresses too.
-    </div>
-    <div class="ty-bar-wrap">
-      <div class="ty-bar-label">This message closes in 6 seconds</div>
-      <div class="ty-bar-track"><div class="ty-bar-fill" id="ty-bar"></div></div>
-    </div>
-    <button class="ty-go-btn" onclick="mmCloseOverlay()">Close This Message →</button>
-  </div>
-</div>
-
-<!-- Canvas for section background animation -->
-<canvas id="mm-canvas"></canvas>
-
-<!-- Missing Money Search Section -->
-<section id="missing-money">
-  <div class="mm-inner">
-    <div style="text-align:center">
-      <span class="mm-badge"><span class="dot"></span> Act Now — Unclaimed Funds May Be Waiting</span>
-    </div>
-    <h2 class="mm-heading">💰 Is <span class="gold">Missing Money</span><br/><span class="red">Waiting in Your Name?</span></h2>
-    <p class="mm-subhead">Search the national unclaimed property database — free, instant, no obligation.</p>
-    <div class="mm-states">🌵 AZ &nbsp;·&nbsp; 🍑 GA &nbsp;·&nbsp; ⭐ TX &nbsp;·&nbsp; <strong>+ All 50 States 🇺🇸</strong></div>
-    <div class="mm-card">
-      <div class="mm-card-title">🔍 Search for Your Missing Money Now</div>
-      <div class="mm-card-sub">Takes less than 60 seconds — completely free</div>
-      <form id="mm-form">
-        <input type="hidden" name="_source" value="Missing Money Search — All 50 States"/>
-        <div class="mm-grid">
-          <div class="mm-field">
-            <label for="mm-first">First Name</label>
-            <input type="text" id="mm-first" name="first_name" placeholder="Jane" autocomplete="given-name" required/>
-          </div>
-          <div class="mm-field">
-            <label for="mm-last">Last Name</label>
-            <input type="text" id="mm-last" name="last_name" placeholder="Smith" autocomplete="family-name" required/>
-          </div>
-          <div class="mm-field mm-full">
-            <label for="mm-email">Email Address</label>
-            <input type="email" id="mm-email" name="email" placeholder="jane@example.com" autocomplete="email" required/>
-          </div>
-          <div class="mm-field mm-full">
-            <label for="mm-phone">Phone Number <span class="optional">(optional)</span></label>
-            <input type="tel" id="mm-phone" name="phone" placeholder="(480) 555-0100" autocomplete="tel"/>
-          </div>
-        </div>
-        <button type="button" class="mm-submit" onclick="mmHandleSubmit()">
-          💰 SEARCH NOW — All 50 States
-        </button>
-        <p class="mm-disclaimer">
-          By submitting, you agree to be contacted by a Rightful Returns Recovery specialist
-          if missing funds are found. Msg &amp; data rates may apply. Reply STOP to opt out.
-          <a href="sms-terms.html">SMS Terms</a>.
-          Search powered by <a href="https://missingmoney.com" target="_blank" style="color:rgba(255,255,255,.5)">MissingMoney.com</a>.
-        </p>
-      </form>
-    </div>
-    <div class="mm-trust">
-      <div class="mm-trust-item"><span class="icon">🔒</span><strong>Secure &amp; Private</strong>Never sold or shared</div>
-      <div class="mm-trust-item"><span class="icon">💵</span><strong>No Upfront Cost</strong>Always free to search</div>
-      <div class="mm-trust-item"><span class="icon">🇺🇸</span><strong>All 50 States</strong>Full national database</div>
-      <div class="mm-trust-item"><span class="icon">📞</span><strong>Specialist Follow-Up</strong>We call if funds found</div>
-    </div>
-  </div>
-</section>
-<!-- ══════════════════════════════════════════════════════════
-     END MISSING MONEY SECTION
-     ══════════════════════════════════════════════════════════ -->
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-top">
-    <div>
-      <div class="footer-logo">Rightful Returns Recovery</div>
-      <p class="footer-tagline">Helping homeowners nationwide recover surplus funds and foreclosure overages — at no upfront cost. We only get paid when you do.</p>
-      <div class="footer-contact-links">
-        <a href="tel:18004282022">📞 1 (800) 428-2022</a>
-        <a href="tel:4802743499">📞 (480) 274-3499</a>
-        <a href="mailto:powell@rightfulreturnsrecovery.com">✉️ powell@rightfulreturnsrecovery.com</a>
+      <div class="keyword-card">
+        <!-- ↓ Make sure this file exists: /blog/how-to-claim-surplus-funds.html ↓ -->
+        <h3><a href="blog/how-to-claim-surplus-funds.html" style="color:var(--gold);text-decoration:none;">How to Claim Surplus Funds After a Foreclosure</a></h3>
+        <p>Most former homeowners never know the county is sitting on money that belongs to them. This complete guide walks you through exactly how to find and claim your foreclosure surplus funds.</p>
+      </div>
+      <div class="keyword-card">
+        <!-- ↓ Make sure this file exists: /blog/what-are-foreclosures.html ↓ -->
+        <h3><a href="blog/what-are-foreclosures.html" style="color:var(--gold);text-decoration:none;">What Are Foreclosures? A Complete Overview</a></h3>
+        <p>Learn what foreclosure means, how the process works, and why surplus funds are often left unclaimed after a sale.</p>
+      </div>
+      <div class="keyword-card">
+        <!-- ↓ Make sure this file exists: /blog/arizona-foreclosure-guide.html ↓ -->
+        <h3><a href="blog/arizona-foreclosure-guide.html" style="color:var(--gold);text-decoration:none;">Arizona Foreclosure Surplus Funds Guide</a></h3>
+        <p>Everything Arizona homeowners need to know about recovering foreclosure overages under A.R.S. § 33-812 — including deadlines and county contacts.</p>
+      </div>
+      <div class="keyword-card">
+        <!-- ↓ Make sure this file exists: /what-are-surplus-funds.html ↓ -->
+        <h3><a href="what-are-surplus-funds.html" style="color:var(--gold);text-decoration:none;">What Are Surplus Funds?</a></h3>
+        <p>A clear explanation of what surplus funds are, who they belong to, and why so many homeowners never collect what's owed to them.</p>
+      </div>
+      <div class="keyword-card">
+        <!-- ↓ Make sure this file exists: /why-surplus-funds-go-unclaimed.html ↓ -->
+        <h3><a href="why-surplus-funds-go-unclaimed.html" style="color:var(--gold);text-decoration:none;">Why Surplus Funds Go Unclaimed</a></h3>
+        <p>Millions of dollars in foreclosure overages go unclaimed every year. Discover the most common reasons — and how to make sure it doesn't happen to you.</p>
+      </div>
+      <div class="keyword-card">
+        <!-- ↓ Make sure this file exists: /maricopa-county-surplus-funds-recovery.html ↓ -->
+        <h3><a href="maricopa-county-surplus-funds-recovery.html" style="color:var(--gold);text-decoration:none;">Maricopa County Surplus Funds Recovery</a></h3>
+        <p>Maricopa County holds millions in unclaimed surplus funds. Find out how to check if your property generated overages and how to file your claim.</p>
       </div>
     </div>
-    <div>
-      <div class="footer-col-title">Quick Links</div>
-      <nav class="footer-nav-links" aria-label="Footer navigation">
-        <a href="#how">How It Works</a>
-        <a href="#about">About Us</a>
-        <a href="#states">States We Serve</a>
-        <a href="#faq">FAQ</a>
-        <a href="#signup">Free Case Evaluation</a>
-        <a href="blog/index.html">Blog</a>
-      </nav>
-    </div>
-    <div>
-      <div class="footer-col-title">Legal &amp; Compliance</div>
-      <nav class="footer-nav-links" aria-label="Legal navigation">
-        <a href="sms-terms.html">SMS Terms &amp; Conditions</a>
-        <a href="sms-terms.html#privacy">Privacy Policy</a>
-        <a href="sms-terms.html#tcpa">TCPA Compliance</a>
-        <a href="sms-terms.html#canspam">CAN-SPAM Policy</a>
-        <a href="sms-terms.html#disclaimer">Legal Disclaimer</a>
-      </nav>
-    </div>
   </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">Rightful Returns Recovery</div>
+  <div class="gold-line"></div>
+  <p style="color:#9aaabb;max-width:560px;margin:16px auto;font-size:0.9rem;line-height:1.7;">Rightful Returns Recovery helps homeowners nationwide recover <strong style="color:var(--accent)">surplus funds</strong>, <strong style="color:var(--accent)">foreclosure overages</strong>, and <strong style="color:var(--accent)">tax sale excess proceeds</strong> — at no upfront cost.</p>
+  <div class="footer-contact">
+    <a href="tel:18004282022">📞 1 (800) 428-2022</a>
+    <a href="tel:4802743499">📞 (480) 274-3499</a>
+    <a href="mailto:powell@rightfulreturnsrecovery.com">✉️ powell@rightfulreturnsrecovery.com</a>
+  </div>
+  <ul class="footer-nav">
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#states">States We Serve</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#signup">Get Started</a></li>
+    <li><a href="arizona-surplus-funds-list.html">Arizona Surplus Funds List</a></li>
+    <li><a href="sms-terms.html">SMS Terms</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Rightful Returns Recovery. All rights reserved.</p>
 </footer>
 
-<!-- ── LEGAL COMPLIANCE SECTION ── -->
-<div class="footer-legal">
-  <div class="footer-legal-inner">
-    <div class="footer-legal-title">Regulatory Compliance &amp; Disclosures</div>
-    <div class="footer-legal-grid">
-
-      <div class="legal-block">
-        <h4>📱 SMS / Text Message Consent (TCPA)</h4>
-        <p>By providing your phone number and submitting any form on this website, you expressly consent to receive autodialed and/or pre-recorded text messages and calls from Rightful Returns Recovery at the number provided. Consent is not a condition of purchase. Message &amp; data rates may apply. Message frequency varies. Reply <strong>STOP</strong> to cancel at any time. Reply <strong>HELP</strong> for assistance. View our full <a href="sms-terms.html">SMS Terms &amp; Conditions</a>.</p>
-      </div>
-
-      <div class="legal-block">
-        <h4>📞 Telephone / Call Consent (TCPA)</h4>
-        <p>By submitting your contact information, you authorize Rightful Returns Recovery and its representatives to contact you by telephone, including mobile phone, using automated dialing systems, artificial or pre-recorded voice messages, and/or text messages regarding surplus fund recovery services. You may opt out at any time by replying STOP to any text message or by calling <a href="tel:18004282022">1 (800) 428-2022</a> and requesting removal.</p>
-      </div>
-
-      <div class="legal-block">
-        <h4>✉️ Email Consent (CAN-SPAM Act)</h4>
-        <p>By providing your email address, you agree to receive informational and promotional emails from Rightful Returns Recovery regarding unclaimed funds, surplus fund recovery services, and related topics. You may unsubscribe at any time by clicking the unsubscribe link in any email or by emailing <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a>. We will not sell or share your email address with third parties for marketing purposes.</p>
-      </div>
-
-      <div class="legal-block">
-        <h4>⚖️ No Attorney-Client Relationship</h4>
-        <p>Rightful Returns Recovery is not a law firm and does not provide legal advice. Information on this website is for general informational purposes only and does not constitute legal advice. Results may vary. Past results do not guarantee future outcomes. We work in partnership with licensed attorneys where required by state law.</p>
-      </div>
-
-      <div class="legal-block">
-        <h4>🔒 Privacy &amp; Data Use</h4>
-        <p>Your personal information is collected solely for the purpose of researching and recovering surplus funds on your behalf. We do not sell, rent, or share your personal data with unaffiliated third parties for marketing purposes. Data is stored securely and handled in accordance with applicable federal and state privacy laws. View our full <a href="sms-terms.html#privacy">Privacy Policy</a>.</p>
-      </div>
-
-      <div class="legal-block">
-        <h4>💰 Contingency Fee Disclosure</h4>
-        <p>Rightful Returns Recovery operates on a contingency fee basis. There is absolutely no upfront cost to you. A fee is only earned upon successful recovery of surplus funds on your behalf. The exact fee percentage will be disclosed in your signed agreement prior to any recovery action. If no funds are recovered, you owe nothing.</p>
-      </div>
-
-    </div>
-
-    <hr class="footer-divider">
-
-    <div class="footer-bottom">
-      <p class="footer-copy">
-        &copy; 2026 Rightful Returns Recovery. All rights reserved. &nbsp;|&nbsp;
-        <a href="sms-terms.html">SMS Terms</a> &nbsp;|&nbsp;
-        <a href="sms-terms.html#privacy">Privacy Policy</a> &nbsp;|&nbsp;
-        <a href="sms-terms.html#tcpa">TCPA Compliance</a> &nbsp;|&nbsp;
-        <a href="sms-terms.html#canspam">CAN-SPAM Policy</a> &nbsp;|&nbsp;
-        <a href="sms-terms.html#disclaimer">Legal Disclaimer</a>
-        <br><br>
-        Rightful Returns Recovery &bull; Phoenix, Arizona &bull;
-        <a href="tel:18004282022">1 (800) 428-2022</a> &bull;
-        <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a>
-        <br><br>
-        <span style="color:#2a3a4a;font-size:0.68rem;">
-          This website is not affiliated with any government agency. Surplus fund recovery services are offered on a contingency basis only.
-          Results vary. By using this site you agree to our Terms of Use and Privacy Policy.
-          All trademarks and registered trademarks are the property of their respective owners.
-        </span>
-      </p>
-    </div>
-  </div>
-</div>
-
-<!-- ── JAVASCRIPT ── -->
+<!-- ════════════════════════════════════════
+     JAVASCRIPT — DO NOT EDIT BELOW
+     (hamburger + FAQ accordion logic)
+════════════════════════════════════════ -->
 <script>
-/* ── HAMBURGER MENU ── */
-(function() {
-  var btn = document.getElementById('menuBtn');
-  var menu = document.getElementById('navMenu');
-  if (!btn || !menu) return;
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var isOpen = menu.classList.toggle('open');
-    btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', isOpen);
+  // ── Hamburger menu ──
+  const menuBtn = document.getElementById('menuBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('open');
+    menuBtn.classList.toggle('open', isOpen);
+    menuBtn.setAttribute('aria-expanded', isOpen);
   });
-  document.addEventListener('click', function(e) {
-    if (!menu.contains(e.target) && !btn.contains(e.target)) {
-      menu.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove('open');
+      menuBtn.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
     }
   });
-  menu.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      menu.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
+
+  // Close on nav link click
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      menuBtn.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
     });
   });
-})();
 
-/* ── FAQ ACCORDION ── */
-document.querySelectorAll('.faq-item').forEach(function(item) {
-  item.addEventListener('click', function() {
-    var wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
-    if (!wasOpen) item.classList.add('open');
-  });
-});
-
-/* ── MISSING MONEY: OVERLAY & FORM ── */
-var mmOverlayTimer = null;
-var mmParticleEngine = null;
-
-/* Pre-initialize the overlay canvas engine on page load so it is
-   ready to fire INSTANTLY when the overlay appears — this prevents
-   the browser window.open() pause from killing the animation */
-window.addEventListener('load', function() {
-  var tyCanvas = document.getElementById('ty-canvas');
-  tyCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
-  tyCanvas.width  = window.innerWidth;
-  tyCanvas.height = window.innerHeight;
-});
-
-function mmHandleSubmit() {
-  var first = document.getElementById('mm-first').value.trim();
-  var last  = document.getElementById('mm-last').value.trim();
-  var email = document.getElementById('mm-email').value.trim();
-  if (!first) { alert('Please enter your first name.'); return; }
-  if (!last)  { alert('Please enter your last name.');  return; }
-  if (!email || email.indexOf('@') < 0) { alert('Please enter a valid email address.'); return; }
-
-  /* Step 1: Open missingmoney.com SYNCHRONOUSLY — must be first */
-  window.open('https://missingmoney.com', '_blank');
-
-  /* Step 2: Send lead to Formspree silently in background */
-  var fd = new FormData(document.getElementById('mm-form'));
-  fetch('https://formspree.io/f/mjgeddoy', {
-    method: 'POST',
-    headers: { 'Accept': 'application/json' },
-    body: fd
-  });
-
-  /* Step 3: Show personalised thank-you overlay */
-  document.getElementById('ty-name').textContent = first + ' ' + last + ' \u2014 We\'re On It!';
-  var overlay = document.getElementById('mm-overlay');
-  overlay.classList.add('show');
-
-  /* Step 4: Start money rain — use requestAnimationFrame to fire on
-     the very next render frame, completely sidestepping any timing
-     interference from window.open() */
-  if (mmParticleEngine) { mmParticleEngine.stop(); mmParticleEngine = null; }
-  var tyCanvas = document.getElementById('ty-canvas');
-  requestAnimationFrame(function() {
-    mmParticleEngine = mmCreateEngine(tyCanvas, function() {
-      return { w: window.innerWidth, h: window.innerHeight };
+  // ── FAQ accordion ──
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
     });
-    mmParticleEngine.start();
   });
-
-  /* Step 5: Animate countdown bar */
-  var bar = document.getElementById('ty-bar');
-  bar.style.transition = 'none';
-  bar.style.transform  = 'scaleX(1)';
-  bar.offsetHeight;
-  bar.style.transition = 'transform 6s linear';
-  bar.style.transform  = 'scaleX(0)';
-
-  /* Step 6: Auto-close overlay after 6 seconds */
-  clearTimeout(mmOverlayTimer);
-  mmOverlayTimer = setTimeout(mmCloseOverlay, 6000);
-}
-
-function mmCloseOverlay() {
-  clearTimeout(mmOverlayTimer);
-  if (mmParticleEngine) { mmParticleEngine.stop(); mmParticleEngine = null; }
-  var overlay = document.getElementById('mm-overlay');
-  overlay.style.transition = 'opacity .4s';
-  overlay.style.opacity = '0';
-  setTimeout(function() {
-    overlay.classList.remove('show');
-    overlay.style.opacity = '';
-    overlay.style.transition = '';
-  }, 400);
-}
-
-/* ── PARTICLE ENGINE (bills + coins) ── */
-function mmCreateEngine(canvas, getSize) {
-  var ctx = canvas.getContext('2d');
-  var W, H, bills, coins, raf, running;
-  function resize() { var s = getSize(); W = canvas.width = s.w; H = canvas.height = s.h; }
-  function rr(c,x,y,w,h,r) {
-    c.moveTo(x+r,y); c.lineTo(x+w-r,y); c.quadraticCurveTo(x+w,y,x+w,y+r);
-    c.lineTo(x+w,y+h-r); c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
-    c.lineTo(x+r,y+h); c.quadraticCurveTo(x,y+h,x,y+h-r);
-    c.lineTo(x,y+r); c.quadraticCurveTo(x,y,x+r,y); c.closePath();
-  }
-  function Bill() { this.reset(true); }
-  Bill.prototype.reset = function(init) {
-    this.x=Math.random()*W; this.y=init?Math.random()*-H:-60;
-    this.w=38+Math.random()*24; this.h=this.w*.45;
-    this.angle=(Math.random()-.5)*.6; this.spin=(Math.random()-.5)*.03;
-    this.vy=1.5+Math.random()*2.5; this.vx=(Math.random()-.5)*.9;
-    this.alpha=.6+Math.random()*.35;
-    this.sway=Math.random()*Math.PI*2;
-    this.swayS=.012+Math.random()*.018; this.swayA=.6+Math.random()*1.4;
-  };
-  Bill.prototype.update=function(){ this.sway+=this.swayS; this.x+=this.vx+Math.sin(this.sway)*this.swayA; this.y+=this.vy; this.angle+=this.spin; if(this.y>H+80) this.reset(false); };
-  Bill.prototype.draw=function(){ ctx.save(); ctx.globalAlpha=this.alpha; ctx.translate(this.x,this.y); ctx.rotate(this.angle); ctx.fillStyle='#2d6e3e'; ctx.strokeStyle='#4a9e5c'; ctx.lineWidth=1; ctx.beginPath(); rr(ctx,-this.w/2,-this.h/2,this.w,this.h,3); ctx.fill(); ctx.stroke(); ctx.fillStyle='rgba(200,255,200,.8)'; ctx.font='bold '+(this.h*.55)+'px Georgia,serif'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0); ctx.restore(); };
-  function Coin() { this.reset(true); }
-  Coin.prototype.reset=function(init){ this.r=9+Math.random()*11; this.x=this.r+Math.random()*(W-this.r*2); this.floor=H-this.r-Math.random()*20; this.y=init?this.floor-Math.random()*H*.6:-this.r; this.vy=-(3+Math.random()*5); this.vx=(Math.random()-.5)*1.5; this.gravity=.2+Math.random()*.1; this.bounce=.45+Math.random()*.25; this.alpha=.75+Math.random()*.25; this.spin=0; this.spinS=(Math.random()-.5)*.08; this.bounces=0; this.maxB=3+Math.floor(Math.random()*5); this.dead=false; };
-  Coin.prototype.update=function(){ if(this.dead) return; this.vy+=this.gravity; this.y+=this.vy; this.x+=this.vx; this.spin+=this.spinS; if(this.y>=this.floor){ this.y=this.floor; this.vy=-Math.abs(this.vy)*this.bounce; this.vx*=.8; this.bounces++; if(this.bounces>=this.maxB||Math.abs(this.vy)<.25){ this.vy=0; this.vx=0; this.dead=true; var self=this; setTimeout(function(){self.reset(false);},800+Math.random()*2500); } } if(this.x<-this.r) this.x=W+this.r; if(this.x>W+this.r) this.x=-this.r; };
-  Coin.prototype.draw=function(){ ctx.save(); ctx.globalAlpha=this.alpha; ctx.translate(this.x,this.y); if(this.dead){ctx.scale(1,.3);}else{ctx.rotate(this.spin);} var g=ctx.createRadialGradient(-this.r*.3,-this.r*.3,1,0,0,this.r); g.addColorStop(0,'#fff5a0'); g.addColorStop(.35,'#FFD700'); g.addColorStop(.75,'#DAA520'); g.addColorStop(1,'#8B6914'); ctx.fillStyle=g; ctx.beginPath(); ctx.arc(0,0,this.r,0,Math.PI*2); ctx.fill(); if(!this.dead){ ctx.fillStyle='rgba(255,255,255,.35)'; ctx.beginPath(); ctx.ellipse(-this.r*.25,-this.r*.28,this.r*.35,this.r*.2,-.5,0,Math.PI*2); ctx.fill(); ctx.fillStyle='rgba(100,65,0,.85)'; ctx.font='bold '+(this.r*.9)+'px Georgia,serif'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0); } ctx.restore(); };
-  return {
-    start: function() {
-      resize(); bills=[]; coins=[]; running=true;
-      var nb=Math.max(16,Math.floor(W/50)); var nc=Math.max(14,Math.floor(W/55));
-      for(var i=0;i<nb;i++) bills.push(new Bill());
-      for(var i=0;i<nc;i++) coins.push(new Coin());
-      function loop(){ if(!running) return; ctx.clearRect(0,0,W,H); for(var i=0;i<bills.length;i++){bills[i].update();bills[i].draw();} for(var i=0;i<coins.length;i++){coins[i].update();coins[i].draw();} raf=requestAnimationFrame(loop); }
-      loop();
-    },
-    stop: function(){ running=false; cancelAnimationFrame(raf); }
-  };
-}
-
-/* ── Section background particle engine ── */
-(function(){
-  var canvas  = document.getElementById('mm-canvas');
-  var section = document.getElementById('missing-money');
-  canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:0;';
-  var engine = mmCreateEngine(canvas, function(){ return {w:section.offsetWidth, h:section.offsetHeight}; });
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting) engine.start(); else engine.stop(); });
-  },{threshold:.05});
-  obs.observe(section);
-  window.addEventListener('resize', function(){ engine.stop(); engine.start(); });
-})();
 </script>
-
 </body>
 </html>
