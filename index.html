@@ -453,665 +453,2765 @@
   </div>
 </section>
 
-<!--
-  ============================================================
-  MISSING MONEY SEARCH SECTION
-  Paste this entire block into your main index.html
-  ============================================================
--->
-
+<!-- ============================================================
+     MISSING MONEY SEARCH SECTION — paste above </body> tag
+     ============================================================ -->
 <style>
-  /* ── SECTION ── */
-  #missing-money {
-    background: linear-gradient(180deg, #0a0f1e 0%, #001233 60%, #0a0f1e 100%);
-    position: relative;
-    overflow: hidden;
-    padding: 6rem 1.5rem 5rem;
-    isolation: isolate;
-  }
-  #mm-canvas {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    pointer-events: none; z-index: 0;
-  }
-  #missing-money::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 70% 60% at 50% 50%,
-      rgba(0,40,104,0.55) 0%, transparent 75%);
-    pointer-events: none; z-index: 1;
-  }
-  .mm-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 3; }
+#missing-money {
+  background: linear-gradient(180deg, #0a0f1e 0%, #001233 60%, #0a0f1e 100%);
+  position: relative; overflow: hidden;
+  padding: 6rem 1.5rem 5rem; isolation: isolate;
+}
+#mm-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
+#missing-money::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,40,104,0.55) 0%, transparent 75%);
+}
+.mm-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 3; }
+.mm-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(191,10,48,.25); border: 1px solid rgba(191,10,48,.6);
+  color: #ff7070; font-size: .72rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  padding: .35em 1.1em; border-radius: 100px; margin-bottom: 1.6rem;
+  animation: mmBlink 2s ease-in-out infinite;
+}
+@keyframes mmBlink {
+  0%,100%{box-shadow:0 0 0 0 rgba(191,10,48,0);}
+  50%{box-shadow:0 0 18px 5px rgba(191,10,48,.4);}
+}
+.mm-badge .dot {
+  width:7px;height:7px;background:#ff4444;border-radius:50%;
+  animation:mmDot 1.2s ease-in-out infinite;
+}
+@keyframes mmDot{0%,100%{opacity:1;}50%{opacity:.15;}}
+.mm-heading {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2.1rem,5.5vw,3.4rem); font-weight:900; color:#fff;
+  line-height:1.12; margin-bottom:.9rem; text-align:center;
+  text-shadow:0 2px 20px rgba(0,0,0,.6);
+}
+.mm-heading .gold{color:#FFD700;} .mm-heading .red{color:#ff4466;}
+.mm-subhead {
+  font-family:'Source Serif 4',Georgia,serif; color:rgba(255,255,255,.7);
+  font-size:1.08rem; text-align:center; margin-bottom:.5rem; font-weight:300;
+}
+.mm-states {
+  display:flex; align-items:center; justify-content:center;
+  gap:.6rem; flex-wrap:wrap; margin-bottom:2.8rem;
+  font-size:.8rem; color:rgba(255,255,255,.45);
+  letter-spacing:.08em; text-transform:uppercase;
+}
+.mm-states strong{color:#FFD700;font-size:.92rem;}
+.mm-card {
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+  border-radius:20px; padding:2.8rem 2.2rem;
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1);
+}
+.mm-card-title {
+  font-family:'Playfair Display',Georgia,serif; font-size:1.25rem;
+  color:#FFD700; font-weight:900; margin-bottom:.3rem; text-align:center;
+  text-shadow:0 0 20px rgba(255,215,0,.4);
+}
+.mm-card-sub {
+  font-size:.84rem; color:rgba(255,255,255,.5);
+  text-align:center; margin-bottom:2rem; letter-spacing:.04em;
+}
+.mm-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-bottom:1.1rem; }
+@media(max-width:540px){.mm-grid{grid-template-columns:1fr;}}
+.mm-full{grid-column:1/-1;}
+.mm-field{display:flex;flex-direction:column;gap:.4rem;}
+.mm-field label {
+  font-size:.75rem; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:#ffffff; text-shadow:0 1px 6px rgba(0,0,0,.5);
+}
+.mm-field .optional {
+  font-size:.66rem; color:rgba(255,255,255,.45);
+  font-weight:400; letter-spacing:0; text-transform:none; margin-left:.3rem;
+}
+.mm-field input {
+  background:rgba(255,255,255,.09); border:1.5px solid rgba(255,255,255,.25);
+  border-radius:10px; padding:.82rem 1rem; font-size:1rem; color:#fff;
+  font-family:'Source Serif 4',Georgia,serif; outline:none; width:100%;
+  transition:border-color .2s,background .2s,box-shadow .2s; caret-color:#FFD700;
+}
+.mm-field input::placeholder{color:rgba(255,255,255,.35);}
+.mm-field input:focus{border-color:#FFD700;background:rgba(255,255,255,.13);box-shadow:0 0 0 3px rgba(255,215,0,.2);}
+.mm-submit {
+  width:100%; margin-top:.4rem;
+  background:linear-gradient(135deg,#c8102e 0%,#8B0520 50%,#c8102e 100%);
+  color:#fff; border:none; border-radius:12px; padding:1.1rem 2rem;
+  font-size:1.15rem; font-weight:900;
+  font-family:'Playfair Display',Georgia,serif;
+  letter-spacing:.06em; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:.8rem;
+  transition:transform .15s,box-shadow .2s;
+  animation:btnShimmer 3s ease-in-out infinite;
+}
+@keyframes btnShimmer{
+  0%,100%{box-shadow:0 6px 30px rgba(200,16,46,.55),0 0 0 0 rgba(255,215,0,0);}
+  50%{box-shadow:0 6px 30px rgba(200,16,46,.7),0 0 20px 4px rgba(255,215,0,.25);}
+}
+.mm-submit:hover{transform:translateY(-3px);}
+.mm-submit:active{transform:translateY(0);}
+.mm-disclaimer {
+  text-align:center; font-size:.75rem; color:rgba(255,255,255,.35);
+  margin-top:1.3rem; line-height:1.55;
+}
+.mm-disclaimer a{color:rgba(255,255,255,.5);text-decoration:underline;}
+.mm-trust {
+  display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;
+  margin-top:2.8rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.1);
+}
+.mm-trust-item {
+  display:flex; flex-direction:column; align-items:center; gap:.3rem;
+  color:rgba(255,255,255,.5); font-size:.76rem; text-align:center;
+}
+.mm-trust-item .icon{font-size:1.5rem;}
+.mm-trust-item strong{color:rgba(255,255,255,.85);font-size:.82rem;display:block;}
 
-  .mm-badge {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(191,10,48,0.25); border: 1px solid rgba(191,10,48,0.6);
-    color: #ff7070; font-size: 0.72rem; font-weight: 700;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    padding: 0.35em 1.1em; border-radius: 100px; margin-bottom: 1.6rem;
-    animation: mmBlink 2s ease-in-out infinite;
-  }
-  @keyframes mmBlink {
-    0%,100% { box-shadow: 0 0 0 0 rgba(191,10,48,0); }
-    50%      { box-shadow: 0 0 18px 5px rgba(191,10,48,0.4); }
-  }
-  .mm-badge .dot {
-    width: 7px; height: 7px; background: #ff4444; border-radius: 50%;
-    animation: mmDot 1.2s ease-in-out infinite;
-  }
-  @keyframes mmDot { 0%,100%{opacity:1;} 50%{opacity:0.15;} }
-
-  .mm-heading {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(2.1rem, 5.5vw, 3.4rem);
-    font-weight: 900; color: #fff; line-height: 1.12;
-    margin-bottom: 0.9rem; text-align: center;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.6);
-  }
-  .mm-heading .gold { color: #FFD700; }
-  .mm-heading .red  { color: #ff4466; }
-
-  .mm-subhead {
-    font-family: 'Source Serif 4', Georgia, serif;
-    color: rgba(255,255,255,0.7); font-size: 1.08rem;
-    text-align: center; margin-bottom: 0.5rem; font-weight: 300;
-  }
-  .mm-states {
-    display: flex; align-items: center; justify-content: center;
-    gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.8rem;
-    font-size: 0.8rem; color: rgba(255,255,255,0.45);
-    letter-spacing: 0.08em; text-transform: uppercase;
-  }
-  .mm-states strong { color: #FFD700; font-size: 0.92rem; }
-
-  .mm-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 20px; padding: 2.8rem 2.2rem;
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-  }
-  .mm-card-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.25rem; color: #FFD700; font-weight: 900;
-    margin-bottom: 0.3rem; text-align: center;
-    text-shadow: 0 0 20px rgba(255,215,0,0.4);
-  }
-  .mm-card-sub {
-    font-size: 0.84rem; color: rgba(255,255,255,0.5);
-    text-align: center; margin-bottom: 2rem; letter-spacing: 0.04em;
-  }
-  .mm-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 1.1rem; margin-bottom: 1.1rem;
-  }
-  @media (max-width: 540px) { .mm-grid { grid-template-columns: 1fr; } }
-  .mm-full { grid-column: 1 / -1; }
-  .mm-field { display: flex; flex-direction: column; gap: 0.4rem; }
-  .mm-field label {
-    font-size: 0.75rem; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: #ffffff; text-shadow: 0 1px 6px rgba(0,0,0,0.5);
-  }
-  .mm-field .optional {
-    font-size: 0.66rem; color: rgba(255,255,255,0.45);
-    font-weight: 400; letter-spacing: 0; text-transform: none; margin-left: 0.3rem;
-  }
-  .mm-field input {
-    background: rgba(255,255,255,0.09);
-    border: 1.5px solid rgba(255,255,255,0.25);
-    border-radius: 10px; padding: 0.82rem 1rem;
-    font-size: 1rem; color: #ffffff;
-    font-family: 'Source Serif 4', Georgia, serif;
-    outline: none; width: 100%;
-    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-    caret-color: #FFD700;
-  }
-  .mm-field input::placeholder { color: rgba(255,255,255,0.35); }
-  .mm-field input:focus {
-    border-color: #FFD700; background: rgba(255,255,255,0.13);
-    box-shadow: 0 0 0 3px rgba(255,215,0,0.2);
-  }
-  .mm-submit {
-    width: 100%; margin-top: 0.4rem;
-    background: linear-gradient(135deg, #c8102e 0%, #8B0520 50%, #c8102e 100%);
-    background-size: 200% 100%;
-    color: #fff; border: none; border-radius: 12px; padding: 1.1rem 2rem;
-    font-size: 1.15rem; font-weight: 900;
-    font-family: 'Playfair Display', Georgia, serif;
-    letter-spacing: 0.06em; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 0.8rem;
-    transition: transform 0.15s, box-shadow 0.2s;
-    animation: btnShimmer 3s ease-in-out infinite;
-  }
-  @keyframes btnShimmer {
-    0%,100% { box-shadow: 0 6px 30px rgba(200,16,46,0.55), 0 0 0 0 rgba(255,215,0,0); }
-    50%      { box-shadow: 0 6px 30px rgba(200,16,46,0.7), 0 0 20px 4px rgba(255,215,0,0.25); }
-  }
-  .mm-submit:hover { transform: translateY(-3px); }
-  .mm-submit:active { transform: translateY(0); }
-  .mm-disclaimer {
-    text-align: center; font-size: 0.75rem;
-    color: rgba(255,255,255,0.35); margin-top: 1.3rem; line-height: 1.55;
-  }
-  .mm-disclaimer a { color: rgba(255,255,255,0.5); text-decoration: underline; }
-
-  .mm-trust {
-    display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
-    margin-top: 2.8rem; padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .mm-trust-item {
-    display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
-    color: rgba(255,255,255,0.5); font-size: 0.76rem; text-align: center;
-  }
-  .mm-trust-item .icon { font-size: 1.5rem; }
-  .mm-trust-item strong { color: rgba(255,255,255,0.85); font-size: 0.82rem; display: block; }
-
-  /* ══════════════════════════════════════════
-     FULL-SCREEN THANK YOU OVERLAY
-  ══════════════════════════════════════════ */
-  #mm-thankyou-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    background: linear-gradient(160deg, #0a0f1e 0%, #001233 45%, #0d1a0d 100%);
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem;
-  }
-  #mm-thankyou-overlay.active { display: flex; }
-
-  /* Overlay canvas for the money rain */
-  #ty-canvas {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    pointer-events: none; z-index: 0;
-  }
-
-  .ty-content {
-    position: relative; z-index: 2;
-    max-width: 640px;
-    animation: tyFadeUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
-  }
-  @keyframes tyFadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .ty-icon {
-    font-size: 5rem; line-height: 1;
-    margin-bottom: 1rem;
-    animation: tyBounce 0.8s cubic-bezier(0.175,0.885,0.32,1.275) 0.3s both;
-    filter: drop-shadow(0 0 30px rgba(255,215,0,0.6));
-  }
-  @keyframes tyBounce {
-    0%   { transform: scale(0) rotate(-15deg); opacity: 0; }
-    60%  { transform: scale(1.2) rotate(5deg); }
-    100% { transform: scale(1) rotate(0deg); opacity: 1; }
-  }
-
-  .ty-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    font-weight: 900; color: #FFD700; line-height: 1.1;
-    margin-bottom: 0.6rem;
-    text-shadow: 0 0 40px rgba(255,215,0,0.5), 0 2px 20px rgba(0,0,0,0.8);
-    animation: tyFadeUp 0.6s ease 0.4s both;
-  }
-
-  .ty-name {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(1.4rem, 4vw, 2rem);
-    color: #ffffff; font-weight: 700;
-    margin-bottom: 1.4rem;
-    animation: tyFadeUp 0.6s ease 0.55s both;
-  }
-
-  .ty-message {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: rgba(255,255,255,0.82);
-    line-height: 1.75; font-weight: 300;
-    margin-bottom: 2rem;
-    animation: tyFadeUp 0.6s ease 0.7s both;
-  }
-  .ty-message strong { color: #FFD700; font-weight: 600; }
-
-  /* Countdown bar */
-  .ty-countdown-wrap {
-    margin-bottom: 1.8rem;
-    animation: tyFadeUp 0.6s ease 0.85s both;
-  }
-  .ty-countdown-label {
-    font-size: 0.8rem; color: rgba(255,255,255,0.5);
-    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;
-  }
-  .ty-bar-track {
-    width: 100%; max-width: 400px; margin: 0 auto;
-    height: 6px; background: rgba(255,255,255,0.1);
-    border-radius: 99px; overflow: hidden;
-  }
-  .ty-bar-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #FFD700, #FFA500);
-    border-radius: 99px;
-    width: 100%;
-    transform-origin: left;
-    animation: tyDrain 5s linear 1s forwards;
-  }
-  @keyframes tyDrain {
-    from { transform: scaleX(1); }
-    to   { transform: scaleX(0); }
-  }
-
-  .ty-skip {
-    display: inline-block;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.25);
-    color: rgba(255,255,255,0.6);
-    font-size: 0.82rem; padding: 0.5rem 1.4rem;
-    border-radius: 99px; cursor: pointer;
-    font-family: 'Source Serif 4', Georgia, serif;
-    transition: all 0.2s;
-    animation: tyFadeUp 0.6s ease 1s both;
-  }
-  .ty-skip:hover {
-    border-color: #FFD700; color: #FFD700;
-    background: rgba(255,215,0,0.08);
-  }
-
-  /* Floating dollar signs in background */
-  .ty-float {
-    position: absolute; font-size: 4rem;
-    opacity: 0.06; pointer-events: none;
-    animation: tyFloat linear infinite;
-    z-index: 1;
-  }
-  @keyframes tyFloat {
-    0%   { transform: translateY(110vh) rotate(0deg); opacity: 0; }
-    10%  { opacity: 0.06; }
-    90%  { opacity: 0.06; }
-    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-  }
+/* ── THANK YOU OVERLAY ── */
+#mm-overlay {
+  display:none; position:fixed; inset:0; z-index:99999;
+  background:linear-gradient(160deg,#0a0f1e 0%,#001233 45%,#0d1a0d 100%);
+  overflow:hidden; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center; padding:2rem;
+}
+#mm-overlay.show{display:flex;}
+#ty-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.ty-float {
+  position:absolute; font-size:4rem; opacity:.06; pointer-events:none;
+  animation:tyFloat linear infinite; z-index:1;
+}
+@keyframes tyFloat {
+  0%{transform:translateY(110vh) rotate(0deg);opacity:0;}
+  10%{opacity:.06;} 90%{opacity:.06;}
+  100%{transform:translateY(-10vh) rotate(360deg);opacity:0;}
+}
+.ty-content {
+  position:relative; z-index:2; max-width:640px;
+  animation:tyUp .7s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes tyUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.ty-icon {
+  font-size:5rem; line-height:1; margin-bottom:1rem;
+  animation:tyBounce .8s cubic-bezier(.175,.885,.32,1.275) .3s both;
+  filter:drop-shadow(0 0 30px rgba(255,215,0,.6));
+}
+@keyframes tyBounce{
+  0%{transform:scale(0) rotate(-15deg);opacity:0;}
+  60%{transform:scale(1.2) rotate(5deg);}
+  100%{transform:scale(1) rotate(0deg);opacity:1;}
+}
+.ty-title {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2rem,6vw,3.5rem); font-weight:900; color:#FFD700;
+  line-height:1.1; margin-bottom:.6rem;
+  text-shadow:0 0 40px rgba(255,215,0,.5),0 2px 20px rgba(0,0,0,.8);
+  animation:tyUp .6s ease .4s both;
+}
+.ty-name {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(1.3rem,3.5vw,1.8rem); color:#fff; font-weight:700;
+  margin-bottom:1.2rem; animation:tyUp .6s ease .55s both;
+}
+.ty-message {
+  font-family:'Source Serif 4',Georgia,serif;
+  font-size:clamp(.95rem,2.5vw,1.15rem); color:rgba(255,255,255,.82);
+  line-height:1.75; font-weight:300; margin-bottom:2rem;
+  animation:tyUp .6s ease .7s both;
+}
+.ty-message strong{color:#FFD700;font-weight:600;}
+.ty-bar-wrap{margin-bottom:1.8rem;animation:tyUp .6s ease .85s both;}
+.ty-bar-label{font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.ty-bar-track{width:100%;max-width:400px;margin:0 auto;height:6px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;}
+.ty-bar-fill{height:100%;background:linear-gradient(90deg,#FFD700,#FFA500);border-radius:99px;width:100%;transform-origin:left;}
+.ty-go-btn {
+  display:inline-block; background:transparent;
+  border:1px solid rgba(255,255,255,.25); color:rgba(255,255,255,.6);
+  font-size:.9rem; padding:.6rem 1.8rem; border-radius:99px; cursor:pointer;
+  font-family:'Source Serif 4',Georgia,serif; transition:all .2s;
+  animation:tyUp .6s ease 1s both;
+}
+.ty-go-btn:hover{border-color:#FFD700;color:#FFD700;background:rgba(255,215,0,.08);}
 </style>
 
-<!-- ── CANVAS for section background animation ── -->
+<!-- CANVAS for section background -->
 <canvas id="mm-canvas"></canvas>
 
-<!-- ══════════════════════════════════════
-     FULL-SCREEN THANK YOU OVERLAY
-══════════════════════════════════════ -->
-<div id="mm-thankyou-overlay">
+<!-- THANK YOU OVERLAY -->
+<div id="mm-overlay">
   <canvas id="ty-canvas"></canvas>
-
-  <!-- Floating $ background decorations -->
-  <span class="ty-float" style="left:5%;  animation-duration:8s;  animation-delay:0s;">💵</span>
-  <span class="ty-float" style="left:15%; animation-duration:11s; animation-delay:1s;">🪙</span>
-  <span class="ty-float" style="left:28%; animation-duration:9s;  animation-delay:2s;">💰</span>
-  <span class="ty-float" style="left:42%; animation-duration:13s; animation-delay:0.5s;">💵</span>
-  <span class="ty-float" style="left:58%; animation-duration:10s; animation-delay:3s;">🪙</span>
-  <span class="ty-float" style="left:70%; animation-duration:8s;  animation-delay:1.5s;">💰</span>
-  <span class="ty-float" style="left:82%; animation-duration:12s; animation-delay:0s;">💵</span>
-  <span class="ty-float" style="left:92%; animation-duration:9s;  animation-delay:2.5s;">🪙</span>
-
+  <span class="ty-float" style="left:5%;animation-duration:8s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:15%;animation-duration:11s;animation-delay:1s">🪙</span>
+  <span class="ty-float" style="left:28%;animation-duration:9s;animation-delay:2s">💰</span>
+  <span class="ty-float" style="left:42%;animation-duration:13s;animation-delay:.5s">💵</span>
+  <span class="ty-float" style="left:58%;animation-duration:10s;animation-delay:3s">🪙</span>
+  <span class="ty-float" style="left:70%;animation-duration:8s;animation-delay:1.5s">💰</span>
+  <span class="ty-float" style="left:82%;animation-duration:12s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:92%;animation-duration:9s;animation-delay:2.5s">🪙</span>
   <div class="ty-content">
     <div class="ty-icon">💰</div>
     <div class="ty-title">Thank You!</div>
-    <div class="ty-name" id="ty-name-display">We're On It For You</div>
+    <div class="ty-name" id="ty-name"></div>
     <div class="ty-message">
-      A <strong>Rightful Returns Recovery Specialist</strong> will personally research
-      any lost or unclaimed funds in your name — across all 50 states.<br/><br/>
-      We're now taking you to <strong>MissingMoney.com</strong> so you can
-      search the national database yourself. Enter your name exactly as it appeared
-      on your property — and try any previous names or addresses too.
+      A <strong>Rightful Returns Recovery Specialist</strong> will personally
+      research any lost or unclaimed funds in your name — across all 50 states.<br/><br/>
+      MissingMoney.com is now open in a new tab. Enter your name exactly as it
+      appeared on your property, and try any previous names or addresses too.
     </div>
-
-    <div class="ty-countdown-wrap">
-      <div class="ty-countdown-label">Taking you to MissingMoney.com in 5 seconds…</div>
-      <div class="ty-bar-track">
-        <div class="ty-bar-fill" id="ty-bar"></div>
-      </div>
+    <div class="ty-bar-wrap">
+      <div class="ty-bar-label">This message closes in 6 seconds</div>
+      <div class="ty-bar-track"><div class="ty-bar-fill" id="ty-bar"></div></div>
     </div>
-
-    <button class="ty-skip" onclick="tyGo()">Go Now →</button>
+    <button class="ty-go-btn" onclick="mmCloseOverlay()">Close This Message →</button>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     MAIN SECTION
-══════════════════════════════════════ -->
+<!-- MAIN SECTION -->
 <section id="missing-money">
   <div class="mm-inner">
-
-    <div style="text-align:center;">
+    <div style="text-align:center">
       <span class="mm-badge"><span class="dot"></span> Act Now — Unclaimed Funds May Be Waiting</span>
     </div>
-
-    <h2 class="mm-heading">
-      💰 Is <span class="gold">Missing Money</span><br/>
-      <span class="red">Waiting in Your Name?</span>
-    </h2>
+    <h2 class="mm-heading">💰 Is <span class="gold">Missing Money</span><br/><span class="red">Waiting in Your Name?</span></h2>
     <p class="mm-subhead">Search the national unclaimed property database — free, instant, no obligation.</p>
-    <div class="mm-states">
-      🌵 AZ &nbsp;·&nbsp; 🍑 GA &nbsp;·&nbsp; ⭐ TX &nbsp;·&nbsp;
-      <strong>+ All 50 States 🇺🇸</strong>
-    </div>
-
+    <div class="mm-states">🌵 AZ &nbsp;·&nbsp; 🍑 GA &nbsp;·&nbsp; ⭐ TX &nbsp;·&nbsp; <strong>+ All 50 States 🇺🇸</strong></div>
     <div class="mm-card">
-      <div class="mm-card-title">🔍 Register to Search for Your Missing Money</div>
-      <div class="mm-card-sub">Enter your info — a specialist will follow up if funds are found</div>
-
-      <form id="mm-form" onsubmit="mmSubmit(event)">
+      <div class="mm-card-title">🔍 Search for Your Missing Money Now</div>
+      <div class="mm-card-sub">Takes less than 60 seconds — completely free</div>
+      <form id="mm-form">
         <input type="hidden" name="_source" value="Missing Money Search — All 50 States"/>
-
         <div class="mm-grid">
           <div class="mm-field">
             <label for="mm-first">First Name</label>
-            <input type="text" id="mm-first" name="first_name"
-              placeholder="Jane" autocomplete="given-name" required/>
+            <input type="text" id="mm-first" name="first_name" placeholder="Jane" autocomplete="given-name" required/>
           </div>
           <div class="mm-field">
             <label for="mm-last">Last Name</label>
-            <input type="text" id="mm-last" name="last_name"
-              placeholder="Smith" autocomplete="family-name" required/>
+            <input type="text" id="mm-last" name="last_name" placeholder="Smith" autocomplete="family-name" required/>
           </div>
           <div class="mm-field mm-full">
             <label for="mm-email">Email Address</label>
-            <input type="email" id="mm-email" name="email"
-              placeholder="jane@example.com" autocomplete="email" required/>
+            <input type="email" id="mm-email" name="email" placeholder="jane@example.com" autocomplete="email" required/>
           </div>
           <div class="mm-field mm-full">
             <label for="mm-phone">Phone Number <span class="optional">(optional)</span></label>
-            <input type="tel" id="mm-phone" name="phone"
-              placeholder="(480) 555-0100" autocomplete="tel"/>
+            <input type="tel" id="mm-phone" name="phone" placeholder="(480) 555-0100" autocomplete="tel"/>
           </div>
         </div>
-
-        <button type="submit" class="mm-submit">
+        <button type="button" class="mm-submit" onclick="mmHandleSubmit()">
           💰 SEARCH NOW — All 50 States
         </button>
-
         <p class="mm-disclaimer">
           By submitting, you agree to be contacted by a Rightful Returns Recovery specialist
           if missing funds are found. Msg &amp; data rates may apply.
           <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">SMS Terms</a>.
-          Search powered by <a href="https://missingmoney.com" target="_blank" style="color:rgba(255,255,255,0.55)">MissingMoney.com</a>.
+          Search powered by <a href="https://missingmoney.com" target="_blank" style="color:rgba(255,255,255,.5)">MissingMoney.com</a>.
         </p>
       </form>
     </div>
-
     <div class="mm-trust">
       <div class="mm-trust-item"><span class="icon">🔒</span><strong>Secure &amp; Private</strong>Never sold or shared</div>
       <div class="mm-trust-item"><span class="icon">💵</span><strong>No Upfront Cost</strong>Always free to search</div>
       <div class="mm-trust-item"><span class="icon">🇺🇸</span><strong>All 50 States</strong>Full national database</div>
       <div class="mm-trust-item"><span class="icon">📞</span><strong>Specialist Follow-Up</strong>We call if funds found</div>
     </div>
-
   </div>
 </section>
 
 <script>
-/* ============================================================
-   SHARED CANVAS PARTICLE ENGINE
-   Used by both the section background AND the thank-you overlay
-   ============================================================ */
-function createParticleEngine(canvas, getSize) {
-  const ctx = canvas.getContext('2d');
-  let W, H, bills = [], coins = [], animId, running = false;
+/* ── KEY CHANGE: button type="button" + plain onclick ──
+   This fires synchronously so window.open is NEVER blocked */
 
-  function resize() {
-    const s = getSize();
-    W = canvas.width  = s.w;
-    H = canvas.height = s.h;
-  }
+var mmOverlayTimer = null;
+var mmParticleEngine = null;
 
-  function roundRect(c, x, y, w, h, r) {
-    c.moveTo(x+r,y); c.lineTo(x+w-r,y);
-    c.quadraticCurveTo(x+w,y,x+w,y+r);
-    c.lineTo(x+w,y+h-r); c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
-    c.lineTo(x+r,y+h); c.quadraticCurveTo(x,y+h,x,y+h-r);
-    c.lineTo(x,y+r); c.quadraticCurveTo(x,y,x+r,y);
-    c.closePath();
-  }
+function mmHandleSubmit() {
+  // 1. Validate
+  var first = document.getElementById('mm-first').value.trim();
+  var last  = document.getElementById('mm-last').value.trim();
+  var email = document.getElementById('mm-email').value.trim();
+  if (!first) { alert('Please enter your first name.'); return; }
+  if (!last)  { alert('Please enter your last name.');  return; }
+  if (!email || email.indexOf('@') < 0) { alert('Please enter a valid email address.'); return; }
 
-  function Bill() { this.reset(true); }
-  Bill.prototype.reset = function(init) {
-    this.x     = Math.random() * W;
-    this.y     = init ? Math.random() * -H : -60;
-    this.w     = 38 + Math.random() * 24;
-    this.h     = this.w * 0.45;
-    this.angle = (Math.random() - 0.5) * 0.6;
-    this.spin  = (Math.random() - 0.5) * 0.03;
-    this.vy    = 1.5 + Math.random() * 2.5;
-    this.vx    = (Math.random() - 0.5) * 0.9;
-    this.alpha = 0.6 + Math.random() * 0.35;
-    this.sway  = Math.random() * Math.PI * 2;
-    this.swayS = 0.012 + Math.random() * 0.018;
-    this.swayA = 0.6   + Math.random() * 1.4;
-  };
-  Bill.prototype.update = function() {
-    this.sway  += this.swayS;
-    this.x     += this.vx + Math.sin(this.sway) * this.swayA;
-    this.y     += this.vy;
-    this.angle += this.spin;
-    if (this.y > H + 80) this.reset(false);
-  };
-  Bill.prototype.draw = function() {
-    ctx.save();
-    ctx.globalAlpha = this.alpha;
-    ctx.translate(this.x, this.y);
-    ctx.rotate(this.angle);
-    ctx.fillStyle = '#2d6e3e'; ctx.strokeStyle = '#4a9e5c'; ctx.lineWidth = 1;
-    ctx.beginPath(); roundRect(ctx, -this.w/2,-this.h/2, this.w,this.h, 3);
-    ctx.fill(); ctx.stroke();
-    ctx.strokeStyle = 'rgba(74,158,92,0.5)'; ctx.lineWidth = 0.7;
-    ctx.beginPath(); roundRect(ctx, -this.w/2+3,-this.h/2+3, this.w-6,this.h-6, 2);
-    ctx.stroke();
-    ctx.fillStyle = 'rgba(200,255,200,0.8)';
-    ctx.font = `bold ${this.h*0.55}px Georgia,serif`;
-    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.fillText('$', 0, 0);
-    ctx.restore();
-  };
+  // 2. Open missingmoney.com RIGHT NOW — synchronous, never blocked
+  window.open('https://missingmoney.com', '_blank');
 
-  function Coin() { this.reset(true); }
-  Coin.prototype.reset = function(init) {
-    this.r       = 9  + Math.random() * 11;
-    this.x       = this.r + Math.random() * (W - this.r * 2);
-    this.floor   = H - this.r - Math.random() * 20;
-    this.y       = init ? this.floor - Math.random() * H * 0.6 : -this.r;
-    this.vy      = init ? -(2 + Math.random() * 4) : 1 + Math.random() * 2;
-    this.vx      = (Math.random() - 0.5) * 1.5;
-    this.gravity = 0.2 + Math.random() * 0.1;
-    this.bounce  = 0.45 + Math.random() * 0.25;
-    this.alpha   = 0.75 + Math.random() * 0.25;
-    this.spin    = 0;
-    this.spinS   = (Math.random() - 0.5) * 0.08;
-    this.bounces = 0;
-    this.maxB    = 3 + Math.floor(Math.random() * 5);
-    this.dead    = false;
-  };
-  Coin.prototype.update = function() {
-    if (this.dead) return;
-    this.vy += this.gravity;
-    this.y  += this.vy;
-    this.x  += this.vx;
-    this.spin += this.spinS;
-    if (this.y >= this.floor) {
-      this.y = this.floor;
-      this.vy = -Math.abs(this.vy) * this.bounce;
-      this.vx *= 0.8;
-      this.bounces++;
-      if (this.bounces >= this.maxB || Math.abs(this.vy) < 0.25) {
-        this.vy = 0; this.vx = 0; this.dead = true;
-        setTimeout(() => { this.reset(false); }, 800 + Math.random() * 2500);
-      }
-    }
-    if (this.x < -this.r) this.x = W + this.r;
-    if (this.x > W + this.r) this.x = -this.r;
-  };
-  Coin.prototype.draw = function() {
-    ctx.save();
-    ctx.globalAlpha = this.alpha;
-    ctx.translate(this.x, this.y);
-    if (this.dead) { ctx.scale(1, 0.3); }
-    else { ctx.rotate(this.spin); }
-    const g = ctx.createRadialGradient(-this.r*.3,-this.r*.3,1, 0,0,this.r);
-    g.addColorStop(0,    '#fff5a0');
-    g.addColorStop(0.35, '#FFD700');
-    g.addColorStop(0.75, '#DAA520');
-    g.addColorStop(1,    '#8B6914');
-    ctx.fillStyle = g;
-    ctx.beginPath(); ctx.arc(0, 0, this.r, 0, Math.PI*2); ctx.fill();
-    if (!this.dead) {
-      ctx.fillStyle = 'rgba(255,255,255,0.35)';
-      ctx.beginPath();
-      ctx.ellipse(-this.r*.25,-this.r*.28, this.r*.35,this.r*.2, -.5,0,Math.PI*2);
-      ctx.fill();
-      ctx.fillStyle = 'rgba(100,65,0,0.85)';
-      ctx.font = `bold ${this.r*.9}px Georgia,serif`;
-      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      ctx.fillText('$', 0, 0);
-    }
-    ctx.restore();
-  };
+  // 3. Send to Formspree in background (fire and forget)
+  var fd = new FormData(document.getElementById('mm-form'));
+  fetch('https://formspree.io/f/mjgeddoy', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: fd
+  });
 
-  return {
-    start(initFull) {
-      resize();
-      bills = []; coins = [];
-      const nb = Math.max(16, Math.floor(W/50));
-      const nc = Math.max(14, Math.floor(W/55));
-      for (let i=0;i<nb;i++) bills.push(new Bill());
-      for (let i=0;i<nc;i++) coins.push(new Coin());
-      running = true;
-      function loop() {
-        if (!running) return;
-        ctx.clearRect(0,0,W,H);
-        bills.forEach(b=>{b.update();b.draw();});
-        coins.forEach(c=>{c.update();c.draw();});
-        animId = requestAnimationFrame(loop);
-      }
-      loop();
-    },
-    stop() {
-      running = false;
-      cancelAnimationFrame(animId);
-    },
-    resize() { resize(); }
-  };
+  // 4. Show thank-you overlay with correct name
+  document.getElementById('ty-name').textContent = first + ' ' + last + ' — We\'re On It!';
+  var overlay = document.getElementById('mm-overlay');
+  overlay.classList.add('show');
+
+  // 5. Start money rain
+  var tyCanvas = document.getElementById('ty-canvas');
+  tyCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
+  mmParticleEngine = mmCreateEngine(tyCanvas, function() {
+    return { w: window.innerWidth, h: window.innerHeight };
+  });
+  mmParticleEngine.start();
+
+  // 6. Restart countdown bar
+  var bar = document.getElementById('ty-bar');
+  bar.style.transition = 'none';
+  bar.style.transform  = 'scaleX(1)';
+  bar.offsetHeight; // reflow
+  bar.style.transition = 'transform 6s linear';
+  bar.style.transform  = 'scaleX(0)';
+
+  // 7. Auto close after 6s
+  clearTimeout(mmOverlayTimer);
+  mmOverlayTimer = setTimeout(mmCloseOverlay, 6000);
 }
 
-/* ── Section background engine ── */
-(function() {
-  const canvas  = document.getElementById('mm-canvas');
-  const section = document.getElementById('missing-money');
-  canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:0;';
-  section.style.position = 'relative';
-
-  const engine = createParticleEngine(canvas, () => ({
-    w: section.offsetWidth,
-    h: section.offsetHeight
-  }));
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) engine.start(true);
-      else engine.stop();
-    });
-  }, { threshold: 0.05 });
-
-  obs.observe(section);
-  window.addEventListener('resize', () => engine.resize());
-})();
-
-/* ── Thank-you overlay engine ── */
-let tyEngine = null;
-let tyRedirectTimer = null;
-
-function tyGo() {
-  clearTimeout(tyRedirectTimer);
-  if (tyEngine) tyEngine.stop();
-  // Just fade out the overlay — missingmoney.com already opened on submit
-  const overlay = document.getElementById('mm-thankyou-overlay');
-  overlay.style.transition = 'opacity 0.4s';
+function mmCloseOverlay() {
+  clearTimeout(mmOverlayTimer);
+  if (mmParticleEngine) { mmParticleEngine.stop(); mmParticleEngine = null; }
+  var overlay = document.getElementById('mm-overlay');
+  overlay.style.transition = 'opacity .4s';
   overlay.style.opacity = '0';
-  setTimeout(() => {
-    overlay.classList.remove('active');
+  setTimeout(function() {
+    overlay.classList.remove('show');
     overlay.style.opacity = '';
     overlay.style.transition = '';
   }, 400);
 }
 
-/* ============================================================
-   FORM SUBMIT
-   ============================================================ */
-function mmSubmit(e) {
-  e.preventDefault();
-  const form  = document.getElementById('mm-form');
-  const first = document.getElementById('mm-first').value.trim();
-  const last  = document.getElementById('mm-last').value.trim();
+/* ── PARTICLE ENGINE ── */
+function mmCreateEngine(canvas, getSize) {
+  var ctx = canvas.getContext('2d');
+  var W, H, bills, coins, raf, running;
 
-  // ── STEP 1: Open missingmoney.com IMMEDIATELY ──
-  // Must happen synchronously on the click event or browsers block it as a popup
-  const mmWindow = window.open('https://missingmoney.com', '_blank');
+  function resize() {
+    var s = getSize(); W = canvas.width = s.w; H = canvas.height = s.h;
+  }
 
-  // ── STEP 2: Send to Formspree silently in background ──
+  function rr(c,x,y,w,h,r) {
+    c.moveTo(x+r,y); c.lineTo(x+w-r,y); c.quadraticCurveTo(x+w,y,x+w,y+r);
+    c.lineTo(x+w,y+h-r); c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    c.lineTo(x+r,y+h); c.quadraticCurveTo(x,y+h,x,y+h-r);
+    c.lineTo(x,y+r); c.quadraticCurveTo(x,y,x+r,y); c.closePath();
+  }
+
+  function Bill() { this.reset(true); }
+  Bill.prototype.reset = function(init) {
+    this.x=Math.random()*W; this.y=init?Math.random()*-H:-60;
+    this.w=38+Math.random()*24; this.h=this.w*.45;
+    this.angle=(Math.random()-.5)*.6; this.spin=(Math.random()-.5)*.03;
+    this.vy=1.5+Math.random()*2.5; this.vx=(Math.random()-.5)*.9;
+    this.alpha=.6+Math.random()*.35;
+    this.sway=Math.random()*Math.PI*2;
+    this.swayS=.012+Math.random()*.018; this.swayA=.6+Math.random()*1.4;
+  };
+  Bill.prototype.update=function(){
+    this.sway+=this.swayS; this.x+=this.vx+Math.sin(this.sway)*this.swayA;
+    this.y+=this.vy; this.angle+=this.spin;
+    if(this.y>H+80) this.reset(false);
+  };
+  Bill.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha;
+    ctx.translate(this.x,this.y); ctx.rotate(this.angle);
+    ctx.fillStyle='#2d6e3e'; ctx.strokeStyle='#4a9e5c'; ctx.lineWidth=1;
+    ctx.beginPath(); rr(ctx,-this.w/2,-this.h/2,this.w,this.h,3); ctx.fill(); ctx.stroke();
+    ctx.fillStyle='rgba(200,255,200,.8)';
+    ctx.font='bold '+(this.h*.55)+'px Georgia,serif';
+    ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    ctx.restore();
+  };
+
+  function Coin() { this.reset(true); }
+  Coin.prototype.reset=function(init){
+    this.r=9+Math.random()*11;
+    this.x=this.r+Math.random()*(W-this.r*2);
+    this.floor=H-this.r-Math.random()*20;
+    this.y=init?this.floor-Math.random()*H*.6:-this.r;
+    this.vy=-(3+Math.random()*5); this.vx=(Math.random()-.5)*1.5;
+    this.gravity=.2+Math.random()*.1; this.bounce=.45+Math.random()*.25;
+    this.alpha=.75+Math.random()*.25; this.spin=0;
+    this.spinS=(Math.random()-.5)*.08; this.bounces=0;
+    this.maxB=3+Math.floor(Math.random()*5); this.dead=false;
+  };
+  Coin.prototype.update=function(){
+    if(this.dead) return;
+    this.vy+=this.gravity; this.y+=this.vy; this.x+=this.vx; this.spin+=this.spinS;
+    if(this.y>=this.floor){
+      this.y=this.floor; this.vy=-Math.abs(this.vy)*this.bounce; this.vx*=.8;
+      this.bounces++;
+      if(this.bounces>=this.maxB||Math.abs(this.vy)<.25){
+        this.vy=0; this.vx=0; this.dead=true;
+        var self=this; setTimeout(function(){self.reset(false);},800+Math.random()*2500);
+      }
+    }
+    if(this.x<-this.r) this.x=W+this.r;
+    if(this.x>W+this.r) this.x=-this.r;
+  };
+  Coin.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha; ctx.translate(this.x,this.y);
+    if(this.dead){ctx.scale(1,.3);}else{ctx.rotate(this.spin);}
+    var g=ctx.createRadialGradient(-this.r*.3,-this.r*.3,1,0,0,this.r);
+    g.addColorStop(0,'#fff5a0'); g.addColorStop(.35,'#FFD700');
+    g.addColorStop(.75,'#DAA520'); g.addColorStop(1,'#8B6914');
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(0,0,this.r,0,Math.PI*2); ctx.fill();
+    if(!this.dead){
+      ctx.fillStyle='rgba(255,255,255,.35)';
+      ctx.beginPath(); ctx.ellipse(-this.r*.25,-this.r*.28,this.r*.35,this.r*.2,-.5,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='rgba(100,65,0,.85)';
+      ctx.font='bold '+(this.r*.9)+'px Georgia,serif';
+      ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    }
+    ctx.restore();
+  };
+
+  return {
+    start: function() {
+      resize(); bills=[]; coins=[]; running=true;
+      var nb=Math.max(16,Math.floor(W/50));
+      var nc=Math.max(14,Math.floor(W/55));
+      for(var i=0;i<nb;i++) bills.push(new Bill());
+      for(var i=0;i<nc;i++) coins.push(new Coin());
+      function loop(){
+        if(!running) return;
+        ctx.clearRect(0,0,W,H);
+        for(var i=0;i<bills.length;i++){bills[i].update();bills[i].draw();}
+        for(var i=0;i<coins.length;i++){coins[i].update();coins[i].draw();}
+        raf=requestAnimationFrame(loop);
+      }
+      loop();
+    },
+    stop: function(){ running=false; cancelAnimationFrame(raf); }
+  };
+}
+
+/* ── Section background engine ── */
+(function(){
+  var canvas  = document.getElementById('mm-canvas');
+  var section = document.getElementById('missing-money');
+  canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:0;';
+  var engine = mmCreateEngine(canvas, function(){ return {w:section.offsetWidth,h:section.offsetHeight}; });
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) engine.start(); else engine.stop(); });
+  },{threshold:.05});
+  obs.observe(section);
+  window.addEventListener('resize', function(){ engine.stop(); engine.start(); });
+})();
+</script>
+<!-- ============================================================
+     END MISSING MONEY SECTION
+     ============================================================ -->
+
+<!-- ============================================================
+     MISSING MONEY SEARCH SECTION — paste above </body> tag
+     ============================================================ -->
+<style>
+#missing-money {
+  background: linear-gradient(180deg, #0a0f1e 0%, #001233 60%, #0a0f1e 100%);
+  position: relative; overflow: hidden;
+  padding: 6rem 1.5rem 5rem; isolation: isolate;
+}
+#mm-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
+#missing-money::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,40,104,0.55) 0%, transparent 75%);
+}
+.mm-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 3; }
+.mm-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(191,10,48,.25); border: 1px solid rgba(191,10,48,.6);
+  color: #ff7070; font-size: .72rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  padding: .35em 1.1em; border-radius: 100px; margin-bottom: 1.6rem;
+  animation: mmBlink 2s ease-in-out infinite;
+}
+@keyframes mmBlink {
+  0%,100%{box-shadow:0 0 0 0 rgba(191,10,48,0);}
+  50%{box-shadow:0 0 18px 5px rgba(191,10,48,.4);}
+}
+.mm-badge .dot {
+  width:7px;height:7px;background:#ff4444;border-radius:50%;
+  animation:mmDot 1.2s ease-in-out infinite;
+}
+@keyframes mmDot{0%,100%{opacity:1;}50%{opacity:.15;}}
+.mm-heading {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2.1rem,5.5vw,3.4rem); font-weight:900; color:#fff;
+  line-height:1.12; margin-bottom:.9rem; text-align:center;
+  text-shadow:0 2px 20px rgba(0,0,0,.6);
+}
+.mm-heading .gold{color:#FFD700;} .mm-heading .red{color:#ff4466;}
+.mm-subhead {
+  font-family:'Source Serif 4',Georgia,serif; color:rgba(255,255,255,.7);
+  font-size:1.08rem; text-align:center; margin-bottom:.5rem; font-weight:300;
+}
+.mm-states {
+  display:flex; align-items:center; justify-content:center;
+  gap:.6rem; flex-wrap:wrap; margin-bottom:2.8rem;
+  font-size:.8rem; color:rgba(255,255,255,.45);
+  letter-spacing:.08em; text-transform:uppercase;
+}
+.mm-states strong{color:#FFD700;font-size:.92rem;}
+.mm-card {
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+  border-radius:20px; padding:2.8rem 2.2rem;
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1);
+}
+.mm-card-title {
+  font-family:'Playfair Display',Georgia,serif; font-size:1.25rem;
+  color:#FFD700; font-weight:900; margin-bottom:.3rem; text-align:center;
+  text-shadow:0 0 20px rgba(255,215,0,.4);
+}
+.mm-card-sub {
+  font-size:.84rem; color:rgba(255,255,255,.5);
+  text-align:center; margin-bottom:2rem; letter-spacing:.04em;
+}
+.mm-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-bottom:1.1rem; }
+@media(max-width:540px){.mm-grid{grid-template-columns:1fr;}}
+.mm-full{grid-column:1/-1;}
+.mm-field{display:flex;flex-direction:column;gap:.4rem;}
+.mm-field label {
+  font-size:.75rem; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:#ffffff; text-shadow:0 1px 6px rgba(0,0,0,.5);
+}
+.mm-field .optional {
+  font-size:.66rem; color:rgba(255,255,255,.45);
+  font-weight:400; letter-spacing:0; text-transform:none; margin-left:.3rem;
+}
+.mm-field input {
+  background:rgba(255,255,255,.09); border:1.5px solid rgba(255,255,255,.25);
+  border-radius:10px; padding:.82rem 1rem; font-size:1rem; color:#fff;
+  font-family:'Source Serif 4',Georgia,serif; outline:none; width:100%;
+  transition:border-color .2s,background .2s,box-shadow .2s; caret-color:#FFD700;
+}
+.mm-field input::placeholder{color:rgba(255,255,255,.35);}
+.mm-field input:focus{border-color:#FFD700;background:rgba(255,255,255,.13);box-shadow:0 0 0 3px rgba(255,215,0,.2);}
+.mm-submit {
+  width:100%; margin-top:.4rem;
+  background:linear-gradient(135deg,#c8102e 0%,#8B0520 50%,#c8102e 100%);
+  color:#fff; border:none; border-radius:12px; padding:1.1rem 2rem;
+  font-size:1.15rem; font-weight:900;
+  font-family:'Playfair Display',Georgia,serif;
+  letter-spacing:.06em; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:.8rem;
+  transition:transform .15s,box-shadow .2s;
+  animation:btnShimmer 3s ease-in-out infinite;
+}
+@keyframes btnShimmer{
+  0%,100%{box-shadow:0 6px 30px rgba(200,16,46,.55),0 0 0 0 rgba(255,215,0,0);}
+  50%{box-shadow:0 6px 30px rgba(200,16,46,.7),0 0 20px 4px rgba(255,215,0,.25);}
+}
+.mm-submit:hover{transform:translateY(-3px);}
+.mm-submit:active{transform:translateY(0);}
+.mm-disclaimer {
+  text-align:center; font-size:.75rem; color:rgba(255,255,255,.35);
+  margin-top:1.3rem; line-height:1.55;
+}
+.mm-disclaimer a{color:rgba(255,255,255,.5);text-decoration:underline;}
+.mm-trust {
+  display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;
+  margin-top:2.8rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.1);
+}
+.mm-trust-item {
+  display:flex; flex-direction:column; align-items:center; gap:.3rem;
+  color:rgba(255,255,255,.5); font-size:.76rem; text-align:center;
+}
+.mm-trust-item .icon{font-size:1.5rem;}
+.mm-trust-item strong{color:rgba(255,255,255,.85);font-size:.82rem;display:block;}
+
+/* ── THANK YOU OVERLAY ── */
+#mm-overlay {
+  display:none; position:fixed; inset:0; z-index:99999;
+  background:linear-gradient(160deg,#0a0f1e 0%,#001233 45%,#0d1a0d 100%);
+  overflow:hidden; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center; padding:2rem;
+}
+#mm-overlay.show{display:flex;}
+#ty-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.ty-float {
+  position:absolute; font-size:4rem; opacity:.06; pointer-events:none;
+  animation:tyFloat linear infinite; z-index:1;
+}
+@keyframes tyFloat {
+  0%{transform:translateY(110vh) rotate(0deg);opacity:0;}
+  10%{opacity:.06;} 90%{opacity:.06;}
+  100%{transform:translateY(-10vh) rotate(360deg);opacity:0;}
+}
+.ty-content {
+  position:relative; z-index:2; max-width:640px;
+  animation:tyUp .7s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes tyUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.ty-icon {
+  font-size:5rem; line-height:1; margin-bottom:1rem;
+  animation:tyBounce .8s cubic-bezier(.175,.885,.32,1.275) .3s both;
+  filter:drop-shadow(0 0 30px rgba(255,215,0,.6));
+}
+@keyframes tyBounce{
+  0%{transform:scale(0) rotate(-15deg);opacity:0;}
+  60%{transform:scale(1.2) rotate(5deg);}
+  100%{transform:scale(1) rotate(0deg);opacity:1;}
+}
+.ty-title {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2rem,6vw,3.5rem); font-weight:900; color:#FFD700;
+  line-height:1.1; margin-bottom:.6rem;
+  text-shadow:0 0 40px rgba(255,215,0,.5),0 2px 20px rgba(0,0,0,.8);
+  animation:tyUp .6s ease .4s both;
+}
+.ty-name {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(1.3rem,3.5vw,1.8rem); color:#fff; font-weight:700;
+  margin-bottom:1.2rem; animation:tyUp .6s ease .55s both;
+}
+.ty-message {
+  font-family:'Source Serif 4',Georgia,serif;
+  font-size:clamp(.95rem,2.5vw,1.15rem); color:rgba(255,255,255,.82);
+  line-height:1.75; font-weight:300; margin-bottom:2rem;
+  animation:tyUp .6s ease .7s both;
+}
+.ty-message strong{color:#FFD700;font-weight:600;}
+.ty-bar-wrap{margin-bottom:1.8rem;animation:tyUp .6s ease .85s both;}
+.ty-bar-label{font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.ty-bar-track{width:100%;max-width:400px;margin:0 auto;height:6px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;}
+.ty-bar-fill{height:100%;background:linear-gradient(90deg,#FFD700,#FFA500);border-radius:99px;width:100%;transform-origin:left;}
+.ty-go-btn {
+  display:inline-block; background:transparent;
+  border:1px solid rgba(255,255,255,.25); color:rgba(255,255,255,.6);
+  font-size:.9rem; padding:.6rem 1.8rem; border-radius:99px; cursor:pointer;
+  font-family:'Source Serif 4',Georgia,serif; transition:all .2s;
+  animation:tyUp .6s ease 1s both;
+}
+.ty-go-btn:hover{border-color:#FFD700;color:#FFD700;background:rgba(255,215,0,.08);}
+</style>
+
+<!-- CANVAS for section background -->
+<canvas id="mm-canvas"></canvas>
+
+<!-- THANK YOU OVERLAY -->
+<div id="mm-overlay">
+  <canvas id="ty-canvas"></canvas>
+  <span class="ty-float" style="left:5%;animation-duration:8s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:15%;animation-duration:11s;animation-delay:1s">🪙</span>
+  <span class="ty-float" style="left:28%;animation-duration:9s;animation-delay:2s">💰</span>
+  <span class="ty-float" style="left:42%;animation-duration:13s;animation-delay:.5s">💵</span>
+  <span class="ty-float" style="left:58%;animation-duration:10s;animation-delay:3s">🪙</span>
+  <span class="ty-float" style="left:70%;animation-duration:8s;animation-delay:1.5s">💰</span>
+  <span class="ty-float" style="left:82%;animation-duration:12s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:92%;animation-duration:9s;animation-delay:2.5s">🪙</span>
+  <div class="ty-content">
+    <div class="ty-icon">💰</div>
+    <div class="ty-title">Thank You!</div>
+    <div class="ty-name" id="ty-name"></div>
+    <div class="ty-message">
+      A <strong>Rightful Returns Recovery Specialist</strong> will personally
+      research any lost or unclaimed funds in your name — across all 50 states.<br/><br/>
+      MissingMoney.com is now open in a new tab. Enter your name exactly as it
+      appeared on your property, and try any previous names or addresses too.
+    </div>
+    <div class="ty-bar-wrap">
+      <div class="ty-bar-label">This message closes in 6 seconds</div>
+      <div class="ty-bar-track"><div class="ty-bar-fill" id="ty-bar"></div></div>
+    </div>
+    <button class="ty-go-btn" onclick="mmCloseOverlay()">Close This Message →</button>
+  </div>
+</div>
+
+<!-- MAIN SECTION -->
+<section id="missing-money">
+  <div class="mm-inner">
+    <div style="text-align:center">
+      <span class="mm-badge"><span class="dot"></span> Act Now — Unclaimed Funds May Be Waiting</span>
+    </div>
+    <h2 class="mm-heading">💰 Is <span class="gold">Missing Money</span><br/><span class="red">Waiting in Your Name?</span></h2>
+    <p class="mm-subhead">Search the national unclaimed property database — free, instant, no obligation.</p>
+    <div class="mm-states">🌵 AZ &nbsp;·&nbsp; 🍑 GA &nbsp;·&nbsp; ⭐ TX &nbsp;·&nbsp; <strong>+ All 50 States 🇺🇸</strong></div>
+    <div class="mm-card">
+      <div class="mm-card-title">🔍 Search for Your Missing Money Now</div>
+      <div class="mm-card-sub">Takes less than 60 seconds — completely free</div>
+      <form id="mm-form">
+        <input type="hidden" name="_source" value="Missing Money Search — All 50 States"/>
+        <div class="mm-grid">
+          <div class="mm-field">
+            <label for="mm-first">First Name</label>
+            <input type="text" id="mm-first" name="first_name" placeholder="Jane" autocomplete="given-name" required/>
+          </div>
+          <div class="mm-field">
+            <label for="mm-last">Last Name</label>
+            <input type="text" id="mm-last" name="last_name" placeholder="Smith" autocomplete="family-name" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-email">Email Address</label>
+            <input type="email" id="mm-email" name="email" placeholder="jane@example.com" autocomplete="email" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-phone">Phone Number <span class="optional">(optional)</span></label>
+            <input type="tel" id="mm-phone" name="phone" placeholder="(480) 555-0100" autocomplete="tel"/>
+          </div>
+        </div>
+        <button type="button" class="mm-submit" onclick="mmHandleSubmit()">
+          💰 SEARCH NOW — All 50 States
+        </button>
+        <p class="mm-disclaimer">
+          By submitting, you agree to be contacted by a Rightful Returns Recovery specialist
+          if missing funds are found. Msg &amp; data rates may apply.
+          <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">SMS Terms</a>.
+          Search powered by <a href="https://missingmoney.com" target="_blank" style="color:rgba(255,255,255,.5)">MissingMoney.com</a>.
+        </p>
+      </form>
+    </div>
+    <div class="mm-trust">
+      <div class="mm-trust-item"><span class="icon">🔒</span><strong>Secure &amp; Private</strong>Never sold or shared</div>
+      <div class="mm-trust-item"><span class="icon">💵</span><strong>No Upfront Cost</strong>Always free to search</div>
+      <div class="mm-trust-item"><span class="icon">🇺🇸</span><strong>All 50 States</strong>Full national database</div>
+      <div class="mm-trust-item"><span class="icon">📞</span><strong>Specialist Follow-Up</strong>We call if funds found</div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ── KEY CHANGE: button type="button" + plain onclick ──
+   This fires synchronously so window.open is NEVER blocked */
+
+var mmOverlayTimer = null;
+var mmParticleEngine = null;
+
+function mmHandleSubmit() {
+  // 1. Validate
+  var first = document.getElementById('mm-first').value.trim();
+  var last  = document.getElementById('mm-last').value.trim();
+  var email = document.getElementById('mm-email').value.trim();
+  if (!first) { alert('Please enter your first name.'); return; }
+  if (!last)  { alert('Please enter your last name.');  return; }
+  if (!email || email.indexOf('@') < 0) { alert('Please enter a valid email address.'); return; }
+
+  // 2. Open missingmoney.com RIGHT NOW — synchronous, never blocked
+  window.open('https://missingmoney.com', '_blank');
+
+  // 3. Send to Formspree in background (fire and forget)
+  var fd = new FormData(document.getElementById('mm-form'));
   fetch('https://formspree.io/f/mjgeddoy', {
     method: 'POST',
     headers: { 'Accept': 'application/json' },
-    body: new FormData(form)
-  }).catch(err => console.warn('Formspree error:', err));
+    body: fd
+  });
 
-  // ── STEP 3: Personalise the thank-you name line ──
-  const nameDisplay = document.getElementById('ty-name-display');
-  if (first) {
-    nameDisplay.textContent = first + (last ? ' ' + last : '') + ', We\'re On It For You!';
+  // 4. Show thank-you overlay with correct name
+  document.getElementById('ty-name').textContent = first + ' ' + last + ' — We\'re On It!';
+  var overlay = document.getElementById('mm-overlay');
+  overlay.classList.add('show');
+
+  // 5. Start money rain
+  var tyCanvas = document.getElementById('ty-canvas');
+  tyCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
+  mmParticleEngine = mmCreateEngine(tyCanvas, function() {
+    return { w: window.innerWidth, h: window.innerHeight };
+  });
+  mmParticleEngine.start();
+
+  // 6. Restart countdown bar
+  var bar = document.getElementById('ty-bar');
+  bar.style.transition = 'none';
+  bar.style.transform  = 'scaleX(1)';
+  bar.offsetHeight; // reflow
+  bar.style.transition = 'transform 6s linear';
+  bar.style.transform  = 'scaleX(0)';
+
+  // 7. Auto close after 6s
+  clearTimeout(mmOverlayTimer);
+  mmOverlayTimer = setTimeout(mmCloseOverlay, 6000);
+}
+
+function mmCloseOverlay() {
+  clearTimeout(mmOverlayTimer);
+  if (mmParticleEngine) { mmParticleEngine.stop(); mmParticleEngine = null; }
+  var overlay = document.getElementById('mm-overlay');
+  overlay.style.transition = 'opacity .4s';
+  overlay.style.opacity = '0';
+  setTimeout(function() {
+    overlay.classList.remove('show');
+    overlay.style.opacity = '';
+    overlay.style.transition = '';
+  }, 400);
+}
+
+/* ── PARTICLE ENGINE ── */
+function mmCreateEngine(canvas, getSize) {
+  var ctx = canvas.getContext('2d');
+  var W, H, bills, coins, raf, running;
+
+  function resize() {
+    var s = getSize(); W = canvas.width = s.w; H = canvas.height = s.h;
   }
 
-  // ── STEP 4: Show full-screen thank-you overlay ──
-  const overlay = document.getElementById('mm-thankyou-overlay');
-  overlay.classList.add('active');
+  function rr(c,x,y,w,h,r) {
+    c.moveTo(x+r,y); c.lineTo(x+w-r,y); c.quadraticCurveTo(x+w,y,x+w,y+r);
+    c.lineTo(x+w,y+h-r); c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    c.lineTo(x+r,y+h); c.quadraticCurveTo(x,y+h,x,y+h-r);
+    c.lineTo(x,y+r); c.quadraticCurveTo(x,y,x+r,y); c.closePath();
+  }
 
-  // ── STEP 5: Start money rain on overlay canvas ──
-  const tyCanvas = document.getElementById('ty-canvas');
-  tyCanvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:0;';
-  tyEngine = createParticleEngine(tyCanvas, () => ({
-    w: window.innerWidth,
-    h: window.innerHeight
-  }));
-  tyEngine.start(false);
+  function Bill() { this.reset(true); }
+  Bill.prototype.reset = function(init) {
+    this.x=Math.random()*W; this.y=init?Math.random()*-H:-60;
+    this.w=38+Math.random()*24; this.h=this.w*.45;
+    this.angle=(Math.random()-.5)*.6; this.spin=(Math.random()-.5)*.03;
+    this.vy=1.5+Math.random()*2.5; this.vx=(Math.random()-.5)*.9;
+    this.alpha=.6+Math.random()*.35;
+    this.sway=Math.random()*Math.PI*2;
+    this.swayS=.012+Math.random()*.018; this.swayA=.6+Math.random()*1.4;
+  };
+  Bill.prototype.update=function(){
+    this.sway+=this.swayS; this.x+=this.vx+Math.sin(this.sway)*this.swayA;
+    this.y+=this.vy; this.angle+=this.spin;
+    if(this.y>H+80) this.reset(false);
+  };
+  Bill.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha;
+    ctx.translate(this.x,this.y); ctx.rotate(this.angle);
+    ctx.fillStyle='#2d6e3e'; ctx.strokeStyle='#4a9e5c'; ctx.lineWidth=1;
+    ctx.beginPath(); rr(ctx,-this.w/2,-this.h/2,this.w,this.h,3); ctx.fill(); ctx.stroke();
+    ctx.fillStyle='rgba(200,255,200,.8)';
+    ctx.font='bold '+(this.h*.55)+'px Georgia,serif';
+    ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    ctx.restore();
+  };
 
-  // ── STEP 6: Reset the countdown bar animation ──
-  const bar = document.getElementById('ty-bar');
-  bar.style.animation = 'none';
-  bar.offsetHeight; // force reflow
-  bar.style.animation = '';
+  function Coin() { this.reset(true); }
+  Coin.prototype.reset=function(init){
+    this.r=9+Math.random()*11;
+    this.x=this.r+Math.random()*(W-this.r*2);
+    this.floor=H-this.r-Math.random()*20;
+    this.y=init?this.floor-Math.random()*H*.6:-this.r;
+    this.vy=-(3+Math.random()*5); this.vx=(Math.random()-.5)*1.5;
+    this.gravity=.2+Math.random()*.1; this.bounce=.45+Math.random()*.25;
+    this.alpha=.75+Math.random()*.25; this.spin=0;
+    this.spinS=(Math.random()-.5)*.08; this.bounces=0;
+    this.maxB=3+Math.floor(Math.random()*5); this.dead=false;
+  };
+  Coin.prototype.update=function(){
+    if(this.dead) return;
+    this.vy+=this.gravity; this.y+=this.vy; this.x+=this.vx; this.spin+=this.spinS;
+    if(this.y>=this.floor){
+      this.y=this.floor; this.vy=-Math.abs(this.vy)*this.bounce; this.vx*=.8;
+      this.bounces++;
+      if(this.bounces>=this.maxB||Math.abs(this.vy)<.25){
+        this.vy=0; this.vx=0; this.dead=true;
+        var self=this; setTimeout(function(){self.reset(false);},800+Math.random()*2500);
+      }
+    }
+    if(this.x<-this.r) this.x=W+this.r;
+    if(this.x>W+this.r) this.x=-this.r;
+  };
+  Coin.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha; ctx.translate(this.x,this.y);
+    if(this.dead){ctx.scale(1,.3);}else{ctx.rotate(this.spin);}
+    var g=ctx.createRadialGradient(-this.r*.3,-this.r*.3,1,0,0,this.r);
+    g.addColorStop(0,'#fff5a0'); g.addColorStop(.35,'#FFD700');
+    g.addColorStop(.75,'#DAA520'); g.addColorStop(1,'#8B6914');
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(0,0,this.r,0,Math.PI*2); ctx.fill();
+    if(!this.dead){
+      ctx.fillStyle='rgba(255,255,255,.35)';
+      ctx.beginPath(); ctx.ellipse(-this.r*.25,-this.r*.28,this.r*.35,this.r*.2,-.5,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='rgba(100,65,0,.85)';
+      ctx.font='bold '+(this.r*.9)+'px Georgia,serif';
+      ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    }
+    ctx.restore();
+  };
 
-  // ── STEP 7: Auto-dismiss overlay after 6 seconds ──
-  tyRedirectTimer = setTimeout(() => {
-    if (tyEngine) tyEngine.stop();
-    const overlay = document.getElementById('mm-thankyou-overlay');
-    overlay.style.transition = 'opacity 0.4s';
-    overlay.style.opacity = '0';
-    setTimeout(() => {
-      overlay.classList.remove('active');
-      overlay.style.opacity = '';
-      overlay.style.transition = '';
-    }, 400);
-  }, 6000);
+  return {
+    start: function() {
+      resize(); bills=[]; coins=[]; running=true;
+      var nb=Math.max(16,Math.floor(W/50));
+      var nc=Math.max(14,Math.floor(W/55));
+      for(var i=0;i<nb;i++) bills.push(new Bill());
+      for(var i=0;i<nc;i++) coins.push(new Coin());
+      function loop(){
+        if(!running) return;
+        ctx.clearRect(0,0,W,H);
+        for(var i=0;i<bills.length;i++){bills[i].update();bills[i].draw();}
+        for(var i=0;i<coins.length;i++){coins[i].update();coins[i].draw();}
+        raf=requestAnimationFrame(loop);
+      }
+      loop();
+    },
+    stop: function(){ running=false; cancelAnimationFrame(raf); }
+  };
 }
+
+/* ── Section background engine ── */
+(function(){
+  var canvas  = document.getElementById('mm-canvas');
+  var section = document.getElementById('missing-money');
+  canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:0;';
+  var engine = mmCreateEngine(canvas, function(){ return {w:section.offsetWidth,h:section.offsetHeight}; });
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) engine.start(); else engine.stop(); });
+  },{threshold:.05});
+  obs.observe(section);
+  window.addEventListener('resize', function(){ engine.stop(); engine.start(); });
+})();
 </script>
-<!--
-  ============================================================
-  END MISSING MONEY SEARCH SECTION
-  ============================================================
--->
+<!-- ============================================================
+     END MISSING MONEY SECTION
+     ============================================================ -->
+
+<!-- ============================================================
+     MISSING MONEY SEARCH SECTION — paste above </body> tag
+     ============================================================ -->
+<style>
+#missing-money {
+  background: linear-gradient(180deg, #0a0f1e 0%, #001233 60%, #0a0f1e 100%);
+  position: relative; overflow: hidden;
+  padding: 6rem 1.5rem 5rem; isolation: isolate;
+}
+#mm-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
+#missing-money::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,40,104,0.55) 0%, transparent 75%);
+}
+.mm-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 3; }
+.mm-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(191,10,48,.25); border: 1px solid rgba(191,10,48,.6);
+  color: #ff7070; font-size: .72rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  padding: .35em 1.1em; border-radius: 100px; margin-bottom: 1.6rem;
+  animation: mmBlink 2s ease-in-out infinite;
+}
+@keyframes mmBlink {
+  0%,100%{box-shadow:0 0 0 0 rgba(191,10,48,0);}
+  50%{box-shadow:0 0 18px 5px rgba(191,10,48,.4);}
+}
+.mm-badge .dot {
+  width:7px;height:7px;background:#ff4444;border-radius:50%;
+  animation:mmDot 1.2s ease-in-out infinite;
+}
+@keyframes mmDot{0%,100%{opacity:1;}50%{opacity:.15;}}
+.mm-heading {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2.1rem,5.5vw,3.4rem); font-weight:900; color:#fff;
+  line-height:1.12; margin-bottom:.9rem; text-align:center;
+  text-shadow:0 2px 20px rgba(0,0,0,.6);
+}
+.mm-heading .gold{color:#FFD700;} .mm-heading .red{color:#ff4466;}
+.mm-subhead {
+  font-family:'Source Serif 4',Georgia,serif; color:rgba(255,255,255,.7);
+  font-size:1.08rem; text-align:center; margin-bottom:.5rem; font-weight:300;
+}
+.mm-states {
+  display:flex; align-items:center; justify-content:center;
+  gap:.6rem; flex-wrap:wrap; margin-bottom:2.8rem;
+  font-size:.8rem; color:rgba(255,255,255,.45);
+  letter-spacing:.08em; text-transform:uppercase;
+}
+.mm-states strong{color:#FFD700;font-size:.92rem;}
+.mm-card {
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+  border-radius:20px; padding:2.8rem 2.2rem;
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1);
+}
+.mm-card-title {
+  font-family:'Playfair Display',Georgia,serif; font-size:1.25rem;
+  color:#FFD700; font-weight:900; margin-bottom:.3rem; text-align:center;
+  text-shadow:0 0 20px rgba(255,215,0,.4);
+}
+.mm-card-sub {
+  font-size:.84rem; color:rgba(255,255,255,.5);
+  text-align:center; margin-bottom:2rem; letter-spacing:.04em;
+}
+.mm-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-bottom:1.1rem; }
+@media(max-width:540px){.mm-grid{grid-template-columns:1fr;}}
+.mm-full{grid-column:1/-1;}
+.mm-field{display:flex;flex-direction:column;gap:.4rem;}
+.mm-field label {
+  font-size:.75rem; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:#ffffff; text-shadow:0 1px 6px rgba(0,0,0,.5);
+}
+.mm-field .optional {
+  font-size:.66rem; color:rgba(255,255,255,.45);
+  font-weight:400; letter-spacing:0; text-transform:none; margin-left:.3rem;
+}
+.mm-field input {
+  background:rgba(255,255,255,.09); border:1.5px solid rgba(255,255,255,.25);
+  border-radius:10px; padding:.82rem 1rem; font-size:1rem; color:#fff;
+  font-family:'Source Serif 4',Georgia,serif; outline:none; width:100%;
+  transition:border-color .2s,background .2s,box-shadow .2s; caret-color:#FFD700;
+}
+.mm-field input::placeholder{color:rgba(255,255,255,.35);}
+.mm-field input:focus{border-color:#FFD700;background:rgba(255,255,255,.13);box-shadow:0 0 0 3px rgba(255,215,0,.2);}
+.mm-submit {
+  width:100%; margin-top:.4rem;
+  background:linear-gradient(135deg,#c8102e 0%,#8B0520 50%,#c8102e 100%);
+  color:#fff; border:none; border-radius:12px; padding:1.1rem 2rem;
+  font-size:1.15rem; font-weight:900;
+  font-family:'Playfair Display',Georgia,serif;
+  letter-spacing:.06em; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:.8rem;
+  transition:transform .15s,box-shadow .2s;
+  animation:btnShimmer 3s ease-in-out infinite;
+}
+@keyframes btnShimmer{
+  0%,100%{box-shadow:0 6px 30px rgba(200,16,46,.55),0 0 0 0 rgba(255,215,0,0);}
+  50%{box-shadow:0 6px 30px rgba(200,16,46,.7),0 0 20px 4px rgba(255,215,0,.25);}
+}
+.mm-submit:hover{transform:translateY(-3px);}
+.mm-submit:active{transform:translateY(0);}
+.mm-disclaimer {
+  text-align:center; font-size:.75rem; color:rgba(255,255,255,.35);
+  margin-top:1.3rem; line-height:1.55;
+}
+.mm-disclaimer a{color:rgba(255,255,255,.5);text-decoration:underline;}
+.mm-trust {
+  display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;
+  margin-top:2.8rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.1);
+}
+.mm-trust-item {
+  display:flex; flex-direction:column; align-items:center; gap:.3rem;
+  color:rgba(255,255,255,.5); font-size:.76rem; text-align:center;
+}
+.mm-trust-item .icon{font-size:1.5rem;}
+.mm-trust-item strong{color:rgba(255,255,255,.85);font-size:.82rem;display:block;}
+
+/* ── THANK YOU OVERLAY ── */
+#mm-overlay {
+  display:none; position:fixed; inset:0; z-index:99999;
+  background:linear-gradient(160deg,#0a0f1e 0%,#001233 45%,#0d1a0d 100%);
+  overflow:hidden; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center; padding:2rem;
+}
+#mm-overlay.show{display:flex;}
+#ty-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.ty-float {
+  position:absolute; font-size:4rem; opacity:.06; pointer-events:none;
+  animation:tyFloat linear infinite; z-index:1;
+}
+@keyframes tyFloat {
+  0%{transform:translateY(110vh) rotate(0deg);opacity:0;}
+  10%{opacity:.06;} 90%{opacity:.06;}
+  100%{transform:translateY(-10vh) rotate(360deg);opacity:0;}
+}
+.ty-content {
+  position:relative; z-index:2; max-width:640px;
+  animation:tyUp .7s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes tyUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.ty-icon {
+  font-size:5rem; line-height:1; margin-bottom:1rem;
+  animation:tyBounce .8s cubic-bezier(.175,.885,.32,1.275) .3s both;
+  filter:drop-shadow(0 0 30px rgba(255,215,0,.6));
+}
+@keyframes tyBounce{
+  0%{transform:scale(0) rotate(-15deg);opacity:0;}
+  60%{transform:scale(1.2) rotate(5deg);}
+  100%{transform:scale(1) rotate(0deg);opacity:1;}
+}
+.ty-title {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2rem,6vw,3.5rem); font-weight:900; color:#FFD700;
+  line-height:1.1; margin-bottom:.6rem;
+  text-shadow:0 0 40px rgba(255,215,0,.5),0 2px 20px rgba(0,0,0,.8);
+  animation:tyUp .6s ease .4s both;
+}
+.ty-name {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(1.3rem,3.5vw,1.8rem); color:#fff; font-weight:700;
+  margin-bottom:1.2rem; animation:tyUp .6s ease .55s both;
+}
+.ty-message {
+  font-family:'Source Serif 4',Georgia,serif;
+  font-size:clamp(.95rem,2.5vw,1.15rem); color:rgba(255,255,255,.82);
+  line-height:1.75; font-weight:300; margin-bottom:2rem;
+  animation:tyUp .6s ease .7s both;
+}
+.ty-message strong{color:#FFD700;font-weight:600;}
+.ty-bar-wrap{margin-bottom:1.8rem;animation:tyUp .6s ease .85s both;}
+.ty-bar-label{font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.ty-bar-track{width:100%;max-width:400px;margin:0 auto;height:6px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;}
+.ty-bar-fill{height:100%;background:linear-gradient(90deg,#FFD700,#FFA500);border-radius:99px;width:100%;transform-origin:left;}
+.ty-go-btn {
+  display:inline-block; background:transparent;
+  border:1px solid rgba(255,255,255,.25); color:rgba(255,255,255,.6);
+  font-size:.9rem; padding:.6rem 1.8rem; border-radius:99px; cursor:pointer;
+  font-family:'Source Serif 4',Georgia,serif; transition:all .2s;
+  animation:tyUp .6s ease 1s both;
+}
+.ty-go-btn:hover{border-color:#FFD700;color:#FFD700;background:rgba(255,215,0,.08);}
+</style>
+
+<!-- CANVAS for section background -->
+<canvas id="mm-canvas"></canvas>
+
+<!-- THANK YOU OVERLAY -->
+<div id="mm-overlay">
+  <canvas id="ty-canvas"></canvas>
+  <span class="ty-float" style="left:5%;animation-duration:8s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:15%;animation-duration:11s;animation-delay:1s">🪙</span>
+  <span class="ty-float" style="left:28%;animation-duration:9s;animation-delay:2s">💰</span>
+  <span class="ty-float" style="left:42%;animation-duration:13s;animation-delay:.5s">💵</span>
+  <span class="ty-float" style="left:58%;animation-duration:10s;animation-delay:3s">🪙</span>
+  <span class="ty-float" style="left:70%;animation-duration:8s;animation-delay:1.5s">💰</span>
+  <span class="ty-float" style="left:82%;animation-duration:12s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:92%;animation-duration:9s;animation-delay:2.5s">🪙</span>
+  <div class="ty-content">
+    <div class="ty-icon">💰</div>
+    <div class="ty-title">Thank You!</div>
+    <div class="ty-name" id="ty-name"></div>
+    <div class="ty-message">
+      A <strong>Rightful Returns Recovery Specialist</strong> will personally
+      research any lost or unclaimed funds in your name — across all 50 states.<br/><br/>
+      MissingMoney.com is now open in a new tab. Enter your name exactly as it
+      appeared on your property, and try any previous names or addresses too.
+    </div>
+    <div class="ty-bar-wrap">
+      <div class="ty-bar-label">This message closes in 6 seconds</div>
+      <div class="ty-bar-track"><div class="ty-bar-fill" id="ty-bar"></div></div>
+    </div>
+    <button class="ty-go-btn" onclick="mmCloseOverlay()">Close This Message →</button>
+  </div>
+</div>
+
+<!-- MAIN SECTION -->
+<section id="missing-money">
+  <div class="mm-inner">
+    <div style="text-align:center">
+      <span class="mm-badge"><span class="dot"></span> Act Now — Unclaimed Funds May Be Waiting</span>
+    </div>
+    <h2 class="mm-heading">💰 Is <span class="gold">Missing Money</span><br/><span class="red">Waiting in Your Name?</span></h2>
+    <p class="mm-subhead">Search the national unclaimed property database — free, instant, no obligation.</p>
+    <div class="mm-states">🌵 AZ &nbsp;·&nbsp; 🍑 GA &nbsp;·&nbsp; ⭐ TX &nbsp;·&nbsp; <strong>+ All 50 States 🇺🇸</strong></div>
+    <div class="mm-card">
+      <div class="mm-card-title">🔍 Search for Your Missing Money Now</div>
+      <div class="mm-card-sub">Takes less than 60 seconds — completely free</div>
+      <form id="mm-form">
+        <input type="hidden" name="_source" value="Missing Money Search — All 50 States"/>
+        <div class="mm-grid">
+          <div class="mm-field">
+            <label for="mm-first">First Name</label>
+            <input type="text" id="mm-first" name="first_name" placeholder="Jane" autocomplete="given-name" required/>
+          </div>
+          <div class="mm-field">
+            <label for="mm-last">Last Name</label>
+            <input type="text" id="mm-last" name="last_name" placeholder="Smith" autocomplete="family-name" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-email">Email Address</label>
+            <input type="email" id="mm-email" name="email" placeholder="jane@example.com" autocomplete="email" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-phone">Phone Number <span class="optional">(optional)</span></label>
+            <input type="tel" id="mm-phone" name="phone" placeholder="(480) 555-0100" autocomplete="tel"/>
+          </div>
+        </div>
+        <button type="button" class="mm-submit" onclick="mmHandleSubmit()">
+          💰 SEARCH NOW — All 50 States
+        </button>
+        <p class="mm-disclaimer">
+          By submitting, you agree to be contacted by a Rightful Returns Recovery specialist
+          if missing funds are found. Msg &amp; data rates may apply.
+          <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">SMS Terms</a>.
+          Search powered by <a href="https://missingmoney.com" target="_blank" style="color:rgba(255,255,255,.5)">MissingMoney.com</a>.
+        </p>
+      </form>
+    </div>
+    <div class="mm-trust">
+      <div class="mm-trust-item"><span class="icon">🔒</span><strong>Secure &amp; Private</strong>Never sold or shared</div>
+      <div class="mm-trust-item"><span class="icon">💵</span><strong>No Upfront Cost</strong>Always free to search</div>
+      <div class="mm-trust-item"><span class="icon">🇺🇸</span><strong>All 50 States</strong>Full national database</div>
+      <div class="mm-trust-item"><span class="icon">📞</span><strong>Specialist Follow-Up</strong>We call if funds found</div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ── KEY CHANGE: button type="button" + plain onclick ──
+   This fires synchronously so window.open is NEVER blocked */
+
+var mmOverlayTimer = null;
+var mmParticleEngine = null;
+
+function mmHandleSubmit() {
+  // 1. Validate
+  var first = document.getElementById('mm-first').value.trim();
+  var last  = document.getElementById('mm-last').value.trim();
+  var email = document.getElementById('mm-email').value.trim();
+  if (!first) { alert('Please enter your first name.'); return; }
+  if (!last)  { alert('Please enter your last name.');  return; }
+  if (!email || email.indexOf('@') < 0) { alert('Please enter a valid email address.'); return; }
+
+  // 2. Open missingmoney.com RIGHT NOW — synchronous, never blocked
+  window.open('https://missingmoney.com', '_blank');
+
+  // 3. Send to Formspree in background (fire and forget)
+  var fd = new FormData(document.getElementById('mm-form'));
+  fetch('https://formspree.io/f/mjgeddoy', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: fd
+  });
+
+  // 4. Show thank-you overlay with correct name
+  document.getElementById('ty-name').textContent = first + ' ' + last + ' — We\'re On It!';
+  var overlay = document.getElementById('mm-overlay');
+  overlay.classList.add('show');
+
+  // 5. Start money rain
+  var tyCanvas = document.getElementById('ty-canvas');
+  tyCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
+  mmParticleEngine = mmCreateEngine(tyCanvas, function() {
+    return { w: window.innerWidth, h: window.innerHeight };
+  });
+  mmParticleEngine.start();
+
+  // 6. Restart countdown bar
+  var bar = document.getElementById('ty-bar');
+  bar.style.transition = 'none';
+  bar.style.transform  = 'scaleX(1)';
+  bar.offsetHeight; // reflow
+  bar.style.transition = 'transform 6s linear';
+  bar.style.transform  = 'scaleX(0)';
+
+  // 7. Auto close after 6s
+  clearTimeout(mmOverlayTimer);
+  mmOverlayTimer = setTimeout(mmCloseOverlay, 6000);
+}
+
+function mmCloseOverlay() {
+  clearTimeout(mmOverlayTimer);
+  if (mmParticleEngine) { mmParticleEngine.stop(); mmParticleEngine = null; }
+  var overlay = document.getElementById('mm-overlay');
+  overlay.style.transition = 'opacity .4s';
+  overlay.style.opacity = '0';
+  setTimeout(function() {
+    overlay.classList.remove('show');
+    overlay.style.opacity = '';
+    overlay.style.transition = '';
+  }, 400);
+}
+
+/* ── PARTICLE ENGINE ── */
+function mmCreateEngine(canvas, getSize) {
+  var ctx = canvas.getContext('2d');
+  var W, H, bills, coins, raf, running;
+
+  function resize() {
+    var s = getSize(); W = canvas.width = s.w; H = canvas.height = s.h;
+  }
+
+  function rr(c,x,y,w,h,r) {
+    c.moveTo(x+r,y); c.lineTo(x+w-r,y); c.quadraticCurveTo(x+w,y,x+w,y+r);
+    c.lineTo(x+w,y+h-r); c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    c.lineTo(x+r,y+h); c.quadraticCurveTo(x,y+h,x,y+h-r);
+    c.lineTo(x,y+r); c.quadraticCurveTo(x,y,x+r,y); c.closePath();
+  }
+
+  function Bill() { this.reset(true); }
+  Bill.prototype.reset = function(init) {
+    this.x=Math.random()*W; this.y=init?Math.random()*-H:-60;
+    this.w=38+Math.random()*24; this.h=this.w*.45;
+    this.angle=(Math.random()-.5)*.6; this.spin=(Math.random()-.5)*.03;
+    this.vy=1.5+Math.random()*2.5; this.vx=(Math.random()-.5)*.9;
+    this.alpha=.6+Math.random()*.35;
+    this.sway=Math.random()*Math.PI*2;
+    this.swayS=.012+Math.random()*.018; this.swayA=.6+Math.random()*1.4;
+  };
+  Bill.prototype.update=function(){
+    this.sway+=this.swayS; this.x+=this.vx+Math.sin(this.sway)*this.swayA;
+    this.y+=this.vy; this.angle+=this.spin;
+    if(this.y>H+80) this.reset(false);
+  };
+  Bill.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha;
+    ctx.translate(this.x,this.y); ctx.rotate(this.angle);
+    ctx.fillStyle='#2d6e3e'; ctx.strokeStyle='#4a9e5c'; ctx.lineWidth=1;
+    ctx.beginPath(); rr(ctx,-this.w/2,-this.h/2,this.w,this.h,3); ctx.fill(); ctx.stroke();
+    ctx.fillStyle='rgba(200,255,200,.8)';
+    ctx.font='bold '+(this.h*.55)+'px Georgia,serif';
+    ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    ctx.restore();
+  };
+
+  function Coin() { this.reset(true); }
+  Coin.prototype.reset=function(init){
+    this.r=9+Math.random()*11;
+    this.x=this.r+Math.random()*(W-this.r*2);
+    this.floor=H-this.r-Math.random()*20;
+    this.y=init?this.floor-Math.random()*H*.6:-this.r;
+    this.vy=-(3+Math.random()*5); this.vx=(Math.random()-.5)*1.5;
+    this.gravity=.2+Math.random()*.1; this.bounce=.45+Math.random()*.25;
+    this.alpha=.75+Math.random()*.25; this.spin=0;
+    this.spinS=(Math.random()-.5)*.08; this.bounces=0;
+    this.maxB=3+Math.floor(Math.random()*5); this.dead=false;
+  };
+  Coin.prototype.update=function(){
+    if(this.dead) return;
+    this.vy+=this.gravity; this.y+=this.vy; this.x+=this.vx; this.spin+=this.spinS;
+    if(this.y>=this.floor){
+      this.y=this.floor; this.vy=-Math.abs(this.vy)*this.bounce; this.vx*=.8;
+      this.bounces++;
+      if(this.bounces>=this.maxB||Math.abs(this.vy)<.25){
+        this.vy=0; this.vx=0; this.dead=true;
+        var self=this; setTimeout(function(){self.reset(false);},800+Math.random()*2500);
+      }
+    }
+    if(this.x<-this.r) this.x=W+this.r;
+    if(this.x>W+this.r) this.x=-this.r;
+  };
+  Coin.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha; ctx.translate(this.x,this.y);
+    if(this.dead){ctx.scale(1,.3);}else{ctx.rotate(this.spin);}
+    var g=ctx.createRadialGradient(-this.r*.3,-this.r*.3,1,0,0,this.r);
+    g.addColorStop(0,'#fff5a0'); g.addColorStop(.35,'#FFD700');
+    g.addColorStop(.75,'#DAA520'); g.addColorStop(1,'#8B6914');
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(0,0,this.r,0,Math.PI*2); ctx.fill();
+    if(!this.dead){
+      ctx.fillStyle='rgba(255,255,255,.35)';
+      ctx.beginPath(); ctx.ellipse(-this.r*.25,-this.r*.28,this.r*.35,this.r*.2,-.5,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='rgba(100,65,0,.85)';
+      ctx.font='bold '+(this.r*.9)+'px Georgia,serif';
+      ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    }
+    ctx.restore();
+  };
+
+  return {
+    start: function() {
+      resize(); bills=[]; coins=[]; running=true;
+      var nb=Math.max(16,Math.floor(W/50));
+      var nc=Math.max(14,Math.floor(W/55));
+      for(var i=0;i<nb;i++) bills.push(new Bill());
+      for(var i=0;i<nc;i++) coins.push(new Coin());
+      function loop(){
+        if(!running) return;
+        ctx.clearRect(0,0,W,H);
+        for(var i=0;i<bills.length;i++){bills[i].update();bills[i].draw();}
+        for(var i=0;i<coins.length;i++){coins[i].update();coins[i].draw();}
+        raf=requestAnimationFrame(loop);
+      }
+      loop();
+    },
+    stop: function(){ running=false; cancelAnimationFrame(raf); }
+  };
+}
+
+/* ── Section background engine ── */
+(function(){
+  var canvas  = document.getElementById('mm-canvas');
+  var section = document.getElementById('missing-money');
+  canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:0;';
+  var engine = mmCreateEngine(canvas, function(){ return {w:section.offsetWidth,h:section.offsetHeight}; });
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) engine.start(); else engine.stop(); });
+  },{threshold:.05});
+  obs.observe(section);
+  window.addEventListener('resize', function(){ engine.stop(); engine.start(); });
+})();
+</script>
+<!-- ============================================================
+     END MISSING MONEY SECTION
+     ============================================================ -->
+
+<!-- ============================================================
+     MISSING MONEY SEARCH SECTION — paste above </body> tag
+     ============================================================ -->
+<style>
+#missing-money {
+  background: linear-gradient(180deg, #0a0f1e 0%, #001233 60%, #0a0f1e 100%);
+  position: relative; overflow: hidden;
+  padding: 6rem 1.5rem 5rem; isolation: isolate;
+}
+#mm-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
+#missing-money::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,40,104,0.55) 0%, transparent 75%);
+}
+.mm-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 3; }
+.mm-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(191,10,48,.25); border: 1px solid rgba(191,10,48,.6);
+  color: #ff7070; font-size: .72rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  padding: .35em 1.1em; border-radius: 100px; margin-bottom: 1.6rem;
+  animation: mmBlink 2s ease-in-out infinite;
+}
+@keyframes mmBlink {
+  0%,100%{box-shadow:0 0 0 0 rgba(191,10,48,0);}
+  50%{box-shadow:0 0 18px 5px rgba(191,10,48,.4);}
+}
+.mm-badge .dot {
+  width:7px;height:7px;background:#ff4444;border-radius:50%;
+  animation:mmDot 1.2s ease-in-out infinite;
+}
+@keyframes mmDot{0%,100%{opacity:1;}50%{opacity:.15;}}
+.mm-heading {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2.1rem,5.5vw,3.4rem); font-weight:900; color:#fff;
+  line-height:1.12; margin-bottom:.9rem; text-align:center;
+  text-shadow:0 2px 20px rgba(0,0,0,.6);
+}
+.mm-heading .gold{color:#FFD700;} .mm-heading .red{color:#ff4466;}
+.mm-subhead {
+  font-family:'Source Serif 4',Georgia,serif; color:rgba(255,255,255,.7);
+  font-size:1.08rem; text-align:center; margin-bottom:.5rem; font-weight:300;
+}
+.mm-states {
+  display:flex; align-items:center; justify-content:center;
+  gap:.6rem; flex-wrap:wrap; margin-bottom:2.8rem;
+  font-size:.8rem; color:rgba(255,255,255,.45);
+  letter-spacing:.08em; text-transform:uppercase;
+}
+.mm-states strong{color:#FFD700;font-size:.92rem;}
+.mm-card {
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+  border-radius:20px; padding:2.8rem 2.2rem;
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1);
+}
+.mm-card-title {
+  font-family:'Playfair Display',Georgia,serif; font-size:1.25rem;
+  color:#FFD700; font-weight:900; margin-bottom:.3rem; text-align:center;
+  text-shadow:0 0 20px rgba(255,215,0,.4);
+}
+.mm-card-sub {
+  font-size:.84rem; color:rgba(255,255,255,.5);
+  text-align:center; margin-bottom:2rem; letter-spacing:.04em;
+}
+.mm-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-bottom:1.1rem; }
+@media(max-width:540px){.mm-grid{grid-template-columns:1fr;}}
+.mm-full{grid-column:1/-1;}
+.mm-field{display:flex;flex-direction:column;gap:.4rem;}
+.mm-field label {
+  font-size:.75rem; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:#ffffff; text-shadow:0 1px 6px rgba(0,0,0,.5);
+}
+.mm-field .optional {
+  font-size:.66rem; color:rgba(255,255,255,.45);
+  font-weight:400; letter-spacing:0; text-transform:none; margin-left:.3rem;
+}
+.mm-field input {
+  background:rgba(255,255,255,.09); border:1.5px solid rgba(255,255,255,.25);
+  border-radius:10px; padding:.82rem 1rem; font-size:1rem; color:#fff;
+  font-family:'Source Serif 4',Georgia,serif; outline:none; width:100%;
+  transition:border-color .2s,background .2s,box-shadow .2s; caret-color:#FFD700;
+}
+.mm-field input::placeholder{color:rgba(255,255,255,.35);}
+.mm-field input:focus{border-color:#FFD700;background:rgba(255,255,255,.13);box-shadow:0 0 0 3px rgba(255,215,0,.2);}
+.mm-submit {
+  width:100%; margin-top:.4rem;
+  background:linear-gradient(135deg,#c8102e 0%,#8B0520 50%,#c8102e 100%);
+  color:#fff; border:none; border-radius:12px; padding:1.1rem 2rem;
+  font-size:1.15rem; font-weight:900;
+  font-family:'Playfair Display',Georgia,serif;
+  letter-spacing:.06em; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:.8rem;
+  transition:transform .15s,box-shadow .2s;
+  animation:btnShimmer 3s ease-in-out infinite;
+}
+@keyframes btnShimmer{
+  0%,100%{box-shadow:0 6px 30px rgba(200,16,46,.55),0 0 0 0 rgba(255,215,0,0);}
+  50%{box-shadow:0 6px 30px rgba(200,16,46,.7),0 0 20px 4px rgba(255,215,0,.25);}
+}
+.mm-submit:hover{transform:translateY(-3px);}
+.mm-submit:active{transform:translateY(0);}
+.mm-disclaimer {
+  text-align:center; font-size:.75rem; color:rgba(255,255,255,.35);
+  margin-top:1.3rem; line-height:1.55;
+}
+.mm-disclaimer a{color:rgba(255,255,255,.5);text-decoration:underline;}
+.mm-trust {
+  display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;
+  margin-top:2.8rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.1);
+}
+.mm-trust-item {
+  display:flex; flex-direction:column; align-items:center; gap:.3rem;
+  color:rgba(255,255,255,.5); font-size:.76rem; text-align:center;
+}
+.mm-trust-item .icon{font-size:1.5rem;}
+.mm-trust-item strong{color:rgba(255,255,255,.85);font-size:.82rem;display:block;}
+
+/* ── THANK YOU OVERLAY ── */
+#mm-overlay {
+  display:none; position:fixed; inset:0; z-index:99999;
+  background:linear-gradient(160deg,#0a0f1e 0%,#001233 45%,#0d1a0d 100%);
+  overflow:hidden; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center; padding:2rem;
+}
+#mm-overlay.show{display:flex;}
+#ty-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.ty-float {
+  position:absolute; font-size:4rem; opacity:.06; pointer-events:none;
+  animation:tyFloat linear infinite; z-index:1;
+}
+@keyframes tyFloat {
+  0%{transform:translateY(110vh) rotate(0deg);opacity:0;}
+  10%{opacity:.06;} 90%{opacity:.06;}
+  100%{transform:translateY(-10vh) rotate(360deg);opacity:0;}
+}
+.ty-content {
+  position:relative; z-index:2; max-width:640px;
+  animation:tyUp .7s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes tyUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.ty-icon {
+  font-size:5rem; line-height:1; margin-bottom:1rem;
+  animation:tyBounce .8s cubic-bezier(.175,.885,.32,1.275) .3s both;
+  filter:drop-shadow(0 0 30px rgba(255,215,0,.6));
+}
+@keyframes tyBounce{
+  0%{transform:scale(0) rotate(-15deg);opacity:0;}
+  60%{transform:scale(1.2) rotate(5deg);}
+  100%{transform:scale(1) rotate(0deg);opacity:1;}
+}
+.ty-title {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2rem,6vw,3.5rem); font-weight:900; color:#FFD700;
+  line-height:1.1; margin-bottom:.6rem;
+  text-shadow:0 0 40px rgba(255,215,0,.5),0 2px 20px rgba(0,0,0,.8);
+  animation:tyUp .6s ease .4s both;
+}
+.ty-name {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(1.3rem,3.5vw,1.8rem); color:#fff; font-weight:700;
+  margin-bottom:1.2rem; animation:tyUp .6s ease .55s both;
+}
+.ty-message {
+  font-family:'Source Serif 4',Georgia,serif;
+  font-size:clamp(.95rem,2.5vw,1.15rem); color:rgba(255,255,255,.82);
+  line-height:1.75; font-weight:300; margin-bottom:2rem;
+  animation:tyUp .6s ease .7s both;
+}
+.ty-message strong{color:#FFD700;font-weight:600;}
+.ty-bar-wrap{margin-bottom:1.8rem;animation:tyUp .6s ease .85s both;}
+.ty-bar-label{font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.ty-bar-track{width:100%;max-width:400px;margin:0 auto;height:6px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;}
+.ty-bar-fill{height:100%;background:linear-gradient(90deg,#FFD700,#FFA500);border-radius:99px;width:100%;transform-origin:left;}
+.ty-go-btn {
+  display:inline-block; background:transparent;
+  border:1px solid rgba(255,255,255,.25); color:rgba(255,255,255,.6);
+  font-size:.9rem; padding:.6rem 1.8rem; border-radius:99px; cursor:pointer;
+  font-family:'Source Serif 4',Georgia,serif; transition:all .2s;
+  animation:tyUp .6s ease 1s both;
+}
+.ty-go-btn:hover{border-color:#FFD700;color:#FFD700;background:rgba(255,215,0,.08);}
+</style>
+
+<!-- CANVAS for section background -->
+<canvas id="mm-canvas"></canvas>
+
+<!-- THANK YOU OVERLAY -->
+<div id="mm-overlay">
+  <canvas id="ty-canvas"></canvas>
+  <span class="ty-float" style="left:5%;animation-duration:8s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:15%;animation-duration:11s;animation-delay:1s">🪙</span>
+  <span class="ty-float" style="left:28%;animation-duration:9s;animation-delay:2s">💰</span>
+  <span class="ty-float" style="left:42%;animation-duration:13s;animation-delay:.5s">💵</span>
+  <span class="ty-float" style="left:58%;animation-duration:10s;animation-delay:3s">🪙</span>
+  <span class="ty-float" style="left:70%;animation-duration:8s;animation-delay:1.5s">💰</span>
+  <span class="ty-float" style="left:82%;animation-duration:12s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:92%;animation-duration:9s;animation-delay:2.5s">🪙</span>
+  <div class="ty-content">
+    <div class="ty-icon">💰</div>
+    <div class="ty-title">Thank You!</div>
+    <div class="ty-name" id="ty-name"></div>
+    <div class="ty-message">
+      A <strong>Rightful Returns Recovery Specialist</strong> will personally
+      research any lost or unclaimed funds in your name — across all 50 states.<br/><br/>
+      MissingMoney.com is now open in a new tab. Enter your name exactly as it
+      appeared on your property, and try any previous names or addresses too.
+    </div>
+    <div class="ty-bar-wrap">
+      <div class="ty-bar-label">This message closes in 6 seconds</div>
+      <div class="ty-bar-track"><div class="ty-bar-fill" id="ty-bar"></div></div>
+    </div>
+    <button class="ty-go-btn" onclick="mmCloseOverlay()">Close This Message →</button>
+  </div>
+</div>
+
+<!-- MAIN SECTION -->
+<section id="missing-money">
+  <div class="mm-inner">
+    <div style="text-align:center">
+      <span class="mm-badge"><span class="dot"></span> Act Now — Unclaimed Funds May Be Waiting</span>
+    </div>
+    <h2 class="mm-heading">💰 Is <span class="gold">Missing Money</span><br/><span class="red">Waiting in Your Name?</span></h2>
+    <p class="mm-subhead">Search the national unclaimed property database — free, instant, no obligation.</p>
+    <div class="mm-states">🌵 AZ &nbsp;·&nbsp; 🍑 GA &nbsp;·&nbsp; ⭐ TX &nbsp;·&nbsp; <strong>+ All 50 States 🇺🇸</strong></div>
+    <div class="mm-card">
+      <div class="mm-card-title">🔍 Search for Your Missing Money Now</div>
+      <div class="mm-card-sub">Takes less than 60 seconds — completely free</div>
+      <form id="mm-form">
+        <input type="hidden" name="_source" value="Missing Money Search — All 50 States"/>
+        <div class="mm-grid">
+          <div class="mm-field">
+            <label for="mm-first">First Name</label>
+            <input type="text" id="mm-first" name="first_name" placeholder="Jane" autocomplete="given-name" required/>
+          </div>
+          <div class="mm-field">
+            <label for="mm-last">Last Name</label>
+            <input type="text" id="mm-last" name="last_name" placeholder="Smith" autocomplete="family-name" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-email">Email Address</label>
+            <input type="email" id="mm-email" name="email" placeholder="jane@example.com" autocomplete="email" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-phone">Phone Number <span class="optional">(optional)</span></label>
+            <input type="tel" id="mm-phone" name="phone" placeholder="(480) 555-0100" autocomplete="tel"/>
+          </div>
+        </div>
+        <button type="button" class="mm-submit" onclick="mmHandleSubmit()">
+          💰 SEARCH NOW — All 50 States
+        </button>
+        <p class="mm-disclaimer">
+          By submitting, you agree to be contacted by a Rightful Returns Recovery specialist
+          if missing funds are found. Msg &amp; data rates may apply.
+          <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">SMS Terms</a>.
+          Search powered by <a href="https://missingmoney.com" target="_blank" style="color:rgba(255,255,255,.5)">MissingMoney.com</a>.
+        </p>
+      </form>
+    </div>
+    <div class="mm-trust">
+      <div class="mm-trust-item"><span class="icon">🔒</span><strong>Secure &amp; Private</strong>Never sold or shared</div>
+      <div class="mm-trust-item"><span class="icon">💵</span><strong>No Upfront Cost</strong>Always free to search</div>
+      <div class="mm-trust-item"><span class="icon">🇺🇸</span><strong>All 50 States</strong>Full national database</div>
+      <div class="mm-trust-item"><span class="icon">📞</span><strong>Specialist Follow-Up</strong>We call if funds found</div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ── KEY CHANGE: button type="button" + plain onclick ──
+   This fires synchronously so window.open is NEVER blocked */
+
+var mmOverlayTimer = null;
+var mmParticleEngine = null;
+
+function mmHandleSubmit() {
+  // 1. Validate
+  var first = document.getElementById('mm-first').value.trim();
+  var last  = document.getElementById('mm-last').value.trim();
+  var email = document.getElementById('mm-email').value.trim();
+  if (!first) { alert('Please enter your first name.'); return; }
+  if (!last)  { alert('Please enter your last name.');  return; }
+  if (!email || email.indexOf('@') < 0) { alert('Please enter a valid email address.'); return; }
+
+  // 2. Open missingmoney.com RIGHT NOW — synchronous, never blocked
+  window.open('https://missingmoney.com', '_blank');
+
+  // 3. Send to Formspree in background (fire and forget)
+  var fd = new FormData(document.getElementById('mm-form'));
+  fetch('https://formspree.io/f/mjgeddoy', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: fd
+  });
+
+  // 4. Show thank-you overlay with correct name
+  document.getElementById('ty-name').textContent = first + ' ' + last + ' — We\'re On It!';
+  var overlay = document.getElementById('mm-overlay');
+  overlay.classList.add('show');
+
+  // 5. Start money rain
+  var tyCanvas = document.getElementById('ty-canvas');
+  tyCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
+  mmParticleEngine = mmCreateEngine(tyCanvas, function() {
+    return { w: window.innerWidth, h: window.innerHeight };
+  });
+  mmParticleEngine.start();
+
+  // 6. Restart countdown bar
+  var bar = document.getElementById('ty-bar');
+  bar.style.transition = 'none';
+  bar.style.transform  = 'scaleX(1)';
+  bar.offsetHeight; // reflow
+  bar.style.transition = 'transform 6s linear';
+  bar.style.transform  = 'scaleX(0)';
+
+  // 7. Auto close after 6s
+  clearTimeout(mmOverlayTimer);
+  mmOverlayTimer = setTimeout(mmCloseOverlay, 6000);
+}
+
+function mmCloseOverlay() {
+  clearTimeout(mmOverlayTimer);
+  if (mmParticleEngine) { mmParticleEngine.stop(); mmParticleEngine = null; }
+  var overlay = document.getElementById('mm-overlay');
+  overlay.style.transition = 'opacity .4s';
+  overlay.style.opacity = '0';
+  setTimeout(function() {
+    overlay.classList.remove('show');
+    overlay.style.opacity = '';
+    overlay.style.transition = '';
+  }, 400);
+}
+
+/* ── PARTICLE ENGINE ── */
+function mmCreateEngine(canvas, getSize) {
+  var ctx = canvas.getContext('2d');
+  var W, H, bills, coins, raf, running;
+
+  function resize() {
+    var s = getSize(); W = canvas.width = s.w; H = canvas.height = s.h;
+  }
+
+  function rr(c,x,y,w,h,r) {
+    c.moveTo(x+r,y); c.lineTo(x+w-r,y); c.quadraticCurveTo(x+w,y,x+w,y+r);
+    c.lineTo(x+w,y+h-r); c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    c.lineTo(x+r,y+h); c.quadraticCurveTo(x,y+h,x,y+h-r);
+    c.lineTo(x,y+r); c.quadraticCurveTo(x,y,x+r,y); c.closePath();
+  }
+
+  function Bill() { this.reset(true); }
+  Bill.prototype.reset = function(init) {
+    this.x=Math.random()*W; this.y=init?Math.random()*-H:-60;
+    this.w=38+Math.random()*24; this.h=this.w*.45;
+    this.angle=(Math.random()-.5)*.6; this.spin=(Math.random()-.5)*.03;
+    this.vy=1.5+Math.random()*2.5; this.vx=(Math.random()-.5)*.9;
+    this.alpha=.6+Math.random()*.35;
+    this.sway=Math.random()*Math.PI*2;
+    this.swayS=.012+Math.random()*.018; this.swayA=.6+Math.random()*1.4;
+  };
+  Bill.prototype.update=function(){
+    this.sway+=this.swayS; this.x+=this.vx+Math.sin(this.sway)*this.swayA;
+    this.y+=this.vy; this.angle+=this.spin;
+    if(this.y>H+80) this.reset(false);
+  };
+  Bill.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha;
+    ctx.translate(this.x,this.y); ctx.rotate(this.angle);
+    ctx.fillStyle='#2d6e3e'; ctx.strokeStyle='#4a9e5c'; ctx.lineWidth=1;
+    ctx.beginPath(); rr(ctx,-this.w/2,-this.h/2,this.w,this.h,3); ctx.fill(); ctx.stroke();
+    ctx.fillStyle='rgba(200,255,200,.8)';
+    ctx.font='bold '+(this.h*.55)+'px Georgia,serif';
+    ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    ctx.restore();
+  };
+
+  function Coin() { this.reset(true); }
+  Coin.prototype.reset=function(init){
+    this.r=9+Math.random()*11;
+    this.x=this.r+Math.random()*(W-this.r*2);
+    this.floor=H-this.r-Math.random()*20;
+    this.y=init?this.floor-Math.random()*H*.6:-this.r;
+    this.vy=-(3+Math.random()*5); this.vx=(Math.random()-.5)*1.5;
+    this.gravity=.2+Math.random()*.1; this.bounce=.45+Math.random()*.25;
+    this.alpha=.75+Math.random()*.25; this.spin=0;
+    this.spinS=(Math.random()-.5)*.08; this.bounces=0;
+    this.maxB=3+Math.floor(Math.random()*5); this.dead=false;
+  };
+  Coin.prototype.update=function(){
+    if(this.dead) return;
+    this.vy+=this.gravity; this.y+=this.vy; this.x+=this.vx; this.spin+=this.spinS;
+    if(this.y>=this.floor){
+      this.y=this.floor; this.vy=-Math.abs(this.vy)*this.bounce; this.vx*=.8;
+      this.bounces++;
+      if(this.bounces>=this.maxB||Math.abs(this.vy)<.25){
+        this.vy=0; this.vx=0; this.dead=true;
+        var self=this; setTimeout(function(){self.reset(false);},800+Math.random()*2500);
+      }
+    }
+    if(this.x<-this.r) this.x=W+this.r;
+    if(this.x>W+this.r) this.x=-this.r;
+  };
+  Coin.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha; ctx.translate(this.x,this.y);
+    if(this.dead){ctx.scale(1,.3);}else{ctx.rotate(this.spin);}
+    var g=ctx.createRadialGradient(-this.r*.3,-this.r*.3,1,0,0,this.r);
+    g.addColorStop(0,'#fff5a0'); g.addColorStop(.35,'#FFD700');
+    g.addColorStop(.75,'#DAA520'); g.addColorStop(1,'#8B6914');
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(0,0,this.r,0,Math.PI*2); ctx.fill();
+    if(!this.dead){
+      ctx.fillStyle='rgba(255,255,255,.35)';
+      ctx.beginPath(); ctx.ellipse(-this.r*.25,-this.r*.28,this.r*.35,this.r*.2,-.5,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='rgba(100,65,0,.85)';
+      ctx.font='bold '+(this.r*.9)+'px Georgia,serif';
+      ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    }
+    ctx.restore();
+  };
+
+  return {
+    start: function() {
+      resize(); bills=[]; coins=[]; running=true;
+      var nb=Math.max(16,Math.floor(W/50));
+      var nc=Math.max(14,Math.floor(W/55));
+      for(var i=0;i<nb;i++) bills.push(new Bill());
+      for(var i=0;i<nc;i++) coins.push(new Coin());
+      function loop(){
+        if(!running) return;
+        ctx.clearRect(0,0,W,H);
+        for(var i=0;i<bills.length;i++){bills[i].update();bills[i].draw();}
+        for(var i=0;i<coins.length;i++){coins[i].update();coins[i].draw();}
+        raf=requestAnimationFrame(loop);
+      }
+      loop();
+    },
+    stop: function(){ running=false; cancelAnimationFrame(raf); }
+  };
+}
+
+/* ── Section background engine ── */
+(function(){
+  var canvas  = document.getElementById('mm-canvas');
+  var section = document.getElementById('missing-money');
+  canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:0;';
+  var engine = mmCreateEngine(canvas, function(){ return {w:section.offsetWidth,h:section.offsetHeight}; });
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) engine.start(); else engine.stop(); });
+  },{threshold:.05});
+  obs.observe(section);
+  window.addEventListener('resize', function(){ engine.stop(); engine.start(); });
+})();
+</script>
+<!-- ============================================================
+     END MISSING MONEY SECTION
+     ============================================================ -->
+
+<!-- ============================================================
+     MISSING MONEY SEARCH SECTION — paste above </body> tag
+     ============================================================ -->
+<style>
+#missing-money {
+  background: linear-gradient(180deg, #0a0f1e 0%, #001233 60%, #0a0f1e 100%);
+  position: relative; overflow: hidden;
+  padding: 6rem 1.5rem 5rem; isolation: isolate;
+}
+#mm-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
+#missing-money::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,40,104,0.55) 0%, transparent 75%);
+}
+.mm-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 3; }
+.mm-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(191,10,48,.25); border: 1px solid rgba(191,10,48,.6);
+  color: #ff7070; font-size: .72rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  padding: .35em 1.1em; border-radius: 100px; margin-bottom: 1.6rem;
+  animation: mmBlink 2s ease-in-out infinite;
+}
+@keyframes mmBlink {
+  0%,100%{box-shadow:0 0 0 0 rgba(191,10,48,0);}
+  50%{box-shadow:0 0 18px 5px rgba(191,10,48,.4);}
+}
+.mm-badge .dot {
+  width:7px;height:7px;background:#ff4444;border-radius:50%;
+  animation:mmDot 1.2s ease-in-out infinite;
+}
+@keyframes mmDot{0%,100%{opacity:1;}50%{opacity:.15;}}
+.mm-heading {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2.1rem,5.5vw,3.4rem); font-weight:900; color:#fff;
+  line-height:1.12; margin-bottom:.9rem; text-align:center;
+  text-shadow:0 2px 20px rgba(0,0,0,.6);
+}
+.mm-heading .gold{color:#FFD700;} .mm-heading .red{color:#ff4466;}
+.mm-subhead {
+  font-family:'Source Serif 4',Georgia,serif; color:rgba(255,255,255,.7);
+  font-size:1.08rem; text-align:center; margin-bottom:.5rem; font-weight:300;
+}
+.mm-states {
+  display:flex; align-items:center; justify-content:center;
+  gap:.6rem; flex-wrap:wrap; margin-bottom:2.8rem;
+  font-size:.8rem; color:rgba(255,255,255,.45);
+  letter-spacing:.08em; text-transform:uppercase;
+}
+.mm-states strong{color:#FFD700;font-size:.92rem;}
+.mm-card {
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+  border-radius:20px; padding:2.8rem 2.2rem;
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1);
+}
+.mm-card-title {
+  font-family:'Playfair Display',Georgia,serif; font-size:1.25rem;
+  color:#FFD700; font-weight:900; margin-bottom:.3rem; text-align:center;
+  text-shadow:0 0 20px rgba(255,215,0,.4);
+}
+.mm-card-sub {
+  font-size:.84rem; color:rgba(255,255,255,.5);
+  text-align:center; margin-bottom:2rem; letter-spacing:.04em;
+}
+.mm-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-bottom:1.1rem; }
+@media(max-width:540px){.mm-grid{grid-template-columns:1fr;}}
+.mm-full{grid-column:1/-1;}
+.mm-field{display:flex;flex-direction:column;gap:.4rem;}
+.mm-field label {
+  font-size:.75rem; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:#ffffff; text-shadow:0 1px 6px rgba(0,0,0,.5);
+}
+.mm-field .optional {
+  font-size:.66rem; color:rgba(255,255,255,.45);
+  font-weight:400; letter-spacing:0; text-transform:none; margin-left:.3rem;
+}
+.mm-field input {
+  background:rgba(255,255,255,.09); border:1.5px solid rgba(255,255,255,.25);
+  border-radius:10px; padding:.82rem 1rem; font-size:1rem; color:#fff;
+  font-family:'Source Serif 4',Georgia,serif; outline:none; width:100%;
+  transition:border-color .2s,background .2s,box-shadow .2s; caret-color:#FFD700;
+}
+.mm-field input::placeholder{color:rgba(255,255,255,.35);}
+.mm-field input:focus{border-color:#FFD700;background:rgba(255,255,255,.13);box-shadow:0 0 0 3px rgba(255,215,0,.2);}
+.mm-submit {
+  width:100%; margin-top:.4rem;
+  background:linear-gradient(135deg,#c8102e 0%,#8B0520 50%,#c8102e 100%);
+  color:#fff; border:none; border-radius:12px; padding:1.1rem 2rem;
+  font-size:1.15rem; font-weight:900;
+  font-family:'Playfair Display',Georgia,serif;
+  letter-spacing:.06em; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:.8rem;
+  transition:transform .15s,box-shadow .2s;
+  animation:btnShimmer 3s ease-in-out infinite;
+}
+@keyframes btnShimmer{
+  0%,100%{box-shadow:0 6px 30px rgba(200,16,46,.55),0 0 0 0 rgba(255,215,0,0);}
+  50%{box-shadow:0 6px 30px rgba(200,16,46,.7),0 0 20px 4px rgba(255,215,0,.25);}
+}
+.mm-submit:hover{transform:translateY(-3px);}
+.mm-submit:active{transform:translateY(0);}
+.mm-disclaimer {
+  text-align:center; font-size:.75rem; color:rgba(255,255,255,.35);
+  margin-top:1.3rem; line-height:1.55;
+}
+.mm-disclaimer a{color:rgba(255,255,255,.5);text-decoration:underline;}
+.mm-trust {
+  display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;
+  margin-top:2.8rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.1);
+}
+.mm-trust-item {
+  display:flex; flex-direction:column; align-items:center; gap:.3rem;
+  color:rgba(255,255,255,.5); font-size:.76rem; text-align:center;
+}
+.mm-trust-item .icon{font-size:1.5rem;}
+.mm-trust-item strong{color:rgba(255,255,255,.85);font-size:.82rem;display:block;}
+
+/* ── THANK YOU OVERLAY ── */
+#mm-overlay {
+  display:none; position:fixed; inset:0; z-index:99999;
+  background:linear-gradient(160deg,#0a0f1e 0%,#001233 45%,#0d1a0d 100%);
+  overflow:hidden; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center; padding:2rem;
+}
+#mm-overlay.show{display:flex;}
+#ty-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.ty-float {
+  position:absolute; font-size:4rem; opacity:.06; pointer-events:none;
+  animation:tyFloat linear infinite; z-index:1;
+}
+@keyframes tyFloat {
+  0%{transform:translateY(110vh) rotate(0deg);opacity:0;}
+  10%{opacity:.06;} 90%{opacity:.06;}
+  100%{transform:translateY(-10vh) rotate(360deg);opacity:0;}
+}
+.ty-content {
+  position:relative; z-index:2; max-width:640px;
+  animation:tyUp .7s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes tyUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.ty-icon {
+  font-size:5rem; line-height:1; margin-bottom:1rem;
+  animation:tyBounce .8s cubic-bezier(.175,.885,.32,1.275) .3s both;
+  filter:drop-shadow(0 0 30px rgba(255,215,0,.6));
+}
+@keyframes tyBounce{
+  0%{transform:scale(0) rotate(-15deg);opacity:0;}
+  60%{transform:scale(1.2) rotate(5deg);}
+  100%{transform:scale(1) rotate(0deg);opacity:1;}
+}
+.ty-title {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2rem,6vw,3.5rem); font-weight:900; color:#FFD700;
+  line-height:1.1; margin-bottom:.6rem;
+  text-shadow:0 0 40px rgba(255,215,0,.5),0 2px 20px rgba(0,0,0,.8);
+  animation:tyUp .6s ease .4s both;
+}
+.ty-name {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(1.3rem,3.5vw,1.8rem); color:#fff; font-weight:700;
+  margin-bottom:1.2rem; animation:tyUp .6s ease .55s both;
+}
+.ty-message {
+  font-family:'Source Serif 4',Georgia,serif;
+  font-size:clamp(.95rem,2.5vw,1.15rem); color:rgba(255,255,255,.82);
+  line-height:1.75; font-weight:300; margin-bottom:2rem;
+  animation:tyUp .6s ease .7s both;
+}
+.ty-message strong{color:#FFD700;font-weight:600;}
+.ty-bar-wrap{margin-bottom:1.8rem;animation:tyUp .6s ease .85s both;}
+.ty-bar-label{font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.ty-bar-track{width:100%;max-width:400px;margin:0 auto;height:6px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;}
+.ty-bar-fill{height:100%;background:linear-gradient(90deg,#FFD700,#FFA500);border-radius:99px;width:100%;transform-origin:left;}
+.ty-go-btn {
+  display:inline-block; background:transparent;
+  border:1px solid rgba(255,255,255,.25); color:rgba(255,255,255,.6);
+  font-size:.9rem; padding:.6rem 1.8rem; border-radius:99px; cursor:pointer;
+  font-family:'Source Serif 4',Georgia,serif; transition:all .2s;
+  animation:tyUp .6s ease 1s both;
+}
+.ty-go-btn:hover{border-color:#FFD700;color:#FFD700;background:rgba(255,215,0,.08);}
+</style>
+
+<!-- CANVAS for section background -->
+<canvas id="mm-canvas"></canvas>
+
+<!-- THANK YOU OVERLAY -->
+<div id="mm-overlay">
+  <canvas id="ty-canvas"></canvas>
+  <span class="ty-float" style="left:5%;animation-duration:8s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:15%;animation-duration:11s;animation-delay:1s">🪙</span>
+  <span class="ty-float" style="left:28%;animation-duration:9s;animation-delay:2s">💰</span>
+  <span class="ty-float" style="left:42%;animation-duration:13s;animation-delay:.5s">💵</span>
+  <span class="ty-float" style="left:58%;animation-duration:10s;animation-delay:3s">🪙</span>
+  <span class="ty-float" style="left:70%;animation-duration:8s;animation-delay:1.5s">💰</span>
+  <span class="ty-float" style="left:82%;animation-duration:12s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:92%;animation-duration:9s;animation-delay:2.5s">🪙</span>
+  <div class="ty-content">
+    <div class="ty-icon">💰</div>
+    <div class="ty-title">Thank You!</div>
+    <div class="ty-name" id="ty-name"></div>
+    <div class="ty-message">
+      A <strong>Rightful Returns Recovery Specialist</strong> will personally
+      research any lost or unclaimed funds in your name — across all 50 states.<br/><br/>
+      MissingMoney.com is now open in a new tab. Enter your name exactly as it
+      appeared on your property, and try any previous names or addresses too.
+    </div>
+    <div class="ty-bar-wrap">
+      <div class="ty-bar-label">This message closes in 6 seconds</div>
+      <div class="ty-bar-track"><div class="ty-bar-fill" id="ty-bar"></div></div>
+    </div>
+    <button class="ty-go-btn" onclick="mmCloseOverlay()">Close This Message →</button>
+  </div>
+</div>
+
+<!-- MAIN SECTION -->
+<section id="missing-money">
+  <div class="mm-inner">
+    <div style="text-align:center">
+      <span class="mm-badge"><span class="dot"></span> Act Now — Unclaimed Funds May Be Waiting</span>
+    </div>
+    <h2 class="mm-heading">💰 Is <span class="gold">Missing Money</span><br/><span class="red">Waiting in Your Name?</span></h2>
+    <p class="mm-subhead">Search the national unclaimed property database — free, instant, no obligation.</p>
+    <div class="mm-states">🌵 AZ &nbsp;·&nbsp; 🍑 GA &nbsp;·&nbsp; ⭐ TX &nbsp;·&nbsp; <strong>+ All 50 States 🇺🇸</strong></div>
+    <div class="mm-card">
+      <div class="mm-card-title">🔍 Search for Your Missing Money Now</div>
+      <div class="mm-card-sub">Takes less than 60 seconds — completely free</div>
+      <form id="mm-form">
+        <input type="hidden" name="_source" value="Missing Money Search — All 50 States"/>
+        <div class="mm-grid">
+          <div class="mm-field">
+            <label for="mm-first">First Name</label>
+            <input type="text" id="mm-first" name="first_name" placeholder="Jane" autocomplete="given-name" required/>
+          </div>
+          <div class="mm-field">
+            <label for="mm-last">Last Name</label>
+            <input type="text" id="mm-last" name="last_name" placeholder="Smith" autocomplete="family-name" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-email">Email Address</label>
+            <input type="email" id="mm-email" name="email" placeholder="jane@example.com" autocomplete="email" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-phone">Phone Number <span class="optional">(optional)</span></label>
+            <input type="tel" id="mm-phone" name="phone" placeholder="(480) 555-0100" autocomplete="tel"/>
+          </div>
+        </div>
+        <button type="button" class="mm-submit" onclick="mmHandleSubmit()">
+          💰 SEARCH NOW — All 50 States
+        </button>
+        <p class="mm-disclaimer">
+          By submitting, you agree to be contacted by a Rightful Returns Recovery specialist
+          if missing funds are found. Msg &amp; data rates may apply.
+          <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">SMS Terms</a>.
+          Search powered by <a href="https://missingmoney.com" target="_blank" style="color:rgba(255,255,255,.5)">MissingMoney.com</a>.
+        </p>
+      </form>
+    </div>
+    <div class="mm-trust">
+      <div class="mm-trust-item"><span class="icon">🔒</span><strong>Secure &amp; Private</strong>Never sold or shared</div>
+      <div class="mm-trust-item"><span class="icon">💵</span><strong>No Upfront Cost</strong>Always free to search</div>
+      <div class="mm-trust-item"><span class="icon">🇺🇸</span><strong>All 50 States</strong>Full national database</div>
+      <div class="mm-trust-item"><span class="icon">📞</span><strong>Specialist Follow-Up</strong>We call if funds found</div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ── KEY CHANGE: button type="button" + plain onclick ──
+   This fires synchronously so window.open is NEVER blocked */
+
+var mmOverlayTimer = null;
+var mmParticleEngine = null;
+
+function mmHandleSubmit() {
+  // 1. Validate
+  var first = document.getElementById('mm-first').value.trim();
+  var last  = document.getElementById('mm-last').value.trim();
+  var email = document.getElementById('mm-email').value.trim();
+  if (!first) { alert('Please enter your first name.'); return; }
+  if (!last)  { alert('Please enter your last name.');  return; }
+  if (!email || email.indexOf('@') < 0) { alert('Please enter a valid email address.'); return; }
+
+  // 2. Open missingmoney.com RIGHT NOW — synchronous, never blocked
+  window.open('https://missingmoney.com', '_blank');
+
+  // 3. Send to Formspree in background (fire and forget)
+  var fd = new FormData(document.getElementById('mm-form'));
+  fetch('https://formspree.io/f/mjgeddoy', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: fd
+  });
+
+  // 4. Show thank-you overlay with correct name
+  document.getElementById('ty-name').textContent = first + ' ' + last + ' — We\'re On It!';
+  var overlay = document.getElementById('mm-overlay');
+  overlay.classList.add('show');
+
+  // 5. Start money rain
+  var tyCanvas = document.getElementById('ty-canvas');
+  tyCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
+  mmParticleEngine = mmCreateEngine(tyCanvas, function() {
+    return { w: window.innerWidth, h: window.innerHeight };
+  });
+  mmParticleEngine.start();
+
+  // 6. Restart countdown bar
+  var bar = document.getElementById('ty-bar');
+  bar.style.transition = 'none';
+  bar.style.transform  = 'scaleX(1)';
+  bar.offsetHeight; // reflow
+  bar.style.transition = 'transform 6s linear';
+  bar.style.transform  = 'scaleX(0)';
+
+  // 7. Auto close after 6s
+  clearTimeout(mmOverlayTimer);
+  mmOverlayTimer = setTimeout(mmCloseOverlay, 6000);
+}
+
+function mmCloseOverlay() {
+  clearTimeout(mmOverlayTimer);
+  if (mmParticleEngine) { mmParticleEngine.stop(); mmParticleEngine = null; }
+  var overlay = document.getElementById('mm-overlay');
+  overlay.style.transition = 'opacity .4s';
+  overlay.style.opacity = '0';
+  setTimeout(function() {
+    overlay.classList.remove('show');
+    overlay.style.opacity = '';
+    overlay.style.transition = '';
+  }, 400);
+}
+
+/* ── PARTICLE ENGINE ── */
+function mmCreateEngine(canvas, getSize) {
+  var ctx = canvas.getContext('2d');
+  var W, H, bills, coins, raf, running;
+
+  function resize() {
+    var s = getSize(); W = canvas.width = s.w; H = canvas.height = s.h;
+  }
+
+  function rr(c,x,y,w,h,r) {
+    c.moveTo(x+r,y); c.lineTo(x+w-r,y); c.quadraticCurveTo(x+w,y,x+w,y+r);
+    c.lineTo(x+w,y+h-r); c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    c.lineTo(x+r,y+h); c.quadraticCurveTo(x,y+h,x,y+h-r);
+    c.lineTo(x,y+r); c.quadraticCurveTo(x,y,x+r,y); c.closePath();
+  }
+
+  function Bill() { this.reset(true); }
+  Bill.prototype.reset = function(init) {
+    this.x=Math.random()*W; this.y=init?Math.random()*-H:-60;
+    this.w=38+Math.random()*24; this.h=this.w*.45;
+    this.angle=(Math.random()-.5)*.6; this.spin=(Math.random()-.5)*.03;
+    this.vy=1.5+Math.random()*2.5; this.vx=(Math.random()-.5)*.9;
+    this.alpha=.6+Math.random()*.35;
+    this.sway=Math.random()*Math.PI*2;
+    this.swayS=.012+Math.random()*.018; this.swayA=.6+Math.random()*1.4;
+  };
+  Bill.prototype.update=function(){
+    this.sway+=this.swayS; this.x+=this.vx+Math.sin(this.sway)*this.swayA;
+    this.y+=this.vy; this.angle+=this.spin;
+    if(this.y>H+80) this.reset(false);
+  };
+  Bill.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha;
+    ctx.translate(this.x,this.y); ctx.rotate(this.angle);
+    ctx.fillStyle='#2d6e3e'; ctx.strokeStyle='#4a9e5c'; ctx.lineWidth=1;
+    ctx.beginPath(); rr(ctx,-this.w/2,-this.h/2,this.w,this.h,3); ctx.fill(); ctx.stroke();
+    ctx.fillStyle='rgba(200,255,200,.8)';
+    ctx.font='bold '+(this.h*.55)+'px Georgia,serif';
+    ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    ctx.restore();
+  };
+
+  function Coin() { this.reset(true); }
+  Coin.prototype.reset=function(init){
+    this.r=9+Math.random()*11;
+    this.x=this.r+Math.random()*(W-this.r*2);
+    this.floor=H-this.r-Math.random()*20;
+    this.y=init?this.floor-Math.random()*H*.6:-this.r;
+    this.vy=-(3+Math.random()*5); this.vx=(Math.random()-.5)*1.5;
+    this.gravity=.2+Math.random()*.1; this.bounce=.45+Math.random()*.25;
+    this.alpha=.75+Math.random()*.25; this.spin=0;
+    this.spinS=(Math.random()-.5)*.08; this.bounces=0;
+    this.maxB=3+Math.floor(Math.random()*5); this.dead=false;
+  };
+  Coin.prototype.update=function(){
+    if(this.dead) return;
+    this.vy+=this.gravity; this.y+=this.vy; this.x+=this.vx; this.spin+=this.spinS;
+    if(this.y>=this.floor){
+      this.y=this.floor; this.vy=-Math.abs(this.vy)*this.bounce; this.vx*=.8;
+      this.bounces++;
+      if(this.bounces>=this.maxB||Math.abs(this.vy)<.25){
+        this.vy=0; this.vx=0; this.dead=true;
+        var self=this; setTimeout(function(){self.reset(false);},800+Math.random()*2500);
+      }
+    }
+    if(this.x<-this.r) this.x=W+this.r;
+    if(this.x>W+this.r) this.x=-this.r;
+  };
+  Coin.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha; ctx.translate(this.x,this.y);
+    if(this.dead){ctx.scale(1,.3);}else{ctx.rotate(this.spin);}
+    var g=ctx.createRadialGradient(-this.r*.3,-this.r*.3,1,0,0,this.r);
+    g.addColorStop(0,'#fff5a0'); g.addColorStop(.35,'#FFD700');
+    g.addColorStop(.75,'#DAA520'); g.addColorStop(1,'#8B6914');
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(0,0,this.r,0,Math.PI*2); ctx.fill();
+    if(!this.dead){
+      ctx.fillStyle='rgba(255,255,255,.35)';
+      ctx.beginPath(); ctx.ellipse(-this.r*.25,-this.r*.28,this.r*.35,this.r*.2,-.5,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='rgba(100,65,0,.85)';
+      ctx.font='bold '+(this.r*.9)+'px Georgia,serif';
+      ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    }
+    ctx.restore();
+  };
+
+  return {
+    start: function() {
+      resize(); bills=[]; coins=[]; running=true;
+      var nb=Math.max(16,Math.floor(W/50));
+      var nc=Math.max(14,Math.floor(W/55));
+      for(var i=0;i<nb;i++) bills.push(new Bill());
+      for(var i=0;i<nc;i++) coins.push(new Coin());
+      function loop(){
+        if(!running) return;
+        ctx.clearRect(0,0,W,H);
+        for(var i=0;i<bills.length;i++){bills[i].update();bills[i].draw();}
+        for(var i=0;i<coins.length;i++){coins[i].update();coins[i].draw();}
+        raf=requestAnimationFrame(loop);
+      }
+      loop();
+    },
+    stop: function(){ running=false; cancelAnimationFrame(raf); }
+  };
+}
+
+/* ── Section background engine ── */
+(function(){
+  var canvas  = document.getElementById('mm-canvas');
+  var section = document.getElementById('missing-money');
+  canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:0;';
+  var engine = mmCreateEngine(canvas, function(){ return {w:section.offsetWidth,h:section.offsetHeight}; });
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) engine.start(); else engine.stop(); });
+  },{threshold:.05});
+  obs.observe(section);
+  window.addEventListener('resize', function(){ engine.stop(); engine.start(); });
+})();
+</script>
+<!-- ============================================================
+     END MISSING MONEY SECTION
+     ============================================================ -->
+
+<!-- ============================================================
+     MISSING MONEY SEARCH SECTION — paste above </body> tag
+     ============================================================ -->
+<style>
+#missing-money {
+  background: linear-gradient(180deg, #0a0f1e 0%, #001233 60%, #0a0f1e 100%);
+  position: relative; overflow: hidden;
+  padding: 6rem 1.5rem 5rem; isolation: isolate;
+}
+#mm-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
+#missing-money::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,40,104,0.55) 0%, transparent 75%);
+}
+.mm-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 3; }
+.mm-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(191,10,48,.25); border: 1px solid rgba(191,10,48,.6);
+  color: #ff7070; font-size: .72rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  padding: .35em 1.1em; border-radius: 100px; margin-bottom: 1.6rem;
+  animation: mmBlink 2s ease-in-out infinite;
+}
+@keyframes mmBlink {
+  0%,100%{box-shadow:0 0 0 0 rgba(191,10,48,0);}
+  50%{box-shadow:0 0 18px 5px rgba(191,10,48,.4);}
+}
+.mm-badge .dot {
+  width:7px;height:7px;background:#ff4444;border-radius:50%;
+  animation:mmDot 1.2s ease-in-out infinite;
+}
+@keyframes mmDot{0%,100%{opacity:1;}50%{opacity:.15;}}
+.mm-heading {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2.1rem,5.5vw,3.4rem); font-weight:900; color:#fff;
+  line-height:1.12; margin-bottom:.9rem; text-align:center;
+  text-shadow:0 2px 20px rgba(0,0,0,.6);
+}
+.mm-heading .gold{color:#FFD700;} .mm-heading .red{color:#ff4466;}
+.mm-subhead {
+  font-family:'Source Serif 4',Georgia,serif; color:rgba(255,255,255,.7);
+  font-size:1.08rem; text-align:center; margin-bottom:.5rem; font-weight:300;
+}
+.mm-states {
+  display:flex; align-items:center; justify-content:center;
+  gap:.6rem; flex-wrap:wrap; margin-bottom:2.8rem;
+  font-size:.8rem; color:rgba(255,255,255,.45);
+  letter-spacing:.08em; text-transform:uppercase;
+}
+.mm-states strong{color:#FFD700;font-size:.92rem;}
+.mm-card {
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+  border-radius:20px; padding:2.8rem 2.2rem;
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1);
+}
+.mm-card-title {
+  font-family:'Playfair Display',Georgia,serif; font-size:1.25rem;
+  color:#FFD700; font-weight:900; margin-bottom:.3rem; text-align:center;
+  text-shadow:0 0 20px rgba(255,215,0,.4);
+}
+.mm-card-sub {
+  font-size:.84rem; color:rgba(255,255,255,.5);
+  text-align:center; margin-bottom:2rem; letter-spacing:.04em;
+}
+.mm-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-bottom:1.1rem; }
+@media(max-width:540px){.mm-grid{grid-template-columns:1fr;}}
+.mm-full{grid-column:1/-1;}
+.mm-field{display:flex;flex-direction:column;gap:.4rem;}
+.mm-field label {
+  font-size:.75rem; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:#ffffff; text-shadow:0 1px 6px rgba(0,0,0,.5);
+}
+.mm-field .optional {
+  font-size:.66rem; color:rgba(255,255,255,.45);
+  font-weight:400; letter-spacing:0; text-transform:none; margin-left:.3rem;
+}
+.mm-field input {
+  background:rgba(255,255,255,.09); border:1.5px solid rgba(255,255,255,.25);
+  border-radius:10px; padding:.82rem 1rem; font-size:1rem; color:#fff;
+  font-family:'Source Serif 4',Georgia,serif; outline:none; width:100%;
+  transition:border-color .2s,background .2s,box-shadow .2s; caret-color:#FFD700;
+}
+.mm-field input::placeholder{color:rgba(255,255,255,.35);}
+.mm-field input:focus{border-color:#FFD700;background:rgba(255,255,255,.13);box-shadow:0 0 0 3px rgba(255,215,0,.2);}
+.mm-submit {
+  width:100%; margin-top:.4rem;
+  background:linear-gradient(135deg,#c8102e 0%,#8B0520 50%,#c8102e 100%);
+  color:#fff; border:none; border-radius:12px; padding:1.1rem 2rem;
+  font-size:1.15rem; font-weight:900;
+  font-family:'Playfair Display',Georgia,serif;
+  letter-spacing:.06em; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:.8rem;
+  transition:transform .15s,box-shadow .2s;
+  animation:btnShimmer 3s ease-in-out infinite;
+}
+@keyframes btnShimmer{
+  0%,100%{box-shadow:0 6px 30px rgba(200,16,46,.55),0 0 0 0 rgba(255,215,0,0);}
+  50%{box-shadow:0 6px 30px rgba(200,16,46,.7),0 0 20px 4px rgba(255,215,0,.25);}
+}
+.mm-submit:hover{transform:translateY(-3px);}
+.mm-submit:active{transform:translateY(0);}
+.mm-disclaimer {
+  text-align:center; font-size:.75rem; color:rgba(255,255,255,.35);
+  margin-top:1.3rem; line-height:1.55;
+}
+.mm-disclaimer a{color:rgba(255,255,255,.5);text-decoration:underline;}
+.mm-trust {
+  display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;
+  margin-top:2.8rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.1);
+}
+.mm-trust-item {
+  display:flex; flex-direction:column; align-items:center; gap:.3rem;
+  color:rgba(255,255,255,.5); font-size:.76rem; text-align:center;
+}
+.mm-trust-item .icon{font-size:1.5rem;}
+.mm-trust-item strong{color:rgba(255,255,255,.85);font-size:.82rem;display:block;}
+
+/* ── THANK YOU OVERLAY ── */
+#mm-overlay {
+  display:none; position:fixed; inset:0; z-index:99999;
+  background:linear-gradient(160deg,#0a0f1e 0%,#001233 45%,#0d1a0d 100%);
+  overflow:hidden; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center; padding:2rem;
+}
+#mm-overlay.show{display:flex;}
+#ty-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.ty-float {
+  position:absolute; font-size:4rem; opacity:.06; pointer-events:none;
+  animation:tyFloat linear infinite; z-index:1;
+}
+@keyframes tyFloat {
+  0%{transform:translateY(110vh) rotate(0deg);opacity:0;}
+  10%{opacity:.06;} 90%{opacity:.06;}
+  100%{transform:translateY(-10vh) rotate(360deg);opacity:0;}
+}
+.ty-content {
+  position:relative; z-index:2; max-width:640px;
+  animation:tyUp .7s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes tyUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.ty-icon {
+  font-size:5rem; line-height:1; margin-bottom:1rem;
+  animation:tyBounce .8s cubic-bezier(.175,.885,.32,1.275) .3s both;
+  filter:drop-shadow(0 0 30px rgba(255,215,0,.6));
+}
+@keyframes tyBounce{
+  0%{transform:scale(0) rotate(-15deg);opacity:0;}
+  60%{transform:scale(1.2) rotate(5deg);}
+  100%{transform:scale(1) rotate(0deg);opacity:1;}
+}
+.ty-title {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2rem,6vw,3.5rem); font-weight:900; color:#FFD700;
+  line-height:1.1; margin-bottom:.6rem;
+  text-shadow:0 0 40px rgba(255,215,0,.5),0 2px 20px rgba(0,0,0,.8);
+  animation:tyUp .6s ease .4s both;
+}
+.ty-name {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(1.3rem,3.5vw,1.8rem); color:#fff; font-weight:700;
+  margin-bottom:1.2rem; animation:tyUp .6s ease .55s both;
+}
+.ty-message {
+  font-family:'Source Serif 4',Georgia,serif;
+  font-size:clamp(.95rem,2.5vw,1.15rem); color:rgba(255,255,255,.82);
+  line-height:1.75; font-weight:300; margin-bottom:2rem;
+  animation:tyUp .6s ease .7s both;
+}
+.ty-message strong{color:#FFD700;font-weight:600;}
+.ty-bar-wrap{margin-bottom:1.8rem;animation:tyUp .6s ease .85s both;}
+.ty-bar-label{font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.ty-bar-track{width:100%;max-width:400px;margin:0 auto;height:6px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;}
+.ty-bar-fill{height:100%;background:linear-gradient(90deg,#FFD700,#FFA500);border-radius:99px;width:100%;transform-origin:left;}
+.ty-go-btn {
+  display:inline-block; background:transparent;
+  border:1px solid rgba(255,255,255,.25); color:rgba(255,255,255,.6);
+  font-size:.9rem; padding:.6rem 1.8rem; border-radius:99px; cursor:pointer;
+  font-family:'Source Serif 4',Georgia,serif; transition:all .2s;
+  animation:tyUp .6s ease 1s both;
+}
+.ty-go-btn:hover{border-color:#FFD700;color:#FFD700;background:rgba(255,215,0,.08);}
+</style>
+
+<!-- CANVAS for section background -->
+<canvas id="mm-canvas"></canvas>
+
+<!-- THANK YOU OVERLAY -->
+<div id="mm-overlay">
+  <canvas id="ty-canvas"></canvas>
+  <span class="ty-float" style="left:5%;animation-duration:8s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:15%;animation-duration:11s;animation-delay:1s">🪙</span>
+  <span class="ty-float" style="left:28%;animation-duration:9s;animation-delay:2s">💰</span>
+  <span class="ty-float" style="left:42%;animation-duration:13s;animation-delay:.5s">💵</span>
+  <span class="ty-float" style="left:58%;animation-duration:10s;animation-delay:3s">🪙</span>
+  <span class="ty-float" style="left:70%;animation-duration:8s;animation-delay:1.5s">💰</span>
+  <span class="ty-float" style="left:82%;animation-duration:12s;animation-delay:0s">💵</span>
+  <span class="ty-float" style="left:92%;animation-duration:9s;animation-delay:2.5s">🪙</span>
+  <div class="ty-content">
+    <div class="ty-icon">💰</div>
+    <div class="ty-title">Thank You!</div>
+    <div class="ty-name" id="ty-name"></div>
+    <div class="ty-message">
+      A <strong>Rightful Returns Recovery Specialist</strong> will personally
+      research any lost or unclaimed funds in your name — across all 50 states.<br/><br/>
+      MissingMoney.com is now open in a new tab. Enter your name exactly as it
+      appeared on your property, and try any previous names or addresses too.
+    </div>
+    <div class="ty-bar-wrap">
+      <div class="ty-bar-label">This message closes in 6 seconds</div>
+      <div class="ty-bar-track"><div class="ty-bar-fill" id="ty-bar"></div></div>
+    </div>
+    <button class="ty-go-btn" onclick="mmCloseOverlay()">Close This Message →</button>
+  </div>
+</div>
+
+<!-- MAIN SECTION -->
+<section id="missing-money">
+  <div class="mm-inner">
+    <div style="text-align:center">
+      <span class="mm-badge"><span class="dot"></span> Act Now — Unclaimed Funds May Be Waiting</span>
+    </div>
+    <h2 class="mm-heading">💰 Is <span class="gold">Missing Money</span><br/><span class="red">Waiting in Your Name?</span></h2>
+    <p class="mm-subhead">Search the national unclaimed property database — free, instant, no obligation.</p>
+    <div class="mm-states">🌵 AZ &nbsp;·&nbsp; 🍑 GA &nbsp;·&nbsp; ⭐ TX &nbsp;·&nbsp; <strong>+ All 50 States 🇺🇸</strong></div>
+    <div class="mm-card">
+      <div class="mm-card-title">🔍 Search for Your Missing Money Now</div>
+      <div class="mm-card-sub">Takes less than 60 seconds — completely free</div>
+      <form id="mm-form">
+        <input type="hidden" name="_source" value="Missing Money Search — All 50 States"/>
+        <div class="mm-grid">
+          <div class="mm-field">
+            <label for="mm-first">First Name</label>
+            <input type="text" id="mm-first" name="first_name" placeholder="Jane" autocomplete="given-name" required/>
+          </div>
+          <div class="mm-field">
+            <label for="mm-last">Last Name</label>
+            <input type="text" id="mm-last" name="last_name" placeholder="Smith" autocomplete="family-name" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-email">Email Address</label>
+            <input type="email" id="mm-email" name="email" placeholder="jane@example.com" autocomplete="email" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-phone">Phone Number <span class="optional">(optional)</span></label>
+            <input type="tel" id="mm-phone" name="phone" placeholder="(480) 555-0100" autocomplete="tel"/>
+          </div>
+        </div>
+        <button type="button" class="mm-submit" onclick="mmHandleSubmit()">
+          💰 SEARCH NOW — All 50 States
+        </button>
+        <p class="mm-disclaimer">
+          By submitting, you agree to be contacted by a Rightful Returns Recovery specialist
+          if missing funds are found. Msg &amp; data rates may apply.
+          <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">SMS Terms</a>.
+          Search powered by <a href="https://missingmoney.com" target="_blank" style="color:rgba(255,255,255,.5)">MissingMoney.com</a>.
+        </p>
+      </form>
+    </div>
+    <div class="mm-trust">
+      <div class="mm-trust-item"><span class="icon">🔒</span><strong>Secure &amp; Private</strong>Never sold or shared</div>
+      <div class="mm-trust-item"><span class="icon">💵</span><strong>No Upfront Cost</strong>Always free to search</div>
+      <div class="mm-trust-item"><span class="icon">🇺🇸</span><strong>All 50 States</strong>Full national database</div>
+      <div class="mm-trust-item"><span class="icon">📞</span><strong>Specialist Follow-Up</strong>We call if funds found</div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ── KEY CHANGE: button type="button" + plain onclick ──
+   This fires synchronously so window.open is NEVER blocked */
+
+var mmOverlayTimer = null;
+var mmParticleEngine = null;
+
+function mmHandleSubmit() {
+  // 1. Validate
+  var first = document.getElementById('mm-first').value.trim();
+  var last  = document.getElementById('mm-last').value.trim();
+  var email = document.getElementById('mm-email').value.trim();
+  if (!first) { alert('Please enter your first name.'); return; }
+  if (!last)  { alert('Please enter your last name.');  return; }
+  if (!email || email.indexOf('@') < 0) { alert('Please enter a valid email address.'); return; }
+
+  // 2. Open missingmoney.com RIGHT NOW — synchronous, never blocked
+  window.open('https://missingmoney.com', '_blank');
+
+  // 3. Send to Formspree in background (fire and forget)
+  var fd = new FormData(document.getElementById('mm-form'));
+  fetch('https://formspree.io/f/mjgeddoy', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: fd
+  });
+
+  // 4. Show thank-you overlay with correct name
+  document.getElementById('ty-name').textContent = first + ' ' + last + ' — We\'re On It!';
+  var overlay = document.getElementById('mm-overlay');
+  overlay.classList.add('show');
+
+  // 5. Start money rain
+  var tyCanvas = document.getElementById('ty-canvas');
+  tyCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
+  mmParticleEngine = mmCreateEngine(tyCanvas, function() {
+    return { w: window.innerWidth, h: window.innerHeight };
+  });
+  mmParticleEngine.start();
+
+  // 6. Restart countdown bar
+  var bar = document.getElementById('ty-bar');
+  bar.style.transition = 'none';
+  bar.style.transform  = 'scaleX(1)';
+  bar.offsetHeight; // reflow
+  bar.style.transition = 'transform 6s linear';
+  bar.style.transform  = 'scaleX(0)';
+
+  // 7. Auto close after 6s
+  clearTimeout(mmOverlayTimer);
+  mmOverlayTimer = setTimeout(mmCloseOverlay, 6000);
+}
+
+function mmCloseOverlay() {
+  clearTimeout(mmOverlayTimer);
+  if (mmParticleEngine) { mmParticleEngine.stop(); mmParticleEngine = null; }
+  var overlay = document.getElementById('mm-overlay');
+  overlay.style.transition = 'opacity .4s';
+  overlay.style.opacity = '0';
+  setTimeout(function() {
+    overlay.classList.remove('show');
+    overlay.style.opacity = '';
+    overlay.style.transition = '';
+  }, 400);
+}
+
+/* ── PARTICLE ENGINE ── */
+function mmCreateEngine(canvas, getSize) {
+  var ctx = canvas.getContext('2d');
+  var W, H, bills, coins, raf, running;
+
+  function resize() {
+    var s = getSize(); W = canvas.width = s.w; H = canvas.height = s.h;
+  }
+
+  function rr(c,x,y,w,h,r) {
+    c.moveTo(x+r,y); c.lineTo(x+w-r,y); c.quadraticCurveTo(x+w,y,x+w,y+r);
+    c.lineTo(x+w,y+h-r); c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+    c.lineTo(x+r,y+h); c.quadraticCurveTo(x,y+h,x,y+h-r);
+    c.lineTo(x,y+r); c.quadraticCurveTo(x,y,x+r,y); c.closePath();
+  }
+
+  function Bill() { this.reset(true); }
+  Bill.prototype.reset = function(init) {
+    this.x=Math.random()*W; this.y=init?Math.random()*-H:-60;
+    this.w=38+Math.random()*24; this.h=this.w*.45;
+    this.angle=(Math.random()-.5)*.6; this.spin=(Math.random()-.5)*.03;
+    this.vy=1.5+Math.random()*2.5; this.vx=(Math.random()-.5)*.9;
+    this.alpha=.6+Math.random()*.35;
+    this.sway=Math.random()*Math.PI*2;
+    this.swayS=.012+Math.random()*.018; this.swayA=.6+Math.random()*1.4;
+  };
+  Bill.prototype.update=function(){
+    this.sway+=this.swayS; this.x+=this.vx+Math.sin(this.sway)*this.swayA;
+    this.y+=this.vy; this.angle+=this.spin;
+    if(this.y>H+80) this.reset(false);
+  };
+  Bill.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha;
+    ctx.translate(this.x,this.y); ctx.rotate(this.angle);
+    ctx.fillStyle='#2d6e3e'; ctx.strokeStyle='#4a9e5c'; ctx.lineWidth=1;
+    ctx.beginPath(); rr(ctx,-this.w/2,-this.h/2,this.w,this.h,3); ctx.fill(); ctx.stroke();
+    ctx.fillStyle='rgba(200,255,200,.8)';
+    ctx.font='bold '+(this.h*.55)+'px Georgia,serif';
+    ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    ctx.restore();
+  };
+
+  function Coin() { this.reset(true); }
+  Coin.prototype.reset=function(init){
+    this.r=9+Math.random()*11;
+    this.x=this.r+Math.random()*(W-this.r*2);
+    this.floor=H-this.r-Math.random()*20;
+    this.y=init?this.floor-Math.random()*H*.6:-this.r;
+    this.vy=-(3+Math.random()*5); this.vx=(Math.random()-.5)*1.5;
+    this.gravity=.2+Math.random()*.1; this.bounce=.45+Math.random()*.25;
+    this.alpha=.75+Math.random()*.25; this.spin=0;
+    this.spinS=(Math.random()-.5)*.08; this.bounces=0;
+    this.maxB=3+Math.floor(Math.random()*5); this.dead=false;
+  };
+  Coin.prototype.update=function(){
+    if(this.dead) return;
+    this.vy+=this.gravity; this.y+=this.vy; this.x+=this.vx; this.spin+=this.spinS;
+    if(this.y>=this.floor){
+      this.y=this.floor; this.vy=-Math.abs(this.vy)*this.bounce; this.vx*=.8;
+      this.bounces++;
+      if(this.bounces>=this.maxB||Math.abs(this.vy)<.25){
+        this.vy=0; this.vx=0; this.dead=true;
+        var self=this; setTimeout(function(){self.reset(false);},800+Math.random()*2500);
+      }
+    }
+    if(this.x<-this.r) this.x=W+this.r;
+    if(this.x>W+this.r) this.x=-this.r;
+  };
+  Coin.prototype.draw=function(){
+    ctx.save(); ctx.globalAlpha=this.alpha; ctx.translate(this.x,this.y);
+    if(this.dead){ctx.scale(1,.3);}else{ctx.rotate(this.spin);}
+    var g=ctx.createRadialGradient(-this.r*.3,-this.r*.3,1,0,0,this.r);
+    g.addColorStop(0,'#fff5a0'); g.addColorStop(.35,'#FFD700');
+    g.addColorStop(.75,'#DAA520'); g.addColorStop(1,'#8B6914');
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(0,0,this.r,0,Math.PI*2); ctx.fill();
+    if(!this.dead){
+      ctx.fillStyle='rgba(255,255,255,.35)';
+      ctx.beginPath(); ctx.ellipse(-this.r*.25,-this.r*.28,this.r*.35,this.r*.2,-.5,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='rgba(100,65,0,.85)';
+      ctx.font='bold '+(this.r*.9)+'px Georgia,serif';
+      ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('$',0,0);
+    }
+    ctx.restore();
+  };
+
+  return {
+    start: function() {
+      resize(); bills=[]; coins=[]; running=true;
+      var nb=Math.max(16,Math.floor(W/50));
+      var nc=Math.max(14,Math.floor(W/55));
+      for(var i=0;i<nb;i++) bills.push(new Bill());
+      for(var i=0;i<nc;i++) coins.push(new Coin());
+      function loop(){
+        if(!running) return;
+        ctx.clearRect(0,0,W,H);
+        for(var i=0;i<bills.length;i++){bills[i].update();bills[i].draw();}
+        for(var i=0;i<coins.length;i++){coins[i].update();coins[i].draw();}
+        raf=requestAnimationFrame(loop);
+      }
+      loop();
+    },
+    stop: function(){ running=false; cancelAnimationFrame(raf); }
+  };
+}
+
+/* ── Section background engine ── */
+(function(){
+  var canvas  = document.getElementById('mm-canvas');
+  var section = document.getElementById('missing-money');
+  canvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:0;';
+  var engine = mmCreateEngine(canvas, function(){ return {w:section.offsetWidth,h:section.offsetHeight}; });
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) engine.start(); else engine.stop(); });
+  },{threshold:.05});
+  obs.observe(section);
+  window.addEventListener('resize', function(){ engine.stop(); engine.start(); });
+})();
+</script>
+<!-- ============================================================
+     END MISSING MONEY SECTION
+     ============================================================ -->
 
 
 <!-- ── FOOTER ── */-->
