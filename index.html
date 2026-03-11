@@ -452,6 +452,557 @@
     </div>
   </div>
 </section>
+ 
+<!--
+  ============================================================
+  MISSING MONEY SEARCH SECTION — Animated Edition
+  Paste this entire block into your main index.html
+  wherever you want this section to appear (e.g. above footer).
+  ============================================================
+-->
+
+<style>
+  /* ── SECTION WRAPPER ── */
+  #missing-money {
+    background: linear-gradient(180deg, #0a0f1e 0%, #001233 60%, #0a0f1e 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 1.5rem 5rem;
+    isolation: isolate;
+  }
+
+  /* ── CANVAS (falling bills + bouncing coins sit behind everything) ── */
+  #mm-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── RADIAL GLOW ── */
+  #missing-money::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%,
+      rgba(0,40,104,0.55) 0%, transparent 75%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ── CONTENT LAYER ── */
+  .mm-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+
+  /* ── URGENCY BADGE ── */
+  .mm-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(191,10,48,0.25); border: 1px solid rgba(191,10,48,0.6);
+    color: #ff7070; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.35em 1.1em; border-radius: 100px; margin-bottom: 1.6rem;
+    animation: mmBlink 2s ease-in-out infinite;
+  }
+  @keyframes mmBlink {
+    0%,100% { box-shadow: 0 0 0 0 rgba(191,10,48,0); }
+    50%      { box-shadow: 0 0 18px 5px rgba(191,10,48,0.4); }
+  }
+  .mm-badge .dot {
+    width: 7px; height: 7px; background: #ff4444; border-radius: 50%;
+    animation: mmDot 1.2s ease-in-out infinite;
+  }
+  @keyframes mmDot { 0%,100%{opacity:1;} 50%{opacity:0.15;} }
+
+  /* ── HEADLINE ── */
+  .mm-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+    font-weight: 900; color: #fff; line-height: 1.12;
+    margin-bottom: 0.9rem; text-align: center;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+  }
+  .mm-heading .gold  { color: #FFD700; }
+  .mm-heading .red   { color: #ff4466; }
+
+  .mm-subhead {
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: rgba(255,255,255,0.7); font-size: 1.08rem;
+    text-align: center; margin-bottom: 0.5rem; font-weight: 300;
+  }
+  .mm-states {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.8rem;
+    font-size: 0.8rem; color: rgba(255,255,255,0.45);
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .mm-states strong { color: #FFD700; font-size: 0.92rem; }
+
+  /* ── GLASS CARD ── */
+  .mm-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 20px;
+    padding: 2.8rem 2.2rem;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+
+  .mm-card-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem; color: #FFD700;
+    font-weight: 900; margin-bottom: 0.3rem; text-align: center;
+    text-shadow: 0 0 20px rgba(255,215,0,0.4);
+  }
+  .mm-card-sub {
+    font-size: 0.84rem; color: rgba(255,255,255,0.5);
+    text-align: center; margin-bottom: 2rem; letter-spacing: 0.04em;
+  }
+
+  /* ── FORM GRID ── */
+  .mm-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.1rem; margin-bottom: 1.1rem;
+  }
+  @media (max-width: 540px) { .mm-grid { grid-template-columns: 1fr; } }
+  .mm-full { grid-column: 1 / -1; }
+
+  .mm-field { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  /* ✅ WHITE labels so they pop on the dark background */
+  .mm-field label {
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  }
+  .mm-field .optional {
+    font-size: 0.66rem; color: rgba(255,255,255,0.45);
+    font-weight: 400; letter-spacing: 0; text-transform: none; margin-left: 0.3rem;
+  }
+
+  /* ✅ WHITE text inputs with bright focus ring */
+  .mm-field input {
+    background: rgba(255,255,255,0.09);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 0.82rem 1rem;
+    font-size: 1rem; color: #ffffff;
+    font-family: 'Source Serif 4', Georgia, serif;
+    outline: none; width: 100%;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    caret-color: #FFD700;
+  }
+  .mm-field input::placeholder { color: rgba(255,255,255,0.35); }
+  .mm-field input:focus {
+    border-color: #FFD700;
+    background: rgba(255,255,255,0.13);
+    box-shadow: 0 0 0 3px rgba(255,215,0,0.2);
+  }
+
+  /* ── BIG SUBMIT BUTTON ── */
+  .mm-submit {
+    width: 100%; margin-top: 0.4rem;
+    background: linear-gradient(135deg, #c8102e 0%, #8B0520 50%, #c8102e 100%);
+    background-size: 200% 100%;
+    color: #fff; border: none; border-radius: 12px;
+    padding: 1.1rem 2rem;
+    font-size: 1.15rem; font-weight: 900;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: 0.06em; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 0.8rem;
+    transition: transform 0.15s, box-shadow 0.2s, background-position 0.4s;
+    box-shadow: 0 6px 30px rgba(200,16,46,0.55), 0 0 0 0 rgba(255,215,0,0);
+    animation: btnShimmer 3s ease-in-out infinite;
+  }
+  @keyframes btnShimmer {
+    0%,100% { box-shadow: 0 6px 30px rgba(200,16,46,0.55), 0 0 0 0 rgba(255,215,0,0); }
+    50%      { box-shadow: 0 6px 30px rgba(200,16,46,0.7),  0 0 20px 4px rgba(255,215,0,0.25); }
+  }
+  .mm-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(200,16,46,0.7), 0 0 24px 6px rgba(255,215,0,0.3);
+    background-position: 100% 0;
+  }
+  .mm-submit:active { transform: translateY(0); }
+
+  /* ── DISCLAIMER ── */
+  .mm-disclaimer {
+    text-align: center; font-size: 0.75rem;
+    color: rgba(255,255,255,0.35); margin-top: 1.3rem; line-height: 1.55;
+  }
+  .mm-disclaimer a { color: rgba(255,255,255,0.5); text-decoration: underline; }
+
+  /* ── SUCCESS STATE ── */
+  #mm-success {
+    display: none; text-align: center; padding: 1.5rem 0;
+  }
+  #mm-success .s-icon  { font-size: 3rem; margin-bottom: 0.8rem; animation: popIn 0.4s cubic-bezier(0.175,0.885,0.32,1.275); }
+  @keyframes popIn { 0%{transform:scale(0);} 100%{transform:scale(1);} }
+  #mm-success .s-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem; color: #FFD700; font-weight: 900; margin-bottom: 0.6rem;
+    text-shadow: 0 0 20px rgba(255,215,0,0.5);
+  }
+  #mm-success .s-body  { color: rgba(255,255,255,0.65); font-size: 0.95rem; line-height: 1.75; }
+  #mm-success .s-body strong { color: #FFD700; }
+
+  /* ── TRUST STRIP ── */
+  .mm-trust {
+    display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+    margin-top: 2.8rem; padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .mm-trust-item {
+    display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+    color: rgba(255,255,255,0.5); font-size: 0.76rem;
+    text-align: center; letter-spacing: 0.05em;
+  }
+  .mm-trust-item .icon { font-size: 1.5rem; }
+  .mm-trust-item strong { color: rgba(255,255,255,0.85); font-size: 0.82rem; display: block; }
+</style>
+
+<!-- ── CANVAS for animations ── -->
+<canvas id="mm-canvas"></canvas>
+
+<section id="missing-money">
+  <div class="mm-inner">
+
+    <div style="text-align:center;">
+      <span class="mm-badge"><span class="dot"></span> Act Now — Unclaimed Funds May Be Waiting</span>
+    </div>
+
+    <h2 class="mm-heading">
+      💰 Is <span class="gold">Missing Money</span><br/>
+      <span class="red">Waiting in Your Name?</span>
+    </h2>
+    <p class="mm-subhead">Search the national unclaimed property database — free, instant, no obligation.</p>
+    <div class="mm-states">
+      🌵 AZ &nbsp;·&nbsp; 🍑 GA &nbsp;·&nbsp; ⭐ TX &nbsp;·&nbsp;
+      <strong>+ All 50 States 🇺🇸</strong>
+    </div>
+
+    <div class="mm-card">
+      <div class="mm-card-title">🔍 Search for Your Missing Money Now</div>
+      <div class="mm-card-sub">Takes less than 60 seconds — completely free</div>
+
+      <form id="mm-form" onsubmit="mmSubmit(event)">
+        <input type="hidden" name="_source" value="Missing Money Search — All 50 States"/>
+
+        <div class="mm-grid">
+          <div class="mm-field">
+            <label for="mm-first">First Name</label>
+            <input type="text" id="mm-first" name="first_name"
+              placeholder="Jane" autocomplete="given-name" required/>
+          </div>
+          <div class="mm-field">
+            <label for="mm-last">Last Name</label>
+            <input type="text" id="mm-last" name="last_name"
+              placeholder="Smith" autocomplete="family-name" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-email">Email Address</label>
+            <input type="email" id="mm-email" name="email"
+              placeholder="jane@example.com" autocomplete="email" required/>
+          </div>
+          <div class="mm-field mm-full">
+            <label for="mm-phone">Phone Number <span class="optional">(optional)</span></label>
+            <input type="tel" id="mm-phone" name="phone"
+              placeholder="(480) 555-0100" autocomplete="tel"/>
+          </div>
+        </div>
+
+        <button type="submit" class="mm-submit">
+          💰 SEARCH NOW — All 50 States
+        </button>
+
+        <p class="mm-disclaimer">
+          By submitting, you agree to be contacted by a Rightful Returns Recovery specialist
+          if missing funds are found. Msg &amp; data rates may apply.
+          <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">SMS Terms</a>.
+          Search powered by <strong style="color:rgba(255,255,255,0.55)">MissingMoney.com</strong>.
+        </p>
+      </form>
+
+      <div id="mm-success">
+        <div class="s-icon">💰</div>
+        <div class="s-title">Your Search Is Launching!</div>
+        <div class="s-body">
+          MissingMoney.com is opening to search all 50 states.<br/>
+          If unclaimed funds are found in your name, a<br/>
+          <strong>Rightful Returns Recovery Specialist</strong> will follow up with you directly.
+        </div>
+      </div>
+    </div>
+
+    <div class="mm-trust">
+      <div class="mm-trust-item"><span class="icon">🔒</span><strong>Secure &amp; Private</strong>Never sold or shared</div>
+      <div class="mm-trust-item"><span class="icon">💵</span><strong>No Upfront Cost</strong>Always free to search</div>
+      <div class="mm-trust-item"><span class="icon">🇺🇸</span><strong>All 50 States</strong>Full national database</div>
+      <div class="mm-trust-item"><span class="icon">📞</span><strong>Specialist Follow-Up</strong>We call if funds found</div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* ============================================================
+   CANVAS ANIMATION — Falling bills + bouncing gold coins
+   ============================================================ */
+(function() {
+  const canvas = document.getElementById('mm-canvas');
+  const section = document.getElementById('missing-money');
+  const ctx = canvas.getContext('2d');
+
+  let W, H, bills = [], coins = [], animId;
+
+  // ── Resize canvas to match section ──
+  function resize() {
+    const rect = section.getBoundingClientRect();
+    W = canvas.width  = section.offsetWidth;
+    H = canvas.height = section.offsetHeight;
+    canvas.style.position = 'absolute';
+    canvas.style.top  = '0';
+    canvas.style.left = '0';
+  }
+
+  // ── Bill object (falling dollar bills) ──
+  function Bill() {
+    this.reset(true);
+  }
+  Bill.prototype.reset = function(init) {
+    this.x     = Math.random() * W;
+    this.y     = init ? Math.random() * -H : -60;
+    this.w     = 38 + Math.random() * 22;   // bill width
+    this.h     = this.w * 0.45;             // bill height
+    this.angle = (Math.random() - 0.5) * 0.6;
+    this.spin  = (Math.random() - 0.5) * 0.03;
+    this.vy    = 1.2 + Math.random() * 2.2;
+    this.vx    = (Math.random() - 0.5) * 0.8;
+    this.alpha = 0.55 + Math.random() * 0.35;
+    this.sway  = Math.random() * Math.PI * 2;
+    this.swaySpeed = 0.012 + Math.random() * 0.018;
+    this.swayAmp   = 0.6 + Math.random() * 1.2;
+  };
+  Bill.prototype.update = function() {
+    this.sway  += this.swaySpeed;
+    this.x     += this.vx + Math.sin(this.sway) * this.swayAmp;
+    this.y     += this.vy;
+    this.angle += this.spin;
+    if (this.y > H + 80) this.reset(false);
+  };
+  Bill.prototype.draw = function() {
+    ctx.save();
+    ctx.globalAlpha = this.alpha;
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.angle);
+
+    // Bill body
+    ctx.fillStyle = '#2d6e3e';
+    ctx.strokeStyle = '#4a9e5c';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.roundRect(-this.w/2, -this.h/2, this.w, this.h, 3);
+    ctx.fill();
+    ctx.stroke();
+
+    // Inner border
+    ctx.strokeStyle = 'rgba(74,158,92,0.5)';
+    ctx.lineWidth = 0.7;
+    ctx.beginPath();
+    ctx.roundRect(-this.w/2 + 3, -this.h/2 + 3, this.w - 6, this.h - 6, 2);
+    ctx.stroke();
+
+    // Dollar sign
+    ctx.fillStyle = 'rgba(200,255,200,0.75)';
+    ctx.font = `bold ${this.h * 0.55}px Georgia, serif`;
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('$', 0, 0);
+
+    ctx.restore();
+  };
+
+  // ── Coin object (bouncing gold coins) ──
+  function Coin() {
+    this.reset(true);
+  }
+  Coin.prototype.reset = function(init) {
+    this.r     = 8 + Math.random() * 10;
+    this.x     = this.r + Math.random() * (W - this.r * 2);
+    this.floor = H - this.r - (Math.random() * 18);   // resting height
+    this.y     = init ? this.floor - Math.random() * 200 : this.floor;
+    this.vy    = -(3 + Math.random() * 5);             // initial upward
+    this.vx    = (Math.random() - 0.5) * 1.5;
+    this.gravity  = 0.18 + Math.random() * 0.12;
+    this.bounce   = 0.45 + Math.random() * 0.25;
+    this.alpha    = 0.7 + Math.random() * 0.3;
+    this.spin     = 0;
+    this.spinSpeed = (Math.random() - 0.5) * 0.08;
+    this.bounces  = 0;
+    this.maxBounces = 4 + Math.floor(Math.random() * 4);
+    this.dead = false;
+  };
+  Coin.prototype.update = function() {
+    if (this.dead) return;
+    this.vy += this.gravity;
+    this.y  += this.vy;
+    this.x  += this.vx;
+    this.spin += this.spinSpeed;
+
+    // Bounce off floor
+    if (this.y >= this.floor) {
+      this.y  = this.floor;
+      this.vy = -Math.abs(this.vy) * this.bounce;
+      this.vx *= 0.85;
+      this.bounces++;
+      if (this.bounces >= this.maxBounces || Math.abs(this.vy) < 0.3) {
+        this.vy = 0; this.vx = 0;
+        // After resting a moment, respawn
+        setTimeout(() => { this.reset(false); }, 1200 + Math.random() * 2000);
+        this.dead = true;
+      }
+    }
+    // Wrap x
+    if (this.x < -this.r) this.x = W + this.r;
+    if (this.x > W + this.r) this.x = -this.r;
+  };
+  Coin.prototype.draw = function() {
+    if (this.dead) {
+      // Draw resting coin (flat)
+      ctx.save();
+      ctx.globalAlpha = this.alpha * 0.8;
+      ctx.translate(this.x, this.y);
+      // Oval to look flat
+      ctx.scale(1, 0.35);
+      const g = ctx.createRadialGradient(-this.r*0.3, -this.r*0.3, 1, 0, 0, this.r);
+      g.addColorStop(0,   '#fff5a0');
+      g.addColorStop(0.4, '#FFD700');
+      g.addColorStop(1,   '#b8860b');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(0, 0, this.r, 0, Math.PI*2);
+      ctx.fill();
+      ctx.restore();
+      return;
+    }
+    ctx.save();
+    ctx.globalAlpha = this.alpha;
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.spin);
+
+    // Coin gradient
+    const g = ctx.createRadialGradient(-this.r*0.3, -this.r*0.3, 1, 0, 0, this.r);
+    g.addColorStop(0,   '#fff5a0');
+    g.addColorStop(0.35,'#FFD700');
+    g.addColorStop(0.75,'#DAA520');
+    g.addColorStop(1,   '#8B6914');
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(0, 0, this.r, 0, Math.PI*2);
+    ctx.fill();
+
+    // Shine
+    ctx.fillStyle = 'rgba(255,255,255,0.35)';
+    ctx.beginPath();
+    ctx.ellipse(-this.r*0.25, -this.r*0.28, this.r*0.35, this.r*0.2, -0.5, 0, Math.PI*2);
+    ctx.fill();
+
+    // Dollar sign on coin
+    ctx.fillStyle = 'rgba(120,80,0,0.8)';
+    ctx.font = `bold ${this.r * 0.9}px Georgia, serif`;
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('$', 0, 0);
+
+    ctx.restore();
+  };
+
+  // ── Spawn particles ──
+  function init() {
+    bills = [];
+    coins = [];
+    const numBills = Math.max(12, Math.floor(W / 55));
+    const numCoins = Math.max(10, Math.floor(W / 60));
+    for (let i = 0; i < numBills; i++) bills.push(new Bill());
+    for (let i = 0; i < numCoins; i++) coins.push(new Coin());
+  }
+
+  // ── Main loop ──
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    bills.forEach(b => { b.update(); b.draw(); });
+    coins.forEach(c => { c.update(); c.draw(); });
+    animId = requestAnimationFrame(loop);
+  }
+
+  // ── Start when section is in view (IntersectionObserver) ──
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        resize();
+        init();
+        loop();
+      } else {
+        cancelAnimationFrame(animId);
+      }
+    });
+  }, { threshold: 0.05 });
+
+  observer.observe(section);
+  window.addEventListener('resize', () => { resize(); init(); });
+
+  // Polyfill roundRect for older browsers
+  if (!CanvasRenderingContext2D.prototype.roundRect) {
+    CanvasRenderingContext2D.prototype.roundRect = function(x,y,w,h,r) {
+      this.moveTo(x+r,y); this.lineTo(x+w-r,y);
+      this.quadraticCurveTo(x+w,y,x+w,y+r);
+      this.lineTo(x+w,y+h-r); this.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+      this.lineTo(x+r,y+h); this.quadraticCurveTo(x,y+h,x,y+h-r);
+      this.lineTo(x,y+r); this.quadraticCurveTo(x,y,x+r,y);
+      this.closePath(); return this;
+    };
+  }
+})();
+
+/* ============================================================
+   FORM SUBMIT — Formspree + open MissingMoney.com
+   ============================================================ */
+async function mmSubmit(e) {
+  e.preventDefault();
+  const first = document.getElementById('mm-first').value.trim();
+  const last  = document.getElementById('mm-last').value.trim();
+  const form  = document.getElementById('mm-form');
+
+  try {
+    await fetch('https://formspree.io/f/mjgeddoy', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    });
+  } catch(err) { console.warn('Formspree error:', err); }
+
+  form.style.display = 'none';
+  document.getElementById('mm-success').style.display = 'block';
+
+  const url = 'https://www.missingmoney.com/en/app/main#/search'
+            + '?firstName=' + encodeURIComponent(first)
+            + '&lastName='  + encodeURIComponent(last);
+  setTimeout(() => window.open(url, '_blank'), 900);
+}
+</script>
+<!--
+  ============================================================
+  END MISSING MONEY SEARCH SECTION
+  ============================================================
+-->
+
 
 <!-- ── FOOTER ── */-->
 <footer>
