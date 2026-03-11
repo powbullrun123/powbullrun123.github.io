@@ -759,6 +759,16 @@ document.querySelectorAll('.faq-item').forEach(function(item) {
 var mmOverlayTimer = null;
 var mmParticleEngine = null;
 
+/* Pre-initialize the overlay canvas engine on page load so it is
+   ready to fire INSTANTLY when the overlay appears — this prevents
+   the browser window.open() pause from killing the animation */
+window.addEventListener('load', function() {
+  var tyCanvas = document.getElementById('ty-canvas');
+  tyCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
+  tyCanvas.width  = window.innerWidth;
+  tyCanvas.height = window.innerHeight;
+});
+
 function mmHandleSubmit() {
   var first = document.getElementById('mm-first').value.trim();
   var last  = document.getElementById('mm-last').value.trim();
@@ -767,8 +777,7 @@ function mmHandleSubmit() {
   if (!last)  { alert('Please enter your last name.');  return; }
   if (!email || email.indexOf('@') < 0) { alert('Please enter a valid email address.'); return; }
 
-  /* Step 1: Open missingmoney.com SYNCHRONOUSLY — must happen first
-     before any async code or browsers will block it as a popup */
+  /* Step 1: Open missingmoney.com SYNCHRONOUSLY — must be first */
   window.open('https://missingmoney.com', '_blank');
 
   /* Step 2: Send lead to Formspree silently in background */
@@ -784,13 +793,17 @@ function mmHandleSubmit() {
   var overlay = document.getElementById('mm-overlay');
   overlay.classList.add('show');
 
-  /* Step 4: Start money rain on overlay canvas */
+  /* Step 4: Start money rain — use requestAnimationFrame to fire on
+     the very next render frame, completely sidestepping any timing
+     interference from window.open() */
+  if (mmParticleEngine) { mmParticleEngine.stop(); mmParticleEngine = null; }
   var tyCanvas = document.getElementById('ty-canvas');
-  tyCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
-  mmParticleEngine = mmCreateEngine(tyCanvas, function() {
-    return { w: window.innerWidth, h: window.innerHeight };
+  requestAnimationFrame(function() {
+    mmParticleEngine = mmCreateEngine(tyCanvas, function() {
+      return { w: window.innerWidth, h: window.innerHeight };
+    });
+    mmParticleEngine.start();
   });
-  mmParticleEngine.start();
 
   /* Step 5: Animate countdown bar */
   var bar = document.getElementById('ty-bar');
