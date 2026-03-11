@@ -1037,8 +1037,7 @@ let tyRedirectTimer = null;
 function tyGo() {
   clearTimeout(tyRedirectTimer);
   if (tyEngine) tyEngine.stop();
-  window.open('https://missingmoney.com', '_blank');
-  // Fade out overlay
+  // Just fade out the overlay — missingmoney.com already opened on submit
   const overlay = document.getElementById('mm-thankyou-overlay');
   overlay.style.transition = 'opacity 0.4s';
   overlay.style.opacity = '0';
@@ -1052,32 +1051,34 @@ function tyGo() {
 /* ============================================================
    FORM SUBMIT
    ============================================================ */
-async function mmSubmit(e) {
+function mmSubmit(e) {
   e.preventDefault();
   const form  = document.getElementById('mm-form');
   const first = document.getElementById('mm-first').value.trim();
   const last  = document.getElementById('mm-last').value.trim();
 
-  // Send to Formspree
-  try {
-    await fetch('https://formspree.io/f/mjgeddoy', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new FormData(form)
-    });
-  } catch(err) { console.warn('Formspree error:', err); }
+  // ── STEP 1: Open missingmoney.com IMMEDIATELY ──
+  // Must happen synchronously on the click event or browsers block it as a popup
+  const mmWindow = window.open('https://missingmoney.com', '_blank');
 
-  // Personalise the thank-you name line
+  // ── STEP 2: Send to Formspree silently in background ──
+  fetch('https://formspree.io/f/mjgeddoy', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: new FormData(form)
+  }).catch(err => console.warn('Formspree error:', err));
+
+  // ── STEP 3: Personalise the thank-you name line ──
   const nameDisplay = document.getElementById('ty-name-display');
   if (first) {
     nameDisplay.textContent = first + (last ? ' ' + last : '') + ', We\'re On It For You!';
   }
 
-  // Show full-screen overlay
+  // ── STEP 4: Show full-screen thank-you overlay ──
   const overlay = document.getElementById('mm-thankyou-overlay');
   overlay.classList.add('active');
 
-  // Start money rain on overlay canvas
+  // ── STEP 5: Start money rain on overlay canvas ──
   const tyCanvas = document.getElementById('ty-canvas');
   tyCanvas.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:0;';
   tyEngine = createParticleEngine(tyCanvas, () => ({
@@ -1086,14 +1087,24 @@ async function mmSubmit(e) {
   }));
   tyEngine.start(false);
 
-  // Reset the progress bar animation by re-inserting it
+  // ── STEP 6: Reset the countdown bar animation ──
   const bar = document.getElementById('ty-bar');
   bar.style.animation = 'none';
-  bar.offsetHeight; // reflow
+  bar.offsetHeight; // force reflow
   bar.style.animation = '';
 
-  // Auto-redirect after 5 seconds
-  tyRedirectTimer = setTimeout(tyGo, 6000);
+  // ── STEP 7: Auto-dismiss overlay after 6 seconds ──
+  tyRedirectTimer = setTimeout(() => {
+    if (tyEngine) tyEngine.stop();
+    const overlay = document.getElementById('mm-thankyou-overlay');
+    overlay.style.transition = 'opacity 0.4s';
+    overlay.style.opacity = '0';
+    setTimeout(() => {
+      overlay.classList.remove('active');
+      overlay.style.opacity = '';
+      overlay.style.transition = '';
+    }, 400);
+  }, 6000);
 }
 </script>
 <!--
@@ -1101,8 +1112,6 @@ async function mmSubmit(e) {
   END MISSING MONEY SEARCH SECTION
   ============================================================
 -->
-
-
 
 
 <!-- ── FOOTER ── */-->
