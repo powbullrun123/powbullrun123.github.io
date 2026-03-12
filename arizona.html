@@ -1,364 +1,160 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>John Wesley Powell – Arizona 1869</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<title>Arizona Surplus Funds Recovery | Foreclosure Overage Experts | Rightful Returns Recovery</title>
+<meta name="description" content="Arizona surplus funds recovery experts. We help homeowners in Maricopa County and statewide claim foreclosure overages and unclaimed surplus funds. No upfront fees. Free case review.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Rightful Returns Recovery">
+<link rel="canonical" href="https://www.rightfulreturnsrecovery.com/arizona/" />
+<meta property="og:title" content="Arizona Surplus Funds Recovery | Rightful Returns Recovery">
+<meta property="og:description" content="We help Arizona homeowners recover foreclosure surplus funds and tax sale overages. No upfront fees.">
+<meta property="og:url" content="https://www.rightfulreturnsrecovery.com/arizona">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialService","name":"Rightful Returns Recovery","url":"https://www.rightfulreturnsrecovery.com","telephone":"+1-480-788-2320","areaServed":{"@type":"State","name":"Arizona"},"description":"Arizona foreclosure surplus and overage recovery services with no upfront fees."}</script>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root{--gold:#C9A84C;--gold-light:#E8D5A3;--dark:#0D1B2A;--navy:#1B2A40;--navy2:#162235;--light:#F5F0E8;--white:#FFFFFF;--muted:#7a8fa6;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Lato',sans-serif;background:var(--dark);color:var(--light);overflow-x:hidden;}
+nav{position:fixed;top:0;width:100%;z-index:200;padding:18px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(13,27,42,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.15);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold);letter-spacing:1px;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:var(--gold-light);text-decoration:none;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;transition:color 0.3s;}
+.nav-links a:hover{color:var(--gold);}
+@media(max-width:650px){.nav-links{display:none;}nav{padding:16px 20px;}}
+.hero{min-height:100vh;background:linear-gradient(160deg,#0D1B2A 0%,#1B2A40 45%,#0D1B2A 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(201,168,76,0.07) 0%,transparent 70%);animation:breathe 7s ease-in-out infinite;}
+@keyframes breathe{0%,100%{opacity:0.6;}50%{opacity:1;}}
 
-  body {
-    background: #0d0a07;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    font-family: 'Cormorant Garamond', serif;
-  }
+/* FLAG */
+.flag-banner{width:100%;max-width:860px;margin:0 auto 0;position:relative;z-index:2;opacity:0;animation:fadeUp 0.9s ease forwards 0.1s;}
+.flag-container{border:2px solid rgba(201,168,76,0.4);box-shadow:0 0 60px rgba(201,168,76,0.15),0 20px 60px rgba(0,0,0,0.5);overflow:hidden;position:relative;}
+.flag-img{width:100%;height:210px;object-fit:cover;object-position:center;display:block;filter:saturate(1.1) brightness(0.85);}
+.flag-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,27,42,0.5) 0%,transparent 35%,transparent 65%,rgba(13,27,42,0.5) 100%);}
+.flag-label{position:absolute;bottom:12px;right:16px;font-size:0.68rem;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.75);}
 
-  .poster {
-    width: 760px;
-    min-height: 980px;
-    background: #f5ede0;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 30px 100px rgba(0,0,0,0.7);
-  }
+/* MOTTO + QUOTE */
+.state-motto-block{width:100%;max-width:860px;margin:0 auto 52px;position:relative;z-index:2;opacity:0;animation:fadeUp 0.9s ease forwards 0.28s;}
+.state-motto{font-family:'Lato',sans-serif;font-size:0.78rem;letter-spacing:6px;text-transform:uppercase;color:var(--gold);text-align:center;padding:24px 0 0;}
+.quote-frame{border-left:3px solid var(--gold);border-right:3px solid var(--gold);padding:34px 44px;margin-top:18px;background:rgba(27,42,64,0.5);position:relative;}
+.quote-frame::before,.quote-frame::after{content:'';position:absolute;left:50%;transform:translateX(-50%);width:60px;height:2px;background:var(--gold);}
+.quote-frame::before{top:0;}
+.quote-frame::after{bottom:0;}
+.quote-text{font-family:'Playfair Display',serif;font-size:clamp(1.05rem,2.2vw,1.28rem);font-style:italic;line-height:1.9;color:var(--gold-light);text-align:center;margin-bottom:20px;}
+.quote-author{font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);text-align:center;}
+@media(max-width:600px){.quote-frame{padding:24px 18px;}.quote-text{font-size:1rem;}}
 
-  /* Aged paper texture overlay */
-  .poster::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
-    opacity: 0.4;
-    pointer-events: none;
-    z-index: 10;
-  }
-
-  /* Dark vignette edges */
-  .poster::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at center, transparent 55%, rgba(30,15,5,0.35) 100%);
-    pointer-events: none;
-    z-index: 11;
-  }
-
-  /* Top decorative rule */
-  .top-rule {
-    width: 100%;
-    padding: 28px 48px 0;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    position: relative;
-    z-index: 5;
-  }
-  .rule-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #8b3a2a, transparent);
-  }
-  .rule-diamond {
-    width: 7px; height: 7px;
-    background: #8b3a2a;
-    transform: rotate(45deg);
-    flex-shrink: 0;
-  }
-
-  /* Header text */
-  .header-label {
-    font-family: 'Cinzel', serif;
-    font-size: 10.5px;
-    letter-spacing: 5px;
-    color: #8b3a2a;
-    text-transform: uppercase;
-    margin-top: 18px;
-    position: relative;
-    z-index: 5;
-  }
-
-  /* Flag container */
-  .flag-wrap {
-    margin-top: 22px;
-    position: relative;
-    z-index: 5;
-    width: 520px;
-    height: 347px;
-    box-shadow:
-      0 0 0 1px rgba(139,58,42,0.3),
-      0 0 0 6px rgba(245,237,224,0.6),
-      0 0 0 7px rgba(139,58,42,0.2),
-      6px 12px 40px rgba(30,10,5,0.45);
-  }
-
-  .flag-wrap svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-
-  /* Subtle flag overlay for aged look */
-  .flag-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(160deg, rgba(255,255,255,0.06) 0%, transparent 60%, rgba(0,0,0,0.12) 100%);
-    pointer-events: none;
-  }
-
-  /* State name */
-  .state-name {
-    font-family: 'Cinzel', serif;
-    font-size: 42px;
-    font-weight: 700;
-    letter-spacing: 14px;
-    color: #1a0f08;
-    margin-top: 30px;
-    position: relative;
-    z-index: 5;
-    text-transform: uppercase;
-  }
-
-  .state-name span {
-    color: #8b3a2a;
-  }
-
-  /* Ornamental divider */
-  .ornament {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: relative;
-    z-index: 5;
-    width: 500px;
-  }
-  .ornament-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #8b3a2a 40%, #8b3a2a 60%, transparent);
-  }
-  .ornament-center {
-    font-size: 18px;
-    color: #8b3a2a;
-    line-height: 1;
-  }
-
-  /* Quote */
-  .quote-section {
-    width: 600px;
-    margin-top: 28px;
-    position: relative;
-    z-index: 5;
-    text-align: center;
-  }
-
-  .open-quote {
-    font-family: 'Playfair Display', serif;
-    font-size: 90px;
-    line-height: 0.5;
-    color: #8b3a2a;
-    opacity: 0.35;
-    display: block;
-    margin-bottom: 10px;
-    text-align: left;
-    padding-left: 30px;
-  }
-
-  .quote-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 20.5px;
-    line-height: 1.75;
-    color: #2a1a10;
-    font-weight: 300;
-    letter-spacing: 0.02em;
-    padding: 0 20px;
-    position: relative;
-  }
-
-  .quote-text em {
-    font-style: normal;
-    color: #8b3a2a;
-    font-weight: 400;
-  }
-
-  .close-quote {
-    font-family: 'Playfair Display', serif;
-    font-size: 90px;
-    line-height: 0.3;
-    color: #8b3a2a;
-    opacity: 0.35;
-    display: block;
-    margin-top: 6px;
-    text-align: right;
-    padding-right: 30px;
-  }
-
-  /* Attribution */
-  .attribution {
-    margin-top: 22px;
-    position: relative;
-    z-index: 5;
-    text-align: center;
-  }
-
-  .attr-name {
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: #1a0f08;
-    text-transform: uppercase;
-  }
-
-  .attr-detail {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    letter-spacing: 2.5px;
-    color: #7a5a40;
-    margin-top: 5px;
-    font-style: italic;
-  }
-
-  /* Bottom rule */
-  .bottom-rule {
-    width: 100%;
-    padding: 26px 48px 32px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    position: relative;
-    z-index: 5;
-    margin-top: auto;
-  }
-
-  /* Decorative corner flourishes */
-  .corner {
-    position: absolute;
-    z-index: 6;
-    width: 50px;
-    height: 50px;
-  }
-  .corner svg { width: 100%; height: 100%; }
-  .corner-tl { top: 14px; left: 14px; }
-  .corner-tr { top: 14px; right: 14px; transform: scaleX(-1); }
-  .corner-bl { bottom: 14px; left: 14px; transform: scaleY(-1); }
-  .corner-br { bottom: 14px; right: 14px; transform: scale(-1,-1); }
-
-  /* Fade-in animation */
-  .poster > * {
-    animation: fadeUp 0.8s ease both;
-  }
-  .flag-wrap { animation-delay: 0.15s; }
-  .state-name { animation-delay: 0.25s; }
-  .ornament { animation-delay: 0.35s; }
-  .quote-section { animation-delay: 0.45s; }
-  .attribution { animation-delay: 0.55s; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+.hero-eyebrow{font-size:0.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;position:relative;z-index:2;opacity:0;animation:fadeUp 0.8s ease forwards 0.42s;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,7vw,5.5rem);font-weight:900;line-height:1.05;margin-bottom:26px;position:relative;z-index:2;opacity:0;animation:fadeUp 0.8s ease forwards 0.56s;}
+.hero h1 span{color:var(--gold);}
+.hero-sub{font-size:clamp(1rem,2.2vw,1.2rem);font-weight:300;max-width:580px;line-height:1.85;color:var(--gold-light);margin-bottom:50px;position:relative;z-index:2;opacity:0;animation:fadeUp 0.8s ease forwards 0.7s;}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;opacity:0;animation:fadeUp 0.8s ease forwards 0.84s;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.btn-primary{background:var(--gold);color:var(--dark);padding:18px 44px;font-family:'Lato',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 10px 35px rgba(201,168,76,0.45);}
+.btn-secondary{background:transparent;color:var(--gold);padding:18px 44px;font-family:'Lato',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;border:2px solid var(--gold);cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s;}
+.btn-secondary:hover{background:var(--gold);color:var(--dark);transform:translateY(-3px);}
+.gold-line{width:60px;height:3px;background:var(--gold);margin:0 auto 26px;}
+.section-label{font-size:0.68rem;letter-spacing:5px;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:12px;}
+.stats-strip{background:var(--navy2);border-top:1px solid rgba(201,168,76,0.2);border-bottom:1px solid rgba(201,168,76,0.2);padding:48px 20px;}
+.stats-inner{max-width:960px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:28px;text-align:center;}
+.stat-item .num{font-family:'Playfair Display',serif;font-size:2.8rem;color:var(--gold);display:block;line-height:1;}
+.stat-item .lbl{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:8px;display:block;}
+.section{padding:96px 20px;max-width:1040px;margin:auto;}
+.section h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,3rem);text-align:center;margin-bottom:56px;line-height:1.2;}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;}
+.step{background:var(--navy);border:1px solid rgba(201,168,76,0.18);padding:38px 26px;text-align:center;position:relative;transition:all 0.35s;}
+.step:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,0.35);}
+.step-num{font-family:'Playfair Display',serif;font-size:3rem;color:var(--gold);opacity:0.2;position:absolute;top:14px;right:16px;line-height:1;}
+.step-icon{font-size:2.3rem;margin-bottom:16px;}
+.step h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:10px;color:var(--gold-light);}
+.step p{font-size:0.91rem;line-height:1.75;color:var(--muted);}
+.about-section{background:var(--navy2);padding:96px 20px;}
+.about-inner{max-width:1040px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+@media(max-width:750px){.about-inner{grid-template-columns:1fr;gap:40px;}}
+.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.5vw,2.7rem);margin-bottom:20px;line-height:1.2;}
+.about-text p{font-size:0.95rem;line-height:1.95;color:var(--muted);margin-bottom:16px;}
+.stat-box{background:var(--dark);border-left:4px solid var(--gold);padding:24px 26px;margin-bottom:16px;}
+.stat-box .snum{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--gold);display:block;line-height:1;}
+.stat-box .slbl{font-size:0.8rem;color:var(--muted);letter-spacing:1px;margin-top:6px;display:block;}
+.faq-section{padding:96px 20px;max-width:780px;margin:auto;}
+.faq-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,3rem);text-align:center;margin-bottom:46px;}
+.faq-item{border-bottom:1px solid rgba(201,168,76,0.18);padding:26px 0;}
+.faq-item h3{font-family:'Playfair Display',serif;font-size:1.12rem;color:var(--gold-light);margin-bottom:10px;}
+.faq-item p{font-size:0.93rem;color:var(--muted);line-height:1.8;}
+.testi-section{background:var(--navy2);padding:96px 20px;}
+.testi-inner{max-width:1040px;margin:auto;}
+.testi-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,3rem);text-align:center;margin-bottom:56px;}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;}
+.testi-card{background:var(--dark);border:1px solid rgba(201,168,76,0.15);padding:38px 34px;position:relative;}
+.testi-card::before{content:'"';font-family:'Playfair Display',serif;font-size:6rem;color:var(--gold);opacity:0.14;position:absolute;top:10px;left:18px;line-height:1;}
+.testi-text{font-size:0.95rem;line-height:1.85;color:var(--gold-light);margin-bottom:22px;position:relative;z-index:1;}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark);font-weight:700;flex-shrink:0;}
+.testi-name{font-weight:700;font-size:0.91rem;}
+.testi-loc{font-size:0.76rem;color:var(--muted);}
+.stars{color:var(--gold);font-size:0.83rem;margin-bottom:4px;}
+.form-section{padding:96px 20px;}
+.form-inner{max-width:620px;margin:auto;text-align:center;}
+.form-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:12px;}
+.form-inner>p{color:var(--muted);margin-bottom:42px;line-height:1.75;}
+.form-group{margin-bottom:16px;text-align:left;}
+.form-group label{display:block;font-size:0.7rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.28);color:var(--white);padding:14px 17px;font-family:'Lato',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.3s;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold);}
+.form-group select option{background:var(--dark);}
+.form-group textarea{height:108px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:480px){.form-row{grid-template-columns:1fr;}}
+.submit-btn{width:100%;background:var(--gold);color:var(--dark);padding:18px;font-family:'Lato',sans-serif;font-size:0.91rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;margin-top:8px;transition:all 0.3s;}
+.submit-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 10px 32px rgba(201,168,76,0.4);}
+.no-fee{margin-top:18px;font-size:0.82rem;color:var(--muted);}
+.no-fee span{color:var(--gold);font-weight:700;}
+footer{background:#060e18;padding:56px 20px;text-align:center;border-top:1px solid rgba(201,168,76,0.12);}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);margin-bottom:12px;}
+.footer-contact{margin:22px 0;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;}
+.footer-contact a{color:var(--gold-light);text-decoration:none;font-size:0.9rem;transition:color 0.3s;}
+.footer-contact a:hover{color:var(--gold);}
+.footer-nav{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:16px;}
+.footer-nav a{color:var(--muted);font-size:0.78rem;text-decoration:none;letter-spacing:1px;transition:color 0.3s;}
+.footer-nav a:hover{color:var(--gold);}
+.footer-copy{font-size:0.76rem;color:#3a4a5a;margin-top:20px;}
 </style>
 </head>
 <body>
-<div class="poster">
+<nav>
+  <div class="nav-logo">Rightful Returns Recovery</div>
+  <ul class="nav-links">
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Get Started</a></li>
+  </ul>
+</nav>
 
-  <!-- Corner flourishes -->
-  <div class="corner corner-tl">
-    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 45 L5 5 L45 5" stroke="#8b3a2a" stroke-width="1.5" fill="none" opacity="0.6"/>
-      <path d="M5 5 L18 18" stroke="#8b3a2a" stroke-width="1" fill="none" opacity="0.4"/>
-      <circle cx="5" cy="5" r="2.5" fill="#8b3a2a" opacity="0.7"/>
-    </svg>
-  </div>
-  <div class="corner corner-tr">
-    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 45 L5 5 L45 5" stroke="#8b3a2a" stroke-width="1.5" fill="none" opacity="0.6"/>
-      <path d="M5 5 L18 18" stroke="#8b3a2a" stroke-width="1" fill="none" opacity="0.4"/>
-      <circle cx="5" cy="5" r="2.5" fill="#8b3a2a" opacity="0.7"/>
-    </svg>
-  </div>
-  <div class="corner corner-bl">
-    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 45 L5 5 L45 5" stroke="#8b3a2a" stroke-width="1.5" fill="none" opacity="0.6"/>
-      <path d="M5 5 L18 18" stroke="#8b3a2a" stroke-width="1" fill="none" opacity="0.4"/>
-      <circle cx="5" cy="5" r="2.5" fill="#8b3a2a" opacity="0.7"/>
-    </svg>
-  </div>
-  <div class="corner corner-br">
-    <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 45 L5 5 L45 5" stroke="#8b3a2a" stroke-width="1.5" fill="none" opacity="0.6"/>
-      <path d="M5 5 L18 18" stroke="#8b3a2a" stroke-width="1" fill="none" opacity="0.4"/>
-      <circle cx="5" cy="5" r="2.5" fill="#8b3a2a" opacity="0.7"/>
-    </svg>
+<section class="hero">
+
+  <!-- AZ FLAG -->
+  <div class="flag-banner">
+    <div class="flag-container">
+      <img class="flag-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arizona.svg/1280px-Flag_of_Arizona.svg.png" alt="Arizona State Flag">
+      <div class="flag-overlay"></div>
+      <span class="flag-label">State of Arizona</span>
+    </div>
   </div>
 
-  <div class="top-rule">
-    <div class="rule-line"></div>
-    <div class="rule-diamond"></div>
-    <div class="rule-line"></div>
+  <!-- MOTTO + POWELL QUOTE -->
+  <div class="state-motto-block">
+    <div class="state-motto">Ditat Deus &nbsp;&middot;&nbsp; God Enriches</div>
+    <div class="quote-frame">
+      <p class="quote-text">"I almost conclude to leave the river. But for years I have been contemplating this trip. To leave the exploration unfinished, to say that there is a part of the canyon which I cannot explore, having already almost accomplished it, is more than I am willing to acknowledge, and I determine to go on."</p>
+      <div class="quote-author">— John Wesley Powell &nbsp;&middot;&nbsp; Grand Canyon Expedition, 1869</div>
+    </div>
   </div>
 
-  <div class="header-label">Grand Canyon Expedition · 1869</div>
-
-  <!-- Arizona Flag SVG inline -->
-  <div class="flag-wrap">
-    <div class="flag-overlay"></div>
-    <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 744.09 496.06" version="1.0">
-      <g stroke-width="1pt" fill-rule="evenodd">
-        <rect height="248.03" width="744.09" y="248.03" x="0" fill="#192f5d"/>
-        <rect height="248.03" width="744.09" y="0" x="0" fill="#bd3d44"/>
-        <g fill="#ffd608">
-          <path d="m-335.99-90.159l372.16 92.488-372.1-185.55-0.06 93.061z" transform="translate(335.76 245.61)"/>
-          <path d="m-228.88-245.92l265.11 248.19-166.02-248.3-99.09 0.11z" transform="translate(335.76 245.61)"/>
-          <path d="m-53.038-246.03l89.336 248.36-31.082-248.19-58.254-0.17z" transform="translate(335.76 245.61)"/>
-          <path d="m-335.31-90.159l371.48 92.488-371.41-185.55-0.07 93.061z" transform="matrix(-1 0 0 1 408.18 245.61)"/>
-          <path d="m-228.88-245.24l265.11 247.51-166.02-248.3-99.09 0.79z" transform="matrix(-1 0 0 1 408.27 245.61)"/>
-          <path d="m-53.038-246.03l89.336 248.36-31.082-248.19-58.254-0.17z" transform="matrix(-1 0 0 1 408.37 245.61)"/>
-        </g>
-      </g>
-      <path d="m145.35-50.874l-86.926 68.413 34.877 104.98-91.928-61.535-89.064 65.605 30.116-106.44-89.925-64.429 110.54-4.251 33.493-105.43 38.202 103.82 110.62-0.734z" fill-rule="evenodd" transform="matrix(.65515 .011378 -.011824 .68087 372.45 246.81)" stroke-width="1pt" fill="#b87333"/>
-    </svg>
-  </div>
-
-  <div class="state-name">Ari<span>z</span>ona</div>
-
-  <div class="ornament">
-    <div class="ornament-line"></div>
-    <div class="ornament-center">✦</div>
-    <div class="ornament-line"></div>
-  </div>
-
-  <div class="quote-section">
-    <span class="open-quote">"</span>
-    <p class="quote-text">To leave the exploration unfinished, to say that there is a part of the canyon which I cannot explore, having already almost accomplished it, is <em>more than I am willing to acknowledge</em>, and I determine to go on.</p>
-    <span class="close-quote">"</span>
-  </div>
-
-  <div class="attribution">
-    <div class="attr-name">John Wesley Powell</div>
-    <div class="attr-detail">Grand Canyon Expedition &nbsp;·&nbsp; 1869</div>
-  </div>
-
-  <div class="bottom-rule">
-    <div class="rule-line"></div>
-    <div class="rule-diamond"></div>
-    <div class="rule-line"></div>
-  
-
-
-</body>
-</html>
-  </div>
   <div class="hero-eyebrow">Rightful Returns Recovery</div>
   <h1>Arizona <span>Surplus Funds</span><br>Recovery</h1>
   <p class="hero-sub">You may have unclaimed foreclosure or tax sale surplus funds waiting. We help Arizona homeowners recover excess proceeds held by the county — with <strong>no upfront fees, ever.</strong></p>
@@ -367,27 +163,6 @@
     <a href="#how" class="btn-secondary">How It Works</a>
   </div>
 </section>
-
-<div class="stats-strip">
-  <div class="stats-inner">
-    <div class="stat-item"><span class="num">$0</span><span class="lbl">Upfront Cost</span></div>
-    <div class="stat-item"><span class="num">15+</span><span class="lbl">Counties Researched</span></div>
-    <div class="stat-item"><span class="num">100%</span><span class="lbl">Free Case Review</span></div>
-    <div class="stat-item"><span class="num">Millions</span><span class="lbl">In Unclaimed Funds Statewide</span></div>
-  </div>
-</div>
-
-<section id="how"><div class="section">
-  <div class="section-label">The Process</div>
-  <div class="gold-line"></div>
-  <h2>How Surplus Fund Recovery Works<br><span style="color:var(--gold)">in Arizona</span></h2>
-  <div class="steps">
-    <div class="step"><span class="step-num">01</span><div class="step-icon">📋</div><h3>Free Sign Up</h3><p>Fill out our simple form with your name and contact info. Takes less than 2 minutes and costs you nothing.</p></div>
-    <div class="step"><span class="step-num">02</span><div class="step-icon">🔍</div><h3>We Research</h3><p>Our team searches Maricopa, Pima, Pinal, and all Arizona county records for surplus funds in your name.</p></div>
-    <div class="step"><span class="step-num">03</span><div class="step-icon">📄</div><h3>We File For You</h3><p>If we find funds, we handle all paperwork and filing with the court on your behalf.</p></div>
-    <div class="step"><span class="step-num">04</span><div class="step-icon">💰</div><h3>You Get Paid</h3><p>Once the claim is approved, the money comes to you. We only earn a fee when you do.</p></div>
-  </div>
-</div></section>
 
 <div class="stats-strip">
   <div class="stats-inner">
@@ -487,14 +262,14 @@
   <div class="footer-nav"><a href="/georgia">Georgia</a><a href="/texas">Texas</a><a href="/arizona">Arizona</a></div>
   <p class="footer-copy">© 2026 Rightful Returns Recovery. All rights reserved.</p>
 </footer>
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are surplus funds after foreclosure?","acceptedAnswer":{"@type":"Answer","text":"Surplus funds are excess proceeds remaining after debts are paid following a foreclosure or tax sale in Arizona."}},{"@type":"Question","name":"How do I claim surplus funds in Arizona?","acceptedAnswer":{"@type":"Answer","text":"A claim must be filed with the county court. Rightful Returns Recovery handles this entire process for you at no upfront cost."}},{"@type":"Question","name":"Is there an upfront fee?","acceptedAnswer":{"@type":"Answer","text":"No. We work on contingency — you pay nothing unless we recover funds for you."}}]}</script>
-<section class="local-seo">
+
+<section class="local-seo" style="display:none;">
 <h2>Arizona Surplus Funds Recovery Experts</h2>
 <p>We actively recover foreclosure surplus funds in Maricopa County, Pima County, Pinal County, Yavapai County and all 15 Arizona counties.</p>
-
 <h2>Georgia Foreclosure Overage Specialists</h2>
 <p>We assist clients in Fulton County, DeKalb County, Cobb County, Gwinnett County and all 159 Georgia counties.</p>
-
 <h2>Texas Excess Proceeds Claims</h2>
 <p>We handle Harris County, Dallas County, Bexar County, Tarrant County and all 254 Texas counties.</p>
 </section>
