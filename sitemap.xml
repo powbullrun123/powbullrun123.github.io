@@ -1,154 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- ═══════════════════════════════════════════
-       MAIN PAGES
-  ════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/arizona.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/georgia.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/texas.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/sms-terms.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════
-       COMPANY — MISSION & GIVING BACK
-       Added 2026-03-11
-  ════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/our-mission.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/giving-back.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════
-       COUNTY PAGES
-  ════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/arizona-surplus-funds-list.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/maricopa-county-surplus-funds.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/maricopa-county-excess-proceeds.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/pima-county-surplus-funds.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/pinal-county-surplus-funds.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  ═══════════════════════════════════════════
+       MAIN PAGE
+  ════════════════════════════════════════════  -->
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<!--  ═══════════════════════════════════════════
+       STATE PAGES
+  ════════════════════════════════════════════  -->
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/arizona.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/georgia.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/texas.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<!--  ═══════════════════════════════════════════
+       COMPANY PAGES
+  ════════════════════════════════════════════  -->
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/our-mission.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/giving-back.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/sms-terms.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.4</priority>
+</url>
+<!--  ═══════════════════════════════════════════
+       RESOURCE / CONTENT PAGES
+  ════════════════════════════════════════════  -->
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/what-are-surplus-funds.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/why-surplus-funds-go-unclaimed.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/how-you-claim-surplus-funds.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<!--  ═══════════════════════════════════════════
+       ARIZONA DEEP PAGES
+  ════════════════════════════════════════════  -->
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/arizona-foreclosure-surplus-funds.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/arizona-surplus-funds-list.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/maricopa-county-surplus-funds-recovery.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<!--  ═══════════════════════════════════════════
        BLOG INDEX
-  ════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/blog/index.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════
+  ════════════════════════════════════════════  -->
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/blog/index.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<!--  ═══════════════════════════════════════════
        BLOG ARTICLES
-  ════════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/blog/what-are-surplus-funds.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/blog/how-to-claim-surplus-funds.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/blog/what-are-foreclosures.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/blog/arizona-foreclosure-guide.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/blog/how-long-to-claim-surplus-funds.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/blog/how-surplus-fund-claim-process-works.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/blog/why-surplus-funds-go-unclaimed.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rightfulreturnsrecovery.com/blog/maricopa-county-surplus-funds-recovery.html</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+  ════════════════════════════════════════════  -->
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/blog/arizona-foreclosure-guide.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/blog/arizona-foreclosure-surplus-funds.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/blog/how-to-claim-foreclosure-surplus-funds.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/blog/how-to-claim-surplus-funds.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/blog/maricopa-county-excess-proceeds.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/blog/surplus-funds-foreclosure-arizona.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/blog/trustee-sale-excess-proceeds-explained.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/blog/unclaimed-foreclosure-money.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/blog/what-are-foreclosures.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.rightfulreturnsrecovery.com/blog/what-happens-to-extra-money-after-foreclosure.html</loc>
+<lastmod>2026-03-11</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
 </urlset>
