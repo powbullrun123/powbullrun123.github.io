@@ -311,6 +311,25 @@
   </nav>
 </header>
 
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  menuBtn.addEventListener('click', function () {
+    const isOpen = navMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+  });
+
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</header>
+
 <!-- ── HERO ── -->
 <section class="hero" aria-label="Surplus Funds Recovery">
   <div class="hero-logo">Rightful Returns Recovery</div>
