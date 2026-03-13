@@ -26,26 +26,27 @@ html { scroll-behavior:smooth; }
 body { font-family:'Lato',sans-serif; background:var(--dark); color:var(--light); overflow-x:hidden; }
 
 /* HEADER */
-.site-header { position:sticky; top:0; z-index:1000; background:var(--dark); border-bottom:2px solid rgba(201,168,76,0.3); overflow:hidden; }
-#flagCanvas { position:absolute; inset:0; width:100%; height:100%; opacity:0.11; pointer-events:none; z-index:0; }
-.header-main { position:relative; z-index:1; max-width:1200px; margin:0 auto; padding:0 28px; height:70px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-.header-logo { font-family:'Playfair Display',Georgia,serif; font-size:1.3rem; font-weight:700; color:var(--white); letter-spacing:0.02em; line-height:1.2; white-space:nowrap; text-decoration:none; }
-.header-logo span { color:var(--gold); }
-.header-phone { font-size:1rem; font-weight:700; color:var(--gold); letter-spacing:0.05em; text-decoration:none; transition:opacity 0.2s; white-space:nowrap; display:block; }
-.header-phone:hover { opacity:0.8; }
-.hamburger { background:none; border:none; cursor:pointer; display:flex; flex-direction:column; gap:5px; padding:8px; flex-shrink:0; }
-.hamburger span { display:block; width:26px; height:2px; background:var(--gold-light); border-radius:2px; transition:all 0.3s; }
-.hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity:0; }
-.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-.nav-dropdown { display:none; position:absolute; top:70px; right:0; left:0; background:var(--deep); border-top:2px solid var(--gold); padding:1rem 1.5rem 1.5rem; z-index:999; }
-.nav-dropdown.open { display:block; }
-.nav-dropdown a { display:block; padding:0.6rem 0; color:var(--gold-light); text-decoration:none; font-size:0.95rem; font-weight:400; border-bottom:1px solid rgba(201,168,76,0.12); transition:color 0.2s; }
-.nav-dropdown a:last-child { border-bottom:none; }
-.nav-dropdown a:hover { color:var(--gold); background:none; }
-.nav-dropdown a.nav-cta { margin-top:0.8rem; background:var(--gold); color:var(--deep); text-align:center; border-radius:4px; font-weight:700; padding:0.7rem; border-bottom:none; letter-spacing:0.04em; display:block; }
-.nav-dropdown a.nav-cta:hover { background:var(--accent); color:var(--deep); }
-@media(max-width:480px) { .header-logo { font-size:1.05rem; } .header-phone { font-size:0.9rem; } }
+#site-header { position:sticky; top:0; z-index:1000; background:var(--dark); box-shadow:0 2px 12px rgba(0,0,0,0.4); }
+#flagCanvas { position:absolute; inset:0; width:100%; height:100%; opacity:0.11; pointer-events:none; }
+.header-inner { position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; padding:0 1.5rem; height:72px; max-width:1200px; margin:0 auto; }
+.header-left { display:flex; align-items:center; gap:1rem; }
+.logo-wrap { display:flex; align-items:center; gap:0.6rem; text-decoration:none; }
+.logo-icon { width:42px; height:42px; border-radius:50%; background:linear-gradient(135deg,var(--gold) 0%,#a07830 100%); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:1.1rem; color:#fff; font-weight:700; flex-shrink:0; }
+.logo-text { font-family:'Playfair Display',serif; font-size:1.05rem; color:#fff; line-height:1.2; }
+.logo-text span { display:block; font-size:0.72rem; color:var(--gold-light); font-family:'Lato',sans-serif; font-weight:300; letter-spacing:0.08em; text-transform:uppercase; }
+.header-phone-link { color:var(--gold-light); font-size:0.85rem; font-weight:700; text-decoration:none; letter-spacing:0.04em; }
+.header-phone-link:hover { color:var(--gold); }
+#menuBtn { background:none; border:none; cursor:pointer; display:flex; flex-direction:column; gap:5px; padding:8px; }
+#menuBtn span { display:block; width:26px; height:2px; background:var(--gold-light); border-radius:2px; transition:all 0.3s; }
+#menuBtn.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+#menuBtn.open span:nth-child(2) { opacity:0; }
+#menuBtn.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+#navMenu { display:none; position:absolute; top:72px; right:0; left:0; background:var(--deep); border-top:2px solid var(--gold); padding:1rem 1.5rem 1.5rem; z-index:999; }
+#navMenu.open { display:block; }
+#navMenu a { display:block; padding:0.6rem 0; color:var(--gold-light); text-decoration:none; font-size:0.95rem; font-weight:400; border-bottom:1px solid rgba(201,168,76,0.12); transition:color 0.2s; }
+#navMenu a:hover, #navMenu a.active { color:var(--gold); }
+#navMenu a.nav-cta { margin-top:0.8rem; background:var(--gold); color:var(--deep); text-align:center; border-radius:4px; font-weight:700; padding:0.7rem; border-bottom:none; letter-spacing:0.04em; }
+#navMenu a.nav-cta:hover { background:#a07830; color:#fff; }
 
 /* HERO */
 .hero { min-height:100vh; background:var(--deep); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; padding:100px 20px; }
@@ -125,25 +126,28 @@ body { font-family:'Lato',sans-serif; background:var(--dark); color:var(--light)
 <body>
 
 <!-- HEADER -->
-<header class="site-header">
+<header id="site-header">
   <canvas id="flagCanvas"></canvas>
-  <div class="header-main">
-    <div>
-      <a href="https://www.rightfulreturnsrecovery.com/" class="header-logo"><span>Rightful Returns</span> Recovery</a>
-      <a class="header-phone" href="tel:18004282022">📞 1 (800) 428-2022</a>
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="https://www.rightfulreturnsrecovery.com/" class="logo-wrap">
+        <div class="logo-icon">RR</div>
+        <div class="logo-text">Rightful Returns Recovery<span>Unclaimed Surplus Funds</span></div>
+      </a>
+      <a href="tel:18004282022" class="header-phone-link">📞 1 (800) 428-2022</a>
     </div>
-    <button class="hamburger" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">
+    <button id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <nav class="nav-dropdown" id="navMenu" aria-label="Site navigation">
+  <nav id="navMenu" role="navigation">
     <a href="https://www.rightfulreturnsrecovery.com/">🏠 Home</a>
     <a href="https://www.rightfulreturnsrecovery.com/#how">📋 How It Works</a>
     <a href="https://www.rightfulreturnsrecovery.com/#about">👤 About Us</a>
     <a href="https://www.rightfulreturnsrecovery.com/#states">🗺️ States We Serve</a>
     <a href="https://www.rightfulreturnsrecovery.com/#faq">❓ FAQ</a>
     <a href="https://www.rightfulreturnsrecovery.com/blog/index.html">📝 Blog</a>
-    <a href="https://www.rightfulreturnsrecovery.com/our-mission.html">🏛️ Our Mission</a>
+    <a href="https://www.rightfulreturnsrecovery.com/our-mission.html" class="active">🏛️ Our Mission</a>
     <a href="https://www.rightfulreturnsrecovery.com/giving-back.html">❤️ Giving Back</a>
     <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">📱 SMS Terms</a>
     <a href="https://www.rightfulreturnsrecovery.com/#signup" class="nav-cta">✅ Free Case Evaluation</a>
@@ -185,7 +189,7 @@ body { font-family:'Lato',sans-serif; background:var(--dark); color:var(--light)
       </div>
     </div>
     <div class="bbb-card">
-      <img src="https://powbullrun123.github.io/bbb-badge.jpeg" alt="BBB A+ Accredited Business" />
+      <img src="https://powbullrun123.github.io/bbb-badge.jpeg" crossorigin="anonymous" onerror="this.onerror=null;this.src='/images/bbb-badge.jpeg';" alt="BBB A+ Accredited Business" />
       <div class="stars">★★★★★</div>
       <h3>BBB Accredited · A+ Rating</h3>
       <p>We hold the <strong style="color:var(--gold-light)">highest possible rating</strong> with the Better Business Bureau. Our A+ accreditation reflects our commitment to transparent practices, honest communication, and putting clients first — every single time.</p>
@@ -237,19 +241,19 @@ body { font-family:'Lato',sans-serif; background:var(--dark); color:var(--light)
     <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">SMS Terms</a>
     <a href="tel:18004282022">1 (800) 428-2022</a>
   </div>
-  <p>&copy; 2026 Rightful Returns Recovery · Phoenix, Arizona · powell@rightfulreturnsrecovery.com</p>
+  <p>&copy; 2026 Rightful Returns Recovery · Phoenix, Arizona · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e6968991838a8aa6948f818e9280938a94839293948895948385899083949fc885898b">[email&#160;protected]</a></p>
   <p style="margin-top:6px;">This website is not affiliated with any government agency. All services offered on a contingency basis only.</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const btn = document.getElementById('menuBtn');
   const nav = document.getElementById('navMenu');
-  btn.addEventListener('click', function() {
-    const isOpen = nav.classList.toggle('open');
-    btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', isOpen);
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
   });
-  document.addEventListener('click', function(e) {
+  document.addEventListener('click', e => {
     if (!btn.contains(e.target) && !nav.contains(e.target)) {
       nav.classList.remove('open');
       btn.classList.remove('open');
@@ -342,17 +346,4 @@ body { font-family:'Lato',sans-serif; background:var(--dark); color:var(--light)
       t += 0.025;
       canvases.forEach(c => {
         const ctx = c.el.getContext('2d');
-        const W = c.el.width, H = c.el.height;
-        if (!W || !H) return;
-        ctx.globalAlpha = c.opacity;
-        drawFlag(ctx, W, H, t);
-        ctx.globalAlpha = 1;
-      });
-      requestAnimationFrame(loop);
-    }
-    loop();
-  })();
-</script>
-
-</body>
-</html>
+        const W = c.el.width
