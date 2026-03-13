@@ -3,380 +3,389 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What Are Foreclosure Surplus Funds? | Rightful Returns Recovery</title>
-  <meta name="description" content="Foreclosure surplus funds are money left over after a foreclosure sale — and they may be legally yours. Learn what they are, how they're created, and how to claim them." />
-  <meta property="og:title" content="What Are Foreclosure Surplus Funds — And Are You Owed Money?" />
-  <meta property="og:description" content="Millions of former homeowners are owed money from foreclosure sales they never knew about. Learn what surplus funds are and how to claim them." />
-  <meta property="og:type" content="article" />
-  <link rel="canonical" href="https://www.rightfulreturnsrecovery.com/blog/what-are-foreclosure-surplus-funds.html" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "What Are Foreclosure Surplus Funds — And Are You Owed Money?",
-    "description": "Learn what foreclosure surplus funds are, how they're created, and how former homeowners can claim them before deadlines expire.",
-    "author": { "@type": "Organization", "name": "Rightful Returns Recovery" },
-    "publisher": { "@type": "Organization", "name": "Rightful Returns Recovery", "url": "https://www.rightfulreturnsrecovery.com" },
-    "datePublished": "2026-03-01",
-    "mainEntityOfPage": "https://www.rightfulreturnsrecovery.com/blog/what-are-foreclosure-surplus-funds.html"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What are foreclosure surplus funds?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Foreclosure surplus funds are the money left over after a property is sold at a foreclosure auction and the outstanding mortgage balance, fees, and costs are paid off. The remaining amount legally belongs to the former property owner." }
-      },
-      {
-        "@type": "Question",
-        "name": "How long do I have to claim foreclosure surplus funds?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Deadlines vary by state. Texas allows 2 years, Georgia up to 5 years, and Arizona timelines vary by sale type. Acting quickly is always recommended as unclaimed funds can be permanently forfeited." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need a lawyer to claim foreclosure surplus funds?",
-        "acceptedAnswer": { "@type": "Answer", "text": "In many states, a licensed attorney must file the claim on your behalf. Rightful Returns Recovery partners with licensed attorneys in all 50 states and handles the entire process for you at no upfront cost." }
-      }
-    ]
-  }
-  </script>
+  <title>What Are Foreclosures? A Plain-Language Guide | Rightful Returns Recovery</title>
+  <meta name="description" content="Understand what foreclosure is, how the process works step by step, and what rights you retain — including the right to any surplus funds from the sale." />
+  <link rel="canonical" href="https://www.rightfulreturnsrecovery.com/blog/what-are-foreclosures.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy: #0f1e3c;
-      --navy-mid: #1a3060;
-      --gold: #c8922a;
-      --gold-light: #e8b84b;
-      --green: #1a7a4a;
-      --green-light: #22a060;
-      --cream: #faf8f3;
-      --white: #ffffff;
-      --gray: #6b7280;
-      --light-gray: #f3f4f6;
-      --border: #e5e7eb;
+      --gold: #C9A84C;
+      --gold-light: #E8D5A3;
+      --dark: #1a2e42;
+      --navy: #1B2A40;
+      --deep: #071018;
+      --light: #F5F0E8;
     }
-    body { font-family: 'Source Serif 4', Georgia, serif; background: var(--cream); color: #1f2937; line-height: 1.7; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; background: var(--light); color: var(--dark); }
 
-    nav {
-      background: var(--navy); padding: 0 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 68px; position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-    }
-    .nav-logo { color: white; font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; text-decoration: none; }
-    .nav-logo span { color: var(--gold-light); }
-    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--gold-light); }
-    .nav-cta { background: var(--gold); color: white !important; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600 !important; }
+    /* HEADER */
+    #site-header { position: sticky; top: 0; z-index: 1000; background: var(--navy); box-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+    #flagCanvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.11; pointer-events: none; }
+    .header-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; height: 72px; max-width: 1200px; margin: 0 auto; }
+    .header-left { display: flex; align-items: center; gap: 1rem; }
+    .logo-wrap { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .logo-icon { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--gold) 0%, #a07830 100%); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; font-weight: 700; flex-shrink: 0; }
+    .logo-text { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #fff; line-height: 1.2; }
+    .logo-text span { display: block; font-size: 0.72rem; color: var(--gold-light); font-family: 'Lato', sans-serif; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; }
+    .header-phone { color: var(--gold-light); font-size: 0.85rem; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; }
+    .header-phone:hover { color: var(--gold); }
+    #menuBtn { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 5px; padding: 8px; }
+    #menuBtn span { display: block; width: 26px; height: 2px; background: var(--gold-light); border-radius: 2px; transition: all 0.3s; }
+    #menuBtn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #menuBtn.open span:nth-child(2) { opacity: 0; }
+    #menuBtn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    #navMenu { display: none; position: absolute; top: 72px; right: 0; left: 0; background: var(--deep); border-top: 2px solid var(--gold); padding: 1rem 1.5rem 1.5rem; z-index: 999; }
+    #navMenu.open { display: block; }
+    #navMenu a { display: block; padding: 0.6rem 0; color: var(--gold-light); text-decoration: none; font-size: 0.95rem; border-bottom: 1px solid rgba(201,168,76,0.12); transition: color 0.2s; }
+    #navMenu a:hover, #navMenu a.active { color: var(--gold); }
+    #navMenu a.cta-nav { margin-top: 0.8rem; background: var(--gold); color: var(--deep); text-align: center; border-radius: 4px; font-weight: 700; padding: 0.7rem; border-bottom: none; letter-spacing: 0.04em; }
+    #navMenu a.cta-nav:hover { background: #a07830; color: #fff; }
 
-    .article-hero {
-      background: var(--navy);
-      padding: 3.5rem 2rem 2.5rem;
-      position: relative; overflow: hidden;
-    }
-    .article-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 20% 50%, rgba(200,146,42,0.12) 0%, transparent 60%);
-    }
-    .article-hero-inner { max-width: 800px; margin: 0 auto; position: relative; }
+    /* ARTICLE HERO */
+    .article-hero { position: relative; background: var(--navy); padding: 3.5rem 1.5rem 3rem; overflow: hidden; }
+    #heroFlagCanvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.38; pointer-events: none; }
+    .hero-flag-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(7,16,24,0.55) 0%, rgba(27,42,64,0.7) 100%); pointer-events: none; }
+    .article-hero-content { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; }
     .breadcrumb { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
     .breadcrumb a { color: var(--gold-light); text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .article-category {
-      display: inline-block; background: rgba(26,122,74,0.25); color: #5de4a0;
-      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 0.3rem 0.8rem; border-radius: 2px; margin-bottom: 1rem;
-      border: 1px solid rgba(26,122,74,0.4);
-    }
-    .article-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      color: white; line-height: 1.25; margin-bottom: 1rem;
-    }
-    .article-hero .lede {
-      color: rgba(255,255,255,0.72); font-size: 1.1rem; line-height: 1.65;
-      max-width: 680px; margin-bottom: 1.5rem;
-    }
-    .article-meta { display: flex; gap: 1.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+    .breadcrumb a:hover { color: var(--gold); }
+    .article-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: block; }
+    .article-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: #fff; line-height: 1.2; margin-bottom: 1rem; }
+    .article-hero .lead { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.05rem, 2.2vw, 1.3rem); color: var(--gold-light); line-height: 1.65; margin-bottom: 1.2rem; }
+    .article-meta { font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+    .article-meta strong { color: rgba(255,255,255,0.8); }
 
-    .article-layout {
-      max-width: 1100px; margin: 0 auto;
-      padding: 3rem 2rem;
-      display: grid; grid-template-columns: 1fr 300px;
-      gap: 3rem; align-items: start;
-    }
+    /* ARTICLE BODY */
+    .article-wrap { display: grid; grid-template-columns: 1fr min(680px, 100%) 1fr; padding: 3.5rem 1.5rem 4rem; }
+    .article-wrap > * { grid-column: 2; }
+    article h2 { font-family: 'Playfair Display', serif; font-size: 1.55rem; color: var(--dark); margin: 2.2rem 0 0.9rem; padding-left: 0.9rem; border-left: 4px solid var(--gold); }
+    article h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--dark); margin: 1.8rem 0 0.6rem; }
+    article p { font-size: 1.02rem; line-height: 1.8; color: #3a3a3a; margin-bottom: 1.2rem; }
+    article ul, article ol { padding-left: 1.6rem; margin-bottom: 1.2rem; }
+    article li { font-size: 1.02rem; line-height: 1.75; color: #3a3a3a; margin-bottom: 0.5rem; }
+    article strong { color: var(--dark); }
 
-    .article-content { min-width: 0; }
-    .article-body h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.7rem; color: var(--navy);
-      margin: 2.5rem 0 1rem; line-height: 1.3;
-    }
-    .article-body h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem; color: var(--navy);
-      margin: 2rem 0 0.75rem;
-    }
-    .article-body p { margin-bottom: 1.25rem; font-size: 1.02rem; color: #374151; }
-    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.5rem; }
-    .article-body li { margin-bottom: 0.6rem; font-size: 1rem; color: #374151; }
+    .timeline { list-style: none; padding: 0; margin: 1.5rem 0 2rem; }
+    .timeline li { display: flex; gap: 1.2rem; margin-bottom: 1.8rem; align-items: flex-start; }
+    .timeline-dot { min-width: 44px; height: 44px; border-radius: 50%; background: var(--navy); border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--gold); font-size: 1rem; flex-shrink: 0; }
+    .timeline-content h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--dark); margin-bottom: 0.35rem; }
+    .timeline-content p { font-size: 0.95rem; color: #555; margin: 0; }
 
-    .callout {
-      background: linear-gradient(135deg, rgba(15,30,60,0.05) 0%, rgba(200,146,42,0.08) 100%);
-      border-left: 4px solid var(--gold);
-      padding: 1.25rem 1.5rem;
-      border-radius: 0 6px 6px 0;
-      margin: 2rem 0;
-    }
-    .callout p { margin: 0; font-size: 1rem; color: var(--navy); font-style: italic; }
-    .callout strong { color: var(--gold); font-style: normal; }
+    .pull-quote { margin: 2.5rem 0; padding: 1.8rem 2rem; background: var(--navy); border-left: 5px solid var(--gold); border-radius: 4px; }
+    .pull-quote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.35rem; color: #fff; line-height: 1.55; margin: 0; }
+    .pull-quote cite { display: block; margin-top: 0.6rem; font-family: 'Lato', sans-serif; font-style: normal; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
 
-    .info-box {
-      background: white; border: 1px solid var(--border);
-      border-radius: 8px; padding: 1.5rem; margin: 2rem 0;
-      box-shadow: 0 2px 12px rgba(15,30,60,0.05);
-    }
-    .info-box h4 { font-family: 'Playfair Display', serif; color: var(--navy); margin-bottom: 0.75rem; font-size: 1.05rem; }
+    .info-box { background: #fff; border: 1px solid rgba(201,168,76,0.3); border-top: 4px solid var(--gold); border-radius: 4px; padding: 1.5rem 1.8rem; margin: 2rem 0; }
+    .info-box h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--dark); margin-bottom: 0.7rem; }
+    .info-box ul { padding-left: 1.2rem; }
+    .info-box li { font-size: 0.95rem; line-height: 1.7; color: #444; margin-bottom: 0.4rem; }
 
-    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
-    .stat-card { background: var(--navy); color: white; border-radius: 8px; padding: 1.25rem; text-align: center; }
-    .stat-card .num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold-light); display: block; margin-bottom: 0.3rem; }
-    .stat-card p { font-size: 0.8rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.4; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.5rem 0 2rem; }
+    .col-box { background: #fff; border-radius: 4px; padding: 1.2rem 1.4rem; border-top: 3px solid var(--gold); }
+    .col-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--dark); margin-bottom: 0.5rem; }
+    .col-box ul { padding-left: 1.1rem; }
+    .col-box li { font-size: 0.88rem; color: #555; line-height: 1.6; margin-bottom: 0.3rem; }
 
-    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-item h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.5rem; }
-    .faq-item p { font-size: 0.95rem; color: var(--gray); margin: 0; }
+    .article-cta { margin: 3rem 0 0; background: linear-gradient(135deg, var(--navy) 0%, var(--deep) 100%); border-radius: 6px; padding: 2.5rem; text-align: center; }
+    .article-cta h3 { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.5rem; margin-bottom: 0.8rem; }
+    .article-cta p { color: var(--gold-light); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--deep); font-family: 'Lato', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 4px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-gold:hover { background: #a07830; color: #fff; transform: translateY(-2px); }
+    .btn-outline { display: inline-block; border: 2px solid var(--gold-light); color: var(--gold-light); font-family: 'Lato', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.8rem 1.8rem; border-radius: 4px; text-decoration: none; margin-left: 1rem; transition: all 0.2s; }
+    .btn-outline:hover { background: var(--gold-light); color: var(--deep); }
+    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--navy); font-weight: 700; font-size: 0.85rem; text-decoration: none; margin-bottom: 2.5rem; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+    .back-link:hover { color: var(--gold); }
 
-    .cta-block {
-      background: var(--navy); border-radius: 8px;
-      padding: 2rem; margin: 2.5rem 0; text-align: center;
-    }
-    .cta-block h3 { font-family: 'Playfair Display', serif; color: white; margin-bottom: 0.75rem; font-size: 1.4rem; }
-    .cta-block p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 0.95rem; }
-    .cta-block a {
-      display: inline-block; background: var(--gold); color: white;
-      padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none;
-      font-weight: 600; font-size: 0.95rem; transition: background 0.2s;
-    }
-    .cta-block a:hover { background: var(--gold-light); color: var(--navy); }
-
-    .sidebar { position: sticky; top: 88px; }
-    .sidebar-widget {
-      background: white; border-radius: 8px; padding: 1.5rem;
-      margin-bottom: 1.5rem; border: 1px solid var(--border);
-      box-shadow: 0 2px 12px rgba(15,30,60,0.05);
-    }
-    .widget-title {
-      font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy);
-      margin-bottom: 1rem; padding-bottom: 0.6rem;
-      border-bottom: 2px solid var(--gold);
-    }
-    .toc-list { list-style: none; }
-    .toc-list li { padding: 0.4rem 0; border-bottom: 1px solid var(--light-gray); font-size: 0.85rem; }
-    .toc-list li:last-child { border-bottom: none; }
-    .toc-list a { color: var(--navy); text-decoration: none; transition: color 0.2s; }
-    .toc-list a:hover { color: var(--green-light); }
-    .cta-widget { background: var(--navy); }
-    .cta-widget .widget-title { color: white; border-bottom-color: var(--gold-light); }
-    .cta-widget p { font-size: 0.88rem; color: rgba(255,255,255,0.75); margin-bottom: 1.25rem; line-height: 1.6; }
-    .cta-btn {
-      display: block; background: var(--gold); color: white;
-      text-align: center; padding: 0.85rem; border-radius: 4px;
-      text-decoration: none; font-weight: 600; font-size: 0.9rem;
-    }
-    .cta-btn:hover { background: var(--gold-light); color: var(--navy); }
-    .related-list { list-style: none; }
-    .related-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--light-gray); }
-    .related-list li:last-child { border-bottom: none; }
-    .related-list a { color: var(--navy); text-decoration: none; font-size: 0.85rem; line-height: 1.4; display: block; }
-    .related-list a:hover { color: var(--green-light); }
-
-    footer {
-      background: var(--navy); color: rgba(255,255,255,0.6);
-      text-align: center; padding: 2rem; font-size: 0.85rem;
-    }
+    footer { background: var(--deep); color: rgba(255,255,255,0.55); padding: 2rem 1.5rem; text-align: center; font-size: 0.82rem; }
     footer a { color: var(--gold-light); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 1rem; }
 
-    @media (max-width: 768px) {
-      .article-layout { grid-template-columns: 1fr; }
-      .sidebar { position: static; }
-      .stat-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+    @media (max-width: 700px) {
+      .article-wrap { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+      .btn-outline { margin-left: 0; margin-top: 0.8rem; display: block; }
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="https://www.rightfulreturnsrecovery.com" class="nav-logo">Rightful <span>Returns</span> Recovery</a>
-  <div class="nav-links">
-    <a href="https://www.rightfulreturnsrecovery.com/#how">How It Works</a>
-    <a href="https://www.rightfulreturnsrecovery.com/#states">States We Serve</a>
-    <a href="index.html">Blog</a>
-    <a href="https://www.rightfulreturnsrecovery.com/#signup" class="nav-cta">Free Search</a>
-  </div>
-</nav>
-
-<div class="article-hero">
-  <div class="article-hero-inner">
-    <div class="breadcrumb"><a href="https://www.rightfulreturnsrecovery.com">Home</a> › <a href="index.html">Blog</a> › Foreclosure Basics</div>
-    <div class="article-category">Foreclosure Basics</div>
-    <h1>What Are Foreclosure Surplus Funds — And Are You Owed Money?</h1>
-    <p class="lede">Millions of former homeowners are owed money from foreclosure sales they never knew about. Learn what surplus funds are, how they're created, and how long you have to claim them.</p>
-    <div class="article-meta">
-      <span>By Rightful Returns Recovery</span>
-      <span>March 2026</span>
-      <span>8 min read</span>
+<!-- HEADER -->
+<header id="site-header">
+  <canvas id="flagCanvas"></canvas>
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="/" class="logo-wrap">
+        <div class="logo-icon">RR</div>
+        <div class="logo-text">Rightful Returns Recovery<span>Unclaimed Surplus Funds</span></div>
+      </a>
+      <a href="tel:+18004282022" class="header-phone">📞 1-800-428-2022</a>
     </div>
+    <button id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</div>
+  <nav id="navMenu" role="navigation">
+    <a href="/">Home</a>
+    <a href="/how-it-works.html">How It Works</a>
+    <a href="/about-us.html">About Us</a>
+    <a href="/states-we-serve.html">States We Serve</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/blog/index.html" class="active">Blog</a>
+    <a href="/our-mission.html">Our Mission</a>
+    <a href="/giving-back.html">Giving Back</a>
+    <a href="/sms-terms.html">SMS Terms</a>
+    <a href="/free-case-evaluation.html" class="cta-nav">Free Case Evaluation</a>
+  </nav>
+</header>
 
-<div class="article-layout">
+<!-- HERO -->
+<section class="article-hero">
+  <canvas id="heroFlagCanvas"></canvas>
+  <div class="hero-flag-overlay"></div>
+  <div class="article-hero-content">
+    <p class="breadcrumb"><a href="/">Home</a> › <a href="/blog/index.html">Blog</a> › Foreclosure Basics</p>
+    <span class="article-tag">Foreclosure Basics</span>
+    <h1>What Are Foreclosures? A Plain-Language Guide</h1>
+    <p class="lead">Foreclosure is a legal process that allows a lender to take possession of a home when the borrower stops making payments. Understanding it — step by step — is the first step toward protecting what's yours.</p>
+    <p class="article-meta"><strong>February 2025</strong> &nbsp;·&nbsp; 6 min read &nbsp;·&nbsp; Rightful Returns Recovery</p>
+  </div>
+</section>
 
-  <article class="article-content">
-    <div class="article-body">
+<!-- ARTICLE BODY -->
+<main class="article-wrap">
+  <article>
+    <a href="/blog/index.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 19"/></svg>
+      Back to Blog
+    </a>
 
-      <div class="stat-grid">
-        <div class="stat-card"><span class="num">$1B+</span><p>In unclaimed surplus funds held by county courts nationwide</p></div>
-        <div class="stat-card"><span class="num">80%</span><p>Of former homeowners never know these funds exist</p></div>
-        <div class="stat-card"><span class="num">$0</span><p>Upfront cost to search and claim with Rightful Returns Recovery</p></div>
+    <p>If you or someone you love has experienced foreclosure — or is worried about it — this guide is for you. Foreclosure is one of the most stressful financial events a family can face, and the legal language surrounding it can make things feel even more confusing. Here we break down exactly what foreclosure is, how the process unfolds, and crucially, what rights you retain even after your home is gone.</p>
+
+    <h2>What Is Foreclosure?</h2>
+    <p>Foreclosure is a legal process through which a <strong>mortgage lender or lienholder repossesses and sells a property</strong> when the borrower fails to make required payments. The legal framework is based on the mortgage agreement itself: when you borrowed money to buy your home, you agreed — in the mortgage contract — that the lender could take the home if you defaulted on the loan.</p>
+    <p>Importantly, foreclosure doesn't happen overnight. It is a formal legal process that typically takes months to years depending on the state, and borrowers have rights throughout.</p>
+
+    <div class="pull-quote">
+      <p>"Foreclosure ends your ownership of a home — but it does not necessarily end your financial rights related to that home."</p>
+      <cite>— Rightful Returns Recovery</cite>
+    </div>
+
+    <h2>The Two Main Types of Foreclosure</h2>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>⚖️ Judicial Foreclosure</h4>
+        <ul>
+          <li>Lender files a lawsuit in court</li>
+          <li>Borrower has a legal right to respond</li>
+          <li>Court supervises the sale</li>
+          <li>More common in: FL, NY, IL, NJ, OH</li>
+          <li>Often takes 1–3 years</li>
+        </ul>
       </div>
-
-      <h2 id="what-are">What Are Foreclosure Surplus Funds?</h2>
-      <p>When a home is sold at a foreclosure auction, the winning bidder pays a price set by the market — not by the lender. In many cases, competitive bidding drives that price above what's needed to pay off the outstanding mortgage, fees, court costs, and any other liens against the property.</p>
-      <p>The money left over after all those debts are satisfied is called <strong>foreclosure surplus funds</strong> — also known as <strong>foreclosure overages</strong>, <strong>excess proceeds</strong>, or <strong>surplus proceeds</strong>. By law in every U.S. state, those funds belong to the former homeowner — not the lender, not the county, and not the winning bidder.</p>
-      <p>But here's the problem: most former homeowners never find out this money exists. The county court or trustee holds it, sends a legally required notice that often goes unread or gets lost, and waits. If no claim is made by the deadline, the funds are absorbed into the government's general fund — gone forever.</p>
-
-      <div class="callout">
-        <p><strong>The key point:</strong> Just because you lost your home to foreclosure doesn't mean you lost all your equity. If the auction price exceeded what you owed, that difference is legally yours — regardless of your credit situation or the circumstances of the foreclosure.</p>
+      <div class="col-box">
+        <h4>📄 Non-Judicial Foreclosure</h4>
+        <ul>
+          <li>Proceeds without court involvement</li>
+          <li>Uses a "power of sale" clause in the deed</li>
+          <li>Governed by state statute</li>
+          <li>More common in: CA, TX, AZ, GA, WA</li>
+          <li>Typically faster: 3–6 months</li>
+        </ul>
       </div>
+    </div>
 
-      <h2 id="how-created">How Are Surplus Funds Created?</h2>
-      <p>To understand surplus funds, it helps to walk through a typical foreclosure sale:</p>
-      <ol>
-        <li><strong>The lender files for foreclosure</strong> after the homeowner falls behind on mortgage payments.</li>
-        <li><strong>The property is scheduled for auction</strong> — either a courthouse steps sale or online auction, depending on the state.</li>
-        <li><strong>Competitive bidding drives up the price.</strong> Investors attend these auctions looking for deals, and multiple bidders often push the final sale price well above what was owed.</li>
-        <li><strong>Debts are paid first.</strong> The auction proceeds pay off the mortgage, attorney fees, court costs, and any other recorded liens in priority order.</li>
-        <li><strong>The remainder becomes surplus funds.</strong> Whatever is left over after all debts are settled is placed into a court-controlled account, awaiting a claim from the former homeowner.</li>
-      </ol>
-      <p>For example: imagine you had a $180,000 mortgage remaining when your home went to foreclosure. The auction attracts four competitive bidders and the property ultimately sells for $235,000. After the $180,000 mortgage, $8,000 in attorney and court fees, and a $2,000 HOA lien are paid off, there's $45,000 in surplus funds sitting with the county — legally yours.</p>
+    <h2>How the Foreclosure Process Works: Step by Step</h2>
+    <ul class="timeline">
+      <li>
+        <div class="timeline-dot">1</div>
+        <div class="timeline-content">
+          <h4>Missed Payments</h4>
+          <p>Foreclosure typically begins after a borrower misses two to three consecutive mortgage payments. The lender will attempt to contact the borrower and may offer options like loan modifications or forbearance.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot">2</div>
+        <div class="timeline-content">
+          <h4>Notice of Default (NOD)</h4>
+          <p>The lender formally notifies the borrower that the loan is in default. This public notice is recorded with the county and signals that foreclosure proceedings have begun. The borrower typically has a window to cure the default by paying past-due amounts.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot">3</div>
+        <div class="timeline-content">
+          <h4>Pre-Foreclosure Period</h4>
+          <p>This period — which can last several months — is the homeowner's last opportunity to catch up on payments, negotiate with the lender, pursue a short sale, or arrange a deed in lieu of foreclosure to avoid full proceedings.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot">4</div>
+        <div class="timeline-content">
+          <h4>Notice of Sale / Auction Scheduled</h4>
+          <p>If the default isn't cured, the lender schedules a public auction. A Notice of Sale is published — usually in a local newspaper and posted at the courthouse — announcing the time, date, and location of the foreclosure auction.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot">5</div>
+        <div class="timeline-content">
+          <h4>Foreclosure Auction (Sheriff's Sale)</h4>
+          <p>The property is sold to the highest bidder at public auction. If no third party bids higher than the lender's opening bid (usually set at the outstanding debt), the lender takes ownership — creating a "bank-owned" or REO (Real Estate Owned) property.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot">6</div>
+        <div class="timeline-content">
+          <h4>Post-Sale: Surplus Funds or Deficiency</h4>
+          <p>This is the step most people never hear about. If the auction price <strong>exceeds</strong> total debt owed, a surplus is created. If it falls short, the lender may pursue a deficiency judgment. Surplus funds are held by the court — and belong to the former homeowner.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-dot">7</div>
+        <div class="timeline-content">
+          <h4>Eviction (if still occupied)</h4>
+          <p>Once the sale is complete and confirmed, the new owner can initiate eviction proceedings if the former homeowner is still on the property. Some states provide a redemption period during which the homeowner can still reclaim the property by paying the full debt.</p>
+        </div>
+      </li>
+    </ul>
 
-      <h2 id="who-eligible">Who Is Eligible to Claim Surplus Funds?</h2>
-      <p>In most states, the former homeowner (the person who held title to the property at the time of foreclosure) has first priority to claim surplus funds. This is true even if:</p>
+    <h2>What Happens to Your Credit?</h2>
+    <p>A foreclosure has significant and lasting effects on credit. It typically drops a credit score by 100–150 points and remains on a credit report for <strong>seven years.</strong> However, many people successfully rebuild their credit within 2–3 years of foreclosure through responsible use of secured credit cards, timely bill payment, and maintaining low balances.</p>
+    <p>A foreclosure does not prevent you from ever owning a home again. FHA loans, for example, may be available just 3 years after a foreclosure.</p>
+
+    <h2>What Rights Do You Keep After Foreclosure?</h2>
+    <p>This is critical and widely misunderstood. Foreclosure ends your ownership of the home — but it does not extinguish all of your financial rights:</p>
+    <ul>
+      <li><strong>Right to surplus funds.</strong> If the home sold for more than was owed, you have a legal claim to that excess. This is one of the most frequently unclaimed financial rights in America.</li>
+      <li><strong>Right to a redemption period.</strong> In many states, you have a set window after the sale to reclaim the property by paying the full debt. This period varies from a few weeks to over a year.</li>
+      <li><strong>Right to proper notice.</strong> Lenders must follow strict procedural requirements. If they fail to properly notify you of proceedings, the foreclosure may be challengeable.</li>
+      <li><strong>Right to challenge deficiency judgments.</strong> In some states, a lender cannot pursue you for the difference between sale price and debt owed.</li>
+    </ul>
+
+    <div class="info-box">
+      <h4>💡 Did You Know? The Surplus Funds Connection</h4>
       <ul>
-        <li>You voluntarily surrendered the property</li>
-        <li>The foreclosure was completed years ago</li>
-        <li>You've moved to a different state</li>
-        <li>You weren't aware the funds existed</li>
-        <li>You had other debts or liens against the property</li>
+        <li>When a foreclosure auction generates more than is owed, the excess is called "surplus funds"</li>
+        <li>These funds are deposited with the court after the sale</li>
+        <li>The former homeowner has a legal right to claim them — but must file before the deadline</li>
+        <li>Billions of dollars in surplus funds go unclaimed each year across the U.S.</li>
+        <li>Rightful Returns Recovery specializes in finding and recovering these funds for former homeowners</li>
       </ul>
-      <p>In some cases, junior lienholders (such as second mortgage holders or judgment creditors) may also have a right to a portion of the surplus. However, the former homeowner's claim takes priority after secured debts are paid.</p>
+    </div>
 
-      <div class="info-box">
-        <h4>📋 What About Tax Sale Surplus Funds?</h4>
-        <p>Similar surplus funds are also created when a property is sold at a <strong>tax sale</strong> for unpaid property taxes. If the winning bid at the tax auction exceeds the amount of taxes owed — plus fees and costs — the difference is owed to the former owner. Rightful Returns Recovery handles both types of surplus claims.</p>
-      </div>
+    <h2>Common Foreclosure Terms, Defined</h2>
+    <p><strong>Default:</strong> Failure to fulfill the terms of the mortgage, usually by not making payments.</p>
+    <p><strong>Redemption Period:</strong> A state-specific window after foreclosure during which the homeowner can reclaim the property.</p>
+    <p><strong>REO (Real Estate Owned):</strong> A property that reverts to the lender after failing to sell at auction.</p>
+    <p><strong>Deficiency Judgment:</strong> A court order allowing a lender to pursue the borrower for the difference between the sale price and total debt owed.</p>
+    <p><strong>Surplus Funds:</strong> The money remaining after a foreclosure sale pays off all outstanding debts — legally owed to the former homeowner.</p>
+    <p><strong>Lis Pendens:</strong> Latin for "lawsuit pending." A notice recorded with the county indicating that the property is subject to a pending legal action (i.e., a foreclosure lawsuit).</p>
 
-      <h2 id="deadlines">How Long Do You Have to Claim?</h2>
-      <p>This is the most critical factor — and the most commonly misunderstood. Each state sets its own deadline for claiming foreclosure surplus funds, and these deadlines are strictly enforced. Miss the window and the funds may be permanently lost.</p>
-      <ul>
-        <li><strong>Texas:</strong> 2-year claim window from the date the court issued the order distributing funds</li>
-        <li><strong>Georgia:</strong> Up to 5 years in most counties; varies by sale type</li>
-        <li><strong>Arizona:</strong> Varies by sale type — judicial vs. trustee sales have different timelines</li>
-        <li><strong>Florida:</strong> 60 days from the clerk's notice; then a second 1-year window</li>
-        <li><strong>Other states:</strong> Deadlines range from 60 days to several years</li>
-      </ul>
-      <p>The statute of limitations clock often starts ticking from the date of the foreclosure sale — not the date you received notice, not the date you found out about the funds. This is why acting promptly is so important, even if you're not sure whether funds exist.</p>
-
-      <h2 id="how-to-find">How Do You Find Out If You Have Surplus Funds?</h2>
-      <p>There are several ways to search for surplus funds, each with varying degrees of effort and success:</p>
-      <h3>Search County Records Yourself</h3>
-      <p>Most county clerk of court offices maintain public records of surplus funds. You can visit the courthouse in person, search online court portals (available in some counties), or make a public records request. This process can be time-consuming and requires knowing exactly which county and which case to search.</p>
-      <h3>Check Your State's Unclaimed Property Database</h3>
-      <p>Some states transfer unclaimed surplus funds to the state comptroller's unclaimed property division after the initial claim window closes. You can search your state's unclaimed property database, though this only catches funds that have already been transferred — not those still in the court's possession.</p>
-      <h3>Work with a Surplus Recovery Specialist</h3>
-      <p>Companies like Rightful Returns Recovery search court records, tax sale databases, and county archives on your behalf. We identify any surplus funds held in your name — at no upfront cost — and handle the entire claim process from start to finish. We only earn a fee if we successfully recover money for you.</p>
-
-      <div class="cta-block">
-        <h3>Think You Might Have Surplus Funds?</h3>
-        <p>We search county court records in Arizona, Georgia, Texas, and all 50 states — completely free. You only pay if we recover money for you.</p>
-        <a href="https://www.rightfulreturnsrecovery.com/#signup">Start Your Free Search Today</a>
-      </div>
-
-      <h2 id="faq">Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <h4>Do I need an attorney to claim foreclosure surplus funds?</h4>
-        <p>In many states, yes — particularly for judicial foreclosures where the claim must be filed as a court motion. Rightful Returns Recovery works with licensed attorneys in all 50 states and handles all legal filings on your behalf.</p>
-      </div>
-      <div class="faq-item">
-        <h4>What if I don't remember the details of my foreclosure?</h4>
-        <p>That's okay. We search records using your name and former address. You don't need to have your paperwork to start a free search.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Can I lose my home to foreclosure and still be owed money?</h4>
-        <p>Absolutely. The foreclosure extinguished your ownership of the property — but not your right to any equity that existed at the time of sale. If the auction price exceeded your debt, you are owed that difference.</p>
-      </div>
-      <div class="faq-item">
-        <h4>What if there were multiple liens on my property?</h4>
-        <p>Liens are paid in priority order. After secured debts are paid, any remaining surplus goes to the former owner. In some cases other creditors may also file claims, but a professional recovery firm can navigate these situations to maximize what you receive.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Is foreclosure surplus fund recovery legitimate?</h4>
-        <p>Yes. Surplus funds recovery is a legal, established practice recognized in all 50 states. The right of former homeowners to claim excess proceeds is codified in state statutes. Rightful Returns Recovery operates transparently with contingency-only fees — we never charge upfront.</p>
-      </div>
-
+    <div class="article-cta">
+      <h3>Did Your Foreclosure Generate a Surplus?</h3>
+      <p>Thousands of former homeowners have money sitting in courthouse files they don't know about. Let us check for you — free of charge.</p>
+      <a href="/free-case-evaluation.html" class="btn-gold">Start Your Free Evaluation</a>
+      <a href="/blog/what-are-foreclosure-surplus-funds.html" class="btn-outline">What Are Surplus Funds?</a>
     </div>
   </article>
+</main>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="sidebar-widget cta-widget">
-      <div class="widget-title">Free Search — No Upfront Cost</div>
-      <p>We search county records at no cost to you. You only pay if we recover money on your behalf.</p>
-      <a href="https://www.rightfulreturnsrecovery.com/#signup" class="cta-btn">Start Your Free Search</a>
-    </div>
-
-    <div class="sidebar-widget">
-      <div class="widget-title">In This Article</div>
-      <ul class="toc-list">
-        <li><a href="#what-are">What Are Foreclosure Surplus Funds?</a></li>
-        <li><a href="#how-created">How Are They Created?</a></li>
-        <li><a href="#who-eligible">Who Is Eligible?</a></li>
-        <li><a href="#deadlines">Claim Deadlines by State</a></li>
-        <li><a href="#how-to-find">How to Find Your Funds</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </div>
-
-    <div class="sidebar-widget">
-      <div class="widget-title">Related Articles</div>
-      <ul class="related-list">
-        <li><a href="how-to-claim-foreclosure-surplus-funds.html">How to Claim Foreclosure Surplus Funds: Step-by-Step →</a></li>
-        <li><a href="arizona-foreclosure-surplus-funds.html">Arizona Foreclosure Surplus Funds Guide →</a></li>
-      </ul>
-    </div>
-
-    <div class="sidebar-widget">
-      <div class="widget-title">Have Questions?</div>
-      <p style="font-size:0.88rem;color:var(--gray);margin-bottom:0.75rem;">Speak with a specialist today.</p>
-      <p style="font-weight:700;color:var(--navy);">📞 <a href="tel:4807882320" style="color:var(--navy);text-decoration:none;">(480) 788-2320</a></p>
-    </div>
-  </aside>
-
-</div>
-
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Rightful Returns Recovery · <a href="https://www.rightfulreturnsrecovery.com">Home</a> · <a href="index.html">Blog</a> · <a href="tel:4807882320">(480) 788-2320</a></p>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/how-it-works.html">How It Works</a>
+    <a href="/about-us.html">About Us</a>
+    <a href="/states-we-serve.html">States We Serve</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/blog/index.html">Blog</a>
+    <a href="/our-mission.html">Our Mission</a>
+    <a href="/giving-back.html">Giving Back</a>
+    <a href="/sms-terms.html">SMS Terms</a>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+  </div>
+  <p>&copy; 2025 Rightful Returns Recovery. All rights reserved.</p>
+  <p style="margin-top:0.5rem; font-size:0.75rem; color:rgba(255,255,255,0.35);">Rightful Returns Recovery is not a law firm and does not provide legal advice.</p>
 </footer>
 
+<script>
+function drawFlag(canvas, w, h, t) {
+  const ctx = canvas.getContext('2d');
+  canvas.width = w; canvas.height = h;
+  ctx.clearRect(0, 0, w, h);
+  const stripeH = h / 13;
+  for (let s = 0; s < 13; s++) {
+    const yBase = s * stripeH;
+    ctx.beginPath();
+    ctx.moveTo(0, yBase);
+    for (let x = 0; x <= w; x++) {
+      const wave = Math.sin((x / w) * Math.PI * 2.5 + t) * (stripeH * 0.35);
+      ctx.lineTo(x, yBase + wave);
+    }
+    for (let x = w; x >= 0; x--) {
+      const wave = Math.sin((x / w) * Math.PI * 2.5 + t) * (stripeH * 0.35);
+      ctx.lineTo(x, yBase + stripeH + wave);
+    }
+    ctx.closePath();
+    ctx.fillStyle = s % 2 === 0 ? '#B22234' : '#FFFFFF';
+    ctx.fill();
+  }
+  const cw = w * 0.4, ch = stripeH * 7;
+  ctx.fillStyle = '#3C3B6E';
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  for (let x = 0; x <= cw; x++) { const wave = Math.sin((x / w) * Math.PI * 2.5 + t) * (stripeH * 0.35); ctx.lineTo(x, wave); }
+  for (let x = cw; x >= 0; x--) { const wave = Math.sin((x / w) * Math.PI * 2.5 + t) * (stripeH * 0.35); ctx.lineTo(x, ch + wave); }
+  ctx.closePath(); ctx.fill();
+  ctx.fillStyle = '#FFFFFF';
+  const cols = 10, rows = 5, sx = cw / (cols + 0.5), sy = ch / (rows + 0.5);
+  for (let r = 0; r < rows * 2 - 1; r++) {
+    const isOdd = r % 2 === 1, count = isOdd ? cols - 1 : cols;
+    const offsetX = isOdd ? sx * 1 : sx * 0.5;
+    const y = sy * (0.5 + r * 0.5);
+    const wave = Math.sin((0.2 / w) * Math.PI * 2.5 + t) * (stripeH * 0.35);
+    for (let c = 0; c < count; c++) {
+      const x = offsetX + c * sx;
+      ctx.save(); ctx.translate(x, y + wave); ctx.beginPath();
+      for (let i = 0; i < 5; i++) {
+        const ang = (i * 4 * Math.PI / 5) - Math.PI / 2;
+        ctx.lineTo(Math.cos(ang) * (i % 2 === 0 ? 3.5 : 1.5), Math.sin(ang) * (i % 2 === 0 ? 3.5 : 1.5));
+      }
+      ctx.closePath(); ctx.fill(); ctx.restore();
+    }
+  }
+}
+function animateFlags() {
+  const header = document.getElementById('flagCanvas');
+  const hero = document.getElementById('heroFlagCanvas');
+  let t = 0;
+  if (hero) { hero.width = hero.parentElement.offsetWidth; hero.height = hero.parentElement.offsetHeight; }
+  function frame() {
+    t += 0.025;
+    if (header) drawFlag(header, header.parentElement.offsetWidth, header.offsetHeight || 72, t);
+    if (hero) drawFlag(hero, hero.parentElement.offsetWidth, hero.parentElement.offsetHeight, t);
+    requestAnimationFrame(frame);
+  }
+  frame();
+}
+window.addEventListener('load', animateFlags);
+window.addEventListener('resize', () => {
+  const hero = document.getElementById('heroFlagCanvas');
+  if (hero) { hero.width = hero.parentElement.offsetWidth; hero.height = hero.parentElement.offsetHeight; }
+});
+const btn = document.getElementById('menuBtn');
+const nav = document.getElementById('navMenu');
+btn.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open);
+});
+document.addEventListener('click', e => {
+  if (!btn.contains(e.target) && !nav.contains(e.target)) { nav.classList.remove('open'); btn.classList.remove('open'); btn.setAttribute('aria-expanded', false); }
+});
+</script>
 </body>
 </html>
