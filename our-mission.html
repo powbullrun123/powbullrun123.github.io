@@ -82,7 +82,7 @@ body { font-family:'Lato',sans-serif; background:var(--dark); color:var(--light)
 .gold-bar { width:50px; height:3px; background:var(--gold); border-radius:2px; margin-bottom:32px; }
 .bbb-card { background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.2); border-radius:16px; padding:36px; text-align:center; position:relative; overflow:hidden; }
 .bbb-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold)); }
-.bbb-card img { height:80px; width:auto; max-width:200px; object-fit:contain; margin-bottom:20px; }
+.bbb-card img { height:80px; width:auto; max-width:200px; object-fit:contain; margin-bottom:20px; filter:brightness(0) invert(1); }
 .bbb-card h3 { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--white); margin-bottom:12px; }
 .bbb-card p { color:#9aaabb; font-size:0.9rem; line-height:1.7; }
 .bbb-card .stars { color:var(--gold); font-size:1.4rem; letter-spacing:4px; margin-bottom:12px; }
@@ -241,11 +241,11 @@ body { font-family:'Lato',sans-serif; background:var(--dark); color:var(--light)
     <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">SMS Terms</a>
     <a href="tel:18004282022">1 (800) 428-2022</a>
   </div>
-  <p>&copy; 2026 Rightful Returns Recovery · Phoenix, Arizona · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="11617e66747d7d51637876796577647d63746564637f626374727e677463683f727e7c">[email&#160;protected]</a></p>
+  <p>&copy; 2026 Rightful Returns Recovery &nbsp;·&nbsp; Phoenix, Arizona</p>
   <p style="margin-top:6px;">This website is not affiliated with any government agency. All services offered on a contingency basis only.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const btn = document.getElementById('menuBtn');
   const nav = document.getElementById('navMenu');
   btn.addEventListener('click', () => {
