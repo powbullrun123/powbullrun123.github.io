@@ -431,7 +431,7 @@
     <div class="contact-strip-numbers">
       <a href="tel:18004282022">📞 1 (800) 428-2022</a>
       <a href="tel:4807882320">📞 (480) 788-2320</a>
-      <a href="mailto:info@rightfulreturnsrecovery.com">✉️ info@rightfulreturnsrecovery.com</a>
+      <a href="mailto:powell@rightfulreturnsrecovery.com">✉️ powell@rightfulreturnsrecovery.com</a>
     </div>
   </div>
 </div>
@@ -584,7 +584,6 @@
     <div class="gold-line"></div>
     <h2>Surplus Funds Recovery <span style="color:var(--gold)">Blog</span></h2>
     <div class="keyword-grid">
-    <div class="keyword-grid">
   <div class="keyword-card"><h3><a href="blog/how-to-claim-surplus-funds.html" style="color:var(--gold);text-decoration:none;">How to Claim Surplus Funds After a Foreclosure</a></h3><p>Most former homeowners never know the county is sitting on money that belongs to them. This complete guide walks you through exactly how to find and claim your foreclosure surplus funds.</p></div>
   <div class="keyword-card"><h3><a href="blog/what-are-foreclosures.html" style="color:var(--gold);text-decoration:none;">What Are Foreclosures? A Complete Overview</a></h3><p>Learn what foreclosure means, how the process works, and why surplus funds are often left unclaimed after a sale.</p></div>
   <div class="keyword-card"><h3><a href="blog/arizona-foreclosure-guide.html" style="color:var(--gold);text-decoration:none;">Arizona Foreclosure Surplus Funds Guide</a></h3><p>Everything Arizona homeowners need to know about recovering foreclosure overages under A.R.S. § 33-812.</p></div>
@@ -693,7 +692,7 @@
       <div class="footer-contact-links">
         <a href="tel:18004282022">📞 1 (800) 428-2022</a>
         <a href="tel:4807882320">📞 (480) 788-2320</a>
-        <a href="mailto:info@rightfulreturnsrecovery.com">✉️ info@rightfulreturnsrecovery.com</a>
+        <a href="mailto:powell@rightfulreturnsrecovery.com">✉️ powell@rightfulreturnsrecovery.com</a>
       </div>
     </div>
     <div>
@@ -738,7 +737,7 @@
 
       <div class="legal-block">
         <h4>✉️ Email Consent (CAN-SPAM Act)</h4>
-        <p>By providing your email address, you agree to receive informational and promotional emails from Rightful Returns Recovery regarding unclaimed funds, surplus fund recovery services, and related topics. You may unsubscribe at any time by clicking the unsubscribe link in any email or by emailing <a href="mailto:info@rightfulreturnsrecovery.com">info@rightfulreturnsrecovery.com</a>. We will not sell or share your email address with third parties for marketing purposes.</p>
+        <p>By providing your email address, you agree to receive informational and promotional emails from Rightful Returns Recovery regarding unclaimed funds, surplus fund recovery services, and related topics. You may unsubscribe at any time by clicking the unsubscribe link in any email or by emailing <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a>. We will not sell or share your email address with third parties for marketing purposes.</p>
       </div>
 
       <div class="legal-block">
@@ -771,7 +770,7 @@
         <br><br>
         Rightful Returns Recovery &bull; Phoenix, Arizona &bull;
         <a href="tel:18004282022">1 (800) 428-2022</a> &bull;
-        <a href="mailto:info@rightfulreturnsrecovery.com">info@rightfulreturnsrecovery.com</a>
+        <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a>
         <br><br>
         <span style="color:#2a3a4a;font-size:0.68rem;">
           This website is not affiliated with any government agency. Surplus fund recovery services are offered on a contingency basis only.
@@ -829,27 +828,40 @@ function mmHandleSubmit() {
   if (!first) { alert('Please enter your first name.'); return; }
   if (!last)  { alert('Please enter your last name.');  return; }
   if (!email || email.indexOf('@') < 0) { alert('Please enter a valid email address.'); return; }
-  window.open('https://missingmoney.com', '_blank');
-  var fd = new FormData(document.getElementById('mm-form'));
-  fetch('https://formspree.io/f/mjgeddoy', {
-    method: 'POST',
-    headers: { 'Accept': 'application/json' },
-    body: fd
-  });
-  document.getElementById('ty-name').textContent = first + ' ' + last + ' — We're On It!';
-  document.getElementById('mm-overlay').classList.add('show');
+
+  /* Open MissingMoney.com national search in a new tab */
+  var searchUrl = 'https://app.missingmoney.com/Name/Search?FirstName='
+    + encodeURIComponent(first) + '&LastName=' + encodeURIComponent(last);
+  window.open(searchUrl, '_blank');
+
+  /* Show the thank-you overlay */
+  var nameEl = document.getElementById('ty-name');
+  if (nameEl) nameEl.textContent = first + ' ' + last + ' — your search is underway!';
+
+  var overlay = document.getElementById('mm-overlay');
+  if (overlay) overlay.classList.add('show');
+
+  /* Animate the countdown bar from full width to zero over 6 seconds */
+  var bar = document.getElementById('ty-bar');
+  if (bar) {
+    bar.style.transition = 'none';
+    bar.style.width = '100%';
+    /* Allow the browser to paint the full bar before animating */
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        bar.style.transition = 'width 6s linear';
+        bar.style.width = '0%';
+      });
+    });
+  }
+
+  /* Auto-close after 6 seconds */
   setTimeout(mmCloseOverlay, 6000);
 }
 
 function mmCloseOverlay() {
   var overlay = document.getElementById('mm-overlay');
-  overlay.style.transition = 'opacity .4s';
-  overlay.style.opacity = '0';
-  setTimeout(function() {
-    overlay.classList.remove('show');
-    overlay.style.opacity = '';
-    overlay.style.transition = '';
-  }, 400);
+  if (overlay) overlay.classList.remove('show');
 }
 </script>
 </body>
