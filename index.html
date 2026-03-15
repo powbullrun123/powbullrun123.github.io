@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surplus Funds Recovery | Rightful Returns Recovery</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="icon" type="image/png" href="logo.png">
 
     <style>
-        /* This hides any accidental text leaks */
-        header, body, html { display: block; }
-        
+        /* CRITICAL RESET: Stops code from leaking onto the screen */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
@@ -28,13 +29,14 @@
             overflow-x: hidden;
         }
 
+        /* BIG, BOLD, BEAUTIFUL HEADER */
         .site-header {
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 9999;
             background: var(--dark);
-            border-bottom: 2px solid var(--gold);
-            padding: 12px 0;
+            border-bottom: 3px solid var(--gold);
+            padding: 15px 0;
             width: 100%;
         }
 
@@ -55,7 +57,7 @@
         }
 
         .header-logo-img {
-            height: 60px;
+            height: 70px; /* High-definition logo size */
             width: auto;
         }
 
@@ -66,33 +68,43 @@
 
         .header-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 900;
             color: var(--gold);
-            line-height: 1.1;
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .header-subtitle {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--white);
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
+            margin-top: 5px;
         }
 
         .header-phone {
-            font-size: 1.1rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 900;
             color: var(--gold);
             border: 2px solid var(--gold);
-            padding: 8px 16px;
-            border-radius: 4px;
+            padding: 10px 20px;
+            border-radius: 5px;
             text-decoration: none;
+            transition: 0.3s;
         }
 
+        .header-phone:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        /* MOBILE FIX */
         @media (max-width: 768px) {
-            .header-main { flex-direction: column; text-align: center; gap: 10px; }
-            .header-title { font-size: 1.4rem; }
+            .header-main { flex-direction: column; gap: 15px; text-align: center; }
+            .header-title { font-size: 1.5rem; }
+            .header-logo-img { height: 55px; }
         }
     </style>
 </head>
@@ -109,7 +121,6 @@
         </a>
         <a href="tel:+18004282022" class="header-phone">1-800-428-2022</a>
     </div>
-</header>
 </header>
 .hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;background:0 0;border:2px solid rgba(201,168,76,.5);border-radius:8px;cursor:pointer;padding:11px;flex-shrink:0;transition:border-color .2s,background .2s}
 .hamburger:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
