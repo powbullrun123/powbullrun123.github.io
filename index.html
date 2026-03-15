@@ -237,30 +237,43 @@ footer{background:#040b12;padding:50px 20px 0}
 </style>
 </head>
 <body>
-<header class="site-header">
-    <div class="header-main" style="display: flex; align-items: center; justify-content: space-between; padding: 0 15px; height: 100px; max-width: 1200px; margin: 0 auto; position: relative;">
+<header class="site-header" style="background: #0D1B2A; position: relative; width: 100%; margin: 0; padding: 0; border-bottom: 2px solid #C9A84C;">
+    <div class="header-main" style="display: flex; align-items: center; justify-content: center; padding: 10px 15px; min-height: 90px; position: relative;">
         
-        <div class="header-logo" style="display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0;">
-            <img src="logo.png" alt="Logo" style="height: clamp(45px, 8vw, 65px); width: auto; flex-shrink: 0;">
-            <span style="font-family: 'Playfair Display', serif; font-size: clamp(1rem, 4vw, 1.6rem); font-weight: 700; color: #FFF; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                Rightful <span style="color:#C9A84C">Returns</span> Recovery
-            </span>
+        <div style="display: flex; align-items: center; gap: 10px; text-align: center;">
+            <img src="logo.png" alt="Logo" style="height: 55px; width: auto;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: #FFF; line-height: 1.2;">
+                Rightful <span style="color:#C9A84C">Returns</span><br>Recovery
+            </div>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 0;">
-            <a class="header-phone" href="tel:18004282022" style="font-size: clamp(0.85rem, 3vw, 1.1rem); color: #FFD700; text-decoration: none; font-weight: 900; border: 2px solid #C9A84C; padding: 8px 12px; border-radius: 8px; white-space: nowrap;">
-                📞 1-800
-            </a>
-            
-            <button class="hamburger" id="menuBtn" aria-label="Menu" style="background: none; border: 2px solid rgba(201,168,76,0.5); border-radius: 8px; width: 45px; height: 45px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; padding: 10px;">
-                <span style="display: block; width: 25px; height: 3px; background: #C9A84C;"></span>
-                <span style="display: block; width: 25px; height: 3px; background: #C9A84C;"></span>
-                <span style="display: block; width: 25px; height: 3px; background: #C9A84C;"></span>
-            </button>
-        </div>
+        <button id="menuBtn" style="position: absolute; right: 15px; background: none; border: 1px solid #C9A84C; border-radius: 5px; padding: 8px; cursor: pointer; display: flex; flex-direction: column; gap: 4px;">
+            <span style="display: block; width: 20px; height: 2px; background: #C9A84C;"></span>
+            <span style="display: block; width: 20px; height: 2px; background: #C9A84C;"></span>
+            <span style="display: block; width: 20px; height: 2px; background: #C9A84C;"></span>
+        </button>
     </div>
 
-    <nav class="nav-dropdown" id="navMenu" style="display: none; position: absolute; top: 100%; right: 15px; background: #101e2e; border: 1px solid #C9A84C; border-top: 3px solid #C9A84C; border-radius: 10px; min-width: 240px; z-index: 1001;">
+    <nav id="navMenu" style="display: none; background: #101e2e; width: 100%; border-top: 1px solid #C9A84C;">
+        <a href="#how" style="display: block; padding: 15px; color: #FFF; text-decoration: none; border-bottom: 1px solid #222;">📋 How It Works</a>
+        <a href="#about" style="display: block; padding: 15px; color: #FFF; text-decoration: none; border-bottom: 1px solid #222;">👤 About Us</a>
+        <a href="#signup" style="display: block; padding: 15px; background: #C9A84C; color: #0D1B2A; text-align: center; font-weight: 700; text-decoration: none;">✅ Free Evaluation</a>
+    </nav>
+
+    <script>
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            var menu = document.getElementById('navMenu');
+            if (menu.style.display === 'none') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+</header>
+    </div>
+
+  <nav class="nav-dropdown" id="navMenu" style="display: none; position: absolute; top: 100%; right: 15px; background: #101e2e; border: 1px solid #C9A84C; border-top: 3px solid #C9A84C; border-radius: 10px; min-width: 240px; z-index: 1001;">
         <a href="#how" style="display: block; padding: 15px; color: #F5F0E8; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.1);">📋 How It Works</a>
         <a href="#about" style="display: block; padding: 15px; color: #F5F0E8; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.1);">👤 About Us</a>
         <a href="#states" style="display: block; padding: 15px; color: #F5F0E8; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.1);">🗺️ States We Serve</a>
