@@ -238,20 +238,30 @@ footer{background:#040b12;padding:50px 20px 0}
 </head>
 <body>
 <header class="site-header">
-    <div class="header-main" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px; height: 100px;">
+    <style>
+        /* This magic code auto-calibrates the sizes for mobile */
+        @media (max-width: 600px) {
+            .header-logo { font-size: 1.1rem !important; gap: 8px !important; }
+            .header-logo img { height: 45px !important; }
+            .header-phone { font-size: 0.85rem !important; padding: 6px 10px !important; }
+            .header-main { height: 80px !important; padding: 0 10px !important; }
+        }
+    </style>
+    
+    <div class="header-main" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px; height: 100px; max-width: 100%; overflow: hidden;">
         
-        <div style="display: flex; align-items: center; justify-content: center; flex-grow: 1; gap: 15px;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 1; min-width: 0;">
             <div class="header-logo" style="display: flex; align-items: center; gap: 12px; font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: #FFF; white-space: nowrap;">
-                <img src="logo.png" alt="Logo" style="height: 67px; width: auto; display: block;">
-                <span>Rightful <span style="color:var(--gold)">Returns</span> Recovery</span>
+                <img src="logo.png" alt="Logo" style="height: 67px; width: auto; display: block; flex-shrink: 0;">
+                <span style="overflow: hidden; text-overflow: ellipsis;">Rightful <span style="color:var(--gold)">Returns</span> Recovery</span>
             </div>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 20px;">
-             <a class="header-phone" href="tel:18004282022" style="font-size: 1.2rem; color: #FFD700; text-decoration: none; font-weight: 900; white-space: nowrap; border: 2px solid #C9A84C; padding: 10px 15px; border-radius: 8px;">
-                📞 1-800-428-2022
+        <div style="display: flex; align-items: center; gap: 15px; flex-shrink: 0;">
+             <a class="header-phone" href="tel:18004282022" style="font-size: 1.1rem; color: #FFD700; text-decoration: none; font-weight: 900; white-space: nowrap; border: 2px solid #C9A84C; padding: 10px 15px; border-radius: 8px;">
+                📞 1-800
             </a>
-            <button class="hamburger" id="menuBtn" style="scale: 1.3;">
+            <button class="hamburger" id="menuBtn" style="scale: 1.1;">
                 <span></span><span></span><span></span>
             </button>
         </div>
