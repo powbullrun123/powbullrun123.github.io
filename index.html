@@ -237,39 +237,56 @@ footer{background:#040b12;padding:50px 20px 0}
 </style>
 </head>
 <body>
-<header class="site-header" style="background: #0D1B2A; position: relative; width: 100%; margin: 0; padding: 0; border-bottom: 2px solid #C9A84C;">
-    <div class="header-main" style="display: flex; align-items: center; justify-content: center; padding: 10px 15px; min-height: 90px; position: relative;">
+<header class="site-header" style="background: #0D1B2A !important; position: sticky; top: 0; width: 100%; z-index: 9999; border-bottom: 3px solid #C9A84C;">
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; max-width: 1200px; margin: 0 auto; min-height: 80px;">
         
-        <div style="display: flex; align-items: center; gap: 10px; text-align: center;">
-            <img src="logo.png" alt="Logo" style="height: 55px; width: auto;">
-            <div style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: #FFF; line-height: 1.2;">
+        <div style="display: flex; align-items: center; gap: 12px; flex: 1;">
+            <img src="logo.png" alt="Logo" style="height: 50px; width: auto; display: block;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #FFF; line-height: 1.1; white-space: nowrap;">
                 Rightful <span style="color:#C9A84C">Returns</span><br>Recovery
             </div>
         </div>
 
-        <button id="menuBtn" style="position: absolute; right: 15px; background: none; border: 1px solid #C9A84C; border-radius: 5px; padding: 8px; cursor: pointer; display: flex; flex-direction: column; gap: 4px;">
-            <span style="display: block; width: 20px; height: 2px; background: #C9A84C;"></span>
-            <span style="display: block; width: 20px; height: 2px; background: #C9A84C;"></span>
-            <span style="display: block; width: 20px; height: 2px; background: #C9A84C;"></span>
+        <button id="mobileMenuBtn" style="background: #101e2e; border: 2px solid #C9A84C; border-radius: 6px; padding: 10px; cursor: pointer; display: flex; flex-direction: column; gap: 5px; z-index: 10000;">
+            <span style="display: block; width: 25px; height: 3px; background: #C9A84C;"></span>
+            <span style="display: block; width: 25px; height: 3px; background: #C9A84C;"></span>
+            <span style="display: block; width: 25px; height: 3px; background: #C9A84C;"></span>
         </button>
     </div>
 
-    <nav id="navMenu" style="display: none; background: #101e2e; width: 100%; border-top: 1px solid #C9A84C;">
-        <a href="#how" style="display: block; padding: 15px; color: #FFF; text-decoration: none; border-bottom: 1px solid #222;">📋 How It Works</a>
-        <a href="#about" style="display: block; padding: 15px; color: #FFF; text-decoration: none; border-bottom: 1px solid #222;">👤 About Us</a>
-        <a href="#signup" style="display: block; padding: 15px; background: #C9A84C; color: #0D1B2A; text-align: center; font-weight: 700; text-decoration: none;">✅ Free Evaluation</a>
+    <nav id="mobileNavMenu" style="display: none; background: #101e2e; width: 100%; border-top: 2px solid #C9A84C; position: absolute; top: 100%; left: 0; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+        <a href="#how" style="display: block; padding: 18px; color: #FFF; text-decoration: none; border-bottom: 1px solid #1a2a3a; font-size: 1.1rem;">📋 How It Works</a>
+        <a href="#about" style="display: block; padding: 18px; color: #FFF; text-decoration: none; border-bottom: 1px solid #1a2a3a; font-size: 1.1rem;">👤 About Us</a>
+        <a href="#states" style="display: block; padding: 18px; color: #FFF; text-decoration: none; border-bottom: 1px solid #1a2a3a; font-size: 1.1rem;">🗺️ States We Serve</a>
+        <a href="#faq" style="display: block; padding: 18px; color: #FFF; text-decoration: none; border-bottom: 1px solid #1a2a3a; font-size: 1.1rem;">❓ FAQ</a>
+        <a href="tel:18004282022" style="display: block; padding: 18px; color: #FFD700; text-decoration: none; border-bottom: 1px solid #1a2a3a; font-weight: 700;">📞 1-800-428-2022</a>
+        <a href="#signup" style="display: block; padding: 20px; background: #C9A84C; color: #0D1B2A; text-align: center; font-weight: 900; text-decoration: none; font-size: 1.2rem;">✅ FREE CASE EVALUATION</a>
     </nav>
 
     <script>
-        document.getElementById('menuBtn').addEventListener('click', function() {
-            var menu = document.getElementById('navMenu');
-            if (menu.style.display === 'none') {
-                menu.style.display = 'block';
-            } else {
-                menu.style.display = 'none';
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('mobileMenuBtn');
+            var menu = document.getElementById('mobileNavMenu');
+            
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (menu.style.display === 'none' || menu.style.display === '') {
+                    menu.style.display = 'block';
+                } else {
+                    menu.style.display = 'none';
+                }
+            });
+
+            // Close menu if a link is clicked
+            var links = menu.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', function() {
+                    menu.style.display = 'none';
+                });
             }
         });
     </script>
+</header>
 </header>
     </div>
 
