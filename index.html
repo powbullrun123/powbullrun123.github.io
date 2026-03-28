@@ -60,9 +60,9 @@ body{font-family:'Lato',sans-serif;background:var(--dark);color:var(--light);ove
 .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at center,rgba(201,168,76,.08) 0%,transparent 60%);animation:pulse 6s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.1);opacity:1}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.hero-logo{margin-bottom:44px;opacity:0;animation:fadeUp .8s ease forwards .2s;position:relative;z-index:2;display:inline-block;padding-bottom:20px}
-.hero-logo img{width:clamp(200px,38vw,340px);height:auto;display:block;margin:0 auto;filter:drop-shadow(0 0 24px rgba(201,168,76,.45)) drop-shadow(0 0 60px rgba(201,168,76,.2)) drop-shadow(0 12px 40px rgba(0,0,0,.7));animation:logoGlow 3s ease-in-out infinite;transition:transform .3s}
-.hero-logo img:hover{transform:scale(1.04)}
+.hero-logo{margin-bottom:44px;opacity:0;animation:fadeUp .8s ease forwards .2s;position:relative;z-index:2;display:block;width:100%;padding-bottom:20px}
+.hero-logo img{width:clamp(320px,70vw,700px);height:auto;display:block;margin:0 auto;filter:drop-shadow(0 0 24px rgba(201,168,76,.45)) drop-shadow(0 0 60px rgba(201,168,76,.2)) drop-shadow(0 12px 40px rgba(0,0,0,.7));animation:logoGlow 3s ease-in-out infinite;transition:transform .3s}
+.hero-logo img:hover{transform:scale(1.03)}
 @keyframes logoGlow{0%,100%{filter:drop-shadow(0 0 20px rgba(201,168,76,.4)) drop-shadow(0 12px 40px rgba(0,0,0,.7))}50%{filter:drop-shadow(0 0 40px rgba(201,168,76,.75)) drop-shadow(0 0 80px rgba(201,168,76,.3)) drop-shadow(0 12px 40px rgba(0,0,0,.7))}}
 .hero-logo::after{content:'';position:absolute;bottom:0;left:10%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--accent),var(--gold),transparent);border-radius:2px;animation:sweepUL 3s ease-in-out infinite}
 @keyframes sweepUL{0%{width:20%;left:40%;opacity:.3}50%{width:80%;left:10%;opacity:1}100%{width:20%;left:40%;opacity:.3}}
