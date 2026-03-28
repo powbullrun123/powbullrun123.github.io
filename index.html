@@ -60,7 +60,10 @@ body{font-family:'Lato',sans-serif;background:var(--dark);color:var(--light);ove
 .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at center,rgba(201,168,76,.08) 0%,transparent 60%);animation:pulse 6s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.1);opacity:1}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.hero-logo{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:40px;opacity:0;animation:fadeUp .8s ease forwards .2s;position:relative;z-index:2;display:inline-block;padding-bottom:12px}
+.hero-logo{margin-bottom:44px;opacity:0;animation:fadeUp .8s ease forwards .2s;position:relative;z-index:2;display:inline-block;padding-bottom:20px}
+.hero-logo img{width:clamp(200px,38vw,340px);height:auto;display:block;margin:0 auto;filter:drop-shadow(0 0 24px rgba(201,168,76,.45)) drop-shadow(0 0 60px rgba(201,168,76,.2)) drop-shadow(0 12px 40px rgba(0,0,0,.7));animation:logoGlow 3s ease-in-out infinite;transition:transform .3s}
+.hero-logo img:hover{transform:scale(1.04)}
+@keyframes logoGlow{0%,100%{filter:drop-shadow(0 0 20px rgba(201,168,76,.4)) drop-shadow(0 12px 40px rgba(0,0,0,.7))}50%{filter:drop-shadow(0 0 40px rgba(201,168,76,.75)) drop-shadow(0 0 80px rgba(201,168,76,.3)) drop-shadow(0 12px 40px rgba(0,0,0,.7))}}
 .hero-logo::after{content:'';position:absolute;bottom:0;left:10%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--accent),var(--gold),transparent);border-radius:2px;animation:sweepUL 3s ease-in-out infinite}
 @keyframes sweepUL{0%{width:20%;left:40%;opacity:.3}50%{width:80%;left:10%;opacity:1}100%{width:20%;left:40%;opacity:.3}}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;line-height:1.15;margin-bottom:12px;opacity:0;animation:fadeUp .8s ease forwards .4s;position:relative;z-index:2}
@@ -250,7 +253,7 @@ footer{background:#040b12;padding:50px 20px 0}
 <header class="site-header"><div class="header-main"><div><div class="header-logo"><a href="/"><img src="/rrr-logo.png" alt="Rightful Returns Recovery"></a></div><a class="header-phone" href="tel:18004282022">📞 1 (800) 428-2022</a></div><button class="hamburger" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button></div><nav class="nav-dropdown" id="navMenu" aria-label="Site navigation"><a href="#how">📋 How It Works</a><a href="#about">👤 About Us</a><a href="#states">🗺️ States We Serve</a><a href="#faq">❓ FAQ</a><a href="blog/index.html">📝 Blog</a><a href="our-mission.html">🏛️ Our Mission</a><a href="giving-back.html">❤️ Giving Back</a><a href="sms-terms.html">📱 SMS Terms</a><a href="#signup" class="nav-cta">✅ Free Case Evaluation</a></nav></header>
 
 <section class="hero" aria-label="Surplus Funds Recovery">
-  <div class="hero-logo">Rightful Returns Recovery</div>
+  <div class="hero-logo"><img src="/rrr-logo.png" alt="Rightful Returns Recovery — Reclaiming Your Legacy Through Ethics &amp; Effort"></div>
   <h1>Finding Hidden Assets.<br><span>Recovering What's Rightfully Yours.</span></h1>
   <div class="dollar-row" aria-hidden="true"><div class="dollar-sign left"><span>$</span></div><div class="dollar-sign right"><span>$</span></div></div>
   <p class="hero-sub">According to the National Association of Unclaimed Property Administrators (NAUPA), over <strong>$70 Billion</strong> in unclaimed property is sitting in government accounts all across America — waiting to be claimed. Texas $10.5B · New York $13B · Florida $2B+ · Arizona $2.8B · LA County alone $964M. <em>1 in 7 Americans have money waiting for them right now.</em></p>
