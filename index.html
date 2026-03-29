@@ -159,37 +159,6 @@ body{font-family:'Lato',sans-serif;background:var(--dark);color:var(--light);ove
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 .faq-a{font-size:1.05rem;line-height:1.85;color:#FFFFFF;max-height:0;overflow:hidden;transition:max-height .4s,margin-top .3s}
 .faq-item.open .faq-a{max-height:300px;margin-top:16px}
-<section id="about-founder" style="padding: 80px 10%; background-color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 50px;">
-        
-        <img src="powell-parker-surplus-funds-expert.png" 
-     alt="Powell Parker - Surplus Funds Expert" 
-     style="width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); border: 4px solid #f4f4f4;">
-        </div>
-
-        <div style="flex: 1; min-width: 350px;">
-            <h2 style="color: #2c3e50; font-size: 2.8em; margin-bottom: 10px; border-bottom: 4px solid #e74c3c; display: inline-block;">Powell Parker</h2>
-            <h3 style="color: #7f8c8d; font-weight: 400; margin-top: 5px; margin-bottom: 25px;">Founder & Surplus Recovery Specialist</h3>
-            
-            <p style="font-size: 1.15em; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                Originally from <strong>Hereford, Texas</strong>, I brought my work ethic to <strong>Arizona in 1986</strong> and have called the Grand Canyon State home ever since. My journey has always been about building—whether it was managing retail locations for a decade or owning and operating a successful <strong>pool construction business for 15 years</strong>.
-            </p>
-            
-            <p style="font-size: 1.15em; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                Today, my mission has shifted from building pools to building futures. As a father of three, I understand the importance of financial security and family legacy. I have dedicated my career to <strong>financial recovery</strong>, helping people reclaim money lost in foreclosures and tax sales.
-            </p>
-
-            <p style="font-size: 1.15em; line-height: 1.8; color: #444; font-weight: 500;">
-                I believe that surplus funds belong in your pocket, not the government’s. I’m here to use my 30+ years of Arizona business experience to fight for what is rightfully yours.
-            </p>
-
-            <div style="margin-top: 30px;">
-                <a href="contact.html" style="background-color: #e74c3c; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em; display: inline-block; transition: 0.3s;">Start Your Recovery Today</a>
-            </div>
-        </div>
-        
-    </div>
-</section>
 /* ══════════════════════════════════════════
 SIGNUP SECTION — REDESIGNED FOR CONVERSION
 ══════════════════════════════════════════ */
@@ -300,16 +269,6 @@ animation:btnPG 2.5s ease-in-out infinite}
 .wave-text{display:flex;justify-content:center;gap:2px;margin-top:18px}
 .wave-text span{font-family:‘Playfair Display’,serif;font-size:1.1rem;font-weight:900;color:var(–gold);display:inline-block;animation:waveJump 1.8s ease-in-out infinite}
 @keyframes waveJump{0%,100%{transform:translateY(0)}20%{transform:translateY(-8px)}40%{transform:translateY(0)}}
-<div style="display: flex; align-items: center; gap: 40px; text-align: left; background: rgba(201, 168, 76, 0.05); padding: 40px; border-radius: 12px; margin-bottom: 60px; border-left: 5px solid #C9A84C; flex-wrap: wrap;">
-    
-    <img src="powell-parker-surplus-funds-expert.png" alt="Powell Parker" style="width: 280px; height: auto; border-radius: 8px; border: 2px solid #C9A84C; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-    
-    <div style="flex: 1; min-width: 300px;">
-        <h2 style="font-family: 'Playfair Display', serif; color: #C9A84C; margin-top: 0;">Our Commitment to You</h2>
-        <p style="line-height: 1.8;">My mission with Rightful Returns Recovery is built on a simple principle: doing the right thing for the right reasons. Every case we take on is a personal mission to secure a legacy that belongs to our clients.</p>
-        <p style="line-height: 1.8;">By leveraging our specialized recovery process, we don't just find lost funds—we restore financial peace of mind. Our success allows us to give back to the community and support those who need it most.</p>
-    </div>
-</div>
 /* ── MISSING MONEY ── */
 #missing-money{background:linear-gradient(180deg,#0a0f1e 0%,#001233 60%,#0a0f1e 100%);position:relative;overflow:hidden;padding:5rem 1.5rem 4rem;isolation:isolate}
 #missing-money::after{content:’’;position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(0,40,104,.55) 0%,transparent 75%)}
@@ -382,6 +341,30 @@ footer{background:#040b12;padding:50px 20px 0}
 .footer-bottom{text-align:center;padding-bottom:28px}
 .footer-copy{font-size:.75rem;color:#4a6a7a;line-height:1.8}
 .footer-copy a{color:var(–ts);text-decoration:none}
+
+/* ── ABOUT THE FOUNDER (bottom section) ── */
+.founder-section{background:linear-gradient(180deg,#071018 0%,#1B2A40 50%,#071018 100%);padding:80px 20px;position:relative;overflow:hidden}
+.founder-wrap{max-width:1100px;margin:0 auto}
+.founder-hero{display:flex;flex-wrap:wrap;align-items:center;gap:50px;justify-content:center;margin-bottom:70px}
+.founder-photo{flex:1 1 380px;max-width:480px;position:relative}
+.founder-photo-frame{position:absolute;top:-8px;left:-8px;right:-8px;bottom:-8px;border:2px solid var(--gold);border-radius:12px;pointer-events:none}
+.founder-photo img{width:100%;height:auto;border-radius:10px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.founder-photo-caption{font-family:'Playfair Display',serif;font-style:italic;font-size:.85rem;color:#b8c8d4;text-align:center;margin-top:16px}
+.founder-text{flex:1 1 420px;max-width:560px}
+.founder-card{background:rgba(27,42,64,.85);border:1px solid rgba(201,168,76,.3);border-left:4px solid var(--gold);border-radius:10px;padding:36px 32px;box-shadow:0 8px 40px rgba(0,0,0,.3)}
+.founder-card h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--gold);margin:0 0 8px}
+.founder-card .title{font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:2.5px;margin:0 0 24px;display:block}
+.founder-card p{font-family:'Lato',sans-serif;font-size:1.05rem;line-height:1.8;color:#fff;margin:0 0 18px}
+.founder-quote{border-top:1px solid rgba(201,168,76,.25);padding-top:20px;margin-top:8px}
+.founder-quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:var(--accent);line-height:1.6;margin:0 0 6px}
+.founder-quote .attr{font-family:'Lato',sans-serif;font-size:.8rem;color:#b8c8d4;text-transform:uppercase;letter-spacing:2px;font-style:normal}
+.pillars{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-bottom:50px}
+.pillar{flex:1 1 300px;max-width:340px;background:rgba(27,42,64,.85);border:1px solid rgba(201,168,76,.25);border-top:4px solid var(--gold);border-radius:10px;padding:32px 28px;text-align:center;box-shadow:0 6px 30px rgba(0,0,0,.25)}
+.pillar .icon{font-size:2.2rem;margin-bottom:12px}
+.pillar h4{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);margin:0 0 14px}
+.pillar p{font-family:'Lato',sans-serif;font-size:1rem;line-height:1.7;color:#fff;margin:0}
+.founder-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px}
+@media(max-width:600px){.founder-card{padding:28px 20px}}
 </style>
 
 </head>
@@ -400,18 +383,16 @@ footer{background:#040b12;padding:50px 20px 0}
   <div class="naupa-badge"><img src="NAUPA_LOGO_ecommunications.png" alt="NAUPA"><span>Data sourced from NAUPA — the leading authority on unclaimed property</span></div>
 </section>
 
-<!-- ── CLIENT SUCCESS PHOTOS ── -->
+<!-- ── MEET YOUR RECOVERY SPECIALIST ── -->
 
 <div style="background:#FFFFFF;padding:50px 20px;text-align:center;border-top:2px solid rgba(201,168,76,.3);border-bottom:2px solid rgba(201,168,76,.3)">
-  <p style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3vw,1.6rem);color:#8B6914;font-weight:900;margin-bottom:8px">Real People. Real Recoveries. Real Checks.</p>
-  <p style="color:#5a6a7a;font-size:.9rem;margin-bottom:28px">Our clients trusted us — and got paid. Here's proof.</p>
-  <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;max-width:1000px;margin:0 auto">
-    <div style="flex:1;min-width:250px;max-width:320px"><img src="client-check.jpg" alt="Ashley Palmer recovered $126,500 with Rightful Returns Recovery" style="width:100%;border-radius:12px;border:2px solid rgba(201,168,76,.3);box-shadow:0 8px 30px rgba(0,0,0,.5)"><p style="color:#8B6914;font-size:.85rem;margin-top:10px;font-weight:700">Ashley P. — $126,500 Recovered</p></div>
-    <div style="flex:1;min-width:250px;max-width:320px"><img src="client-wheelchair.jpg" alt="Janine Smith recovered $10,563 surplus refund" style="width:100%;border-radius:12px;border:2px solid rgba(201,168,76,.3);box-shadow:0 8px 30px rgba(0,0,0,.5)"><p style="color:#8B6914;font-size:.85rem;margin-top:10px;font-weight:700">Janine S. — $10,563 Surplus Refund</p></div>
-    <div style="flex:1;min-width:250px;max-width:320px"><img src="client-cash.jpg" alt="Happy client holding recovered cash" style="width:100%;border-radius:12px;border:2px solid rgba(201,168,76,.3);box-shadow:0 8px 30px rgba(0,0,0,.5)"><p style="color:#8B6914;font-size:.85rem;margin-top:10px;font-weight:700">Your Recovery Could Be Next!</p></div>
+  <p style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3vw,1.6rem);color:#8B6914;font-weight:900;margin-bottom:8px">Meet Your Recovery Specialist</p>
+  <p style="color:#5a6a7a;font-size:.9rem;margin-bottom:28px">Real people. Real expertise. Dedicated to recovering what's rightfully yours.</p>
+  <div style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;max-width:800px;margin:0 auto">
+    <div style="flex:1;min-width:280px;max-width:380px"><img src="powell-parker-surplus-funds-expert.png" alt="Powell Parker, Founder of Rightful Returns Recovery, on horseback in Arizona" style="width:100%;border-radius:12px;border:2px solid rgba(201,168,76,.3);box-shadow:0 8px 30px rgba(0,0,0,.5)"><p style="color:#8B6914;font-size:.95rem;margin-top:12px;font-weight:700">Powell Parker — Founder &amp; Recovery Specialist</p><p style="color:#5a6a7a;font-size:.85rem;line-height:1.7;margin-top:6px;max-width:340px;margin-left:auto;margin-right:auto">30+ years of Arizona business experience. Faith-driven. Results-focused. Fighting for families who deserve every dollar.</p></div>
+    <div style="flex:1;min-width:280px;max-width:380px"><img src="powell-parker-family-man-recovery.png" alt="Powell Parker and his daughter on Mount Lemmon, Arizona — family at the heart of Rightful Returns Recovery" style="width:100%;border-radius:12px;border:2px solid rgba(201,168,76,.3);box-shadow:0 8px 30px rgba(0,0,0,.5)"><p style="color:#8B6914;font-size:.95rem;margin-top:12px;font-weight:700">Faith. Family. Recovery.</p><p style="color:#5a6a7a;font-size:.85rem;line-height:1.7;margin-top:6px;max-width:340px;margin-left:auto;margin-right:auto">As a father, I understand financial security isn't just about money — it's about legacy. That's why I fight for every client like family.</p></div>
   </div>
 </div>
-
 <!-- ── HOW IT WORKS ── -->
 
 <section id="how" style="background:#FFFFFF;"><div class="section">
@@ -483,7 +464,7 @@ footer{background:#040b12;padding:50px 20px 0}
   </div>
 </section>
 
-<div class="contact-strip"><div class="contact-strip-inner"><h3>READY TO FIND YOUR FUNDS? CALL US — IT'S FREE</h3><div class="contact-strip-numbers"><a href="tel:18004282022">📞 1 (800) 428-2022</a><a href="tel:4807882320">📞 (480) 788-2320</a><a href="mailto:powell@rightfulreturnsrecovery.com">✉️ powell@rightfulreturnsrecovery.com</a></div></div></div>
+<div class="contact-strip"><div class="contact-strip-inner"><h3>READY TO FIND YOUR FUNDS? CALL US — IT'S FREE</h3><div class="contact-strip-numbers"><a href="tel:18004282022">📞 1 (800) 428-2022</a><a href="tel:4807882320">📞 (480) 788-2320</a><a href="/cdn-cgi/l/email-protection#ff8f90889a9393bf8d9698978b998a938d9a8b8a8d918c8d9a9c90899a8d86d19c9092">✉️ <span class="__cf_email__" data-cfemail="8fffe0f8eae3e3cffde6e8e7fbe9fae3fdeafbfafde1fcfdeaece0f9eafdf6a1ece0e2">[email&#160;protected]</span></a></div></div></div>
 
 <!-- ── KNOW YOUR RIGHTS — BLOG SPOTLIGHT ── -->
 
@@ -494,7 +475,7 @@ footer{background:#040b12;padding:50px 20px 0}
     <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);text-align:center;color:var(--navy);margin-bottom:12px;">Our Research. <span style="color:var(--gold)">Your Rights.</span></h2>
     <p style="text-align:center;color:#4a5568;max-width:680px;margin:0 auto 48px;line-height:1.8;font-size:1rem;">We dig deep into state laws, county records, and unclaimed property statutes so you don't have to. Read our findings — then call us to see if funds are waiting in your name.</p>
 
-```
+
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;">
 
   <!-- Texas -->
@@ -530,7 +511,7 @@ footer{background:#040b12;padding:50px 20px 0}
 <div style="text-align:center;margin-top:44px;">
   <a href="blog/index.html" style="display:inline-block;background:transparent;border:2px solid var(--gold);color:var(--navy);padding:16px 40px;font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:all .3s;" onmouseover="this.style.background='var(--gold)';this.style.color='#0a0a1a'" onmouseout="this.style.background='transparent';this.style.color='var(--navy)'">View All Research &amp; Articles →</a>
 </div>
-```
+
 
   </div>
 </section>
@@ -669,8 +650,75 @@ footer{background:#040b12;padding:50px 20px 0}
   <div class="ty-content"><div class="ty-icon">💰</div><div class="ty-title">Thank You!</div><div class="ty-name" id="ty-name"></div><div class="ty-message">A <strong>Recovery Specialist</strong> will research unclaimed funds in your name across all 50 states. MissingMoney.com is now open in a new tab.</div><div class="ty-bar-wrap"><div class="ty-bar-label">Closes in 6 seconds</div><div class="ty-bar-track"><div class="ty-bar-fill" id="ty-bar"></div></div></div><button class="ty-go-btn" onclick="mmCloseOverlay()">Close →</button></div>
 </div>
 
+<!-- ══════════════════════════════════════
+     ABOUT THE FOUNDER — POWELL PARKER
+     ══════════════════════════════════════ -->
+
+<section class="founder-section">
+  <div class="founder-wrap">
+
+    <!-- Section header -->
+    <div style="text-align:center;margin-bottom:60px">
+      <div style="width:80px;height:4px;background:var(--gold);margin:0 auto 16px;border-radius:2px"></div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.8rem);color:#fff;margin:0 0 8px">About the Founder</h2>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:var(--accent);margin:0;letter-spacing:1px">Faith · Grit · Recovery</p>
+    </div>
+
+    <!-- Photo + Bio card -->
+    <div class="founder-hero">
+      <div class="founder-photo">
+        <div class="founder-photo-frame"></div>
+        <img src="powell-parker-surplus-funds-expert.png" alt="Powell Parker, Founder of Rightful Returns Recovery, on horseback in Arizona" loading="lazy">
+        <p class="founder-photo-caption">Powell Parker — Phoenix, Arizona</p>
+      </div>
+      <div class="founder-text">
+        <div class="founder-card">
+          <h3>Powell Parker</h3>
+          <span class="title">Managing Member · Rightful Returns Recovery</span>
+          <p>Originally from <strong style="color:var(--accent)">Hereford, Texas</strong>, I brought my work ethic to Arizona in 1986 and have called the Grand Canyon State home ever since. From managing retail locations for a decade to owning a successful <strong style="color:var(--accent)">pool construction business for 15 years</strong>, my journey has always been about building — and fighting for what's right.</p>
+          <p>Today, my mission has shifted from building pools to building futures. As a father, I understand the importance of financial security and family legacy. I founded Rightful Returns Recovery on a simple promise: <strong style="color:var(--accent)">we don't get paid unless you do.</strong> No upfront fees. No fine print. Just honest work backed by licensed attorneys and a personal commitment to every single client.</p>
+          <p>A portion of every recovery goes to <strong style="color:var(--accent)">Wounded Warrior Project</strong>, <strong style="color:var(--accent)">St. Jude Children's Research Hospital</strong>, and <strong style="color:var(--accent)">Sunshine Acres Children's Home</strong> — because when we recover what's rightfully yours, everybody wins.</p>
+          <div class="founder-quote">
+            <p>"I believe surplus funds belong in your pocket, not the government's. I'm here to use my 30+ years of Arizona business experience to fight for what is rightfully yours."</p>
+            <span class="attr">— Powell Parker, Founder</span>
+          </div>
+        </div>
+        <div class="founder-cta">
+          <a href="#signup" class="btn-primary">Free Case Evaluation</a>
+          <a href="tel:18004282022" class="btn-secondary">📞 1 (800) 428-2022</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Three Pillars -->
+    <div class="pillars">
+      <div class="pillar">
+        <div class="icon">🙏</div>
+        <h4>Why We Kneel</h4>
+        <p>We kneel in faith — grateful for the ability to serve others and trusting that honest work done with integrity is its own reward. Our values aren't a marketing angle. They're the foundation everything else is built on.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">🇺🇸</div>
+        <h4>Why We Stand</h4>
+        <p>We stand for the families who've been overlooked by the system — veterans, seniors, single parents, everyday Americans who lost property and never knew the government owed them money. We stand because someone has to.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">⚖️</div>
+        <h4>Why We're In Business</h4>
+        <p>We exist to bridge the gap between families and the money that belongs to them. Research, documentation, attorney representation, and full legal advocacy — all at zero upfront cost. We only get paid when you do.</p>
+      </div>
+    </div>
+
+    <!-- Mission link -->
+    <div style="text-align:center">
+      <a href="our-mission.html" style="font-family:'Lato',sans-serif;font-size:1rem;color:var(--gold);text-decoration:none;letter-spacing:1px;border-bottom:1px solid rgba(201,168,76,.4);padding-bottom:2px;transition:color .3s" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--gold)'">Read Our Full Mission →</a>
+    </div>
+
+  </div>
+</section>
+
 <footer><div class="footer-top">
-  <div><div class="footer-logo">Rightful Returns Recovery</div><p class="footer-tagline">Finding hidden assets. Recovering what's rightfully yours. Full-service recovery at no upfront cost.</p><div class="footer-contact-links"><a href="tel:18004282022">📞 1 (800) 428-2022</a><a href="tel:4807882320">📞 (480) 788-2320</a><a href="mailto:powell@rightfulreturnsrecovery.com">✉️ powell@rightfulreturnsrecovery.com</a></div></div>
+  <div><div class="footer-logo">Rightful Returns Recovery</div><p class="footer-tagline">Finding hidden assets. Recovering what's rightfully yours. Full-service recovery at no upfront cost.</p><div class="footer-contact-links"><a href="tel:18004282022">📞 1 (800) 428-2022</a><a href="tel:4807882320">📞 (480) 788-2320</a><a href="/cdn-cgi/l/email-protection#17677860727b7b57657e707f6371627b65726362657964657274786172656e3974787a">✉️ <span class="__cf_email__" data-cfemail="f3839c84969f9fb3819a949b8795869f81968786819d808196909c8596818add909c9e">[email&#160;protected]</span></a></div></div>
   <div><div class="footer-col-title">Quick Links</div><nav class="footer-nav-links"><a href="#how">How It Works</a><a href="#about">About Us</a><a href="#states">States We Serve</a><a href="#faq">FAQ</a><a href="#signup">Free Case Evaluation</a><a href="blog/index.html">Blog</a></nav></div>
   <div><div class="footer-col-title">Legal</div><nav class="footer-nav-links"><a href="sms-terms.html">SMS Terms</a><a href="sms-terms.html#privacy">Privacy Policy</a><a href="sms-terms.html#tcpa">TCPA Compliance</a><a href="sms-terms.html#canspam">CAN-SPAM Policy</a><a href="sms-terms.html#disclaimer">Disclaimer</a></nav></div>
 </div></footer>
@@ -679,16 +727,16 @@ footer{background:#040b12;padding:50px 20px 0}
   <div class="footer-legal-grid">
     <div class="legal-block"><h4>📱 SMS Consent (TCPA)</h4><p>By providing your phone number you consent to receive texts from Rightful Returns Recovery. Reply STOP to cancel. <a href="sms-terms.html">Full Terms</a>.</p></div>
     <div class="legal-block"><h4>📞 Call Consent</h4><p>You authorize contact by telephone including automated systems. Opt out anytime by calling <a href="tel:18004282022">1 (800) 428-2022</a>.</p></div>
-    <div class="legal-block"><h4>✉️ Email (CAN-SPAM)</h4><p>Unsubscribe anytime via email link or contact <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a>.</p></div>
+    <div class="legal-block"><h4>✉️ Email (CAN-SPAM)</h4><p>Unsubscribe anytime via email link or contact <a href="/cdn-cgi/l/email-protection#03736c74666f6f43716a646b7765766f71667776716d707166606c7566717a2d606c6e"><span class="__cf_email__" data-cfemail="01716e76646d6d41736866697567746d73647574736f727364626e776473782f626e6c">[email&#160;protected]</span></a>.</p></div>
     <div class="legal-block"><h4>⚖️ No Attorney-Client Relationship</h4><p>Not a law firm. General information only. We partner with licensed attorneys where required.</p></div>
     <div class="legal-block"><h4>🔒 Privacy</h4><p>We never sell or share your data. <a href="sms-terms.html#privacy">Privacy Policy</a>.</p></div>
     <div class="legal-block"><h4>💰 Contingency Fee</h4><p>No upfront cost. Fee only upon successful recovery, disclosed in your agreement.</p></div>
   </div>
   <hr class="footer-divider">
-  <div class="footer-bottom"><p class="footer-copy">&copy; 2026 Rightful Returns Recovery. <a href="sms-terms.html">SMS Terms</a> | <a href="sms-terms.html#privacy">Privacy</a> | <a href="sms-terms.html#tcpa">TCPA</a><br>Phoenix, Arizona · <a href="tel:18004282022">1 (800) 428-2022</a> · <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a><br><span style="color:#2a3a4a;font-size:.65rem">Not affiliated with any government agency. Contingency basis only. Results vary.</span></p></div>
+  <div class="footer-bottom"><p class="footer-copy">&copy; 2026 Rightful Returns Recovery. <a href="sms-terms.html">SMS Terms</a> | <a href="sms-terms.html#privacy">Privacy</a> | <a href="sms-terms.html#tcpa">TCPA</a><br>Phoenix, Arizona · <a href="tel:18004282022">1 (800) 428-2022</a> · <a href="/cdn-cgi/l/email-protection#23534c54464f4f63514a444b5745564f51465756514d505146404c5546515a0d404c4e"><span class="__cf_email__" data-cfemail="3a4a554d5f56567a48535d524e5c4f56485f4e4f485449485f59554c5f484314595557">[email&#160;protected]</span></a><br><span style="color:#2a3a4a;font-size:.65rem">Not affiliated with any government agency. Contingency basis only. Results vary.</span></p></div>
 </div></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── Hamburger menu ──
 (function(){var btn=document.getElementById('menuBtn');var menu=document.getElementById('navMenu');if(!btn||!menu)return;btn.addEventListener('click',function(e){e.stopPropagation();var isOpen=menu.classList.toggle('open');btn.classList.toggle('open',isOpen);btn.setAttribute('aria-expanded',isOpen)});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!btn.contains(e.target)){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false')}});menu.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false')})})})();
 
@@ -708,10 +756,15 @@ createWave('wave1',"Let's Help You Get Paid Today!");
 createWave('wave2',"Let's Help You Get Paid Today!");
 
 // ── Flag canvas ──
-(function(){var c=document.getElementById('flag-canvas');if(!c)return;var ctx=c.getContext('2d');function draw(){c.width=c.offsetWidth;c.height=c.offsetHeight;var w=c.width,h=c.height,sh=h/13;for(var i=0;i<13;i++){ctx.fillStyle=i%2===0?'rgba(200,40,40,0.4)':'rgba(255,255,255,0.15)';ctx.fillRect(0,i*sh,w,sh)}ctx.fillStyle='rgba(0,40,100,0.5)';ctx.fillRect(0,0,w*0.4,sh*7);ctx.fillStyle='rgba(255,255,255,0.6)';var sx=w*0.4/12,sy=sh*7/10;for(var r=0;r<5;r++)for(var col=0;col<6;col++){ctx.beginPath();ctx.arc(sx*(col*2+1+(r%2)),sy*(r*2+1),2,0,Math.PI*2);ctx.fill()}for(var r=0;r<4;r++)for(var col=0;col<5;col++){ctx.beginPath();ctx.arc(sx*(col*2+2+(r%2)),sy*(r*2+2),2,0,Math.PI*2);ctx.fill()}}draw();window.addEventListener('resize',draw)})();
-
-
+(func// ── Flag canvas (States section) ──
+(function(){var c=document.getElementById('flag-canvas');if(!c)return;var ctx=c.getContext('2d');function draw(){var w=c.parentElement.offsetWidth;var h=c.parentElement.offsetHeight;c.width=w;c.height=h;var t=Date.now()/1000;
+// stripes
+var sh=h/13;for(var i=0;i<13;i++){ctx.fillStyle=i%2===0?'rgba(191,10,48,0.5)':'rgba(255,255,255,0.5)';ctx.fillRect(0,i*sh,w,sh)}
+// canton
+var cw=w*0.4;var ch=sh*7;ctx.fillStyle='rgba(0,40,104,0.6)';ctx.fillRect(0,0,cw,ch);
+// stars
+ctx.fillStyle='rgba(255,255,255,0.7)';var rows=[6,5,6,5,6,5,6,5,6];var sy=ch/10;for(var r=0;r<rows.length;r++){var cols=rows[r];var sx=cw/(cols+1);for(var cc=0;cc<cols;cc++){var x=sx*(cc+1);var y=sy*(r+1);var wave=Math.sin(t*2+x*0.01+y*0.01)*3;ctx.beginPath();for(var p=0;p<5;p++){var a=(p*4*Math.PI/5)-Math.PI/2;var ox=x+Math.cos(a)*4;var oy=y+wave+Math.sin(a)*4;p===0?ctx.moveTo(ox,oy):ctx.lineTo(ox,oy);a=(p*4*Math.PI/5+2*Math.PI/5)-Math.PI/2;ox=x+Math.cos(a)*1.8;oy=y+wave+Math.sin(a)*1.8;ctx.lineTo(ox,oy)}ctx.closePath();ctx.fill()}}
+requestAnimationFrame(draw)}draw()})();
 </script>
-
 </body>
 </html>
