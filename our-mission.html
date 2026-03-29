@@ -24,7 +24,445 @@
 }
 html { scroll-behavior:smooth; }
 body { font-family:'Lato',sans-serif; background:var(--dark); color:var(--light); overflow-x:hidden; }
+<!-- ============================================================
+     OUR MISSION — "Why We Kneel. Why We Stand. Why We're In Business."
+     
+     WHERE TO PLACE THIS:
+     This is a SECTION block to drop into your existing our-mission.html.
+     
+     If your our-mission.html already has content sections, paste this
+     where you want the personal/family mission story to appear —
+     ideally near the TOP of the page content, right after the hero
+     section (after the closing </section> of your hero block).
+     
+     If you're building our-mission.html from scratch, this can serve
+     as the main body content between your header and footer.
+     
+     IMAGE: Uses powell-parker-family-man-recovery.png (Mt. Lemmon)
+     ============================================================ -->
 
+
+<!-- ===== OUR MISSION — PERSONAL STORY ===== -->
+<section style="
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #071018 0%, #1B2A40 40%, #1a2e42 70%, #071018 100%);
+  position: relative;
+  overflow: hidden;
+">
+
+  <!-- Section header -->
+  <div style="text-align: center; margin-bottom: 60px;">
+    <div style="
+      width: 80px;
+      height: 4px;
+      background: #C9A84C;
+      margin: 0 auto 16px;
+      border-radius: 2px;
+    "></div>
+    <h2 style="
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 44px);
+      color: #fff;
+      margin: 0 0 8px;
+      letter-spacing: 0.5px;
+    ">Our Mission</h2>
+    <p style="
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: #E8D5A3;
+      margin: 0;
+      letter-spacing: 1px;
+    ">Why We Kneel. Why We Stand. Why We're In Business.</p>
+  </div>
+
+  <!-- ===== ROW 1: FAMILY PHOTO + MISSION TEXT ===== -->
+  <div style="
+    max-width: 1100px;
+    margin: 0 auto 70px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+  ">
+
+    <!-- PHOTO — Mt. Lemmon with daughter -->
+    <div style="
+      flex: 1 1 380px;
+      max-width: 480px;
+      position: relative;
+    ">
+      <div style="
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+        border: 2px solid #C9A84C;
+        border-radius: 12px;
+        pointer-events: none;
+      "></div>
+      <img
+        src="powell-parker-family-man-recovery.png"
+        alt="Powell Parker and his daughter on top of Mount Lemmon, Arizona — family and faith at the heart of Rightful Returns Recovery"
+        loading="lazy"
+        style="
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          display: block;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        "
+      >
+      <p style="
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 14px;
+        color: #b8c8d4;
+        text-align: center;
+        margin: 16px 0 0;
+      ">Powell & daughter — Mount Lemmon, Arizona</p>
+    </div>
+
+    <!-- TEXT — Faith, Family, Mission -->
+    <div style="
+      flex: 1 1 420px;
+      max-width: 560px;
+    ">
+      <div style="
+        background: rgba(27, 42, 64, 0.85);
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        border-left: 4px solid #C9A84C;
+        border-radius: 10px;
+        padding: 36px 32px;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+      ">
+        <h3 style="
+          font-family: 'Playfair Display', serif;
+          font-size: 26px;
+          color: #C9A84C;
+          margin: 0 0 20px;
+        ">Faith. Family. Recovery.</h3>
+
+        <p style="
+          font-family: 'Lato', sans-serif;
+          font-size: 17px;
+          line-height: 1.8;
+          color: #fff;
+          margin: 0 0 18px;
+        ">
+          Rightful Returns Recovery wasn't born in an office — it was born from
+          a conviction. I watched too many hardworking families lose their homes
+          to foreclosure, only to have the government quietly pocket the surplus
+          money that legally belonged to <em>them</em>. That didn't sit right
+          with me. It still doesn't.
+        </p>
+
+        <p style="
+          font-family: 'Lato', sans-serif;
+          font-size: 17px;
+          line-height: 1.8;
+          color: #fff;
+          margin: 0 0 18px;
+        ">
+          I'm a man of faith, a father, and an Arizonan. I believe in doing
+          honest work for honest people. I believe the money held in county
+          vaults belongs to the families it was taken from — not to bureaucracies
+          that bank on nobody showing up to claim it. And I believe that when
+          you help someone recover what's rightfully theirs, you're not just
+          handing them a check — you're handing them a second chance.
+        </p>
+
+        <p style="
+          font-family: 'Lato', sans-serif;
+          font-size: 17px;
+          line-height: 1.8;
+          color: #fff;
+          margin: 0 0 18px;
+        ">
+          That's why we work on <strong style="color: #E8D5A3;">contingency only</strong>.
+          No upfront fees. No fine print. No risk to you. We partner with
+          licensed attorneys in every state we serve, handle all the paperwork
+          and court filings, and don't collect a dime unless <em>you</em> get paid first.
+        </p>
+
+        <p style="
+          font-family: 'Lato', sans-serif;
+          font-size: 17px;
+          line-height: 1.8;
+          color: #fff;
+          margin: 0 0 4px;
+        ">
+          And because we believe in giving back, a portion of every successful
+          recovery goes to <strong style="color: #E8D5A3;">Wounded Warrior Project</strong>,
+          <strong style="color: #E8D5A3;">St. Jude Children's Research Hospital</strong>,
+          and <strong style="color: #E8D5A3;">Sunshine Acres Children's Home</strong>.
+          When we win, everybody wins.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ROW 2: THREE PILLARS ===== -->
+  <div style="
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  ">
+
+    <!-- Pillar 1: Why We Kneel -->
+    <div style="
+      flex: 1 1 300px;
+      max-width: 340px;
+      background: rgba(27, 42, 64, 0.85);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-top: 4px solid #C9A84C;
+      border-radius: 10px;
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+    ">
+      <div style="font-size: 36px; margin-bottom: 12px;">🙏</div>
+      <h4 style="
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        color: #C9A84C;
+        margin: 0 0 14px;
+      ">Why We Kneel</h4>
+      <p style="
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #fff;
+        margin: 0;
+      ">
+        We kneel in faith — grateful for the ability to serve others and
+        trusting that honest work done with integrity is its own reward.
+        Our values aren't a marketing angle. They're the foundation
+        everything else is built on.
+      </p>
+    </div>
+
+    <!-- Pillar 2: Why We Stand -->
+    <div style="
+      flex: 1 1 300px;
+      max-width: 340px;
+      background: rgba(27, 42, 64, 0.85);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-top: 4px solid #C9A84C;
+      border-radius: 10px;
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+    ">
+      <div style="font-size: 36px; margin-bottom: 12px;">🇺🇸</div>
+      <h4 style="
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        color: #C9A84C;
+        margin: 0 0 14px;
+      ">Why We Stand</h4>
+      <p style="
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #fff;
+        margin: 0;
+      ">
+        We stand for the families who've been overlooked by the system —
+        veterans, seniors, single parents, everyday Americans who lost
+        property and never knew the government owed them money. We stand
+        because someone has to.
+      </p>
+    </div>
+
+    <!-- Pillar 3: Why We're In Business -->
+    <div style="
+      flex: 1 1 300px;
+      max-width: 340px;
+      background: rgba(27, 42, 64, 0.85);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-top: 4px solid #C9A84C;
+      border-radius: 10px;
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+    ">
+      <div style="font-size: 36px; margin-bottom: 12px;">⚖️</div>
+      <h4 style="
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        color: #C9A84C;
+        margin: 0 0 14px;
+      ">Why We're In Business</h4>
+      <p style="
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #fff;
+        margin: 0;
+      ">
+        We exist to bridge the gap between families and the money that
+        belongs to them. Research, documentation, attorney representation,
+        and full legal advocacy — all at zero upfront cost. We only get
+        paid when you do.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== GIVING BACK CALLOUT ===== -->
+  <div style="
+    max-width: 800px;
+    margin: 0 auto 50px;
+    background: rgba(27, 42, 64, 0.6);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 10px;
+    padding: 36px 32px;
+    text-align: center;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.2);
+  ">
+    <h3 style="
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: #C9A84C;
+      margin: 0 0 20px;
+    ">When We Recover, Everyone Wins</h3>
+    <p style="
+      font-family: 'Lato', sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #fff;
+      margin: 0 0 24px;
+    ">
+      A portion of every successful recovery is donated to organizations
+      that protect those who've sacrificed for us and care for children
+      who need it most.
+    </p>
+    <div style="
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    ">
+      <span style="
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        color: #E8D5A3;
+        letter-spacing: 1px;
+      ">🎖️ Wounded Warrior Project</span>
+      <span style="
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        color: #E8D5A3;
+        letter-spacing: 1px;
+      ">❤️ St. Jude Children's Hospital</span>
+      <span style="
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        color: #E8D5A3;
+        letter-spacing: 1px;
+      ">🌻 Sunshine Acres Children's Home</span>
+    </div>
+  </div>
+
+  <!-- ===== FOUNDER QUOTE ===== -->
+  <div style="
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+    border-top: 1px solid rgba(201, 168, 76, 0.25);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+    padding: 30px 20px;
+  ">
+    <p style="
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: #E8D5A3;
+      margin: 0 0 10px;
+      line-height: 1.6;
+    ">"We believe this money belongs in the hands of the families it was
+    taken from — not buried in government ledgers."</p>
+    <p style="
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #b8c8d4;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    ">— Powell Parker, Founder</p>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div style="
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+  ">
+    <a href="index.html#signup" style="
+      display: inline-block;
+      background: #C9A84C;
+      color: #071018;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+    " onmouseover="this.style.background='#E8D5A3'; this.style.transform='translateY(-2px)'"
+       onmouseout="this.style.background='#C9A84C'; this.style.transform='translateY(0)'">
+      Free Case Evaluation
+    </a>
+    <a href="tel:18004282022" style="
+      display: inline-block;
+      background: transparent;
+      color: #C9A84C;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 2px solid #C9A84C;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+    " onmouseover="this.style.background='#C9A84C'; this.style.color='#071018'; this.style.transform='translateY(-2px)'"
+       onmouseout="this.style.background='transparent'; this.style.color='#C9A84C'; this.style.transform='translateY(0)'">
+      📞 1 (800) 428-2022
+    </a>
+    <a href="giving-back.html" style="
+      display: inline-block;
+      background: transparent;
+      color: #E8D5A3;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 1px;
+      padding: 14px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1px solid rgba(232, 213, 163, 0.3);
+      transition: border-color 0.3s, color 0.3s;
+    " onmouseover="this.style.borderColor='#E8D5A3'; this.style.color='#fff'"
+       onmouseout="this.style.borderColor='rgba(232,213,163,0.3)'; this.style.color='#E8D5A3'">
+      ❤️ See Who We Support
+    </a>
+  </div>
+
+</section>
+<!-- ===== END OUR MISSION — PERSONAL STORY ===== -->
 /* HEADER */
 #site-header { position:sticky; top:0; z-index:1000; background:var(--dark); box-shadow:0 2px 12px rgba(0,0,0,0.4); }
 #flagCanvas { position:absolute; inset:0; width:100%; height:100%; opacity:0.11; pointer-events:none; }
