@@ -30,7 +30,10 @@ nav{position:fixed;top:0;width:100%;z-index:200;padding:18px 48px;display:flex;j
 .hero{min-height:100vh;background:linear-gradient(160deg,#0D1B2A 0%,#1B2A40 45%,#0D1B2A 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 80px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(201,168,76,0.07) 0%,transparent 70%);animation:breathe 7s ease-in-out infinite;}
 @keyframes breathe{0%,100%{opacity:0.6;}50%{opacity:1;}}
-
+<div class="hero-bg">
+  <img src="texas-storm-hero.jpg" alt="Texas storm sky — surplus funds recovery" loading="eager">
+  <div class="hero-bg-overlay"></div>
+</div>
 /* Texas Flag SVG wrapper */
 .tx-flag-wrap{width:100%;max-width:780px;margin:0 auto 36px;position:relative;z-index:2;opacity:0;animation:fadeUp 0.9s ease forwards 0.1s;box-shadow:0 8px 60px rgba(0,0,0,0.6),0 0 0 3px rgba(201,168,76,0.35);}
 .tx-flag-wrap svg{display:block;width:100%;height:auto;}
