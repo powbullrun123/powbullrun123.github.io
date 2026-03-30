@@ -1,92 +1,122 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo.png">
+  <title>Surplus Funds Recovery | Foreclosure Overage Experts | Rightful Returns Recovery</title>
+  
+  <meta name="description" content="Rightful Returns Recovery helps homeowners claim surplus funds from foreclosure sales and tax auctions in Texas and Arizona. Contact our Dallas office at 214-838-1338.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Rightful Returns Recovery">
+  <link rel="canonical" href="https://www.rightfulreturnsrecovery.com/">
+  
+  <meta property="og:title" content="Surplus Funds Recovery | Rightful Returns Recovery">
+  <meta property="og:description" content="Direct Dallas Line: 214-838-1338. We help homeowners recover foreclosure surplus funds and tax sale overages nationwide.">
+  <meta property="og:url" content="https://www.rightfulreturnsrecovery.com/">
+  <meta property="og:type" content="website">
+  <meta property="business:contact_data:phone_number" content="+1 214-838-1338">
+
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "Rightful Returns Recovery",
-  "telephone": "+1-214-838-1338",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Dallas",
-    "addressRegion": "TX"
-  },
-  "areaServed": ["Dallas", "Denton", "Texas"],
-  "description": "Professional recovery firm for surplus tax sale funds."
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Rightful Returns Recovery",
+    "url": "https://www.rightfulreturnsrecovery.com",
+    "telephone": "+1-214-838-1338",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5301 Alpha Rd., Suite 80",
+      "addressLocality": "Dallas",
+      "addressRegion": "TX",
+      "postalCode": "75240"
+    },
+    "department": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Rightful Returns Recovery - Dallas HQ",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "5301 Alpha Rd., Suite 80",
+          "addressLocality": "Dallas",
+          "addressRegion": "TX",
+          "postalCode": "75240"
+        },
+        "telephone": "+1-214-838-1338"
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Rightful Returns Recovery - Arizona Branch",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "6846 E. Laguna Azul Ave.",
+          "addressLocality": "Mesa",
+          "addressRegion": "AZ",
+          "postalCode": "85209"
+        }
+      }
+    ],
+    "areaServed": ["Texas", "Arizona", "Georgia"]
+  }
+  </script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="logo.png">
-<title>Surplus Funds Recovery | Foreclosure Overage Experts | Rightful Returns Recovery</title>
-<meta name="description" content="Rightful Returns Recovery helps homeowners claim surplus funds from foreclosure sales and tax auctions nationwide. No upfront fees. Free case review.">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Rightful Returns Recovery">
-<meta name="google-site-verification" content="54BEmMuOcZAbtUwi4Bw18OAkdYWJPkmQm10jI6LaPuk">
-<link rel="canonical" href="https://www.rightfulreturnsrecovery.com/">
-<meta property="og:title" content="Surplus Funds Recovery | Rightful Returns Recovery">
-<meta property="og:description" content="We help homeowners recover foreclosure surplus funds and tax sale overages nationwide. No upfront fees. Free case review.">
-<meta property="og:url" content="https://www.rightfulreturnsrecovery.com/">
-<meta property="og:type" content="website">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FinancialService","name":"Rightful Returns Recovery","url":"https://www.rightfulreturnsrecovery.com","telephone":"+1-800-428-2022","email":"powell@rightfulreturnsrecovery.com","areaServed":[{"@type":"State","name":"Arizona"},{"@type":"State","name":"Georgia"},{"@type":"State","name":"Texas"}],"description":"Surplus funds recovery specialists. No upfront fees.","priceRange":"Contingency Only"}</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18046279784"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18046279784');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18046279784"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18046279784');
+  </script>
 
-<!-- MENU JS — in head with DOMContentLoaded so nothing can block it -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // ── Menu button ──
-  var btn = document.getElementById('menuBtn');
-  var menu = document.getElementById('navMenu');
-  if (!btn || !menu) return;
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('menuBtn');
+    var menu = document.getElementById('navMenu');
+    
+    if (btn && menu) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.toggle('open');
+        btn.classList.toggle('open', isOpen);
+      });
 
-  btn.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    var isOpen = menu.classList.toggle('open');
-    btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', String(isOpen));
-  });
+      document.addEventListener('click', function(e) {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+          menu.classList.remove('open');
+          btn.classList.remove('open');
+        }
+      });
+    }
 
-  document.addEventListener('click', function(e) {
-    if (!menu.contains(e.target) && !btn.contains(e.target)) {
-      menu.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
+    var hdr = document.querySelector('.site-header');
+    if (hdr) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) { hdr.classList.add('scrolled'); }
+        else { hdr.classList.remove('scrolled'); }
+      }, {passive: true});
     }
   });
+  </script>
 
-  menu.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      menu.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // ── Header scroll shadow ──
-  var hdr = document.querySelector('.site-header');
-  if (hdr) {
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 50) { hdr.classList.add('scrolled'); }
-      else { hdr.classList.remove('scrolled'); }
-    }, {passive: true});
-  }<section id="contact-dallas" style="padding: 60px 20px; text-align: center; background-color: #f9f9f9; border-top: 3px solid #004a99;">
-    <h2 style="font-family: 'Helvetica', sans-serif; font-size: 1.5rem; color: #333;">Direct Dallas Financial District Line</h2>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Root & Base */
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--gold:#C9A84C;--dark:#0D1B2A;--navy:#1B2A40;--light:#F5F0E8;--white:#FFF;--accent:#E8D5A3;--ts:#4a5568;--pearl:#F0EBE1;--page-bg:#F4F1EB}
+    html{scroll-behavior:smooth}
+    body{font-family:'Lato',sans-serif;background:var(--dark);color:var(--light);overflow-x:hidden;font-size:18px}
     
-    <a href="tel:+12148381883" style="font-size: 3.5rem; font-weight: 800; color: #
+    /* Ensure the Menu is hidden until toggled */
+    .nav-dropdown { display: none; position: absolute; top: 70px; right: 0; background: var(--dark); border: 1px solid var(--gold); min-width: 200px; z-index: 1001; }
+    .nav-dropdown.open { display: block !important; }
+    
+    /* Rest of your existing styles... */
+  </style>
+</head>
+<body>
 
-004a99; 
 </script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
