@@ -92,22 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         Our team is available to discuss high-value surplus fund recovery cases in Denton and Dallas County.
     </p>
 </section>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "Rightful Returns Recovery",
-  "telephone": "+1-214-838-1883",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Dallas",
-    "addressRegion": "TX"
-  },
-  "areaServed": ["Dallas", "Denton", "Fort Worth"],
-  "description": "Specializing in the recovery of surplus tax sale funds."
-}
-</script>
-
+<script type="application/ld+
 });
 </script>
 <style>
@@ -118,6 +103,58 @@ body{font-family:'Lato',sans-serif;background:var(--dark);color:var(--light);ove
 
 /* ── WHITE PAGE BACKGROUND (after hero) ── */
 .page-body{background:#F4F1EB}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Rightful Returns Recovery",
+  "url": "https://www.rightfulreturnsrecovery.com",
+  "telephone": "+1-214-838-1338",
+  "description": "Professional firm specializing in the recovery of surplus tax sale funds in Texas and Arizona.",
+  "logo": "https://www.rightfulreturnsrecovery.com/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "5301 Alpha Rd., Suite 80",
+    "addressLocality": "Dallas",
+    "addressRegion": "TX",
+    "postalCode": "75240",
+    "addressCountry": "US"
+  },
+  "department": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Rightful Returns Recovery - Dallas Headquarters",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5301 Alpha Rd., Suite 80",
+        "addressLocality": "Dallas",
+        "addressRegion": "TX",
+        "postalCode": "75240"
+      },
+      "telephone": "+1-214-838-1338"
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "Rightful Returns Recovery - Arizona Branch",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6846 E. Laguna Azul Ave.",
+        "addressLocality": "Mesa",
+        "addressRegion": "AZ",
+        "postalCode": "85209"
+      }
+    }
+  ],
+  "areaServed": ["Dallas County", "Denton County", "Maricopa County", "Texas", "Arizona"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-214-838-1338",
+    "contactType": "customer service",
+    "areaServed": ["US-TX", "US-AZ"],
+    "availableLanguage": "en"
+  }
+}
+</script>
 
 /* ── STICKY HEADER ── */
 .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,27,42,0.97);border-bottom:2px solid rgba(201,168,76,.3);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:box-shadow .3s}
