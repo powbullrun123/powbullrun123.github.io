@@ -1,15 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18046279784"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18046279784');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18046279784"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18046279784');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Surplus Funds Recovery Blog | Foreclosure Overage Guides | Rightful Returns Recovery</title>
@@ -27,6 +27,61 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
 
+  <!-- ✅ FIXED: Structured data moved OUT of <style> block and closing brace added -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Rightful Returns Recovery",
+    "url": "https://www.rightfulreturnsrecovery.com",
+    "telephone": "+1-214-838-1338",
+    "description": "Professional firm specializing in the recovery of surplus tax sale funds in Texas and Arizona.",
+    "logo": "https://www.rightfulreturnsrecovery.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5301 Alpha Rd., Suite 80",
+      "addressLocality": "Dallas",
+      "addressRegion": "TX",
+      "postalCode": "75240",
+      "addressCountry": "US"
+    },
+    "department": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Rightful Returns Recovery - Dallas Headquarters",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "5301 Alpha Rd., Suite 80",
+          "addressLocality": "Dallas",
+          "addressRegion": "TX",
+          "postalCode": "75240"
+        },
+        "telephone": "+1-214-838-1338"
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Rightful Returns Recovery - Arizona Branch",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "6846 E. Laguna Azul Ave.",
+          "addressLocality": "Mesa",
+          "addressRegion": "AZ",
+          "postalCode": "85209"
+        }
+      }
+    ],
+    "areaServed": ["Dallas County", "Denton County", "Maricopa County", "Texas", "Arizona"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-214-838-1338",
+      "contactType": "customer service",
+      "areaServed": ["US-TX", "US-AZ"],
+      "availableLanguage": "en"
+    }
+  }
+  </script>
+
   <style>
     :root {
       --gold: #C9A84C;
@@ -39,58 +94,6 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Lato', sans-serif; background: var(--light); color: var(--dark); }
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "Rightful Returns Recovery",
-  "url": "https://www.rightfulreturnsrecovery.com",
-  "telephone": "+1-214-838-1338",
-  "description": "Professional firm specializing in the recovery of surplus tax sale funds in Texas and Arizona.",
-  "logo": "https://www.rightfulreturnsrecovery.com/logo.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "5301 Alpha Rd., Suite 80",
-    "addressLocality": "Dallas",
-    "addressRegion": "TX",
-    "postalCode": "75240",
-    "addressCountry": "US"
-  },
-  "department": [
-    {
-      "@type": "LocalBusiness",
-      "name": "Rightful Returns Recovery - Dallas Headquarters",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "5301 Alpha Rd., Suite 80",
-        "addressLocality": "Dallas",
-        "addressRegion": "TX",
-        "postalCode": "75240"
-      },
-      "telephone": "+1-214-838-1338"
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "Rightful Returns Recovery - Arizona Branch",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "6846 E. Laguna Azul Ave.",
-        "addressLocality": "Mesa",
-        "addressRegion": "AZ",
-        "postalCode": "85209"
-      }
-    }
-  ],
-  "areaServed": ["Dallas County", "Denton County", "Maricopa County", "Texas", "Arizona"],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+1-214-838-1338",
-    "contactType": "customer service",
-    "areaServed": ["US-TX", "US-AZ"],
-    "availableLanguage": "en"
-  }
-
-</script>
 
     /* ── HEADER ── */
     #site-header {
@@ -231,6 +234,14 @@
     .card-link svg { transition: transform 0.2s; }
     .card-link:hover svg { transform: translateX(3px); }
 
+    /* ── TEXAS SECTION ── */
+    .texas-section { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 5rem; }
+    .texas-section h2 {
+      font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.1rem);
+      color: var(--dark); margin-bottom: 2.5rem; border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.8rem;
+    }
+
     /* ── CTA BAND ── */
     .cta-band {
       background: var(--navy); padding: 3.5rem 1.5rem; text-align: center;
@@ -262,10 +273,12 @@
       .blog-grid { grid-template-columns: 1fr; }
     }
   </style>
+
 </head>
 <body>
 
 <!-- HEADER -->
+
 <header id="site-header">
   <canvas id="flagCanvas"></canvas>
   <div class="header-inner">
@@ -294,6 +307,7 @@
 </header>
 
 <!-- HERO -->
+
 <section class="blog-hero">
   <canvas id="heroFlagCanvas"></canvas>
   <div class="hero-flag-overlay"></div>
@@ -306,149 +320,166 @@
 </section>
 
 <!-- BLOG POSTS — GENERAL -->
+
 <section class="blog-section">
   <p class="section-label">General Knowledge</p>
   <h2>Foreclosure &amp; Surplus Funds Explained</h2>
   <div class="blog-grid">
 
-    <article class="blog-card">
-      <div class="card-img"><span class="card-img-icon">🏠</span></div>
-      <div class="card-body">
-        <p class="card-tag">Foreclosure Basics</p>
-        <h3><a href="/blog/what-are-foreclosures.html" style="color:inherit;text-decoration:none;">What Are Foreclosures?</a></h3>
-        <p>Foreclosure is one of the most stressful events a homeowner can face. This guide walks through exactly what happens — from missed payments to auction — in plain English.</p>
-        <p class="card-meta">📅 July 2025 &nbsp;·&nbsp; 6 min read</p>
-        <a href="/blog/what-are-foreclosures.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-    </article>
+```
+<article class="blog-card">
+  <div class="card-img"><span class="card-img-icon">🏠</span></div>
+  <div class="card-body">
+    <p class="card-tag">Foreclosure Basics</p>
+    <h3><a href="/blog/what-are-foreclosures.html" style="color:inherit;text-decoration:none;">What Are Foreclosures?</a></h3>
+    <p>Foreclosure is one of the most stressful events a homeowner can face. This guide walks through exactly what happens — from missed payments to auction — in plain English.</p>
+    <p class="card-meta">📅 July 2025 &nbsp;·&nbsp; 6 min read</p>
+    <a href="/blog/what-are-foreclosures.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
 
-    <article class="blog-card">
-      <div class="card-img"><span class="card-img-icon">💵</span></div>
-      <div class="card-body">
-        <p class="card-tag">Surplus Funds</p>
-        <h3><a href="/blog/what-happens-to-extra-money-after-foreclosure.html" style="color:inherit;text-decoration:none;">What Happens to Extra Money After Foreclosure?</a></h3>
-        <p>Most people don't know that extra money from a foreclosure sale doesn't go to the bank. Find out where it goes, who can claim it, and what deadlines you must not miss.</p>
-        <p class="card-meta">📅 August 2025 &nbsp;·&nbsp; 5 min read</p>
-        <a href="/blog/what-happens-to-extra-money-after-foreclosure.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-    </article>
+<article class="blog-card">
+  <div class="card-img"><span class="card-img-icon">💵</span></div>
+  <div class="card-body">
+    <p class="card-tag">Surplus Funds</p>
+    <h3><a href="/blog/what-happens-to-extra-money-after-foreclosure.html" style="color:inherit;text-decoration:none;">What Happens to Extra Money After Foreclosure?</a></h3>
+    <p>Most people don't know that extra money from a foreclosure sale doesn't go to the bank. Find out where it goes, who can claim it, and what deadlines you must not miss.</p>
+    <p class="card-meta">📅 August 2025 &nbsp;·&nbsp; 5 min read</p>
+    <a href="/blog/what-happens-to-extra-money-after-foreclosure.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
 
-    <article class="blog-card">
-      <div class="card-img"><span class="card-img-icon">📋</span></div>
-      <div class="card-body">
-        <p class="card-tag">How To Claim</p>
-        <h3><a href="/blog/how-to-claim-surplus-funds.html" style="color:inherit;text-decoration:none;">How to Claim Surplus Funds</a></h3>
-        <p>Not sure where to start? This guide breaks down the surplus fund claim process in plain language so you know exactly what to expect at every stage.</p>
-        <p class="card-meta">📅 September 2025 &nbsp;·&nbsp; 4 min read</p>
-        <a href="/blog/how-to-claim-surplus-funds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-    </article>
+<article class="blog-card">
+  <div class="card-img"><span class="card-img-icon">📋</span></div>
+  <div class="card-body">
+    <p class="card-tag">How To Claim</p>
+    <h3><a href="/blog/how-to-claim-surplus-funds.html" style="color:inherit;text-decoration:none;">How to Claim Surplus Funds</a></h3>
+    <p>Not sure where to start? This guide breaks down the surplus fund claim process in plain language so you know exactly what to expect at every stage.</p>
+    <p class="card-meta">📅 September 2025 &nbsp;·&nbsp; 4 min read</p>
+    <a href="/blog/how-to-claim-surplus-funds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
 
-    <article class="blog-card">
-      <div class="card-img"><span class="card-img-icon">💰</span></div>
-      <div class="card-body">
-        <p class="card-tag">Unclaimed Money</p>
-        <h3><a href="/blog/unclaimed-foreclosure-money.html" style="color:inherit;text-decoration:none;">Unclaimed Foreclosure Money</a></h3>
-        <p>Billions in foreclosure proceeds go unclaimed every year. Learn why this happens, who is most affected, and how to find out if money is sitting in a courthouse waiting for you.</p>
-        <p class="card-meta">📅 October 2025 &nbsp;·&nbsp; 5 min read</p>
-        <a href="/blog/unclaimed-foreclosure-money.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-    </article>
+<article class="blog-card">
+  <div class="card-img"><span class="card-img-icon">💰</span></div>
+  <div class="card-body">
+    <p class="card-tag">Unclaimed Money</p>
+    <h3><a href="/blog/unclaimed-foreclosure-money.html" style="color:inherit;text-decoration:none;">Unclaimed Foreclosure Money</a></h3>
+    <p>Billions in foreclosure proceeds go unclaimed every year. Learn why this happens, who is most affected, and how to find out if money is sitting in a courthouse waiting for you.</p>
+    <p class="card-meta">📅 October 2025 &nbsp;·&nbsp; 5 min read</p>
+    <a href="/blog/unclaimed-foreclosure-money.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
+```
 
   </div>
 </section>
 
 <!-- BLOG POSTS — ARIZONA -->
+
 <section class="blog-section" style="padding-top:0;">
   <p class="section-label">Arizona Resources</p>
   <h2>Arizona Foreclosure &amp; Surplus Fund Guides</h2>
   <div class="blog-grid">
 
-    <article class="blog-card">
-      <div class="card-img"><span class="card-img-icon">🌵</span></div>
-      <div class="card-body">
-        <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/how-to-claim-foreclosure-surplus-funds.html" style="color:inherit;text-decoration:none;">How to Claim Foreclosure Surplus Funds</a></h3>
-        <p>A step-by-step walkthrough of filing a surplus funds claim under Arizona law — from verifying eligibility to receiving your check from the court.</p>
-        <p class="card-meta">📅 November 2025 &nbsp;·&nbsp; 5 min read</p>
-        <a href="/blog/how-to-claim-foreclosure-surplus-funds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-    </article>
+```
+<article class="blog-card">
+  <div class="card-img"><span class="card-img-icon">🌵</span></div>
+  <div class="card-body">
+    <p class="card-tag">Arizona</p>
+    <h3><a href="/blog/how-to-claim-foreclosure-surplus-funds.html" style="color:inherit;text-decoration:none;">How to Claim Foreclosure Surplus Funds</a></h3>
+    <p>A step-by-step walkthrough of filing a surplus funds claim under Arizona law — from verifying eligibility to receiving your check from the court.</p>
+    <p class="card-meta">📅 November 2025 &nbsp;·&nbsp; 5 min read</p>
+    <a href="/blog/how-to-claim-foreclosure-surplus-funds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
 
-    <article class="blog-card">
-      <div class="card-img"><span class="card-img-icon">🏜️</span></div>
-      <div class="card-body">
-        <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/arizona-foreclosure-guide.html" style="color:inherit;text-decoration:none;">Arizona Foreclosure Guide</a></h3>
-        <p>A complete guide to the Arizona foreclosure process — from the first missed payment through the trustee sale — written in plain language for homeowners.</p>
-        <p class="card-meta">📅 December 2025 &nbsp;·&nbsp; 6 min read</p>
-        <a href="/blog/arizona-foreclosure-guide.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-    </article>
+<article class="blog-card">
+  <div class="card-img"><span class="card-img-icon">🏜️</span></div>
+  <div class="card-body">
+    <p class="card-tag">Arizona</p>
+    <h3><a href="/blog/arizona-foreclosure-guide.html" style="color:inherit;text-decoration:none;">Arizona Foreclosure Guide</a></h3>
+    <p>A complete guide to the Arizona foreclosure process — from the first missed payment through the trustee sale — written in plain language for homeowners.</p>
+    <p class="card-meta">📅 December 2025 &nbsp;·&nbsp; 6 min read</p>
+    <a href="/blog/arizona-foreclosure-guide.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
 
-    <article class="blog-card">
-      <div class="card-img"><span class="card-img-icon">🏦</span></div>
-      <div class="card-body">
-        <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/arizona-foreclosure-surplus-funds.html" style="color:inherit;text-decoration:none;">Arizona Foreclosure Surplus Funds</a></h3>
-        <p>Arizona homeowners may be owed money after a foreclosure sale. Learn how surplus funds work under Arizona law and how to find out if money is being held for you.</p>
-        <p class="card-meta">📅 January 2026 &nbsp;·&nbsp; 5 min read</p>
-        <a href="/blog/arizona-foreclosure-surplus-funds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-    </article>
+<article class="blog-card">
+  <div class="card-img"><span class="card-img-icon">🏦</span></div>
+  <div class="card-body">
+    <p class="card-tag">Arizona</p>
+    <h3><a href="/blog/arizona-foreclosure-surplus-funds.html" style="color:inherit;text-decoration:none;">Arizona Foreclosure Surplus Funds</a></h3>
+    <p>Arizona homeowners may be owed money after a foreclosure sale. Learn how surplus funds work under Arizona law and how to find out if money is being held for you.</p>
+    <p class="card-meta">📅 January 2026 &nbsp;·&nbsp; 5 min read</p>
+    <a href="/blog/arizona-foreclosure-surplus-funds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
 
-    <article class="blog-card">
-      <div class="card-img"><span class="card-img-icon">⚖️</span></div>
-      <div class="card-body">
-        <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/surplus-funds-foreclosure-arizona.html" style="color:inherit;text-decoration:none;">Surplus Funds Foreclosure Arizona</a></h3>
-        <p>Arizona's trustee sale process often generates surplus proceeds. This article explains state-specific rules, deadlines, and how to protect your right to claim.</p>
-        <p class="card-meta">📅 February 2026 &nbsp;·&nbsp; 5 min read</p>
-        <a href="/blog/surplus-funds-foreclosure-arizona.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-    </article>
+<article class="blog-card">
+  <div class="card-img"><span class="card-img-icon">⚖️</span></div>
+  <div class="card-body">
+    <p class="card-tag">Arizona</p>
+    <h3><a href="/blog/surplus-funds-foreclosure-arizona.html" style="color:inherit;text-decoration:none;">Surplus Funds Foreclosure Arizona</a></h3>
+    <p>Arizona's trustee sale process often generates surplus proceeds. This article explains state-specific rules, deadlines, and how to protect your right to claim.</p>
+    <p class="card-meta">📅 February 2026 &nbsp;·&nbsp; 5 min read</p>
+    <a href="/blog/surplus-funds-foreclosure-arizona.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
 
-    <article class="blog-card">
-      <div class="card-img"><span class="card-img-icon">🗺️</span></div>
-      <div class="card-body">
-        <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/maricopa-county-excess-proceeds.html" style="color:inherit;text-decoration:none;">Maricopa County Excess Proceeds</a></h3>
-        <p>Maricopa County is one of the highest-volume foreclosure counties in the U.S. Find out how excess proceeds work there and who is entitled to claim them.</p>
-        <p class="card-meta">📅 February 2026 &nbsp;·&nbsp; 5 min read</p>
-        <a href="/blog/maricopa-county-excess-proceeds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-    </article>
+<article class="blog-card">
+  <div class="card-img"><span class="card-img-icon">🗺️</span></div>
+  <div class="card-body">
+    <p class="card-tag">Arizona</p>
+    <h3><a href="/blog/maricopa-county-excess-proceeds.html" style="color:inherit;text-decoration:none;">Maricopa County Excess Proceeds</a></h3>
+    <p>Maricopa County is one of the highest-volume foreclosure counties in the U.S. Find out how excess proceeds work there and who is entitled to claim them.</p>
+    <p class="card-meta">📅 February 2026 &nbsp;·&nbsp; 5 min read</p>
+    <a href="/blog/maricopa-county-excess-proceeds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
 
-    <article class="blog-card">
-      <div class="card-img"><span class="card-img-icon">📄</span></div>
-      <div class="card-body">
-        <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/trustee-sale-excess-proceeds-explained.html" style="color:inherit;text-decoration:none;">Trustee Sale Excess Proceeds Explained</a></h3>
-        <p>What happens to the extra money after an Arizona trustee sale? Who gets paid first, who gets the surplus, and how does the claim process work?</p>
-        <p class="card-meta">📅 March 2026 &nbsp;·&nbsp; 5 min read</p>
-        <a href="/blog/trustee-sale-excess-proceeds-explained.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-    </article>
+<article class="blog-card">
+  <div class="card-img"><span class="card-img-icon">📄</span></div>
+  <div class="card-body">
+    <p class="card-tag">Arizona</p>
+    <h3><a href="/blog/trustee-sale-excess-proceeds-explained.html" style="color:inherit;text-decoration:none;">Trustee Sale Excess Proceeds Explained</a></h3>
+    <p>What happens to the extra money after an Arizona trustee sale? Who gets paid first, who gets the surplus, and how does the claim process work?</p>
+    <p class="card-meta">📅 March 2026 &nbsp;·&nbsp; 5 min read</p>
+    <a href="/blog/trustee-sale-excess-proceeds-explained.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
+```
 
   </div>
 </section>
-<!-- Texas Resources -->
-<div style="max-width:1100px;margin:60px auto 0;padding:0 28px;">
-  <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:8px;color:#1B2A40;">Texas Resources</h2>
-  <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#7a8fa6;font-weight:400;margin-bottom:32px;">Texas Foreclosure & Surplus Fund Guides</h3>
-</div>
-<div style="max-width:1100px;margin:0 auto;padding:0 28px;">
-  <a href="texas-foreclosure-surplus-funds.html" style="text-decoration:none;display:block;max-width:380px;">
-    <div style="background:#1B2A40;border:1px solid rgba(201,168,76,.25);border-radius:12px;padding:32px 28px;transition:all .3s;box-shadow:0 4px 16px rgba(0,0,0,.1);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.2)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'">
-      <div style="font-size:2rem;margin-bottom:12px;">⭐</div>
-      <div style="font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;font-weight:700;">Texas · $10.5B Unclaimed</div>
-      <h4 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#F0EBE1;margin-bottom:10px;line-height:1.3;">Texas Foreclosure Surplus Funds: The 2-Year Deadline That Could Cost You Everything</h4>
-      <p style="color:#b8c8d4;font-size:.88rem;line-height:1.75;margin-bottom:16px;">Texas Tax Code §34.04 gives you exactly 2 years to claim foreclosure surplus. We break down how it works across all 254 counties — Dallas, Denton, Harris, Bexar and beyond.</p>
-      <span style="color:#C9A84C;font-size:.8rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;">📅 March 2026 · 7 min read →</span>
-    </div>
-  </a>
-</div>
+
+<!-- BLOG POSTS — TEXAS -->
+
+<section class="texas-section">
+  <p class="section-label">Texas Resources</p>
+  <h2>Texas Foreclosure &amp; Surplus Fund Guides</h2>
+  <div class="blog-grid">
+
+```
+<article class="blog-card">
+  <div class="card-img" style="background: linear-gradient(135deg, #1B2A40 0%, #071018 100%);">
+    <span class="card-img-icon">⭐</span>
+  </div>
+  <div class="card-body">
+    <p class="card-tag">Texas · $10.5B Unclaimed</p>
+    <h3><a href="/blog/texas-foreclosure-surplus-funds.html" style="color:inherit;text-decoration:none;">Texas Foreclosure Surplus Funds: The 2-Year Deadline That Could Cost You Everything</a></h3>
+    <p>Texas Tax Code §34.04 gives you exactly 2 years to claim foreclosure surplus. We break down how it works across all 254 counties — Dallas, Denton, Harris, Bexar and beyond.</p>
+    <p class="card-meta">📅 March 2026 &nbsp;·&nbsp; 7 min read</p>
+    <a href="/blog/texas-foreclosure-surplus-funds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</article>
+```
+
+  </div>
+</section>
+
 <!-- CTA BAND -->
+
 <section class="cta-band">
   <h2>Could Money Be Waiting for You?</h2>
   <p>Find out in minutes — call us at no cost and no obligation.</p>
@@ -456,6 +487,7 @@
 </section>
 
 <!-- FOOTER -->
+
 <footer>
   <div class="footer-links">
     <a href="https://www.rightfulreturnsrecovery.com/">Home</a>
@@ -571,5 +603,6 @@ document.addEventListener('click', e => {
   }
 });
 </script>
+
 </body>
 </html>
