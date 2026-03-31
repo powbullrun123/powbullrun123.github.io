@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification=Z3SxTeTj9n0bWGWlPF2_D8PPUyoTwHwDRl9lzXgEQlY>"
+  <meta name="google-site-verification" content="Z3SxTeTj9n0bWGWlPF2_D8PPUyoTwHwDRl9lzXgEQlY">
   <link rel="icon" type="image/png" href="logo.png">
   <title>Surplus Funds Recovery | Foreclosure Overage Experts | Rightful Returns Recovery</title>
-  
+
   <meta name="description" content="Rightful Returns Recovery helps homeowners claim surplus funds from foreclosure sales and tax auctions in Texas and Arizona. Contact our Dallas office at 214-838-1338.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Rightful Returns Recovery">
   <link rel="canonical" href="https://www.rightfulreturnsrecovery.com/">
-  
+
   <meta property="og:title" content="Surplus Funds Recovery | Rightful Returns Recovery">
   <meta property="og:description" content="Direct Dallas Line: 214-838-1338. We help homeowners recover foreclosure surplus funds and tax sale overages nationwide.">
   <meta property="og:url" content="https://www.rightfulreturnsrecovery.com/">
@@ -25,17 +25,20 @@
     "name": "Rightful Returns Recovery",
     "url": "https://www.rightfulreturnsrecovery.com",
     "telephone": "+1-214-838-1338",
+    "description": "Professional firm specializing in the recovery of surplus tax sale funds in Texas and Arizona.",
+    "logo": "https://www.rightfulreturnsrecovery.com/logo.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "5301 Alpha Rd., Suite 80",
       "addressLocality": "Dallas",
       "addressRegion": "TX",
-      "postalCode": "75240"
+      "postalCode": "75240",
+      "addressCountry": "US"
     },
     "department": [
       {
         "@type": "LocalBusiness",
-        "name": "Rightful Returns Recovery - Dallas HQ",
+        "name": "Rightful Returns Recovery - Dallas Headquarters",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "5301 Alpha Rd., Suite 80",
@@ -57,7 +60,14 @@
         }
       }
     ],
-    "areaServed": ["Texas", "Arizona", "Georgia"]
+    "areaServed": ["Dallas County", "Denton County", "Maricopa County", "Texas", "Arizona"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-214-838-1338",
+      "contactType": "customer service",
+      "areaServed": ["US-TX", "US-AZ"],
+      "availableLanguage": "en"
+    }
   }
   </script>
 
@@ -73,7 +83,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     var btn = document.getElementById('menuBtn');
     var menu = document.getElementById('navMenu');
-    
+
     if (btn && menu) {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -81,7 +91,6 @@
         var isOpen = menu.classList.toggle('open');
         btn.classList.toggle('open', isOpen);
       });
-
       document.addEventListener('click', function(e) {
         if (!menu.contains(e.target) && !btn.contains(e.target)) {
           menu.classList.remove('open');
@@ -101,122 +110,120 @@
   </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  
+
   <style>
-    /* CSS Root & Base */
+    /* ── RESET & ROOT ── */
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{--gold:#C9A84C;--dark:#0D1B2A;--navy:#1B2A40;--light:#F5F0E8;--white:#FFF;--accent:#E8D5A3;--ts:#4a5568;--pearl:#F0EBE1;--page-bg:#F4F1EB}
     html{scroll-behavior:smooth}
     body{font-family:'Lato',sans-serif;background:var(--dark);color:var(--light);overflow-x:hidden;font-size:18px}
-    
-    /* Ensure the Menu is hidden until toggled */
-    .nav-dropdown { display: none; position: absolute; top: 70px; right: 0; background: var(--dark); border: 1px solid var(--gold); min-width: 200px; z-index: 1001; }
-    .nav-dropdown.open { display: block !important; }
-    
-    /* Rest of your existing styles... */
+    .page-body{background:#F4F1EB}
+
+    /* ── STICKY HEADER ── */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,27,42,0.97);border-bottom:2px solid rgba(201,168,76,.3);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:box-shadow .3s}
+    .site-header.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.5)}
+    .header-main{max-width:1200px;margin:0 auto;padding:0 28px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative}
+    .header-left{display:flex;align-items:center;gap:16px}
+    .header-logo{display:flex;align-items:center}
+    .header-logo a{display:flex;align-items:center;line-height:0}
+    .header-logo img{height:52px;width:auto;display:block}
+    .header-phone{font-size:1rem;font-weight:700;color:var(--gold);letter-spacing:.05em;text-decoration:none;white-space:nowrap;display:block;transition:color .2s}
+    .header-phone:hover{color:var(--accent)}
+
+    /* ── MENU BUTTON ── */
+    .menu-btn{display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#d4af37,#FFD700,#d4af37);color:#0D1B2A;border:none;border-radius:8px;cursor:pointer;padding:12px 22px;font-family:'Playfair Display',serif;font-size:.9rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(201,168,76,.35);flex-shrink:0}
+    .menu-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.5)}
+    .menu-btn.open{background:linear-gradient(135deg,#b8960c,#d4af37,#b8960c)}
+    .menu-btn .bar-wrap{display:flex;flex-direction:column;gap:4px;width:18px;pointer-events:none}
+    .menu-btn .bar{display:block;width:100%;height:2px;background:#0D1B2A;border-radius:2px;transition:transform .3s,opacity .3s;transform-origin:center;pointer-events:none}
+    .menu-btn.open .bar:nth-child(1){transform:translateY(6px) rotate(45deg)}
+    .menu-btn.open .bar:nth-child(2){opacity:0}
+    .menu-btn.open .bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+    /* ── NAV DROPDOWN ── */
+    .nav-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:6px;background:rgba(16,30,46,0.98);border:1px solid rgba(201,168,76,.3);border-top:3px solid var(--gold);border-radius:10px;min-width:280px;box-shadow:0 16px 48px rgba(0,0,0,.6);overflow:hidden;animation:dropIn .2s ease;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:1001}
+    .nav-dropdown.open{display:block}
+    @keyframes dropIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+    .nav-section-label{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:14px 22px 6px;font-weight:700;opacity:.7}
+    .nav-dropdown a{display:flex;align-items:center;gap:12px;padding:14px 22px;color:var(--light);text-decoration:none;font-size:.95rem;font-weight:600;border-bottom:1px solid rgba(255,255,255,.06);transition:background .15s,color .15s,padding-left .2s}
+    .nav-dropdown a:last-child{border-bottom:none}
+    .nav-dropdown a:hover{background:rgba(201,168,76,.1);color:var(--gold);padding-left:28px}
+    .nav-dropdown a.nav-cta{background:var(--gold);color:var(--dark);font-weight:700;justify-content:center;border-bottom:none;margin:8px 12px;border-radius:6px;padding:14px 22px}
+    .nav-dropdown a.nav-cta:hover{background:var(--accent);padding-left:22px}
+    .nav-divider{height:1px;background:rgba(201,168,76,.15);margin:4px 16px}
+
+    /* ── MOBILE ── */
+    @media(max-width:480px){
+      .header-logo img{height:38px}
+      .header-phone{font-size:.82rem}
+      .nav-dropdown{right:16px;left:16px;min-width:auto}
+      .menu-btn{padding:10px 16px;font-size:.8rem;gap:8px}
+      .menu-btn .bar-wrap{width:15px}
+    }
+
+    /* ── UTILITIES ── */
+    .gold-line{width:80px;height:3px;background:var(--gold);margin:0 auto 24px}
+    .section{padding:80px 20px;max-width:1100px;margin:0 auto}
+    .section-label{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:16px}
+    .btn-primary{background:var(--gold);color:var(--dark);padding:18px 40px;font-family:'Lato',sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:all .3s;display:inline-block}
+    .btn-primary:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.4)}
+    .btn-secondary{background:0 0;color:var(--gold);padding:18px 40px;font-family:'Lato',sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:2px solid var(--gold);cursor:pointer;text-decoration:none;transition:all .3s;display:inline-block}
+    .btn-secondary:hover{background:var(--gold);color:var(--dark);transform:translateY(-2px)}
+
+    /* ── HERO ── */
+    .hero{min-height:100vh;background:linear-gradient(135deg,#0D1B2A 0%,#1B2A40 50%,#0D1B2A 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 20px 40px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at center,rgba(201,168,76,.08) 0%,transparent 60%);animation:pulse 6s ease-in-out infinite}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.1);opacity:1}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .hero-logo{margin-bottom:44px;opacity:0;animation:fadeUp .8s ease forwards .2s;position:relative;z-index:2;display:block;width:100%;padding-bottom:20px}
+    .hero-logo img{width:clamp(320px,70vw,700px);height:auto;display:block;margin:0 auto;filter:drop-shadow(0 0 24px rgba(201,168,76,.45)) drop-shadow(0 0 60px rgba(201,168,76,.2)) drop-shadow(0 12px 40px rgba(0,0,0,.7));animation:logoGlow 3s ease-in-out infinite;transition:transform .3s}
+    .hero-logo img:hover{transform:scale(1.03)}
+    @keyframes logoGlow{0%,100%{filter:drop-shadow(0 0 20px rgba(201,168,76,.4)) drop-shadow(0 12px 40px rgba(0,0,0,.7))}50%{filter:drop-shadow(0 0 40px rgba(201,168,76,.75)) drop-shadow(0 0 80px rgba(201,168,76,.3)) drop-shadow(0 12px 40px rgba(0,0,0,.7))}}
+    .hero-logo::after{content:'';position:absolute;bottom:0;left:10%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--accent),var(--gold),transparent);border-radius:2px;animation:sweepUL 3s ease-in-out infinite}
+    @keyframes sweepUL{0%{width:20%;left:40%;opacity:.3}50%{width:80%;left:10%;opacity:1}100%{width:20%;left:40%;opacity:.3}}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;line-height:1.15;margin-bottom:12px;opacity:0;animation:fadeUp .8s ease forwards .4s;position:relative;z-index:2}
+    .hero h1 span{color:var(--gold)}
+    .hero .hero-sub{font-size:clamp(1.05rem,2.5vw,1.4rem);font-weight:300;max-width:720px;line-height:1.8;color:var(--accent);margin-bottom:16px;opacity:0;animation:fadeUp .8s ease forwards .6s;position:relative;z-index:2}
+    .hero .hero-pos{font-size:clamp(1rem,2.2vw,1.2rem);color:var(--light);max-width:660px;line-height:1.8;margin-bottom:36px;opacity:0;animation:fadeUp .8s ease forwards .7s;position:relative;z-index:2}
   </style>
 </head>
 <body>
 
-</script>
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--gold:#C9A84C;--dark:#0D1B2A;--navy:#1B2A40;--light:#F5F0E8;--white:#FFF;--accent:#E8D5A3;--ts:#4a5568;--pearl:#F0EBE1;--page-bg:#F4F1EB}
-html{scroll-behavior:smooth}
-body{font-family:'Lato',sans-serif;background:var(--dark);color:var(--light);overflow-x:hidden;font-size:18px}
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <div class="header-main">
+    <div class="header-left">
+      <div class="header-logo">
+        <a href="/"><img src="logo.png" alt="Rightful Returns Recovery"></a>
+      </div>
+      <a href="tel:+12148381338" class="header-phone">&#9742; 1 (214) 838-1338</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu">
+      <div class="bar-wrap">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      MENU
+    </button>
+    <nav class="nav-dropdown" id="navMenu" aria-label="Site navigation">
+      <div class="nav-section-label">Navigate</div>
+      <a href="how-it-works.html">&#9881; How It Works</a>
+      <a href="about-us.html">&#128100; About Us</a>
+      <a href="states-we-serve.html">&#127979; States We Serve</a>
+      <a href="faq.html">&#10067; FAQ</a>
+      <a href="blog/">&#128240; Blog</a>
+      <div class="nav-divider"></div>
+      <a href="our-mission.html">&#127775; Our Mission</a>
+      <a href="giving-back.html">&#10084; Giving Back</a>
+      <a href="sms-terms.html">&#128241; SMS Terms</a>
+      <div class="nav-divider"></div>
+      <a href="free-case-evaluation.html" class="nav-cta">&#128269; Free Case Evaluation</a>
+    </nav>
+  </div>
+</header>
 
-/* ── WHITE PAGE BACKGROUND (after hero) ── */
-.page-body{background:#F4F1EB}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "Rightful Returns Recovery",
-  "url": "https://www.rightfulreturnsrecovery.com",
-  "telephone": "+1-214-838-1338",
-  "description": "Professional firm specializing in the recovery of surplus tax sale funds in Texas and Arizona.",
-  "logo": "https://www.rightfulreturnsrecovery.com/logo.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "5301 Alpha Rd., Suite 80",
-    "addressLocality": "Dallas",
-    "addressRegion": "TX",
-    "postalCode": "75240",
-    "addressCountry": "US"
-  },
-  "department": [
-    {
-      "@type": "LocalBusiness",
-      "name": "Rightful Returns Recovery - Dallas Headquarters",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "5301 Alpha Rd., Suite 80",
-        "addressLocality": "Dallas",
-        "addressRegion": "TX",
-        "postalCode": "75240"
-      },
-      "telephone": "+1-214-838-1338"
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "Rightful Returns Recovery - Arizona Branch",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "6846 E. Laguna Azul Ave.",
-        "addressLocality": "Mesa",
-        "addressRegion": "AZ",
-        "postalCode": "85209"
-      }
-    }
-  ],
-  "areaServed": ["Dallas County", "Denton County", "Maricopa County", "Texas", "Arizona"],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+1-214-838-1338",
-    "contactType": "customer service",
-    "areaServed": ["US-TX", "US-AZ"],
-    "availableLanguage": "en"
-  }
-}
-</script>
-
-/* ── STICKY HEADER ── */
-.site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,27,42,0.97);border-bottom:2px solid rgba(201,168,76,.3);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:box-shadow .3s}
-.site-header.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.5)}
-.header-main{max-width:1200px;margin:0 auto;padding:0 28px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative}
-.header-left{display:flex;align-items:center;gap:16px}
-.header-logo{display:flex;align-items:center}
-.header-logo a{display:flex;align-items:center;line-height:0}
-.header-logo img{height:52px;width:auto;display:block}
-.header-phone{font-size:1rem;font-weight:700;color:var(--gold);letter-spacing:.05em;text-decoration:none;white-space:nowrap;display:block;transition:color .2s}
-.header-phone:hover{color:var(--accent)}
-.menu-btn{display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#d4af37,#FFD700,#d4af37);color:#0D1B2A;border:none;border-radius:8px;cursor:pointer;padding:12px 22px;font-family:'Playfair Display',serif;font-size:.9rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(201,168,76,.35);flex-shrink:0}
-.menu-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.5)}
-.menu-btn.open{background:linear-gradient(135deg,#b8960c,#d4af37,#b8960c)}
-.menu-btn .bar-wrap{display:flex;flex-direction:column;gap:4px;width:18px;pointer-events:none}
-.menu-btn .bar{display:block;width:100%;height:2px;background:#0D1B2A;border-radius:2px;transition:transform .3s,opacity .3s;transform-origin:center;pointer-events:none}
-.menu-btn.open .bar:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.menu-btn.open .bar:nth-child(2){opacity:0}
-.menu-btn.open .bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.nav-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:6px;background:rgba(16,30,46,0.98);border:1px solid rgba(201,168,76,.3);border-top:3px solid var(--gold);border-radius:10px;min-width:280px;box-shadow:0 16px 48px rgba(0,0,0,.6);overflow:hidden;animation:dropIn .2s ease;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.nav-dropdown.open{display:block}
-@keyframes dropIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-.nav-section-label{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:14px 22px 6px;font-weight:700;opacity:.7}
-.nav-dropdown a{display:flex;align-items:center;gap:12px;padding:14px 22px;color:var(--light);text-decoration:none;font-size:.95rem;font-weight:600;border-bottom:1px solid rgba(255,255,255,.06);transition:background .15s,color .15s,padding-left .2s}
-.nav-dropdown a:last-child{border-bottom:none}
-.nav-dropdown a:hover{background:rgba(201,168,76,.1);color:var(--gold);padding-left:28px}
-.nav-dropdown a.nav-cta{background:var(--gold);color:var(--dark);font-weight:700;justify-content:center;border-bottom:none;margin:8px 12px;border-radius:6px;padding:14px 22px}
-.nav-dropdown a.nav-cta:hover{background:var(--accent);padding-left:22px}
-.nav-divider{height:1px;background:rgba(201,168,76,.15);margin:4px 16px}
-@media(max-width:480px){.header-logo img{height:38px}.header-phone{font-size:.82rem}.nav-dropdown{right:16px;left:16px;min-width:auto}.menu-btn{padding:10px 16px;font-size:.8rem;gap:8px}.menu-btn .bar-wrap{width:15px}}
-
-.gold-line{width:80px;height:3px;background:var(--gold);margin:0 auto 24px}
-.section{padding:80px 20px;max-width:1100px;margin:0 auto}
-.section-label{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:16px}
-.btn-primary{background:var(--gold);color:var(--dark);padding:18px 40px;font-family:‘Lato’,sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:all .3s;display:inline-block}
-.btn-primary:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.4)}
-.btn-secondary{background:0 0;color:var(--gold);padding:18px 40px;font-family:‘Lato’,sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:2px solid var(--gold);cursor:pointer;text-decoration:none;transition:all .3s;display:inline-block}
-.btn-secondary:hover{background:var(--gold);color:var(--dark);transform:translateY(-2px)}
+<!-- ── HERO ── -->
 
 /* ── HERO ── */
 .hero{min-height:100vh;background:linear-gradient(135deg,#0D1B2A 0%,#1B2A40 50%,#0D1B2A 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 20px 40px;position:relative;overflow:hidden}
