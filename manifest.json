@@ -1,0 +1,26 @@
+{
+  "name": "Rightful Returns Recovery",
+  "short_name": "RRR",
+  "description": "Finding Hidden Assets. Recovering What's Rightfully Yours.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#071018",
+  "theme_color": "#C9A84C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/rrr-logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/rrr-logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "business"],
+  "lang": "en-US"
+}
