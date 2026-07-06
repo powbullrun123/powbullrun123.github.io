@@ -9,7 +9,7 @@
   ════════════════════════════════════════════  -->
   <url>
     <loc>https://www.rightfulreturnsrecovery.com/</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -59,7 +59,17 @@
   </url>
   <url>
     <loc>https://www.rightfulreturnsrecovery.com/sms-terms.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!--  ═══════════════════════════════════════════
+         LEGAL / PRIVACY
+  ════════════════════════════════════════════  -->
+  <url>
+    <loc>https://www.rightfulreturnsrecovery.com/privacy-policy.html</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
