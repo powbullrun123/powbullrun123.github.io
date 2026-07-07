@@ -302,7 +302,24 @@ body{font-family:'Lato',sans-serif;background:var(--dark);color:var(--light);ove
 .mm-trust-item{display:flex;flex-direction:column;align-items:center;gap:.2rem;color:rgba(255,255,255,.5);font-size:.78rem;text-align:center}
 .mm-trust-item .icon{font-size:1.4rem}
 .mm-trust-item strong{color:rgba(255,255,255,.85);font-size:.82rem;display:block}
+#mm-overlay{display:none;position:fixed;inset:0;z-index:99999;background:linear-gradient(160deg,#0a0f1e 0%,#001233 45%,#0d1a0d 100%);overflow:hidden;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+#mm-overlay.show{display:flex}
+.ty-float{position:absolute;font-size:4rem;opacity:.06;pointer-events:none;animation:tyFloat linear infinite;z-index:1}
+@keyframes tyFloat{0%{transform:translateY(110vh);opacity:0}10%{opacity:.06}90%{opacity:.06}100%{transform:translateY(-10vh);opacity:0}}
+.ty-content{position:relative;z-index:2;max-width:640px;animation:tyUp .7s cubic-bezier(.22,1,.36,1) forwards}
 @keyframes tyUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.ty-icon{font-size:5rem;line-height:1;margin-bottom:1rem;animation:tyBounce .8s cubic-bezier(.175,.885,.32,1.275) .3s both}
+@keyframes tyBounce{0%{transform:scale(0) rotate(-15deg);opacity:0}60%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1);opacity:1}}
+.ty-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,3.5rem);font-weight:900;color:#FFD700;margin-bottom:.6rem}
+.ty-name{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3vw,1.6rem);color:#fff;font-weight:700;margin-bottom:1rem}
+.ty-message{font-size:clamp(.95rem,2.5vw,1.1rem);color:rgba(255,255,255,.82);line-height:1.75;font-weight:300;margin-bottom:1.5rem}
+.ty-message strong{color:#FFD700}
+.ty-bar-wrap{margin-bottom:1.5rem}
+.ty-bar-label{font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem}
+.ty-bar-track{width:100%;max-width:400px;margin:0 auto;height:6px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden}
+.ty-bar-fill{height:100%;background:linear-gradient(90deg,#FFD700,#FFA500);border-radius:99px;width:100%}
+.ty-go-btn{display:inline-block;background:0 0;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.6);font-size:.9rem;padding:.6rem 1.8rem;border-radius:99px;cursor:pointer;font-family:'Playfair Display',serif;transition:all .2s}
+.ty-go-btn:hover{border-color:#FFD700;color:#FFD700}
 
 /* ── FOOTER ── */
 footer{background:#14263a;padding:50px 20px 0}
@@ -384,7 +401,6 @@ main{display:contents}
     <a href="texas.html">&#11088; Texas</a>
     <a href="georgia.html">&#127825; Georgia</a>
     <a href="sms-terms.html">&#128241; SMS Terms</a>
-    <a href="privacy-policy.html">&#128274; Privacy Policy</a>
     <a href="https://jackaiattorney.com/" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;">&#11088; Meet Our Attorney</a>
     <div class="nav-divider"></div>
     <a href="#signup" class="nav-cta">&#9989; Free Case Evaluation</a>
@@ -405,6 +421,9 @@ main{display:contents}
   <p class="hero-pos">The bureaucratic process to recover these funds is complex — but our experts have perfected it. We handle <strong style="color:var(--gold)">everything</strong>: research, documentation, attorney representation, and full legal advocacy. <strong style="color:var(--gold)">NOW is the time to get what's yours.</strong> Simply fill out the form below at no cost to you.</p>
   <div class="funnel-cta"><a href="#signup">START YOUR FREE CASE EVALUATION</a></div>
   <div style="margin-top:16px;opacity:0;animation:fadeUp .8s ease forwards .9s;position:relative;z-index:2"><a href="tel:18004282022" class="btn-secondary">&#128222; Call Now — It's Free</a></div>
+  <div style="margin-top:22px;opacity:0;animation:fadeUp .8s ease forwards 1.05s;position:relative;z-index:2;">
+    <a href="https://jackaiattorney.com/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--gold);border:1px solid rgba(201,168,76,.5);padding:12px 26px;border-radius:6px;font-family:'Lato',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.3px;background:rgba(201,168,76,.08);transition:all .2s;" onmouseover="this.style.background='rgba(201,168,76,.18)'" onmouseout="this.style.background='rgba(201,168,76,.08)'">&#128172; Have Case Questions? Discuss Them Free With <span style="text-decoration:underline;">Jack AI Attorney</span></a>
+  </div>
   <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.95rem,2vw,1.15rem);color:var(--accent);margin-top:28px;opacity:0;animation:fadeUp .8s ease forwards 1s;position:relative;z-index:2;max-width:620px;line-height:1.7">&#128052; We can't recover your lost cattle — but your lost tax surplus, foreclosure overages, uncashed checks, and forgotten funds? <strong style="color:var(--gold)">Saddle up. That's exactly what we do.</strong></p>
   <div class="naupa-badge">
     <img src="naupa-logo.webp" alt="NAUPA Member — National Association of Unclaimed Property Administrators" width="120" height="45" loading="lazy">
@@ -419,11 +438,16 @@ main{display:contents}
 <div style="background:#FFFFFF;padding:50px 20px;text-align:center;border-top:2px solid rgba(201,168,76,.3);border-bottom:2px solid rgba(201,168,76,.3)">
   <p style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3vw,1.6rem);color:#8B6914;font-weight:900;margin-bottom:8px">Meet Your Recovery Specialist</p>
   <p style="color:#5a6a7a;font-size:.9rem;margin-bottom:28px">Real people. Real expertise. Dedicated to recovering what's rightfully yours.</p>
-  <div style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;max-width:420px;margin:0 auto">
+  <div style="display:flex;gap:28px;justify-content:center;flex-wrap:wrap;max-width:800px;margin:0 auto">
     <div style="flex:1;min-width:280px;max-width:380px">
       <img src="Parker-headshot.webp" alt="Powell Parker, Managing Partner &amp; Founder of Rightful Returns Recovery" width="380" height="380" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;border:2px solid rgba(201,168,76,.3);box-shadow:0 8px 30px rgba(0,0,0,.5)">
       <p style="color:#8B6914;font-size:.95rem;margin-top:12px;font-weight:700">Powell Parker — Managing Partner &amp; Founder</p>
-      <p style="color:#5a6a7a;font-size:.85rem;line-height:1.7;margin-top:6px;max-width:340px;margin-left:auto;margin-right:auto">30+ years of Arizona business experience. Faith-driven. Results-focused. Fighting for families who deserve every dollar. As a father, I understand financial security isn't just about money — it's about legacy. That's why I fight for every client like family.</p>
+      <p style="color:#5a6a7a;font-size:.85rem;line-height:1.7;margin-top:6px;max-width:340px;margin-left:auto;margin-right:auto">30+ years of Arizona business experience. Faith-driven. Results-focused. Fighting for families who deserve every dollar.</p>
+    </div>
+    <div style="flex:1;min-width:280px;max-width:380px">
+      <img src="powell-parker-family-man-recovery.webp" alt="Powell Parker and his daughter on Mount Lemmon, Arizona — family at the heart of Rightful Returns Recovery" width="380" height="380" loading="lazy" style="width:100%;height:auto;border-radius:12px;border:2px solid rgba(201,168,76,.3);box-shadow:0 8px 30px rgba(0,0,0,.5)">
+      <p style="color:#8B6914;font-size:.95rem;margin-top:12px;font-weight:700">Faith. Family. Recovery.</p>
+      <p style="color:#5a6a7a;font-size:.85rem;line-height:1.7;margin-top:6px;max-width:340px;margin-left:auto;margin-right:auto">As a father, I understand financial security isn't just about money — it's about legacy. That's why I fight for every client like family.</p>
     </div>
   </div>
 </div>
@@ -503,6 +527,36 @@ main{display:contents}
   </div>
   <div class="legal-experts-bar"><p>Our Network of Legal Experts Will Help You Recover What's Yours</p></div>
 </div></section>
+<!-- ── REVITALIZING UNDERVALUED ASSETS ── -->
+
+<section style="background:linear-gradient(180deg,#071018 0%,#1B2A40 50%,#071018 100%);padding:80px 20px;border-top:3px solid rgba(201,168,76,.25);border-bottom:3px solid rgba(201,168,76,.25);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label" style="color:var(--gold)">Beyond Recovery</div>
+    <div class="gold-line"></div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);text-align:center;margin-bottom:16px;color:#fff;">Revitalizing <span style="color:var(--gold)">Undervalued Assets</span></h2>
+    <p style="text-align:center;color:#E8D5A3;max-width:720px;margin:0 auto 48px;line-height:1.8;font-size:1.05rem;">Recovery is only the beginning. We specialize in identifying assets that have been overlooked, underperforming, or written off — and transforming them into high-value opportunities.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;">
+      <div style="background:rgba(27,42,64,.85);border:1px solid rgba(201,168,76,.3);border-top:4px solid var(--gold);border-radius:12px;padding:36px 28px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.3);transition:all .3s;">
+        <div style="font-size:2.8rem;margin-bottom:16px;">&#128269;</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#FFD700;margin-bottom:12px;">Identify</h3>
+        <p style="color:#fff;line-height:1.8;font-size:1rem;">We locate dormant assets, underperforming brands, abandoned intellectual property, and overlooked revenue streams that others have written off as losses.</p>
+      </div>
+      <div style="background:rgba(27,42,64,.85);border:1px solid rgba(201,168,76,.3);border-top:4px solid var(--gold);border-radius:12px;padding:36px 28px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.3);transition:all .3s;">
+        <div style="font-size:2.8rem;margin-bottom:16px;">&#128736;</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#FFD700;margin-bottom:12px;">Revitalize</h3>
+        <p style="color:#fff;line-height:1.8;font-size:1rem;">We develop strategic recovery plans that rework undervalued assets into commercially viable properties — restoring their relevance, their audience, and their revenue potential.</p>
+      </div>
+      <div style="background:rgba(27,42,64,.85);border:1px solid rgba(201,168,76,.3);border-top:4px solid var(--gold);border-radius:12px;padding:36px 28px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.3);transition:all .3s;">
+        <div style="font-size:2.8rem;margin-bottom:16px;">&#128200;</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#FFD700;margin-bottom:12px;">Return Value</h3>
+        <p style="color:#fff;line-height:1.8;font-size:1rem;">From forgotten funds to dormant brands, every asset has unrealized value. We don't just recover what was lost — we build it into something worth more than it was before.</p>
+      </div>
+    </div>
+    <div style="margin-top:48px;background:rgba(201,168,76,.08);border:2px solid rgba(201,168,76,.3);border-radius:14px;padding:36px 32px;text-align:center;">
+      <p style="font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2.5vw,1.4rem);color:var(--gold);font-weight:900;line-height:1.6;margin:0;">&#128161; "We don't just find what's been lost. We find what's been <em>undervalued</em> — and we make it valuable again."</p>
+    </div>
+  </div>
+</section>
 <!-- ── STATES ── -->
 
 <section class="states-section" id="states">
@@ -663,13 +717,16 @@ main{display:contents}
   <p style="color:rgba(255,255,255,.7);font-size:1rem;text-align:center;margin-bottom:2rem">Free national search — instant results, no obligation.</p>
   <div class="mm-card">
     <div class="mm-card-title">&#128269; Search for Your Missing Money Now</div>
-    <div class="mm-card-sub">Takes 10 seconds — completely free</div>
-    <form id="mm-form" onsubmit="return mmHandleSubmit(event)">
-      <div style="display:flex;gap:0;max-width:520px;margin:0 auto;flex-wrap:wrap">
-        <input type="text" id="mm-quick" name="quick_name" placeholder="Enter Your Name or Property Address" required style="flex:1;min-width:220px;background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.35);border-radius:6px 0 0 6px;color:#fff;font-family:'Lato',sans-serif;font-size:1rem;padding:16px 18px;outline:0">
-        <button type="submit" class="mm-submit" style="width:auto;flex-shrink:0;border-radius:0 6px 6px 0;margin-top:0;padding:16px 32px">Search Now</button>
+    <div class="mm-card-sub">Takes 60 seconds — completely free</div>
+    <form id="mm-form"><input type="hidden" name="_source" value="Missing Money Search">
+      <div class="mm-grid">
+        <div class="mm-field"><label for="mm-first">First Name</label><input type="text" id="mm-first" name="first_name" placeholder="Jane" required></div>
+        <div class="mm-field"><label for="mm-last">Last Name</label><input type="text" id="mm-last" name="last_name" placeholder="Smith" required></div>
+        <div class="mm-field mm-full"><label for="mm-email">Email</label><input type="email" id="mm-email" name="email" placeholder="jane@example.com" required></div>
+        <div class="mm-field mm-full"><label for="mm-phone">Phone <span class="optional">(optional)</span></label><input type="tel" id="mm-phone" name="phone" placeholder="(480) 555-0100"></div>
       </div>
-      <p class="mm-disclaimer">By submitting you'll be taken to our free case evaluation form to finish your search. <a href="sms-terms.html">SMS Terms</a>.</p>
+      <button type="button" class="mm-submit" onclick="mmHandleSubmit()">Search Now — All 50 States</button>
+      <p class="mm-disclaimer">By submitting you agree to be contacted if funds are found. <a href="sms-terms.html">SMS Terms</a>. Powered by <a href="https://missingmoney.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5)">MissingMoney.com</a>.</p>
     </form>
     <div class="wave-text" id="wave2"></div>
   </div>
@@ -680,6 +737,13 @@ main{display:contents}
     <div class="mm-trust-item"><span class="icon">&#128222;</span><strong>Follow-Up</strong>We call if found</div>
   </div>
 </div></section>
+
+<!-- ── MM OVERLAY ── -->
+
+<div id="mm-overlay">
+  <span class="ty-float" style="left:5%;animation-duration:8s">&#128181;</span><span class="ty-float" style="left:28%;animation-duration:9s;animation-delay:2s">&#128176;</span><span class="ty-float" style="left:58%;animation-duration:10s;animation-delay:3s">&#129689;</span><span class="ty-float" style="left:82%;animation-duration:12s">&#128181;</span>
+  <div class="ty-content"><div class="ty-icon">&#128176;</div><div class="ty-title">Thank You!</div><div class="ty-name" id="ty-name"></div><div class="ty-message">A <strong>Recovery Specialist</strong> will research unclaimed funds in your name across all 50 states. MissingMoney.com is now open in a new tab.</div><div class="ty-bar-wrap"><div class="ty-bar-label">Closes in 6 seconds</div><div class="ty-bar-track"><div class="ty-bar-fill" id="ty-bar"></div></div></div><button class="ty-go-btn" onclick="mmCloseOverlay()">Close →</button></div>
+</div>
 
 <!-- ── ABOUT THE FOUNDER ── -->
 
@@ -751,7 +815,7 @@ main{display:contents}
 <footer><div class="footer-top">
   <div><div class="footer-logo">Rightful Returns Recovery</div><p class="footer-tagline">Finding hidden assets. Recovering what's rightfully yours. Full-service recovery at no upfront cost.</p><div class="footer-contact-links"><a href="tel:18004282022">&#128222; 1 (800) 428-2022</a><a href="tel:4807882320">&#128222; (480) 788-2320</a><a href="mailto:powell@rightfulreturnsrecovery.com">&#9993; powell@rightfulreturnsrecovery.com</a></div></div>
   <div><div class="footer-col-title">Quick Links</div><nav class="footer-nav-links"><a href="#how">How It Works</a><a href="#about">About Us</a><a href="#states">States We Serve</a><a href="#faq">FAQ</a><a href="#signup">Free Case Evaluation</a><a href="blog/index.html">Blog</a><a href="https://jackaiattorney.com/" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;">&#11088; Meet Our Attorney</a></nav></div>
-  <div><div class="footer-col-title">Legal</div><nav class="footer-nav-links"><a href="sms-terms.html">SMS Terms</a><a href="privacy-policy.html">Privacy Policy</a><a href="sms-terms.html#tcpa">TCPA Compliance</a><a href="sms-terms.html#canspam">CAN-SPAM Policy</a><a href="sms-terms.html#disclaimer">Disclaimer</a><a href="https://jackaiattorney.com/" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;">&#11088; Free Legal Chat</a></nav></div>
+  <div><div class="footer-col-title">Legal</div><nav class="footer-nav-links"><a href="sms-terms.html">SMS Terms</a><a href="sms-terms.html#privacy">Privacy Policy</a><a href="sms-terms.html#tcpa">TCPA Compliance</a><a href="sms-terms.html#canspam">CAN-SPAM Policy</a><a href="sms-terms.html#disclaimer">Disclaimer</a><a href="https://jackaiattorney.com/" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700;">&#11088; Free Legal Chat</a></nav></div>
 </div></footer>
 <div class="footer-legal"><div class="footer-legal-inner">
   <div class="footer-legal-title">Compliance &amp; Disclosures</div>
@@ -760,11 +824,11 @@ main{display:contents}
     <div class="legal-block"><h4>&#128222; Call Consent</h4><p>You authorize contact by telephone including automated systems. Opt out anytime by calling <a href="tel:18004282022">1 (800) 428-2022</a>.</p></div>
     <div class="legal-block"><h4>&#9993; Email (CAN-SPAM)</h4><p>Unsubscribe anytime via email link or contact <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a>.</p></div>
     <div class="legal-block"><h4>&#9878; No Attorney-Client Relationship</h4><p>Not a law firm. General information only. We partner with licensed attorneys where required.</p></div>
-    <div class="legal-block"><h4>&#128274; Privacy</h4><p>We never sell or share your data. <a href="privacy-policy.html">Privacy Policy</a>.</p></div>
+    <div class="legal-block"><h4>&#128274; Privacy</h4><p>We never sell or share your data. <a href="sms-terms.html#privacy">Privacy Policy</a>.</p></div>
     <div class="legal-block"><h4>&#128176; Contingency Fee</h4><p>No upfront cost. Fee only upon successful recovery, disclosed in your agreement.</p></div>
   </div>
   <hr class="footer-divider">
-  <div class="footer-bottom"><p class="footer-copy">&copy; 2026 Rightful Returns Recovery. <a href="sms-terms.html">SMS Terms</a> | <a href="privacy-policy.html">Privacy</a> | <a href="sms-terms.html#tcpa">TCPA</a><br>Phoenix, Arizona · <a href="tel:18004282022">1 (800) 428-2022</a> · <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a><br><span style="color:#2a3a4a;font-size:.65rem">Not affiliated with any government agency. Contingency basis only. Results vary.</span></p></div>
+  <div class="footer-bottom"><p class="footer-copy">&copy; 2026 Rightful Returns Recovery. <a href="sms-terms.html">SMS Terms</a> | <a href="sms-terms.html#privacy">Privacy</a> | <a href="sms-terms.html#tcpa">TCPA</a><br>Phoenix, Arizona · <a href="tel:18004282022">1 (800) 428-2022</a> · <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a><br><span style="color:#2a3a4a;font-size:.65rem">Not affiliated with any government agency. Contingency basis only. Results vary.</span></p></div>
 </div></div>
 
 <script>
@@ -774,20 +838,9 @@ document.querySelectorAll('.faq-item').forEach(function(item){item.addEventListe
 // ── Signup form success ──
 var sf=document.getElementById('signup-form');if(sf){sf.addEventListener('submit',function(){var fn=document.getElementById('first_name').value.trim();var ln=document.getElementById('last_name').value.trim();var ne=document.getElementById('form-success-name');if(ne)ne.textContent=fn+' '+ln+' — your case is being reviewed!';var ov=document.getElementById('form-success');if(ov)setTimeout(function(){ov.style.display='flex'},800)})}
 
-// ── Missing money quick search → feeds main evaluation form ──
-function mmHandleSubmit(e){
-  if(e) e.preventDefault();
-  var q=document.getElementById('mm-quick').value.trim();
-  if(!q){alert('Please enter your name or property address.');return false;}
-  var parts=q.split(' ');
-  var fn=document.getElementById('first_name');
-  var ln=document.getElementById('last_name');
-  if(fn) fn.value=parts[0]||'';
-  if(ln) ln.value=parts.slice(1).join(' ')||'';
-  var target=document.getElementById('signup');
-  if(target) target.scrollIntoView({behavior:'smooth'});
-  return false;
-}
+// ── Missing money ──
+function mmHandleSubmit(){var f=document.getElementById('mm-first').value.trim();var l=document.getElementById('mm-last').value.trim();var e=document.getElementById('mm-email').value.trim();if(!f){alert('Please enter your first name.');return}if(!l){alert('Please enter your last name.');return}if(!e||e.indexOf('@')<0){alert('Please enter a valid email.');return}window.open('https://app.missingmoney.com/Name/Search?FirstName='+encodeURIComponent(f)+'&LastName='+encodeURIComponent(l),'_blank');var n=document.getElementById('ty-name');if(n)n.textContent=f+' '+l+' — your search is underway!';var o=document.getElementById('mm-overlay');if(o)o.classList.add('show');var b=document.getElementById('ty-bar');if(b){b.style.transition='none';b.style.width='100%';requestAnimationFrame(function(){requestAnimationFrame(function(){b.style.transition='width 6s linear';b.style.width='0%'})})}setTimeout(mmCloseOverlay,6000)}
+function mmCloseOverlay(){var o=document.getElementById('mm-overlay');if(o)o.classList.remove('show')}
 
 // ── Wave text ──
 function createWave(id,text){var el=document.getElementById(id);if(!el)return;text.split('').forEach(function(ch,i){var s=document.createElement('span');s.textContent=ch===' '?'\u00A0':ch;s.style.animationDelay=(i*0.06)+'s';el.appendChild(s)})}
