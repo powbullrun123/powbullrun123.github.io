@@ -381,7 +381,7 @@ main{display:contents}
   <div class="header-main">
     <div class="header-left">
       <div class="header-logo">
-        <a href="/"><img src="/rrr-logo.webp" alt="Rightful Returns Recovery" width="180" height="52"></a>
+        <a href="/"><img src="/rrr-logo.webp" alt="Rightful Returns Recovery" width="40" height="52"></a>
       </div>
       <a class="header-phone" href="tel:18004282022">&#128222; 1 (800) 428-2022</a>
       <a href="https://jackaiattorney.com/" target="_blank" rel="noopener" style="display:none;align-items:center;gap:8px;text-decoration:none;background:#1B2A40;border:1px solid #C9A84C;padding:8px 14px;border-radius:6px;font-family:'Lato',sans-serif;" class="header-jack-ai">
@@ -421,7 +421,7 @@ main{display:contents}
 <section class="hero" aria-label="Surplus Funds Recovery">
   <div class="hero-logo">
     <!-- FIX B: fetchpriority=high, eager load — biggest LCP element -->
-    <img src="/rrr-logo.webp" alt="Rightful Returns Recovery — Reclaiming Your Legacy Through Ethics &amp; Effort" width="700" height="200" fetchpriority="high" loading="eager">
+    <img src="/rrr-logo.webp" alt="Rightful Returns Recovery — Reclaiming Your Legacy Through Ethics &amp; Effort" width="560" height="732" fetchpriority="high" loading="eager">
   </div>
   <h1>Finding Hidden Assets.<br><span>Recovering What's Rightfully Yours.</span></h1>
   <p class="hero-sub">According to the National Association of Unclaimed Property Administrators (NAUPA), over <strong>$70 Billion</strong> in unclaimed property is sitting in government accounts all across America — waiting to be claimed. Texas $10.5B · New York $13B · Florida $2B+ · Arizona $2.8B · LA County alone $964M. <em>1 in 7 Americans have money waiting for them right now.</em></p>
@@ -861,7 +861,7 @@ createWave('wave1',"Let's Help You Get Paid Today!");
 createWave('wave2',"Let's Help You Get Paid Today!");
 
 // ── Flag canvas (States section) ──
-(function(){var c=document.getElementById('flag-canvas');if(!c)return;var ctx=c.getContext('2d');function draw(){var w=c.parentElement.offsetWidth;var h=c.parentElement.offsetHeight;c.width=w;c.height=h;var t=Date.now()/1000;
+(function(){var c=document.getElementById('flag-canvas');if(!c)return;var ctx=c.getContext('2d');var w=0,h=0;function resize(){w=c.parentElement.offsetWidth;h=c.parentElement.offsetHeight;c.width=w;c.height=h}window.addEventListener('resize',resize,{passive:true});resize();function draw(){var t=Date.now()/1000;
 var sh=h/13;for(var i=0;i<13;i++){ctx.fillStyle=i%2===0?'rgba(191,10,48,0.5)':'rgba(255,255,255,0.5)';ctx.fillRect(0,i*sh,w,sh)}
 var cw=w*0.4;var ch=sh*7;ctx.fillStyle='rgba(0,40,104,0.6)';ctx.fillRect(0,0,cw,ch);
 ctx.fillStyle='rgba(255,255,255,0.7)';var rows=[6,5,6,5,6,5,6,5,6];var sy=ch/10;for(var r=0;r<rows.length;r++){var cols=rows[r];var sx=cw/(cols+1);for(var cc=0;cc<cols;cc++){var x=sx*(cc+1);var y=sy*(r+1);var wave=Math.sin(t*2+x*0.01+y*0.01)*3;ctx.beginPath();for(var p=0;p<5;p++){var a=(p*4*Math.PI/5)-Math.PI/2;var ox=x+Math.cos(a)*4;var oy=y+wave+Math.sin(a)*4;p===0?ctx.moveTo(ox,oy):ctx.lineTo(ox,oy);a=(p*4*Math.PI/5+2*Math.PI/5)-Math.PI/2;ox=x+Math.cos(a)*1.8;oy=y+wave+Math.sin(a)*1.8;ctx.lineTo(ox,oy)}ctx.closePath();ctx.fill()}}
