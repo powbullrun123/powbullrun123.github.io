@@ -420,7 +420,6 @@ main{display:contents}
 
 <section class="hero" aria-label="Surplus Funds Recovery">
   <div class="hero-logo">
-    <!-- FIX B: fetchpriority=high, eager load — biggest LCP element -->
     <img src="/rrr-logo.webp" alt="Rightful Returns Recovery — Reclaiming Your Legacy Through Ethics &amp; Effort" width="560" height="732" fetchpriority="high" loading="eager">
   </div>
   <h1>Finding Hidden Assets.<br><span>Recovering What's Rightfully Yours.</span></h1>
@@ -439,8 +438,6 @@ main{display:contents}
 </section>
 
 <!-- ── MEET YOUR RECOVERY SPECIALIST ── -->
-
-<!-- FIX C: Removed loading=lazy from above-fold photo section; added fetchpriority=high on first photo -->
 
 <div style="background:#FFFFFF;padding:50px 20px;text-align:center;border-top:2px solid rgba(201,168,76,.3);border-bottom:2px solid rgba(201,168,76,.3)">
   <p style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3vw,1.6rem);color:#8B6914;font-weight:900;margin-bottom:8px">Meet One of Our Recovery Specialists</p>
@@ -525,7 +522,6 @@ main{display:contents}
   </div>
   <div class="legal-experts-bar"><p>Our Network of Legal Experts Will Help You Recover What's Yours</p></div>
 </div></section>
-<!-- ── REVITALIZING UNDERVALUED ASSETS ── -->
 
 <!-- ── STATES ── -->
 
@@ -685,7 +681,12 @@ main{display:contents}
     </div>
   </div>
   <div class="signup-inner">
-    <form id="signup-form" action="https://formspree.io/f/mjgeddoy" method="POST">
+    <form id="signup-form" action="https://formsubmit.co/info@rightfulreturnsrecovery.com" method="POST">
+      <!-- FormSubmit Configuration -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Free Case Evaluation Submission">
+      <input type="hidden" name="_template" value="table">
+      
       <div class="form-header">
         <h3>Free Case Evaluation</h3>
         <p>Takes less than 2 minutes · No cost · No obligation</p>
