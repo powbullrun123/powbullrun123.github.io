@@ -94,6 +94,15 @@ nav{position:fixed;top:0;width:100%;z-index:200;padding:18px 48px;display:flex;j
 .nav-links a:hover{color:var(--gold)}
 @media(max-width:650px){.nav-links{display:none}nav{padding:16px 20px}}
 
+/* Header blog link (stays visible on mobile) */
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-blog{background:var(--gold);color:var(--dark);text-decoration:none;font-size:0.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:11px 20px;border:1px solid var(--gold);white-space:nowrap;transition:all 0.3s}
+.nav-blog:hover{background:var(--gold-light);border-color:var(--gold-light);box-shadow:0 6px 22px rgba(201,168,76,0.4)}
+.nav-blog:focus-visible,.footer-blog:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px}
+.nav-blog .short{display:none}
+@media(max-width:900px){.nav-links{gap:18px}.nav-right{gap:18px}}
+@media(max-width:650px){.nav-logo{font-size:0.95rem}.nav-blog{padding:9px 13px;font-size:0.7rem;letter-spacing:1px}.nav-blog .full{display:none}.nav-blog .short{display:inline}}
+
 /* ── HERO WITH STORM BACKDROP ── */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 80px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(201,168,76,0.05) 0%,transparent 70%);animation:breathe 7s ease-in-out infinite;z-index:1}
@@ -199,18 +208,30 @@ footer{background:#060e18;padding:56px 20px;text-align:center;border-top:1px sol
 .footer-nav a{color:var(--muted);font-size:0.78rem;text-decoration:none;letter-spacing:1px;transition:color 0.3s}
 .footer-nav a:hover{color:var(--gold)}
 .footer-copy{font-size:0.76rem;color:#3a4a5a;margin-top:20px}
+
+/* Footer blog feature link */
+.footer-blog{display:block;max-width:600px;margin:30px auto 26px;padding:28px 30px;background:var(--navy);border:2px solid var(--gold);text-decoration:none;text-align:center;transition:all 0.3s}
+.footer-blog:hover{background:var(--navy2);box-shadow:0 12px 40px rgba(201,168,76,0.3);transform:translateY(-3px)}
+.footer-blog .fb-title{display:block;font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3.5vw,1.75rem);font-weight:900;color:var(--gold);line-height:1.25;margin-bottom:10px}
+.footer-blog .fb-sub{display:block;font-size:0.92rem;color:var(--gold-light);line-height:1.7;margin-bottom:18px}
+.footer-blog .fb-btn{display:inline-block;background:var(--gold);color:var(--dark);padding:13px 30px;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.footer-blog:hover .fb-btn{background:var(--gold-light)}
+@media(prefers-reduced-motion:reduce){.nav-blog,.footer-blog{transition:none}.footer-blog:hover{transform:none}}
 </style>
 </head>
 <body>
 <nav>
   <div class="nav-logo">Rightful Returns Recovery</div>
-  <ul class="nav-links">
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#contact">Get Started</a></li>
-  </ul>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Get Started</a></li>
+    </ul>
+    <a href="https://www.rightfulreturnsrecovery.com/blog/texas-foreclosure-surplus-funds.html" class="nav-blog" aria-label="Read the Texas Surplus Funds Guide"><span class="full">📖 Texas Surplus Funds Guide</span><span class="short">📖 Surplus Guide</span></a>
+  </div>
 </nav>
 
 <section class="hero">
@@ -348,6 +369,11 @@ footer{background:#060e18;padding:56px 20px;text-align:center;border-top:1px sol
   <div class="footer-logo">Rightful Returns Recovery</div>
   <div class="gold-line"></div>
   <p style="color:var(--muted);max-width:460px;margin:14px auto;font-size:0.86rem;line-height:1.75;">We help Texas residents recover surplus funds and unclaimed money from tax sales and foreclosures — at no upfront cost.</p>
+  <a href="https://www.rightfulreturnsrecovery.com/blog/texas-foreclosure-surplus-funds.html" class="footer-blog">
+    <span class="fb-title">📖 Read the Texas Surplus Funds Guide</span>
+    <span class="fb-sub">Tax sale or lender foreclosure? Learn which deadline applies to you, and whether money from an older foreclosure is still waiting.</span>
+    <span class="fb-btn">Read the Guide</span>
+  </a>
   <div class="footer-contact">
     <a href="tel:2148381883">📞 Texas: (214) 838-1883</a>
     <a href="tel:4802743499">📞 (480) 274-3499</a>
