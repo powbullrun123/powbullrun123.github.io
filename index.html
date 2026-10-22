@@ -432,7 +432,7 @@ main{display:contents}
   </div>
   <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.95rem,2vw,1.15rem);color:var(--accent);margin-top:28px;opacity:0;animation:fadeUp .8s ease forwards 1s;position:relative;z-index:2;max-width:620px;line-height:1.7">&#128052; We can't recover your lost cattle — but your lost tax surplus, foreclosure overages, uncashed checks, and forgotten funds? <strong style="color:var(--gold)">Saddle up. That's exactly what we do.</strong></p>
   <div class="naupa-badge">
-    <img src="naupa-logo.webp" alt="NAUPA Member — National Association of Unclaimed Property Administrators" width="120" height="45" loading="lazy">
+    <img src="naupa-logo.webp" alt="NAUPA — National Association of Unclaimed Property Administrators" width="120" height="45" loading="lazy">
     <span>Data sourced from NAUPA — the leading authority on unclaimed property</span>
   </div>
 </section>
@@ -461,6 +461,163 @@ main{display:contents}
     <div class="step"><span class="step-number">#4</span><div class="step-icon">&#9989;</div><h3>You Get Paid</h3><p>Once your claim is approved, the money comes to you. We only get paid when you do.</p></div>
   </div>
 </div></section>
+
+<!-- ── 2026 TRACK RECORD ── -->
+<section class="rrr-track" id="track-record" aria-labelledby="rrr-track-title">
+  <style>
+    .rrr-track{
+      --gold:#C9A84C; --gold-hi:#F2D98A; --ink:#0F1A2B; --ink-2:#17263D; --cream:#FBF6EA;
+      position:relative; overflow:hidden; padding:72px 16px 64px;
+      background:
+        radial-gradient(1200px 400px at 50% -10%, rgba(201,168,76,.28), transparent 60%),
+        linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+      color:var(--cream); text-align:center; font-family:inherit;
+    }
+    .rrr-track *{box-sizing:border-box}
+    .rrr-track::before{ /* subtle gold pinstripes */
+      content:""; position:absolute; inset:0; pointer-events:none; opacity:.07;
+      background:repeating-linear-gradient(135deg, var(--gold) 0 1px, transparent 1px 22px);
+    }
+    .rrr-track__inner{position:relative; max-width:1080px; margin:0 auto}
+    .rrr-track__eyebrow{
+      display:inline-block; padding:6px 14px; border:1px solid rgba(201,168,76,.6); border-radius:999px;
+      font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-hi);
+      background:rgba(201,168,76,.08);
+    }
+    .rrr-track__title{
+      margin:18px auto 14px; max-width:860px; font-size:clamp(28px,4.6vw,46px); line-height:1.12; font-weight:800;
+      color:#fff; font-family:'Playfair Display',serif;
+    }
+    .rrr-track__title span{
+      background:linear-gradient(90deg,var(--gold),var(--gold-hi),var(--gold));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .rrr-track__lede{margin:0 auto 40px; max-width:720px; font-size:clamp(16px,2vw,19px); line-height:1.6; color:rgba(251,246,234,.86)}
+
+    .rrr-track__stats{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:0 auto 36px}
+    .rrr-track__stat{
+      position:relative; padding:30px 18px 26px; border-radius:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(201,168,76,.35);
+      box-shadow:0 10px 30px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06);
+      transform:translateY(18px); opacity:0; transition:transform .7s ease, opacity .7s ease;
+    }
+    .rrr-track.is-visible .rrr-track__stat{transform:none; opacity:1}
+    .rrr-track.is-visible .rrr-track__stat:nth-child(2){transition-delay:.12s}
+    .rrr-track.is-visible .rrr-track__stat:nth-child(3){transition-delay:.24s}
+    .rrr-track__stat--hero{border:2px solid var(--gold); box-shadow:0 0 0 6px rgba(201,168,76,.12), 0 14px 40px rgba(201,168,76,.25)}
+    .rrr-track__num{
+      display:block; font-family:'Playfair Display',serif; font-size:clamp(46px,7vw,72px); font-weight:900; line-height:1; letter-spacing:-.02em;
+      background:linear-gradient(180deg,var(--gold-hi),var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent;
+      font-variant-numeric:tabular-nums;
+    }
+    .rrr-track__unit{font-size:.42em; font-weight:800; margin-left:4px}
+    .rrr-track__label{display:block; margin-top:12px; font-size:15px; line-height:1.4; color:rgba(251,246,234,.9); font-weight:600}
+    .rrr-track__seal{
+      position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+      padding:5px 12px; border-radius:999px; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+      background:var(--gold); color:var(--ink); white-space:nowrap; box-shadow:0 4px 12px rgba(0,0,0,.3);
+    }
+
+    .rrr-track__proof{
+      display:flex; flex-wrap:wrap; justify-content:center; gap:10px 22px; margin:0 auto 34px; padding:0; list-style:none;
+      font-size:15px; color:rgba(251,246,234,.88);
+    }
+    .rrr-track__proof li::before{content:"✓"; color:var(--gold); font-weight:900; margin-right:8px}
+
+    .rrr-track__cta{
+      display:inline-block; padding:17px 34px; border-radius:999px; text-decoration:none;
+      font-weight:800; font-size:17px; letter-spacing:.04em; text-transform:uppercase;
+      color:var(--ink); background:linear-gradient(180deg,var(--gold-hi),var(--gold));
+      box-shadow:0 10px 26px rgba(201,168,76,.4); transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .rrr-track__cta:hover,.rrr-track__cta:focus-visible{transform:translateY(-2px); box-shadow:0 14px 34px rgba(201,168,76,.55)}
+    .rrr-track__fine{margin:26px auto 0; max-width:760px; font-size:12.5px; line-height:1.55; color:rgba(251,246,234,.6)}
+
+    @media (max-width:720px){
+      .rrr-track{padding:56px 16px 48px}
+      .rrr-track__stats{grid-template-columns:1fr; gap:26px; max-width:380px}
+      .rrr-track__stat--hero{order:-1}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .rrr-track__stat{transform:none; opacity:1; transition:none}
+      .rrr-track__cta{transition:none}
+    }
+  </style>
+
+  <div class="rrr-track__inner">
+    <span class="rrr-track__eyebrow">2026 Track Record</span>
+
+    <h2 class="rrr-track__title" id="rrr-track-title">
+      Every Case We've Taken On This Year Has Been Paid — <span>or Has a Check in the Mail</span>
+    </h2>
+
+    <p class="rrr-track__lede">
+      Proper documentation is the difference. Every client who signed with Rightful Returns Recovery in 2026
+      has either received their surplus funds or has an approved check on its way. Our longest case so far
+      took just three months from start to check.
+    </p>
+
+    <div class="rrr-track__stats">
+      <div class="rrr-track__stat rrr-track__stat--hero">
+        <span class="rrr-track__seal">Perfect Record</span>
+        <span class="rrr-track__num"><span data-count="100">100</span><span class="rrr-track__unit">%</span></span>
+        <span class="rrr-track__label">of 2026 clients paid</span>
+      </div>
+      <div class="rrr-track__stat">
+        <span class="rrr-track__num"><span data-count="3">3</span><span class="rrr-track__unit">mo</span></span>
+        <span class="rrr-track__label">longest time to payout</span>
+      </div>
+      <div class="rrr-track__stat">
+        <span class="rrr-track__num"><span class="rrr-track__unit" style="margin:0 2px 0 0">$</span><span data-count="0">0</span></span>
+        <span class="rrr-track__label">upfront — ever</span>
+      </div>
+    </div>
+
+    <ul class="rrr-track__proof">
+      <li>Court-approved claims</li>
+      <li>Checks tracked to your door</li>
+      <li>Attorney-backed filings</li>
+    </ul>
+
+    <a class="rrr-track__cta" href="#signup">See If You're Next — Free</a>
+
+    <p class="rrr-track__fine">
+      Based on Rightful Returns Recovery cases signed January–October 2026. Past results do not guarantee future
+      outcomes. Recovered funds are paid net of the contingency fee disclosed in your agreement.
+    </p>
+  </div>
+
+  <script>
+    (function(){
+      var sec = document.getElementById('track-record');
+      if(!sec) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function countUp(el){
+        var end = parseInt(el.getAttribute('data-count'),10);
+        if(reduce || !end){ el.textContent = end; return; }
+        var start = null, dur = 1400;
+        function step(t){
+          if(!start) start = t;
+          var p = Math.min((t-start)/dur,1);
+          el.textContent = Math.round(end*(1-Math.pow(1-p,3)));
+          if(p<1) requestAnimationFrame(step);
+        }
+        el.textContent = 0; requestAnimationFrame(step);
+      }
+      function go(){
+        sec.classList.add('is-visible');
+        sec.querySelectorAll('[data-count]').forEach(countUp);
+      }
+      if(!('IntersectionObserver' in window)){ go(); return; }
+      var io = new IntersectionObserver(function(entries){
+        if(entries[0].isIntersecting){ go(); io.disconnect(); }
+      },{threshold:.35});
+      io.observe(sec);
+    })();
+  </script>
+</section>
+<!-- ===== END TRACK RECORD SECTION ===== -->
 
 <div class="contact-strip"><div class="contact-strip-inner"><h3>SPEAK WITH A RECOVERY SPECIALIST TODAY — FREE</h3><div class="contact-strip-numbers"><a href="tel:18004282022">&#128222; 1 (800) 428-2022</a><a href="tel:4802743499">&#128222; (480) 274-3499</a></div></div></div>
 
@@ -529,7 +686,7 @@ main{display:contents}
   <canvas id="flag-canvas"></canvas>
   <div class="states-inner">
     <div class="section-label">Where We Work</div><div class="gold-line"></div>
-    <h2 class="states-heading">&#127482;&#127480;; We Serve All <span>50 States</span></h2>
+    <h2 class="states-heading">&#127482;&#127480; We Serve All <span>50 States</span></h2>
     <p class="states-subtext">We specialize in <strong style="color:var(--gold)">Arizona</strong>, <strong style="color:var(--gold)">Texas</strong>, and <strong style="color:var(--gold)">Georgia</strong> — and serve homeowners in every state through our network of licensed attorneys.</p>
     <div class="states-grid">
       <a href="arizona.html" class="state-card"><span class="state-emoji">&#127797;</span><div class="state-name">Arizona</div><span class="state-nickname">$2.8B in unclaimed funds</span><p class="state-desc">Maricopa, Pima, Pinal and all 15 counties. A.R.S. § 33-812 protects your right to claim.</p><div class="county-badge">15 Counties</div><div class="state-cta">View Arizona →</div></a>
@@ -551,21 +708,21 @@ main{display:contents}
     <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);text-align:center;color:var(--navy);margin-bottom:12px;">Our Research. <span style="color:var(--gold)">Your Rights.</span></h2>
     <p style="text-align:center;color:#4a5568;max-width:680px;margin:0 auto 48px;line-height:1.8;font-size:1rem;">We dig deep into state laws, county records, and unclaimed property statutes so you don't have to. Read our findings — then call us to see if funds are waiting in your name.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;">
-      <a href="blog/index.html" style="text-decoration:none;display:block;background:var(--navy);border:1px solid rgba(201,168,76,.25);border-top:4px solid var(--gold);border-radius:12px;padding:32px 28px;transition:all .3s;box-shadow:0 6px 24px rgba(27,42,64,.15);" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(27,42,64,.25)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 24px rgba(27,42,64,.15)'">
+      <a href="blog/texas-foreclosure-surplus-funds.html" style="text-decoration:none;display:block;background:var(--navy);border:1px solid rgba(201,168,76,.25);border-top:4px solid var(--gold);border-radius:12px;padding:32px 28px;transition:all .3s;box-shadow:0 6px 24px rgba(27,42,64,.15);" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(27,42,64,.25)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 24px rgba(27,42,64,.15)'">
         <div style="font-size:2.5rem;margin-bottom:16px;">&#11088;</div>
         <div style="font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:700;">Texas · $10.5B Unclaimed</div>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#F0EBE1;margin-bottom:12px;line-height:1.3;">Texas Surplus Funds: What Every Former Property Owner Must Know</h3>
         <p style="color:#b8c8d4;font-size:.92rem;line-height:1.75;margin-bottom:20px;">Texas has a strict 2-year deadline to claim foreclosure surplus. We break down Tax Code §34.04, how funds are deposited, and exactly how to file — or how we file for you.</p>
         <span style="color:var(--gold);font-size:.82rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;">Read Our Research →</span>
       </a>
-      <a href="blog/index.html" style="text-decoration:none;display:block;background:var(--navy);border:1px solid rgba(201,168,76,.25);border-top:4px solid var(--gold);border-radius:12px;padding:32px 28px;transition:all .3s;box-shadow:0 6px 24px rgba(27,42,64,.15);" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(27,42,64,.25)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 24px rgba(27,42,64,.15)'">
+      <a href="blog/arizona-foreclosure-surplus-funds.html" style="text-decoration:none;display:block;background:var(--navy);border:1px solid rgba(201,168,76,.25);border-top:4px solid var(--gold);border-radius:12px;padding:32px 28px;transition:all .3s;box-shadow:0 6px 24px rgba(27,42,64,.15);" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(27,42,64,.25)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 24px rgba(27,42,64,.15)'">
         <div style="font-size:2.5rem;margin-bottom:16px;">&#127797;</div>
         <div style="font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:700;">Arizona · $2.8B Unclaimed</div>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#F0EBE1;margin-bottom:12px;line-height:1.3;">Arizona Homeowners: Your Rights After a Foreclosure Sale</h3>
         <p style="color:#b8c8d4;font-size:.92rem;line-height:1.75;margin-bottom:20px;">Under A.R.S. § 33-812, Arizona property owners are entitled to surplus proceeds. We've researched Maricopa, Pima, and all 15 counties — and the results may surprise you.</p>
         <span style="color:var(--gold);font-size:.82rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;">Read Our Research →</span>
       </a>
-      <a href="blog/index.html" style="text-decoration:none;display:block;background:var(--navy);border:1px solid rgba(201,168,76,.25);border-top:4px solid var(--gold);border-radius:12px;padding:32px 28px;transition:all .3s;box-shadow:0 6px 24px rgba(27,42,64,.15);" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(27,42,64,.25)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 24px rgba(27,42,64,.15)'">
+      <a href="georgia.html" style="text-decoration:none;display:block;background:var(--navy);border:1px solid rgba(201,168,76,.25);border-top:4px solid var(--gold);border-radius:12px;padding:32px 28px;transition:all .3s;box-shadow:0 6px 24px rgba(27,42,64,.15);" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(27,42,64,.25)'" onmouseout="this.style.transform='';this.style.boxShadow='0 6px 24px rgba(27,42,64,.15)'">
         <div style="font-size:2.5rem;margin-bottom:16px;">&#127825;</div>
         <div style="font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:700;">Georgia · 159 Counties</div>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#F0EBE1;margin-bottom:12px;line-height:1.3;">Georgia Excess Funds: The Facts Counties Don't Advertise</h3>
@@ -647,8 +804,8 @@ main{display:contents}
       </div>
       <div style="width:1px;height:50px;background:rgba(201,168,76,.3)"></div>
       <div style="display:flex;align-items:center;gap:14px">
-        <img src="naupa-logo.webp" alt="NAUPA Member" width="120" height="45" loading="lazy" style="height:45px;width:auto;filter:brightness(1.2)">
-        <div style="color:var(--light);font-size:.88rem;line-height:1.5;text-align:left"><strong style="color:var(--gold)">NAUPA Data Partner</strong><br><span style="color:#FFFFFF">National Authority on Unclaimed Property</span></div>
+        <img src="naupa-logo.webp" alt="NAUPA — National Association of Unclaimed Property Administrators" width="120" height="45" loading="lazy" style="height:45px;width:auto;filter:brightness(1.2)">
+        <div style="color:var(--light);font-size:.88rem;line-height:1.5;text-align:left"><strong style="color:var(--gold)">Data Sourced From NAUPA</strong><br><span style="color:#FFFFFF">National Authority on Unclaimed Property</span></div>
       </div>
     </div>
   </div>
@@ -830,7 +987,7 @@ main{display:contents}
   <div><div class="footer-logo">Rightful Returns Recovery</div><p class="footer-tagline">Finding hidden assets. Recovering what's rightfully yours. Full-service recovery at no upfront cost.</p><div class="footer-contact-links"><a href="tel:18004282022">&#128222; 1 (800) 428-2022</a><a href="tel:4802743499">&#128222; (480) 274-3499</a><a href="mailto:powell@rightfulreturnsrecovery.com">&#9993; powell@rightfulreturnsrecovery.com</a></div></div>
   <div><div class="footer-col-title">Quick Links</div><nav class="footer-nav-links"><a href="#how">How It Works</a><a href="#about">About Us</a><a href="#states">States We Serve</a><a href="#faq">FAQ</a><a href="#signup">Free Case Evaluation</a><a href="blog/index.html">Blog</a></nav></div>
   <div><div class="footer-col-title">Also From Powell Parker</div><nav class="footer-nav-links"><a href="https://jackaiattorney.com/" target="_blank" rel="noopener">Jack AI Attorney</a><a href="https://www.parlaypen.com" target="_blank" rel="noopener">Send a message that lives forever — ParlayPen</a></nav></div>
-  <div><div class="footer-col-title">Legal</div><nav class="footer-nav-links"><a href="sms-terms.html">SMS Terms</a><a href="sms-terms.html#privacy">Privacy Policy</a><a href="sms-terms.html#tcpa">TCPA Compliance</a><a href="sms-terms.html#canspam">CAN-SPAM Policy</a><a href="sms-terms.html#disclaimer">Disclaimer</a></nav></div>
+  <div><div class="footer-col-title">Legal</div><nav class="footer-nav-links"><a href="sms-terms.html">SMS Terms</a><a href="privacy-policy.html">Privacy Policy</a><a href="sms-terms.html#tcpa">TCPA Compliance</a><a href="sms-terms.html#canspam">CAN-SPAM Policy</a><a href="sms-terms.html#disclaimer">Disclaimer</a></nav></div>
 </div></footer>
 <div class="footer-legal"><div class="footer-legal-inner">
   <div class="footer-legal-title">Compliance &amp; Disclosures</div>
@@ -839,11 +996,11 @@ main{display:contents}
     <div class="legal-block"><h4>&#128222; Call Consent</h4><p>You authorize contact by telephone including automated systems. Opt out anytime by calling <a href="tel:18004282022">1 (800) 428-2022</a>.</p></div>
     <div class="legal-block"><h4>&#9993; Email (CAN-SPAM)</h4><p>Unsubscribe anytime via email link or contact <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a>.</p></div>
     <div class="legal-block"><h4>&#9878; No Attorney-Client Relationship</h4><p>Not a law firm. General information only. We partner with licensed attorneys where required.</p></div>
-    <div class="legal-block"><h4>&#128274; Privacy</h4><p>We never sell or share your data. <a href="sms-terms.html#privacy">Privacy Policy</a>.</p></div>
+    <div class="legal-block"><h4>&#128274; Privacy</h4><p>We never sell or share your data. <a href="privacy-policy.html">Privacy Policy</a>.</p></div>
     <div class="legal-block"><h4>&#128176; Contingency Fee</h4><p>No upfront cost. Fee only upon successful recovery, disclosed in your agreement.</p></div>
   </div>
   <hr class="footer-divider">
-  <div class="footer-bottom"><p class="footer-copy">&copy; 2026 Rightful Returns Recovery. <a href="sms-terms.html">SMS Terms</a> | <a href="sms-terms.html#privacy">Privacy</a> | <a href="sms-terms.html#tcpa">TCPA</a><br>Phoenix, Arizona · <a href="tel:18004282022">1 (800) 428-2022</a> · <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a><br><span style="color:#2a3a4a;font-size:.65rem">Not affiliated with any government agency. Contingency basis only. Results vary.</span></p></div>
+  <div class="footer-bottom"><p class="footer-copy">&copy; 2026 Rightful Returns Recovery. <a href="sms-terms.html">SMS Terms</a> | <a href="privacy-policy.html">Privacy</a> | <a href="sms-terms.html#tcpa">TCPA</a><br>Phoenix, Arizona · <a href="tel:18004282022">1 (800) 428-2022</a> · <a href="mailto:powell@rightfulreturnsrecovery.com">powell@rightfulreturnsrecovery.com</a><br><span style="display:inline-block;margin-top:10px;color:#C9A84C;font-size:.85rem;font-weight:700;letter-spacing:.3px">Not affiliated with any government agency. Contingency basis only. Results vary.</span></p></div>
 </div></div>
 
 <script>
