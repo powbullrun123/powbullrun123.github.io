@@ -11,6 +11,8 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
   <title>Surplus Funds Recovery Blog | Foreclosure Overage Guides | Rightful Returns Recovery</title>
   <meta name="description" content="Plain-language guides on foreclosure surplus funds, unclaimed money, and property rights nationwide. Learn how to recover what's rightfully yours — no upfront fees." />
   <meta name="keywords" content="surplus funds recovery blog, foreclosure overage guide, unclaimed foreclosure money, excess proceeds, Arizona surplus funds, Georgia surplus funds, Texas surplus funds" />
@@ -80,97 +82,109 @@
   </script>
 
   <style>
-    :root {
-      --gold: #C9A84C;
-      --gold-light: #E8D5A3;
-      --dark: #1a2e42;
-      --navy: #1B2A40;
-      --deep: #071018;
-      --light: #F5F0E8;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Lato', sans-serif; background: var(--light); color: var(--dark); }
-    #site-header { position: sticky; top: 0; z-index: 1000; background: var(--navy); box-shadow: 0 2px 12px rgba(0,0,0,0.4); }
-    #flagCanvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.11; pointer-events: none; }
-    .header-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; height: 72px; max-width: 1200px; margin: 0 auto; }
-    .header-left { display: flex; align-items: center; gap: 1rem; }
-    .logo-wrap { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .logo-icon { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--gold) 0%, #a07830 100%); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; font-weight: 700; flex-shrink: 0; }
-    .logo-text { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #fff; line-height: 1.2; }
-    .logo-text span { display: block; font-size: 0.72rem; color: var(--gold-light); font-family: 'Lato', sans-serif; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; }
-    .header-phone { color: var(--gold-light); font-size: 0.85rem; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; }
-    .header-phone:hover { color: var(--gold); }
-    #menuBtn { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 5px; padding: 8px; }
-    #menuBtn span { display: block; width: 26px; height: 2px; background: var(--gold-light); border-radius: 2px; transition: all 0.3s; }
-    #menuBtn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    #menuBtn.open span:nth-child(2) { opacity: 0; }
-    #menuBtn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    #navMenu { display: none; position: absolute; top: 72px; right: 0; left: 0; background: var(--deep); border-top: 2px solid var(--gold); padding: 1rem 1.5rem 1.5rem; z-index: 999; }
-    #navMenu.open { display: block; }
-    #navMenu a { display: block; padding: 0.6rem 0; color: var(--gold-light); text-decoration: none; font-size: 0.95rem; font-weight: 400; border-bottom: 1px solid rgba(201,168,76,0.12); transition: color 0.2s; }
-    #navMenu a:hover, #navMenu a.active { color: var(--gold); }
-    #navMenu a.cta-nav { margin-top: 0.8rem; background: var(--gold); color: var(--deep); text-align: center; border-radius: 4px; font-weight: 700; padding: 0.7rem; border-bottom: none; letter-spacing: 0.04em; }
-    #navMenu a.cta-nav:hover { background: #a07830; color: #fff; }
-    .blog-hero { position: relative; background: var(--navy); padding: 4rem 1.5rem 3.5rem; text-align: center; overflow: hidden; }
-    #heroFlagCanvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.38; pointer-events: none; }
-    .hero-flag-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(7,16,24,0.55) 0%, rgba(27,42,64,0.7) 100%); pointer-events: none; }
-    .blog-hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-    .hero-eyebrow { font-family: 'Lato', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
-    .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: #fff; line-height: 1.2; margin-bottom: 1rem; }
-    .blog-hero p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2.5vw, 1.35rem); color: var(--gold-light); line-height: 1.65; }
-    .gold-rule { width: 60px; height: 3px; background: var(--gold); margin: 1.2rem auto 0; border-radius: 2px; }
-    .blog-section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem 5rem; }
-    .section-label { font-family: 'Lato', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-    .blog-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--dark); margin-bottom: 2.5rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.8rem; }
-    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-    .blog-card { background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; border-top: 4px solid var(--gold); transition: transform 0.25s, box-shadow 0.25s; }
-    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.14); }
-    .card-img { height: 180px; overflow: hidden; background: linear-gradient(135deg, var(--navy) 0%, var(--dark) 100%); display: flex; align-items: center; justify-content: center; position: relative; }
-    .card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .card-img-icon { font-size: 3.5rem; opacity: 0.6; }
-    .card-news-badge { position: absolute; top: 12px; left: 12px; background: #B22234; color: #fff; font-family: 'Lato', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 10px; border-radius: 3px; z-index: 2; }
-    .card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
-    .card-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
-    .card-body h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dark); line-height: 1.35; margin-bottom: 0.8rem; }
-    .card-body p { font-size: 0.9rem; color: #555; line-height: 1.65; flex: 1; margin-bottom: 1.2rem; }
-    .card-meta { font-size: 0.78rem; color: #888; margin-bottom: 1rem; }
-    .card-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--navy); font-weight: 700; font-size: 0.85rem; text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
-    .card-link:hover { color: var(--gold); }
-    .card-link svg { transition: transform 0.2s; }
-    .card-link:hover svg { transform: translateX(3px); }
-    .texas-section { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 5rem; }
-    .texas-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--dark); margin-bottom: 2.5rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.8rem; }
-    .cta-band { background: var(--navy); padding: 3.5rem 1.5rem; text-align: center; }
-    .cta-band h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2rem); color: #fff; margin-bottom: 0.8rem; }
-    .cta-band p { color: var(--gold-light); font-size: 1rem; margin-bottom: 1.8rem; }
-    .btn-gold { display: inline-block; background: var(--gold); color: var(--deep); font-family: 'Lato', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.9rem 2.2rem; border-radius: 4px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-    .btn-gold:hover { background: #a07830; color: #fff; transform: translateY(-2px); }
-    footer { background: var(--deep); color: rgba(255,255,255,0.55); padding: 2rem 1.5rem; text-align: center; font-size: 0.82rem; }
-    footer a { color: var(--gold-light); text-decoration: none; }
-    footer a:hover { color: var(--gold); }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 1rem; }
-    @media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+    :root{--gold:#C9A84C;--gold-deep:#A87B12;--gold-light:#E8D5A3;--yellow:#FFD700;--dark:#0D1B2A;--navy:#1B2A40;--navy-2:#22395F;--ink:#1B2A40;--slate:#3d4a5c;--sky:#EAF4FC}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Lato',sans-serif;background:#FFFFFF;color:var(--ink);font-size:17px}
+
+    /* HEADER (matches homepage) */
+    #site-header{position:sticky;top:0;z-index:1000;background:rgba(13,27,42,.97);border-bottom:2px solid rgba(201,168,76,.4);box-shadow:0 4px 20px rgba(0,0,0,.2)}
+    .header-inner{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;height:70px;max-width:1200px;margin:0 auto}
+    .header-left{display:flex;align-items:center;gap:16px}
+    .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;line-height:0}
+    .logo-wrap img{height:50px;width:auto;display:block}
+    .logo-text{font-family:'Playfair Display',serif;font-size:1.05rem;color:#fff;line-height:1.2}
+    .logo-text span{display:block;font-size:.7rem;color:var(--gold-light);font-family:'Lato',sans-serif;letter-spacing:.08em;text-transform:uppercase}
+    .header-phone{color:var(--gold);font-size:1rem;font-weight:700;text-decoration:none;letter-spacing:.04em;white-space:nowrap}
+    .header-phone:hover{color:var(--gold-light)}
+    #menuBtn{display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#d4af37,#FFD700,#d4af37);color:var(--dark);border:none;border-radius:8px;cursor:pointer;padding:12px 20px;font-family:'Playfair Display',serif;font-size:.9rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;box-shadow:0 4px 16px rgba(201,168,76,.35)}
+    #menuBtn .bars{display:flex;flex-direction:column;gap:4px;width:18px}
+    #menuBtn .bars span{display:block;height:2px;background:var(--dark);border-radius:2px;transition:transform .3s,opacity .3s}
+    #menuBtn.open .bars span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+    #menuBtn.open .bars span:nth-child(2){opacity:0}
+    #menuBtn.open .bars span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+    #navMenu{display:none;position:absolute;top:calc(100% + 6px);right:24px;min-width:260px;background:#13233a;border:1px solid rgba(201,168,76,.35);border-top:3px solid var(--gold);border-radius:10px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.4);z-index:999}
+    #navMenu.open{display:block}
+    #navMenu a{display:block;padding:14px 22px;color:#F5F0E8;text-decoration:none;font-size:.95rem;font-weight:600;border-bottom:1px solid rgba(255,255,255,.07)}
+    #navMenu a:hover,#navMenu a.active{color:var(--yellow);background:rgba(201,168,76,.1)}
+    #navMenu a.cta-nav{margin:8px 12px;background:var(--gold);color:var(--dark);text-align:center;border-radius:6px;font-weight:800;border-bottom:none}
+    #navMenu a.cta-nav:hover{background:var(--gold-light)}
+    @media(max-width:560px){.logo-text{display:none}.logo-wrap img{height:40px}.header-phone{font-size:.85rem}#menuBtn{padding:10px 14px;font-size:.78rem;gap:8px}#navMenu{left:12px;right:12px;min-width:0}}
+
+    /* HERO: light sky */
+    .blog-hero{background:linear-gradient(180deg,#CFE6F7 0%,#EAF4FC 55%,#FFFFFF 100%);padding:70px 20px 56px;text-align:center}
+    .blog-hero-content{max-width:760px;margin:0 auto}
+    .blog-hero .hero-eyebrow{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--navy);padding:7px 16px;border-radius:999px;margin-bottom:18px}
+    .blog-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:900;color:var(--ink);line-height:1.15;margin-bottom:16px}
+    .blog-hero h1 .gold{color:var(--gold-deep)}
+    .blog-hero p{font-size:clamp(1.05rem,2.3vw,1.25rem);color:var(--slate);line-height:1.75}
+    .gold-rule{width:70px;height:3px;background:var(--gold);margin:22px auto 0;border-radius:2px}
+    .state-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px}
+    .state-chips a{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;text-decoration:none;font-weight:800;font-size:.9rem;padding:10px 18px;border-radius:999px;border:1px solid rgba(201,168,76,.6);box-shadow:0 6px 16px rgba(27,42,64,.15);transition:transform .2s}
+    .state-chips a:hover{transform:translateY(-2px);color:var(--yellow)}
+
+    /* SECTIONS alternate white / light blue */
+    .band{padding:64px 20px}
+    .band.alt{background:linear-gradient(180deg,#EAF4FC 0%,#F5FAFE 100%)}
+    .blog-section,.texas-section{max-width:1100px;margin:0 auto}
+    .section-label{font-size:.75rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
+    .blog-section h2,.texas-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:900;color:var(--ink);margin-bottom:34px;border-bottom:3px solid var(--gold);padding-bottom:12px}
+
+    /* CARDS: the whole card is one big link */
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
+    .blog-card{position:relative;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 26px rgba(27,42,64,.12);display:flex;flex-direction:column;border:1px solid #D3E5F3;border-top:5px solid var(--gold);transition:transform .25s,box-shadow .25s;cursor:pointer}
+    .blog-card:hover,.blog-card:focus-within{transform:translateY(-5px);box-shadow:0 18px 40px rgba(27,42,64,.2)}
+    .card-img{height:170px;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);display:flex;align-items:center;justify-content:center;position:relative}
+    .card-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .card-img-icon{font-size:3.6rem;filter:drop-shadow(0 6px 14px rgba(0,0,0,.35))}
+    .card-news-badge{position:absolute;top:12px;left:12px;background:#B22234;color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border-radius:4px;z-index:2}
+    .card-body{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column}
+    .card-tag{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
+    .card-body h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--ink);line-height:1.35;margin-bottom:10px}
+    .card-body h3 a{color:inherit;text-decoration:none}
+    .card-body p{font-size:.98rem;color:var(--slate);line-height:1.7;flex:1;margin-bottom:14px}
+    .card-body p.card-meta{flex:0;font-size:.85rem;color:#6a7a8a;margin-bottom:16px}
+    .card-link{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;font-weight:800;font-size:.88rem;letter-spacing:.04em;text-decoration:none;padding:11px 18px;border-radius:8px;transition:background .2s,color .2s}
+    .card-link::after{content:'';position:absolute;inset:0;z-index:1}
+    .blog-card:hover .card-link{background:linear-gradient(135deg,#d4af37,#FFD700,#d4af37);color:var(--dark)}
+    .card-link:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+    .card-link svg{transition:transform .2s}
+    .blog-card:hover .card-link svg{transform:translateX(3px)}
+
+    /* CTA + FOOTER */
+    .cta-band{background:linear-gradient(135deg,#1B2A40,#22395F);border-top:4px solid var(--gold);padding:60px 20px;text-align:center}
+    .cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;color:#fff;margin-bottom:10px}
+    .cta-band p{color:#FFFFFF;font-size:1.08rem;margin-bottom:26px}
+    .cta-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+    .btn-gold{display:inline-block;background:linear-gradient(135deg,#d4af37,#FFD700,#d4af37);color:var(--dark);font-weight:900;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;padding:16px 32px;border-radius:8px;text-decoration:none;box-shadow:0 8px 24px rgba(201,168,76,.4);transition:transform .15s}
+    .btn-gold:hover{transform:translateY(-2px)}
+    .btn-outline{display:inline-block;border:2px solid #fff;color:#fff;font-weight:800;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;padding:14px 30px;border-radius:8px;text-decoration:none}
+    .btn-outline:hover{background:#fff;color:var(--navy)}
+    footer{background:linear-gradient(180deg,#26406A 0%,#1F3456 100%);color:#FFFFFF;padding:40px 20px;text-align:center;font-size:.9rem}
+    footer a{color:var(--yellow);text-decoration:none;font-weight:700}
+    footer a:hover{color:#FFF3C4}
+    .footer-links{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-bottom:18px}
+    .footer-disclaimer{margin-top:10px;font-weight:700;color:var(--gold)}
+    @media(max-width:600px){.blog-grid{grid-template-columns:1fr}.band{padding:48px 16px}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important}}
   </style>
 
 </head>
 <body>
 
 <header id="site-header">
-  <canvas id="flagCanvas"></canvas>
   <div class="header-inner">
     <div class="header-left">
       <a href="https://www.rightfulreturnsrecovery.com/" class="logo-wrap">
-        <div class="logo-icon">RR</div>
+        <img src="/rrr-logo.webp" alt="Rightful Returns Recovery" width="40" height="52">
         <div class="logo-text">Rightful Returns Recovery<span>Unclaimed Surplus Funds</span></div>
       </a>
       <a href="tel:+18004282022" class="header-phone">📞 1-800-428-2022</a>
     </div>
-    <button id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button id="menuBtn" type="button" aria-label="Open navigation menu" aria-expanded="false">
+      <span class="bars"><span></span><span></span><span></span></span>MENU
     </button>
-  </div>
-  <nav id="navMenu" role="navigation">
+  <nav id="navMenu" aria-label="Site navigation">
     <a href="https://www.rightfulreturnsrecovery.com/">Home</a>
     <a href="https://www.rightfulreturnsrecovery.com/blog/index.html" class="active">Blog</a>
     <a href="https://www.rightfulreturnsrecovery.com/our-mission.html">Our Mission</a>
@@ -181,22 +195,26 @@
     <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">SMS Terms</a>
     <a href="https://www.rightfulreturnsrecovery.com/#signup" class="cta-nav">✅ Free Case Evaluation</a>
   </nav>
+  </div>
 </header>
 
 <section class="blog-hero">
-  <canvas id="heroFlagCanvas"></canvas>
-  <div class="hero-flag-overlay"></div>
   <div class="blog-hero-content">
     <p class="hero-eyebrow">Knowledge Is Power</p>
-    <h1>The Rightful Returns Blog</h1>
+    <h1>The <span class="gold">Rightful Returns</span> Blog</h1>
     <p>Plain-language guides to foreclosure surplus funds, your legal rights, and how to reclaim what's yours — nationwide.</p>
     <div class="gold-rule"></div>
+    <div class="state-chips">
+      <a href="#arizona">🌵 Arizona Guides</a>
+      <a href="#texas">⭐ Texas Guides</a>
+      <a href="/georgia.html">🍑 Georgia</a>
+    </div>
   </div>
-</section>
+</div></section>
 
 <!-- BLOG POSTS — LATEST NEWS -->
 
-<section class="blog-section" style="padding-bottom:1rem;">
+<section class="band"><div class="blog-section">
   <p class="section-label">Latest News</p>
   <h2>Industry &amp; Policy Updates</h2>
   <div class="blog-grid">
@@ -208,7 +226,7 @@
       </div>
       <div class="card-body">
         <p class="card-tag">Policy Update · $70B Unclaimed</p>
-        <h3><a href="/blog/2026-surplus-crisis-safer-act.html" style="color:inherit;text-decoration:none;">The $70 Billion Surplus Crisis &amp; The Federal Pushback</a></h3>
+        <h3><a href="/blog/2026-surplus-crisis-safer-act.html">The $70 Billion Surplus Crisis &amp; The Federal Pushback</a></h3>
         <p>States are holding over $70 billion in unclaimed property while dormancy periods shrink. Learn about the SAFER Act of 2026 and why acting fast on your claim matters more than ever.</p>
         <p class="card-meta">📅 July 2026 &nbsp;·&nbsp; 5 min read</p>
         <a href="/blog/2026-surplus-crisis-safer-act.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -216,11 +234,11 @@
     </article>
 
   </div>
-</section>
+</div></section>
 
 <!-- BLOG POSTS — GENERAL -->
 
-<section class="blog-section" style="padding-top:1rem;">
+<section class="band alt"><div class="blog-section">
   <p class="section-label">General Knowledge</p>
   <h2>Foreclosure &amp; Surplus Funds Explained</h2>
   <div class="blog-grid">
@@ -229,7 +247,7 @@
       <div class="card-img"><span class="card-img-icon">🏠</span></div>
       <div class="card-body">
         <p class="card-tag">Foreclosure Basics</p>
-        <h3><a href="/blog/what-are-foreclosures.html" style="color:inherit;text-decoration:none;">What Are Foreclosures?</a></h3>
+        <h3><a href="/blog/what-are-foreclosures.html">What Are Foreclosures?</a></h3>
         <p>Foreclosure is one of the most stressful events a homeowner can face. This guide walks through exactly what happens — from missed payments to auction — in plain English.</p>
         <p class="card-meta">📅 July 2025 &nbsp;·&nbsp; 6 min read</p>
         <a href="/blog/what-are-foreclosures.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -240,7 +258,7 @@
       <div class="card-img"><span class="card-img-icon">💵</span></div>
       <div class="card-body">
         <p class="card-tag">Surplus Funds</p>
-        <h3><a href="/blog/what-happens-to-extra-money-after-foreclosure.html" style="color:inherit;text-decoration:none;">What Happens to Extra Money After Foreclosure?</a></h3>
+        <h3><a href="/blog/what-happens-to-extra-money-after-foreclosure.html">What Happens to Extra Money After Foreclosure?</a></h3>
         <p>Most people don't know that extra money from a foreclosure sale doesn't go to the bank. Find out where it goes, who can claim it, and what deadlines you must not miss.</p>
         <p class="card-meta">📅 August 2025 &nbsp;·&nbsp; 5 min read</p>
         <a href="/blog/what-happens-to-extra-money-after-foreclosure.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -251,7 +269,7 @@
       <div class="card-img"><span class="card-img-icon">📋</span></div>
       <div class="card-body">
         <p class="card-tag">How To Claim</p>
-        <h3><a href="/blog/how-to-claim-surplus-funds.html" style="color:inherit;text-decoration:none;">How to Claim Surplus Funds</a></h3>
+        <h3><a href="/blog/how-to-claim-surplus-funds.html">How to Claim Surplus Funds</a></h3>
         <p>Not sure where to start? This guide breaks down the surplus fund claim process in plain language so you know exactly what to expect at every stage.</p>
         <p class="card-meta">📅 September 2025 &nbsp;·&nbsp; 4 min read</p>
         <a href="/blog/how-to-claim-surplus-funds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -262,7 +280,7 @@
       <div class="card-img"><span class="card-img-icon">💰</span></div>
       <div class="card-body">
         <p class="card-tag">Unclaimed Money</p>
-        <h3><a href="/blog/unclaimed-foreclosure-money.html" style="color:inherit;text-decoration:none;">Unclaimed Foreclosure Money</a></h3>
+        <h3><a href="/blog/unclaimed-foreclosure-money.html">Unclaimed Foreclosure Money</a></h3>
         <p>Billions in foreclosure proceeds go unclaimed every year. Learn why this happens, who is most affected, and how to find out if money is sitting in a courthouse waiting for you.</p>
         <p class="card-meta">📅 October 2025 &nbsp;·&nbsp; 5 min read</p>
         <a href="/blog/unclaimed-foreclosure-money.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -270,11 +288,11 @@
     </article>
 
   </div>
-</section>
+</div></section>
 
 <!-- BLOG POSTS — ARIZONA -->
 
-<section class="blog-section" style="padding-top:0;">
+<section class="band" id="arizona"><div class="blog-section">
   <p class="section-label">Arizona Resources</p>
   <h2>Arizona Foreclosure &amp; Surplus Fund Guides</h2>
   <div class="blog-grid">
@@ -283,7 +301,7 @@
       <div class="card-img"><span class="card-img-icon">🌵</span></div>
       <div class="card-body">
         <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/how-to-claim-foreclosure-surplus-funds.html" style="color:inherit;text-decoration:none;">How to Claim Foreclosure Surplus Funds</a></h3>
+        <h3><a href="/blog/how-to-claim-foreclosure-surplus-funds.html">How to Claim Foreclosure Surplus Funds</a></h3>
         <p>A step-by-step walkthrough of filing a surplus funds claim under Arizona law — from verifying eligibility to receiving your check from the court.</p>
         <p class="card-meta">📅 November 2025 &nbsp;·&nbsp; 5 min read</p>
         <a href="/blog/how-to-claim-foreclosure-surplus-funds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -294,7 +312,7 @@
       <div class="card-img"><span class="card-img-icon">🏜️</span></div>
       <div class="card-body">
         <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/arizona-foreclosure-guide.html" style="color:inherit;text-decoration:none;">Arizona Foreclosure Guide</a></h3>
+        <h3><a href="/blog/arizona-foreclosure-guide.html">Arizona Foreclosure Guide</a></h3>
         <p>A complete guide to the Arizona foreclosure process — from the first missed payment through the trustee sale — written in plain language for homeowners.</p>
         <p class="card-meta">📅 December 2025 &nbsp;·&nbsp; 6 min read</p>
         <a href="/blog/arizona-foreclosure-guide.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -305,7 +323,7 @@
       <div class="card-img"><span class="card-img-icon">🏦</span></div>
       <div class="card-body">
         <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/arizona-foreclosure-surplus-funds.html" style="color:inherit;text-decoration:none;">Arizona Foreclosure Surplus Funds</a></h3>
+        <h3><a href="/blog/arizona-foreclosure-surplus-funds.html">Arizona Foreclosure Surplus Funds</a></h3>
         <p>Arizona homeowners may be owed money after a foreclosure sale. Learn how surplus funds work under Arizona law and how to find out if money is being held for you.</p>
         <p class="card-meta">📅 January 2026 &nbsp;·&nbsp; 5 min read</p>
         <a href="/blog/arizona-foreclosure-surplus-funds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -316,7 +334,7 @@
       <div class="card-img"><span class="card-img-icon">⚖️</span></div>
       <div class="card-body">
         <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/surplus-funds-foreclosure-arizona.html" style="color:inherit;text-decoration:none;">Surplus Funds Foreclosure Arizona</a></h3>
+        <h3><a href="/blog/surplus-funds-foreclosure-arizona.html">Surplus Funds Foreclosure Arizona</a></h3>
         <p>Arizona's trustee sale process often generates surplus proceeds. This article explains state-specific rules, deadlines, and how to protect your right to claim.</p>
         <p class="card-meta">📅 February 2026 &nbsp;·&nbsp; 5 min read</p>
         <a href="/blog/surplus-funds-foreclosure-arizona.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -327,7 +345,7 @@
       <div class="card-img"><span class="card-img-icon">🗺️</span></div>
       <div class="card-body">
         <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/maricopa-county-excess-proceeds.html" style="color:inherit;text-decoration:none;">Maricopa County Excess Proceeds</a></h3>
+        <h3><a href="/blog/maricopa-county-excess-proceeds.html">Maricopa County Excess Proceeds</a></h3>
         <p>Maricopa County is one of the highest-volume foreclosure counties in the U.S. Find out how excess proceeds work there and who is entitled to claim them.</p>
         <p class="card-meta">📅 February 2026 &nbsp;·&nbsp; 5 min read</p>
         <a href="/blog/maricopa-county-excess-proceeds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -338,7 +356,7 @@
       <div class="card-img"><span class="card-img-icon">📄</span></div>
       <div class="card-body">
         <p class="card-tag">Arizona</p>
-        <h3><a href="/blog/trustee-sale-excess-proceeds-explained.html" style="color:inherit;text-decoration:none;">Trustee Sale Excess Proceeds Explained</a></h3>
+        <h3><a href="/blog/trustee-sale-excess-proceeds-explained.html">Trustee Sale Excess Proceeds Explained</a></h3>
         <p>What happens to the extra money after an Arizona trustee sale? Who gets paid first, who gets the surplus, and how does the claim process work?</p>
         <p class="card-meta">📅 March 2026 &nbsp;·&nbsp; 5 min read</p>
         <a href="/blog/trustee-sale-excess-proceeds-explained.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -346,22 +364,22 @@
     </article>
 
   </div>
-</section>
+</div></section>
 
 <!-- BLOG POSTS — TEXAS -->
 
-<section class="texas-section">
+<section class="band alt" id="texas"><div class="texas-section">
   <p class="section-label">Texas Resources</p>
   <h2>Texas Foreclosure &amp; Surplus Fund Guides</h2>
   <div class="blog-grid">
 
     <article class="blog-card">
-      <div class="card-img" style="background: linear-gradient(135deg, #1B2A40 0%, #071018 100%);">
+      <div class="card-img">
         <span class="card-img-icon">⭐</span>
       </div>
       <div class="card-body">
         <p class="card-tag">Texas · $10.5B Unclaimed</p>
-        <h3><a href="/blog/texas-foreclosure-surplus-funds.html" style="color:inherit;text-decoration:none;">Texas Foreclosure Surplus Funds: The 2-Year Deadline That Could Cost You Everything</a></h3>
+        <h3><a href="/blog/texas-foreclosure-surplus-funds.html">Texas Foreclosure Surplus Funds: The 2-Year Deadline That Could Cost You Everything</a></h3>
         <p>Texas Tax Code §34.04 gives you exactly 2 years to claim foreclosure surplus. We break down how it works across all 254 counties — Dallas, Denton, Harris, Bexar and beyond.</p>
         <p class="card-meta">📅 March 2026 &nbsp;·&nbsp; 7 min read</p>
         <a href="/blog/texas-foreclosure-surplus-funds.html" class="card-link">Read Article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -369,14 +387,17 @@
     </article>
 
   </div>
-</section>
+</div></section>
 
 <!-- CTA BAND -->
 
 <section class="cta-band">
   <h2>Could Money Be Waiting for You?</h2>
   <p>Find out in minutes — call us at no cost and no obligation.</p>
-  <a href="tel:+18004282022" class="btn-gold">📞 Call 1-800-428-2022</a>
+  <div class="cta-actions">
+    <a href="tel:+18004282022" class="btn-gold">📞 Call 1-800-428-2022</a>
+    <a href="https://www.rightfulreturnsrecovery.com/#signup" class="btn-outline">Free Case Evaluation</a>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -393,106 +414,18 @@
     <a href="https://www.rightfulreturnsrecovery.com/sms-terms.html">SMS Terms</a>
   </div>
   <p>&copy; 2026 Rightful Returns Recovery. All rights reserved.</p>
-  <p style="margin-top:0.5rem; font-size:0.75rem; color:rgba(255,255,255,0.35);">
-    Rightful Returns Recovery is not a law firm and does not provide legal advice.
-  </p>
+  <p class="footer-disclaimer">Rightful Returns Recovery is not a law firm and does not provide legal advice. Not affiliated with any government agency.</p>
 </footer>
 
 <script>
-function drawFlag(canvas, w, h, t) {
-  const ctx = canvas.getContext('2d');
-  canvas.width = w; canvas.height = h;
-  ctx.clearRect(0, 0, w, h);
-  const stripeH = h / 13;
-  const redColors = ['#B22234', '#FFFFFF'];
-  for (let s = 0; s < 13; s++) {
-    const yBase = s * stripeH;
-    ctx.beginPath();
-    ctx.moveTo(0, yBase);
-    for (let x = 0; x <= w; x++) {
-      const wave = Math.sin((x / w) * Math.PI * 2.5 + t) * (stripeH * 0.35);
-      ctx.lineTo(x, yBase + wave);
-    }
-    for (let x = w; x >= 0; x--) {
-      const wave = Math.sin((x / w) * Math.PI * 2.5 + t) * (stripeH * 0.35);
-      ctx.lineTo(x, yBase + stripeH + wave);
-    }
-    ctx.closePath();
-    ctx.fillStyle = redColors[s % 2];
-    ctx.fill();
-  }
-  const cw = w * 0.4, ch = stripeH * 7;
-  ctx.fillStyle = '#3C3B6E';
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  for (let x = 0; x <= cw; x++) {
-    const wave = Math.sin((x / w) * Math.PI * 2.5 + t) * (stripeH * 0.35);
-    ctx.lineTo(x, wave);
-  }
-  for (let x = cw; x >= 0; x--) {
-    const wave = Math.sin((x / w) * Math.PI * 2.5 + t) * (stripeH * 0.35);
-    ctx.lineTo(x, ch + wave);
-  }
-  ctx.closePath();
-  ctx.fill();
-  ctx.fillStyle = '#FFFFFF';
-  const cols = 10, rows = 5;
-  const sx = cw / (cols + 0.5), sy = ch / (rows + 0.5);
-  for (let r = 0; r < rows * 2 - 1; r++) {
-    const isOdd = r % 2 === 1;
-    const count = isOdd ? cols - 1 : cols;
-    const offsetX = isOdd ? sx * 1 : sx * 0.5;
-    const y = sy * (0.5 + r * 0.5);
-    const wave = Math.sin((0.2 / w) * Math.PI * 2.5 + t) * (stripeH * 0.35);
-    for (let c = 0; c < count; c++) {
-      const x = offsetX + c * sx;
-      ctx.save();
-      ctx.translate(x, y + wave);
-      ctx.beginPath();
-      for (let i = 0; i < 5; i++) {
-        const ang = (i * 4 * Math.PI / 5) - Math.PI / 2;
-        ctx.lineTo(Math.cos(ang) * (i % 2 === 0 ? 3.5 : 1.5), Math.sin(ang) * (i % 2 === 0 ? 3.5 : 1.5));
-      }
-      ctx.closePath(); ctx.fill();
-      ctx.restore();
-    }
-  }
-}
-
-function animateFlags() {
-  const header = document.getElementById('flagCanvas');
-  const hero = document.getElementById('heroFlagCanvas');
-  let t = 0;
-  function frame() {
-    t += 0.025;
-    if (header) drawFlag(header, header.parentElement.offsetWidth, header.offsetHeight || 72, t);
-    if (hero) drawFlag(hero, hero.parentElement.offsetWidth, hero.parentElement.offsetHeight, t);
-    requestAnimationFrame(frame);
-  }
-  if (hero) {
-    hero.width = hero.parentElement.offsetWidth;
-    hero.height = hero.parentElement.offsetHeight;
-  }
-  frame();
-}
-window.addEventListener('load', animateFlags);
-window.addEventListener('resize', () => {
-  const hero = document.getElementById('heroFlagCanvas');
-  if (hero) { hero.width = hero.parentElement.offsetWidth; hero.height = hero.parentElement.offsetHeight; }
-});
-
-const btn = document.getElementById('menuBtn');
-const nav = document.getElementById('navMenu');
-btn.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open);
-});
-document.addEventListener('click', e => {
-  if (!btn.contains(e.target) && !nav.contains(e.target)) {
-    nav.classList.remove('open'); btn.classList.remove('open'); btn.setAttribute('aria-expanded', false);
-  }
-});
+(function(){
+  var btn=document.getElementById('menuBtn'), nav=document.getElementById('navMenu');
+  if(!btn||!nav) return;
+  function close(){ nav.classList.remove('open'); btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  btn.addEventListener('click',function(e){ e.stopPropagation(); var o=nav.classList.toggle('open'); btn.classList.toggle('open',o); btn.setAttribute('aria-expanded',String(o)); });
+  document.addEventListener('click',function(e){ if(!btn.contains(e.target)&&!nav.contains(e.target)) close(); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',close); });
+})();
 </script>
 
 </body>
